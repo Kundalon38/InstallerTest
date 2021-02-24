@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="17.9" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="." IsPseudoRoot="1"/>
+    <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
+    <ROW Directory="NewFolder1_Dir" Directory_Parent="CommonAppDataFolder" DefaultDir="RISA"/>
+    <ROW Directory="ProgramFiles64Folder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramFiles64Folder" IsPseudoRoot="1"/>
+    <ROW Directory="RISA_Dir" Directory_Parent="ProgramFiles64Folder" DefaultDir="RISA"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="Utilities_Dir" Directory_Parent="RISA_Dir" DefaultDir="UTILIT~1|Utilities"/>
+    <ROW Directory="bin_Dir" Directory_Parent="Utilities_Dir" DefaultDir="bin"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="CSharpControls.Wpf.dll" ComponentId="{4794DB1E-954B-490E-95C3-78ECFDFDBC18}" Directory_="bin_Dir" Attributes="0" KeyPath="CSharpControls.Wpf.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.Core.dll" ComponentId="{5EBD9C36-78F4-4C4A-A4D7-84B3B181CA9C}" Directory_="bin_Dir" Attributes="0" KeyPath="Caliburn.Micro.Platform.Core.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.dll" ComponentId="{40CE4550-8DA6-4856-96DF-6EF17D578779}" Directory_="bin_Dir" Attributes="0" KeyPath="Caliburn.Micro.Platform.dll"/>
+    <ROW Component="Caliburn.Micro.dll" ComponentId="{9BAAD2D8-BD32-4761-9AFC-386F4B23421B}" Directory_="bin_Dir" Attributes="0" KeyPath="Caliburn.Micro.dll"/>
+    <ROW Component="ClientProgramKey.dll" ComponentId="{CD9AAABB-F04B-4A25-B618-8B4CE48C549D}" Directory_="bin_Dir" Attributes="256" KeyPath="ClientProgramKey.dll"/>
+    <ROW Component="ClientProgramKeyLib.dll" ComponentId="{2A9A3603-BD82-440B-97C8-88225752C6ED}" Directory_="bin_Dir" Attributes="256" KeyPath="ClientProgramKeyLib.dll"/>
+    <ROW Component="ControlzEx.dll" ComponentId="{09D189EB-CBFD-4C87-A8F2-9A53DA563113}" Directory_="bin_Dir" Attributes="0" KeyPath="ControlzEx.dll"/>
+    <ROW Component="FileUploader.exe" ComponentId="{96B686A8-AAB4-41D2-B966-48A19D1D7C8C}" Directory_="bin_Dir" Attributes="256" KeyPath="FileUploader.exe"/>
+    <ROW Component="FileUploader.exe.config" ComponentId="{2FB7A692-58D3-41BD-A307-8C561925C043}" Directory_="bin_Dir" Attributes="0" KeyPath="FileUploader.exe.config" Type="0"/>
+    <ROW Component="FluentFTP.dll" ComponentId="{EADACED6-9BE2-45D1-85E2-C0358052501C}" Directory_="bin_Dir" Attributes="0" KeyPath="FluentFTP.dll"/>
+    <ROW Component="Interop.RISALicenseManagerCOMLib._1" ComponentId="{5E199D10-7AD4-4E00-87B4-E3374C8F9633}" Directory_="NewFolder1_Dir" Attributes="256" KeyPath="Interop.RISALicenseManagerCOML_1"/>
+    <ROW Component="LicensingDashboard.exe" ComponentId="{6E85D5AD-D416-4F87-9176-B30566BC11CA}" Directory_="bin_Dir" Attributes="256" KeyPath="LicensingDashboard.exe"/>
+    <ROW Component="MahApps.Metro.IconPacks.Material.dl" ComponentId="{EF3AC366-E175-483E-AE62-7EDAA5A519F4}" Directory_="bin_Dir" Attributes="0" KeyPath="MahApps.Metro.IconPacks.Material"/>
+    <ROW Component="MahApps.Metro.dll" ComponentId="{3AA0F8D4-F17D-4B01-9AED-3C2842892744}" Directory_="bin_Dir" Attributes="0" KeyPath="MahApps.Metro.dll"/>
+    <ROW Component="Microsoft.Expression.Controls.dll" ComponentId="{4AA7AC79-E307-461E-BC38-E2094637B7C5}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Controls.dl"/>
+    <ROW Component="Microsoft.Expression.Drawing.dll" ComponentId="{9A581F6B-9047-47BB-B1DF-61CA8B630B26}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Drawing.dll"/>
+    <ROW Component="Microsoft.Expression.Effects.dll" ComponentId="{4C499361-E655-4F65-87E6-762019E6AA88}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Effects.dll"/>
+    <ROW Component="Microsoft.Expression.Interactions.d" ComponentId="{705E2D6B-1F9A-4DB7-B4E9-D4EB8E509FB7}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Interaction"/>
+    <ROW Component="Microsoft.Expression.Prototyping.In" ComponentId="{045E621A-902F-414F-9DA1-CD19961662A7}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Prototyping"/>
+    <ROW Component="Microsoft.Expression.Prototyping.Sk" ComponentId="{D06393CD-E5ED-45C5-9860-F3348C589D99}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Expression.Prototypi_2"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.De_1" ComponentId="{B1DD8166-EFA7-4224-854C-1EBE5DF7096F}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm_1"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.dl_1" ComponentId="{661220E6-857F-4416-AB13-4FDFF32553CE}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm_3"/>
+    <ROW Component="Microsoft.Practices.Prism.SharedI_1" ComponentId="{82E8393C-DD00-4F6E-992E-4B799BEF0945}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Shar_1"/>
+    <ROW Component="Microsoft.Practices.ServiceLocation" ComponentId="{CC2C701A-A170-43B9-BA6A-79FD84B51AE4}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Practices.ServiceLocat"/>
+    <ROW Component="Microsoft.Practices.Unity.Configura" ComponentId="{EBC380A7-1B05-48CA-8D4B-E727609A6B85}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Practices.Unity.Config"/>
+    <ROW Component="Microsoft.Practices.Unity.Registrat" ComponentId="{4D0B1512-6D5C-47C8-8607-E7DD49BF52F4}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Practices.Unity.Regist"/>
+    <ROW Component="Microsoft.Practices.Unity.dll" ComponentId="{8D31531C-FE3D-440C-B5FA-2284E8749225}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Practices.Unity.dll"/>
+    <ROW Component="Microsoft.SDK.Expression.Blend.dll" ComponentId="{0317BA15-F5B6-4260-9080-F806C6994733}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.SDK.Expression.Blend.d"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{BC2EE357-C172-41FD-AF8B-1D93D2F7ADB6}" Directory_="bin_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{FADA1751-29FD-4CBF-A2F0-B45365AEB8C2}" Directory_="bin_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="Prism.Unity.Wpf.dll" ComponentId="{5CC4D619-10F7-4852-A1EF-720953652753}" Directory_="bin_Dir" Attributes="0" KeyPath="Prism.Unity.Wpf.dll"/>
+    <ROW Component="Prism.Wpf.dll" ComponentId="{B16B7979-1E86-46D6-9C34-CA7739BFABFF}" Directory_="bin_Dir" Attributes="0" KeyPath="Prism.Wpf.dll"/>
+    <ROW Component="Prism.dll" ComponentId="{1F7F2DEC-2AD1-4D18-8856-D2EEEAAB618F}" Directory_="bin_Dir" Attributes="0" KeyPath="Prism.dll"/>
+    <ROW Component="RISABorrowLicense.exe_2" ComponentId="{BB66BC82-963A-4CE0-A9CE-0F7F79795E25}" Directory_="NewFolder1_Dir" Attributes="256" KeyPath="RISABorrowLicense.exe_2"/>
+    <ROW Component="RISAChangeLicenseType.exe" ComponentId="{CCF9CC02-0881-4AFA-B53D-F136624BF11F}" Directory_="bin_Dir" Attributes="256" KeyPath="RISAChangeLicenseType.exe"/>
+    <ROW Component="RISALicenseManagerCOM.dll" ComponentId="{360C37AF-2953-4487-B069-2C0872CE5C08}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="RISALicenseManagerCOM.dll"/>
+    <ROW Component="RISARegistryLib.dll" ComponentId="{F2856CCB-D280-4E0F-9098-65FD12EE9BE6}" Directory_="bin_Dir" Attributes="256" KeyPath="RISARegistryLib.dll"/>
+    <ROW Component="RMS_WrapperLib.dll" ComponentId="{6247B57F-E5DD-401A-B10E-787A0D7450C0}" Directory_="bin_Dir" Attributes="256" KeyPath="RMS_WrapperLib.dll"/>
+    <ROW Component="SLSLib.dll" ComponentId="{AEA0A977-D26B-4C85-BEDB-80495D9392AC}" Directory_="bin_Dir" Attributes="256" KeyPath="SLSLib.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{7378E0FD-BD81-4825-8A0C-FBA158DA40C1}" Directory_="bin_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="Utilities" ComponentId="{01907B61-975E-41D2-B1F9-1F209D8B487B}" Directory_="Utilities_Dir" Attributes="0"/>
+    <ROW Component="WCF_ServiceLib.LicensingDashboard.d" ComponentId="{DE082309-84EE-4553-9115-CD790B6EB5B9}" Directory_="bin_Dir" Attributes="256" KeyPath="WCF_ServiceLib.LicensingDashboar"/>
+    <ROW Component="WpfAnimatedGif.dll" ComponentId="{C7CD3598-D9EF-4A69-AD84-3581658A36BA}" Directory_="bin_Dir" Attributes="0" KeyPath="WpfAnimatedGif.dll"/>
+    <ROW Component="log4net.dll_1" ComponentId="{0CCF0B78-4EAC-45E8-9D8E-2F3DE8A92A01}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="log4net.dll_1"/>
+    <ROW Component="log4net.xml_1" ComponentId="{52D2E2A7-5588-4C17-962E-81026401893D}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="log4net.xml_1" Type="0"/>
+    <ROW Component="lsapiw64.dll" ComponentId="{2D9BA38E-56A3-4C2D-8FB0-62D41991EEF8}" Directory_="bin_Dir" Attributes="256" KeyPath="lsapiw64.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="TargetFeature" Title="TargetFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="TargetFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="RISALicenseManagerCOM.dll" Component_="RISALicenseManagerCOM.dll" FileName="RISALI~1.DLL|RISALicenseManagerCOM.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\RISALicenseManagerCOM.dll" SelfReg="safe" RegSynch="on"/>
+    <ROW File="Caliburn.Micro.dll" Component_="Caliburn.Micro.dll" FileName="CALIBU~1.DLL|Caliburn.Micro.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Caliburn.Micro.dll" SelfReg="false"/>
+    <ROW File="Caliburn.Micro.Platform.Core.dll" Component_="Caliburn.Micro.Platform.Core.dll" FileName="CALIBU~2.DLL|Caliburn.Micro.Platform.Core.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Caliburn.Micro.Platform.Core.dll" SelfReg="false"/>
+    <ROW File="Caliburn.Micro.Platform.dll" Component_="Caliburn.Micro.Platform.dll" FileName="CALIBU~3.DLL|Caliburn.Micro.Platform.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Caliburn.Micro.Platform.dll" SelfReg="false"/>
+    <ROW File="ClientProgramKey.dll" Component_="ClientProgramKey.dll" FileName="CLIENT~1.DLL|ClientProgramKey.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ClientProgramKey.dll" SelfReg="false"/>
+    <ROW File="ClientProgramKey.pdb" Component_="ClientProgramKey.dll" FileName="CLIENT~1.PDB|ClientProgramKey.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ClientProgramKey.pdb" SelfReg="false"/>
+    <ROW File="ClientProgramKeyLib.dll" Component_="ClientProgramKeyLib.dll" FileName="CLIENT~2.DLL|ClientProgramKeyLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ClientProgramKeyLib.dll" SelfReg="false"/>
+    <ROW File="ClientProgramKeyLib.pdb" Component_="ClientProgramKeyLib.dll" FileName="CLIENT~2.PDB|ClientProgramKeyLib.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ClientProgramKeyLib.pdb" SelfReg="false"/>
+    <ROW File="ControlzEx.dll" Component_="ControlzEx.dll" FileName="CONTRO~1.DLL|ControlzEx.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ControlzEx.dll" SelfReg="false"/>
+    <ROW File="ControlzEx.pdb" Component_="ControlzEx.dll" FileName="CONTRO~1.PDB|ControlzEx.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\ControlzEx.pdb" SelfReg="false"/>
+    <ROW File="CSharpControls.Wpf.dll" Component_="CSharpControls.Wpf.dll" FileName="CSHARP~1.DLL|CSharpControls.Wpf.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\CSharpControls.Wpf.dll" SelfReg="false"/>
+    <ROW File="CSharpControls.Wpf.pdb" Component_="CSharpControls.Wpf.dll" FileName="CSHARP~1.PDB|CSharpControls.Wpf.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\CSharpControls.Wpf.pdb" SelfReg="false"/>
+    <ROW File="FileUploader.exe" Component_="FileUploader.exe" FileName="FILEUP~1.EXE|FileUploader.exe" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\FileUploader.exe" SelfReg="false"/>
+    <ROW File="FileUploader.exe.config" Component_="FileUploader.exe.config" FileName="FILEUP~1.CON|FileUploader.exe.config" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\FileUploader.exe.config" SelfReg="false"/>
+    <ROW File="FileUploader.exe.manifest" Component_="FileUploader.exe.config" FileName="FILEUP~1.MAN|FileUploader.exe.manifest" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\FileUploader.exe.manifest" SelfReg="false"/>
+    <ROW File="FileUploader.pdb" Component_="FileUploader.exe" FileName="FILEUP~1.PDB|FileUploader.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\FileUploader.pdb" SelfReg="false"/>
+    <ROW File="FluentFTP.dll" Component_="FluentFTP.dll" FileName="FLUENT~1.DLL|FluentFTP.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\FluentFTP.dll" SelfReg="false"/>
+    <ROW File="LicensingDashboard.exe" Component_="LicensingDashboard.exe" FileName="LICENS~1.EXE|LicensingDashboard.exe" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\LicensingDashboard.exe" SelfReg="false"/>
+    <ROW File="LicensingDashboard.exe.config" Component_="FileUploader.exe.config" FileName="LICENS~1.CON|LicensingDashboard.exe.config" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\LicensingDashboard.exe.config" SelfReg="false"/>
+    <ROW File="LicensingDashboard.exe.manifest" Component_="FileUploader.exe.config" FileName="LICENS~1.MAN|LicensingDashboard.exe.manifest" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\LicensingDashboard.exe.manifest" SelfReg="false"/>
+    <ROW File="LicensingDashboard.pdb" Component_="LicensingDashboard.exe" FileName="LICENS~1.PDB|LicensingDashboard.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\LicensingDashboard.pdb" SelfReg="false"/>
+    <ROW File="lsapiw64.dll" Component_="lsapiw64.dll" FileName="lsapiw64.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\lsapiw64.dll" SelfReg="false"/>
+    <ROW File="MahApps.Metro.dll" Component_="MahApps.Metro.dll" FileName="MAHAPP~1.DLL|MahApps.Metro.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\MahApps.Metro.dll" SelfReg="false"/>
+    <ROW File="MahApps.Metro.IconPacks.Material" Component_="MahApps.Metro.IconPacks.Material.dl" FileName="MAHAPP~2.DLL|MahApps.Metro.IconPacks.Material.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\MahApps.Metro.IconPacks.Material.dll" SelfReg="false"/>
+    <ROW File="MahApps.Metro.IconPacks.Materi_2" Component_="MahApps.Metro.IconPacks.Material.dl" FileName="MAHAPP~1.PDB|MahApps.Metro.IconPacks.Material.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\MahApps.Metro.IconPacks.Material.pdb" SelfReg="false"/>
+    <ROW File="MahApps.Metro.pdb" Component_="MahApps.Metro.dll" FileName="MAHAPP~2.PDB|MahApps.Metro.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\MahApps.Metro.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Controls.dl" Component_="Microsoft.Expression.Controls.dll" FileName="MICROS~1.DLL|Microsoft.Expression.Controls.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Controls.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Drawing.dll" Component_="Microsoft.Expression.Drawing.dll" FileName="MICROS~2.DLL|Microsoft.Expression.Drawing.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Drawing.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Effects.dll" Component_="Microsoft.Expression.Effects.dll" FileName="MICROS~3.DLL|Microsoft.Expression.Effects.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Effects.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Interaction" Component_="Microsoft.Expression.Interactions.d" FileName="MICROS~4.DLL|Microsoft.Expression.Interactions.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Interactions.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Prototyping" Component_="Microsoft.Expression.Prototyping.In" FileName="MICROS~5.DLL|Microsoft.Expression.Prototyping.Interactivity.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Prototyping.Interactivity.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Prototypi_2" Component_="Microsoft.Expression.Prototyping.Sk" FileName="MICROS~6.DLL|Microsoft.Expression.Prototyping.SketchControls.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Expression.Prototyping.SketchControls.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.ServiceLocat" Component_="Microsoft.Practices.ServiceLocation" FileName="MICROS~7.DLL|Microsoft.Practices.ServiceLocation.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Practices.ServiceLocation.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.ServiceLoc_2" Component_="Microsoft.Practices.ServiceLocation" FileName="MICROS~1.PDB|Microsoft.Practices.ServiceLocation.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Practices.ServiceLocation.pdb" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Unity.Config" Component_="Microsoft.Practices.Unity.Configura" FileName="MICROS~8.DLL|Microsoft.Practices.Unity.Configuration.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Practices.Unity.Configuration.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Unity.dll" Component_="Microsoft.Practices.Unity.dll" FileName="MICROS~9.DLL|Microsoft.Practices.Unity.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Practices.Unity.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Unity.Regist" Component_="Microsoft.Practices.Unity.Registrat" FileName="MICRO~10.DLL|Microsoft.Practices.Unity.RegistrationByConvention.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll" SelfReg="false"/>
+    <ROW File="Microsoft.SDK.Expression.Blend.d" Component_="Microsoft.SDK.Expression.Blend.dll" FileName="MICRO~11.DLL|Microsoft.SDK.Expression.Blend.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.SDK.Expression.Blend.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Xaml.Behaviors.dll" Component_="Microsoft.Xaml.Behaviors.dll" FileName="MICRO~12.DLL|Microsoft.Xaml.Behaviors.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Microsoft.Xaml.Behaviors.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.pdb" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.PDB|Newtonsoft.Json.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Newtonsoft.Json.pdb" SelfReg="false"/>
+    <ROW File="Prism.dll" Component_="Prism.dll" FileName="Prism.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Prism.dll" SelfReg="false"/>
+    <ROW File="Prism.Unity.Wpf.dll" Component_="Prism.Unity.Wpf.dll" FileName="PRISMU~1.DLL|Prism.Unity.Wpf.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Prism.Unity.Wpf.dll" SelfReg="false"/>
+    <ROW File="Prism.Wpf.dll" Component_="Prism.Wpf.dll" FileName="PRISMW~1.DLL|Prism.Wpf.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\Prism.Wpf.dll" SelfReg="false"/>
+    <ROW File="RISAChangeLicenseType.exe" Component_="RISAChangeLicenseType.exe" FileName="RISACH~1.EXE|RISA Change License Type.exe" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RISA Change License Type.exe" SelfReg="false"/>
+    <ROW File="RISAChangeLicenseType.exe.config" Component_="FileUploader.exe.config" FileName="RISACH~1.CON|RISA Change License Type.exe.config" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RISA Change License Type.exe.config" SelfReg="false"/>
+    <ROW File="RISAChangeLicenseType.pdb" Component_="RISAChangeLicenseType.exe" FileName="RISACH~1.PDB|RISA Change License Type.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RISA Change License Type.pdb" SelfReg="false"/>
+    <ROW File="RISARegistryLib.dll" Component_="RISARegistryLib.dll" FileName="RISARE~1.DLL|RISARegistryLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RISARegistryLib.dll" SelfReg="false"/>
+    <ROW File="RISARegistryLib.pdb" Component_="RISARegistryLib.dll" FileName="RISARE~1.PDB|RISARegistryLib.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RISARegistryLib.pdb" SelfReg="false"/>
+    <ROW File="RMS_WrapperLib.dll" Component_="RMS_WrapperLib.dll" FileName="RMS_WR~1.DLL|RMS_WrapperLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RMS_WrapperLib.dll" SelfReg="false"/>
+    <ROW File="RMS_WrapperLib.pdb" Component_="RMS_WrapperLib.dll" FileName="RMS_WR~1.PDB|RMS_WrapperLib.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\RMS_WrapperLib.pdb" SelfReg="false"/>
+    <ROW File="SLSLib.dll" Component_="SLSLib.dll" FileName="SLSLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\SLSLib.dll" SelfReg="false"/>
+    <ROW File="SLSLib.pdb" Component_="SLSLib.dll" FileName="SLSLib.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\SLSLib.pdb" SelfReg="false"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\System.Windows.Interactivity.dll" SelfReg="false"/>
+    <ROW File="WCF_ServiceLib.LicensingDashboar" Component_="WCF_ServiceLib.LicensingDashboard.d" FileName="WCF_SE~1.DLL|WCF_ServiceLib.LicensingDashboard.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\WCF_ServiceLib.LicensingDashboard.dll" SelfReg="false"/>
+    <ROW File="WCF_ServiceLib.LicensingDashbo_2" Component_="WCF_ServiceLib.LicensingDashboard.d" FileName="WCF_SE~1.PDB|WCF_ServiceLib.LicensingDashboard.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\WCF_ServiceLib.LicensingDashboard.pdb" SelfReg="false"/>
+    <ROW File="WpfAnimatedGif.dll" Component_="WpfAnimatedGif.dll" FileName="WPFANI~1.DLL|WpfAnimatedGif.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin\WpfAnimatedGif.dll" SelfReg="false"/>
+    <ROW File="Interop.RISALicenseManagerCOML_1" Component_="Interop.RISALicenseManagerCOMLib._1" FileName="INTERO~1.DLL|Interop.RISALicenseManagerCOMLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Interop.RISALicenseManagerCOMLib.dll" SelfReg="false"/>
+    <ROW File="log4net.dll_1" Component_="log4net.dll_1" FileName="log4net.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\log4net.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm_1" Component_="Microsoft.Practices.Prism.Mvvm.De_1" FileName="MICROS~1.DLL|Microsoft.Practices.Prism.Mvvm.Desktop.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.Mvvm.Desktop.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm_3" Component_="Microsoft.Practices.Prism.Mvvm.dl_1" FileName="MICROS~2.DLL|Microsoft.Practices.Prism.Mvvm.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Shar_1" Component_="Microsoft.Practices.Prism.SharedI_1" FileName="MICROS~3.DLL|Microsoft.Practices.Prism.SharedInterfaces.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.SharedInterfaces.dll" SelfReg="false"/>
+    <ROW File="RISABorrowLicense.exe_2" Component_="RISABorrowLicense.exe_2" FileName="RISABO~1.EXE|RISABorrowLicense.exe" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\RISABorrowLicense.exe" SelfReg="false"/>
+    <ROW File="log4net.xml_1" Component_="log4net.xml_1" FileName="log4net.xml" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\log4net.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm_4" Component_="log4net.xml_1" FileName="MICROS~1.XML|Microsoft.Practices.Prism.Mvvm.xml" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.Mvvm.xml" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Shar_3" Component_="log4net.xml_1" FileName="MICROS~2.XML|Microsoft.Practices.Prism.SharedInterfaces.xml" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.SharedInterfaces.xml" SelfReg="false"/>
+    <ROW File="RISABorrowLicense.exe.config_1" Component_="log4net.xml_1" FileName="RISABO~1.CON|RISABorrowLicense.exe.config" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\RISABorrowLicense.exe.config" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
+    <ATTRIBUTE name="Enable" value="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="MSMSequences.aip" Path="&lt;AI_FRAGS&gt;MSMSequences.aip"/>
+    <ROW Fragment="MsmValidation.aip" Path="&lt;AI_FRAGS&gt;MsmValidation.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="Utilities_Dir" Component_="Utilities" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="TargetFeature" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Caliburn.Micro.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Caliburn.Micro.Platform.Core.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Caliburn.Micro.Platform.dll"/>
+    <ROW Feature_="TargetFeature" Component_="ClientProgramKey.dll"/>
+    <ROW Feature_="TargetFeature" Component_="ClientProgramKeyLib.dll"/>
+    <ROW Feature_="TargetFeature" Component_="ControlzEx.dll"/>
+    <ROW Feature_="TargetFeature" Component_="CSharpControls.Wpf.dll"/>
+    <ROW Feature_="TargetFeature" Component_="FileUploader.exe"/>
+    <ROW Feature_="TargetFeature" Component_="FileUploader.exe.config"/>
+    <ROW Feature_="TargetFeature" Component_="FluentFTP.dll"/>
+    <ROW Feature_="TargetFeature" Component_="LicensingDashboard.exe"/>
+    <ROW Feature_="TargetFeature" Component_="lsapiw64.dll"/>
+    <ROW Feature_="TargetFeature" Component_="MahApps.Metro.dll"/>
+    <ROW Feature_="TargetFeature" Component_="MahApps.Metro.IconPacks.Material.dl"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Controls.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Drawing.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Effects.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Interactions.d"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Prototyping.In"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Expression.Prototyping.Sk"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.ServiceLocation"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Unity.Configura"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Unity.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Unity.Registrat"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.SDK.Expression.Blend.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Prism.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Prism.Unity.Wpf.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Prism.Wpf.dll"/>
+    <ROW Feature_="TargetFeature" Component_="RISAChangeLicenseType.exe"/>
+    <ROW Feature_="TargetFeature" Component_="RISARegistryLib.dll"/>
+    <ROW Feature_="TargetFeature" Component_="RMS_WrapperLib.dll"/>
+    <ROW Feature_="TargetFeature" Component_="SLSLib.dll"/>
+    <ROW Feature_="TargetFeature" Component_="System.Windows.Interactivity.dll"/>
+    <ROW Feature_="TargetFeature" Component_="WCF_ServiceLib.LicensingDashboard.d"/>
+    <ROW Feature_="TargetFeature" Component_="WpfAnimatedGif.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Utilities"/>
+    <ROW Feature_="TargetFeature" Component_="Interop.RISALicenseManagerCOMLib._1"/>
+    <ROW Feature_="TargetFeature" Component_="log4net.dll_1"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.De_1"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.dl_1"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.SharedI_1"/>
+    <ROW Feature_="TargetFeature" Component_="RISABorrowLicense.exe_2"/>
+    <ROW Feature_="TargetFeature" Component_="log4net.xml_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Programmable" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_1" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_10" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_11" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_12" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_13" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_14" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_15" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_16" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_17" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_18" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_19" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_2" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_20" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_21" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_22" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_3" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_4" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_5" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_6" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Programmable_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_1" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_10" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_11" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_12" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_13" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_14" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_15" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_16" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_17" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_18" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_19" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_2" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_20" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_21" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_22" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_3" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_4" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_5" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_6" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="ThreadingModel_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_100" Root="2" Key="Software\Classes\Interface\{8D396DE0-8291-440D-B457-550B85167A0D}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_101" Root="2" Key="Software\Classes\Interface\{8EC14FCE-1D41-45C4-870A-DF0F1CB01027}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_102" Root="2" Key="Software\Classes\Interface\{9064A409-2474-4082-B28E-FCB90E83B005}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_103" Root="2" Key="Software\Classes\Interface\{93CEE66F-1250-4C1D-AACC-9A401DBB4AEC}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_104" Root="2" Key="Software\Classes\Interface\{94079351-368A-4265-8D6E-784802890E37}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_105" Root="2" Key="Software\Classes\Interface\{97BEB6D9-4D16-4345-8E9A-AD579BED1A1B}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_106" Root="2" Key="Software\Classes\Interface\{985F8FF9-B51D-41AB-85C7-D67A686543C4}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_107" Root="2" Key="Software\Classes\Interface\{9CBDD16A-F235-4065-95F9-0869C6C0E7D5}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_108" Root="2" Key="Software\Classes\Interface\{9E4033AD-CE1C-4240-876F-FC8E5586AFB0}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_109" Root="2" Key="Software\Classes\Interface\{9EB24336-0BDD-4CD6-9E11-128B85B27432}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_110" Root="2" Key="Software\Classes\Interface\{A0E7CFB8-7614-4718-B95B-C4E4A210E4BB}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_111" Root="2" Key="Software\Classes\Interface\{A2853DD1-B576-4A42-BB76-12D37F8A0146}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_112" Root="2" Key="Software\Classes\Interface\{A43AE8B6-57E1-404C-ACEF-1B6436FF7BC6}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_113" Root="2" Key="Software\Classes\Interface\{A7421205-0081-4DE7-AC88-FAF39159CE48}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_114" Root="2" Key="Software\Classes\Interface\{AC300C11-D0C7-4527-BDC5-4D72C74A26F8}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_115" Root="2" Key="Software\Classes\Interface\{AD8B7D35-DC04-43AC-AB8C-26F7DA6A2FFA}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_116" Root="2" Key="Software\Classes\Interface\{AFB1D61B-7D11-4C07-B1EF-952F2E3CA8A7}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_117" Root="2" Key="Software\Classes\Interface\{B79E4FA1-5D85-4A34-BB6F-1A52D5A02B8B}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_118" Root="2" Key="Software\Classes\Interface\{BDB80CAF-9DA9-4B71-B207-D3C5A95FD23F}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_119" Root="2" Key="Software\Classes\Interface\{BF6C5551-A32D-46B8-961F-F3D6E5ABA147}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_120" Root="2" Key="Software\Classes\Interface\{C112CEDE-D1B7-4BEF-A3F7-794ADD571854}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_121" Root="2" Key="Software\Classes\Interface\{C2BAB013-1BB2-404C-AC2B-3D5FA3D9FA82}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_122" Root="2" Key="Software\Classes\Interface\{C62DBBA1-17C4-419C-9AAE-5216DD88F0B5}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_123" Root="2" Key="Software\Classes\Interface\{CA22F89E-3990-4E39-B76B-40AF9850976C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_124" Root="2" Key="Software\Classes\Interface\{CD65BFB7-DB6A-49B9-985A-5EA7F03F46F4}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_125" Root="2" Key="Software\Classes\Interface\{CECF78FC-2F0D-4D27-8985-97562E32567B}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_126" Root="2" Key="Software\Classes\Interface\{CF59A12E-76BB-4269-A436-04AD84831AA0}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_127" Root="2" Key="Software\Classes\Interface\{D0E8F7EF-0090-424F-A691-F1495A81551D}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_128" Root="2" Key="Software\Classes\Interface\{D2A6F213-2FA9-4BD9-A85F-63C17FDB413C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_129" Root="2" Key="Software\Classes\Interface\{D42F36A4-1DA6-43D1-B96A-6554014C205E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_130" Root="2" Key="Software\Classes\Interface\{D561777E-303D-450F-8BA1-836FE07EF9E3}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_131" Root="2" Key="Software\Classes\Interface\{D6853070-F8F7-443E-BAF2-8579708B116F}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_132" Root="2" Key="Software\Classes\Interface\{DA5E038B-12AF-428D-9F08-CA7F5B9CE1A0}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_133" Root="2" Key="Software\Classes\Interface\{DA8C114B-CE6F-476B-98E0-CCFDFD7464BF}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_134" Root="2" Key="Software\Classes\Interface\{DB0B94AE-084C-49E0-847E-45AF6530F773}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_135" Root="2" Key="Software\Classes\Interface\{DD29850B-79AA-4C4C-BB52-7C5D0D7A08C2}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_136" Root="2" Key="Software\Classes\Interface\{E267124C-0673-41E0-BFCD-EF8D88FE4E3D}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_137" Root="2" Key="Software\Classes\Interface\{E4B8C72C-8D9A-4233-B559-8CFCDAAB5F7A}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_138" Root="2" Key="Software\Classes\Interface\{E68F1686-D826-4584-92C8-920C73FC7E3B}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_139" Root="2" Key="Software\Classes\Interface\{ED7F760C-D6E5-4487-B895-5E89A2A8AF35}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_140" Root="2" Key="Software\Classes\Interface\{EE56722E-BEA8-4A26-8C2B-00B0FBD0030F}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_141" Root="2" Key="Software\Classes\Interface\{F0FF4540-1B85-4094-88F3-8806C08AA0E5}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_142" Root="2" Key="Software\Classes\Interface\{F1211777-A1C7-4B08-91A9-0A7A78D46E35}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_143" Root="2" Key="Software\Classes\Interface\{F12F587D-8FF5-46AD-B2C4-EC0C84B67E82}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_144" Root="2" Key="Software\Classes\Interface\{F49373B6-E266-4EE8-81EA-A5BACA80C103}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_145" Root="2" Key="Software\Classes\Interface\{F574D139-DCFE-48F1-8AD5-DBCCFAF6C650}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_146" Root="2" Key="Software\Classes\Interface\{F9F4E84D-7230-445F-852C-EBFFD397923A}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_147" Root="2" Key="Software\Classes\Interface\{FAA8DEA4-8FDB-4F1E-9732-65E16BF13E70}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_148" Root="2" Key="Software\Classes\Interface\{FC314F0A-AE62-4D0A-99B1-8A3D72353752}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_45" Root="2" Key="Software\Classes\Interface\{01482DE1-4636-401F-A00C-118B0C389CC4}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_46" Root="2" Key="Software\Classes\Interface\{02CE27CE-47EE-4260-A25A-C6F5408CF75C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_47" Root="2" Key="Software\Classes\Interface\{045F1CC6-1862-4F1A-AE23-AA7952649967}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_48" Root="2" Key="Software\Classes\Interface\{05730C23-10EC-4BDC-90B6-2C5673B060CC}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_49" Root="2" Key="Software\Classes\Interface\{075E023F-DC2F-4E83-A304-3EE99C6E7D0C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_50" Root="2" Key="Software\Classes\Interface\{07E05A2E-BD5B-4223-9202-33D9A0CFA8B8}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_51" Root="2" Key="Software\Classes\Interface\{097DC19F-E4F1-4480-BCFA-BA8DEFF344D2}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_52" Root="2" Key="Software\Classes\Interface\{0A6524B5-DE5E-4CD2-AE38-6E8CFF23D19E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_53" Root="2" Key="Software\Classes\Interface\{0E5ADC35-D974-4D7A-ADC2-A4354032C9F3}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_54" Root="2" Key="Software\Classes\Interface\{1478AFFD-4269-4C63-BA7C-B669A5A3B566}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_55" Root="2" Key="Software\Classes\Interface\{1D4A3017-287E-4D08-84FF-E0F0ED8D1573}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_56" Root="2" Key="Software\Classes\Interface\{1F334240-C487-4B71-9A35-D3534C910F6E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_57" Root="2" Key="Software\Classes\Interface\{28477943-A03C-4A56-9058-3CAEA5A66DBD}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_58" Root="2" Key="Software\Classes\Interface\{285AEAEA-00E0-4E2D-8EBB-69D8BD5CFA2E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_59" Root="2" Key="Software\Classes\Interface\{299FAC27-D042-4390-96AE-8F8E55811307}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_60" Root="2" Key="Software\Classes\Interface\{2C38F7BB-D0C5-4BA4-B2DD-6EE4B9A6502E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_61" Root="2" Key="Software\Classes\Interface\{2C838738-1E88-4CE3-A4F2-84B6DFF5D161}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_62" Root="2" Key="Software\Classes\Interface\{3429D584-0EF1-42F7-ADBB-19F491811599}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_63" Root="2" Key="Software\Classes\Interface\{34DAF0D6-9E6D-4B39-B72C-4F40F6176DA0}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_64" Root="2" Key="Software\Classes\Interface\{359F97F5-A5A7-4676-A25A-55B850373DDA}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_65" Root="2" Key="Software\Classes\Interface\{371331C1-F66C-4FED-9AE9-B4FF5CCC3CE8}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_66" Root="2" Key="Software\Classes\Interface\{37CA6A47-72E6-44E7-AFD6-5C79B7B3E079}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_67" Root="2" Key="Software\Classes\Interface\{388B5CD2-51AE-41DC-BC6E-D50163E8960E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_68" Root="2" Key="Software\Classes\Interface\{39B2008D-F00B-408D-9D44-DA408C3BF69C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_69" Root="2" Key="Software\Classes\Interface\{3E0CFF93-0633-4737-8236-1179E223846B}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_70" Root="2" Key="Software\Classes\Interface\{448E60E0-28ED-452D-8439-2674C113BF02}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_71" Root="2" Key="Software\Classes\Interface\{451315EC-A2F0-43E9-B3ED-B66FB3CF7A6C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_72" Root="2" Key="Software\Classes\Interface\{47FF31CA-E73F-475C-8038-D98794183AA3}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_73" Root="2" Key="Software\Classes\Interface\{4AE18A7E-4FD2-4348-9D78-70207DA10F74}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_74" Root="2" Key="Software\Classes\Interface\{4CE701B6-B0E3-46F5-ADA6-9FC3CFFEB9A4}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_75" Root="2" Key="Software\Classes\Interface\{4D8ABA44-0D69-4B99-BCF3-628AA0E83DE0}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_76" Root="2" Key="Software\Classes\Interface\{4EE0867A-0029-42DF-A30B-37198888FBAD}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_77" Root="2" Key="Software\Classes\Interface\{50818282-A908-4CC1-ADC3-5B2DE8390A16}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_78" Root="2" Key="Software\Classes\Interface\{516A60AF-07E5-448A-B80A-B308D3C7FE8E}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_79" Root="2" Key="Software\Classes\Interface\{51AC67A0-1152-4EDC-BB7D-A6FE0CE51AFE}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_80" Root="2" Key="Software\Classes\Interface\{52BAB744-04F6-4571-BBF8-AE2F38AA19BF}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_81" Root="2" Key="Software\Classes\Interface\{53B3144F-1CE3-4B6E-AF96-4ECBE9ED5DE3}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_82" Root="2" Key="Software\Classes\Interface\{54E406C1-545A-447A-9ECA-52190D3680B4}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_83" Root="2" Key="Software\Classes\Interface\{57865E8A-BDD8-4101-A1FE-355B5760860C}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_84" Root="2" Key="Software\Classes\Interface\{599A0A0A-F5A2-4FD0-B3CA-9C42B6B362EB}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_85" Root="2" Key="Software\Classes\Interface\{5A031E95-851D-4385-B027-E9E9B0FFC8BF}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_86" Root="2" Key="Software\Classes\Interface\{5AF24EEE-86CA-4644-84AF-C8402979CD43}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_87" Root="2" Key="Software\Classes\Interface\{5E44EBF1-50DA-45CC-B868-6E89F7EC6AAB}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_88" Root="2" Key="Software\Classes\Interface\{62CB57A5-641F-413E-9A81-ECC8B253995D}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_89" Root="2" Key="Software\Classes\Interface\{67CDFBCF-3A9C-4F7B-A7E8-22EFED78A0E1}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_90" Root="2" Key="Software\Classes\Interface\{6BF9C261-4D56-4C92-8261-A4B986397633}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_91" Root="2" Key="Software\Classes\Interface\{74A4EFEB-6B84-4F60-8DE2-721CC6BBD281}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_92" Root="2" Key="Software\Classes\Interface\{7632FFF7-4E22-4D52-84D5-C4A02013D0CA}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_93" Root="2" Key="Software\Classes\Interface\{78A4CE02-2508-4FAA-8AB2-26D0F6DC3D5F}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_94" Root="2" Key="Software\Classes\Interface\{7A524561-1A79-4E3D-A210-2133BAA981A3}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_95" Root="2" Key="Software\Classes\Interface\{7E955556-19C0-4AF1-B9C4-108C8370E674}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_96" Root="2" Key="Software\Classes\Interface\{7F55328F-3F4B-4D29-B4A7-9B68EDCD4C67}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_97" Root="2" Key="Software\Classes\Interface\{7FDE60E8-9AAA-426B-A7DE-C0B2541F8587}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_98" Root="2" Key="Software\Classes\Interface\{84BCFD27-0D90-4054-8F72-9448BA7B343A}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="Version_99" Root="2" Key="Software\Classes\Interface\{8D0CA923-F911-41BE-887C-066399351925}\TypeLib" Name="Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="_" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}" Value="RISA_F3FeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__10" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}" Value="RISANetworkLicenseTypeManagerObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__100" Root="2" Key="Software\Classes\Interface\{045F1CC6-1862-4F1A-AE23-AA7952649967}" Value="IRISAKeyManager" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__101" Root="2" Key="Software\Classes\Interface\{045F1CC6-1862-4F1A-AE23-AA7952649967}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__102" Root="2" Key="Software\Classes\Interface\{045F1CC6-1862-4F1A-AE23-AA7952649967}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__103" Root="2" Key="Software\Classes\Interface\{05730C23-10EC-4BDC-90B6-2C5673B060CC}" Value="_IRISALicenseExpirationEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__104" Root="2" Key="Software\Classes\Interface\{05730C23-10EC-4BDC-90B6-2C5673B060CC}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__105" Root="2" Key="Software\Classes\Interface\{05730C23-10EC-4BDC-90B6-2C5673B060CC}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__106" Root="2" Key="Software\Classes\Interface\{075E023F-DC2F-4E83-A304-3EE99C6E7D0C}" Value="_IRISAGlobalLicensingControllerPropertiesEvents3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__107" Root="2" Key="Software\Classes\Interface\{075E023F-DC2F-4E83-A304-3EE99C6E7D0C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__108" Root="2" Key="Software\Classes\Interface\{075E023F-DC2F-4E83-A304-3EE99C6E7D0C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__109" Root="2" Key="Software\Classes\Interface\{07E05A2E-BD5B-4223-9202-33D9A0CFA8B8}" Value="IRISALicenseManagerObj5_IFeaturePropertiesFL" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__11" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__110" Root="2" Key="Software\Classes\Interface\{07E05A2E-BD5B-4223-9202-33D9A0CFA8B8}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__111" Root="2" Key="Software\Classes\Interface\{07E05A2E-BD5B-4223-9202-33D9A0CFA8B8}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__112" Root="2" Key="Software\Classes\Interface\{097DC19F-E4F1-4480-BCFA-BA8DEFF344D2}" Value="IRISALicenseManagerObj5_IFeaturePropertiesBF" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__113" Root="2" Key="Software\Classes\Interface\{097DC19F-E4F1-4480-BCFA-BA8DEFF344D2}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__114" Root="2" Key="Software\Classes\Interface\{097DC19F-E4F1-4480-BCFA-BA8DEFF344D2}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__115" Root="2" Key="Software\Classes\Interface\{0A6524B5-DE5E-4CD2-AE38-6E8CFF23D19E}" Value="_INotifyRISALicenseTypeManagerObjEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__116" Root="2" Key="Software\Classes\Interface\{0A6524B5-DE5E-4CD2-AE38-6E8CFF23D19E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__117" Root="2" Key="Software\Classes\Interface\{0A6524B5-DE5E-4CD2-AE38-6E8CFF23D19E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__118" Root="2" Key="Software\Classes\Interface\{0E5ADC35-D974-4D7A-ADC2-A4354032C9F3}" Value="IRISA_BFFeatureObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__119" Root="2" Key="Software\Classes\Interface\{0E5ADC35-D974-4D7A-ADC2-A4354032C9F3}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__12" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__120" Root="2" Key="Software\Classes\Interface\{0E5ADC35-D974-4D7A-ADC2-A4354032C9F3}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__121" Root="2" Key="Software\Classes\Interface\{1478AFFD-4269-4C63-BA7C-B669A5A3B566}" Value="IRISALicensingLogin" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__122" Root="2" Key="Software\Classes\Interface\{1478AFFD-4269-4C63-BA7C-B669A5A3B566}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__123" Root="2" Key="Software\Classes\Interface\{1478AFFD-4269-4C63-BA7C-B669A5A3B566}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__124" Root="2" Key="Software\Classes\Interface\{1D4A3017-287E-4D08-84FF-E0F0ED8D1573}" Value="IRISA_CNFeatureObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__125" Root="2" Key="Software\Classes\Interface\{1D4A3017-287E-4D08-84FF-E0F0ED8D1573}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__126" Root="2" Key="Software\Classes\Interface\{1D4A3017-287E-4D08-84FF-E0F0ED8D1573}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__127" Root="2" Key="Software\Classes\Interface\{1F334240-C487-4B71-9A35-D3534C910F6E}" Value="IRISAAssembleSinkProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__128" Root="2" Key="Software\Classes\Interface\{1F334240-C487-4B71-9A35-D3534C910F6E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__129" Root="2" Key="Software\Classes\Interface\{1F334240-C487-4B71-9A35-D3534C910F6E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__13" Root="0" Key="CLSID\{1cca6178-9d8d-4425-bca4-225560e2d79b}\Version" Value="1.4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__130" Root="2" Key="Software\Classes\Interface\{28477943-A03C-4A56-9058-3CAEA5A66DBD}" Value="IRISALicenseManagerObj5_Properties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__131" Root="2" Key="Software\Classes\Interface\{28477943-A03C-4A56-9058-3CAEA5A66DBD}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__132" Root="2" Key="Software\Classes\Interface\{28477943-A03C-4A56-9058-3CAEA5A66DBD}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__133" Root="2" Key="Software\Classes\Interface\{285AEAEA-00E0-4E2D-8EBB-69D8BD5CFA2E}" Value="IRISALicenseManagerObj2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__134" Root="2" Key="Software\Classes\Interface\{285AEAEA-00E0-4E2D-8EBB-69D8BD5CFA2E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__135" Root="2" Key="Software\Classes\Interface\{285AEAEA-00E0-4E2D-8EBB-69D8BD5CFA2E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__136" Root="2" Key="Software\Classes\Interface\{299FAC27-D042-4390-96AE-8F8E55811307}" Value="_INotifyRISAGlobalLicensingControllerEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__137" Root="2" Key="Software\Classes\Interface\{299FAC27-D042-4390-96AE-8F8E55811307}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__138" Root="2" Key="Software\Classes\Interface\{299FAC27-D042-4390-96AE-8F8E55811307}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__139" Root="2" Key="Software\Classes\Interface\{2C38F7BB-D0C5-4BA4-B2DD-6EE4B9A6502E}" Value="IRISAObjectList" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__14" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}" Value="RISA_BRFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__140" Root="2" Key="Software\Classes\Interface\{2C38F7BB-D0C5-4BA4-B2DD-6EE4B9A6502E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__141" Root="2" Key="Software\Classes\Interface\{2C38F7BB-D0C5-4BA4-B2DD-6EE4B9A6502E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__142" Root="2" Key="Software\Classes\Interface\{2C838738-1E88-4CE3-A4F2-84B6DFF5D161}" Value="IRISAFeatureObj4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__143" Root="2" Key="Software\Classes\Interface\{2C838738-1E88-4CE3-A4F2-84B6DFF5D161}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__144" Root="2" Key="Software\Classes\Interface\{2C838738-1E88-4CE3-A4F2-84B6DFF5D161}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__145" Root="2" Key="Software\Classes\Interface\{3429D584-0EF1-42F7-ADBB-19F491811599}" Value="_IRISAObjectListEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__146" Root="2" Key="Software\Classes\Interface\{3429D584-0EF1-42F7-ADBB-19F491811599}\ProxyStubClsid32" Value="[\{]00020420-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__147" Root="2" Key="Software\Classes\Interface\{3429D584-0EF1-42F7-ADBB-19F491811599}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__148" Root="2" Key="Software\Classes\Interface\{34DAF0D6-9E6D-4B39-B72C-4F40F6176DA0}" Value="IRISAGlobalLicensingControllerProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__149" Root="2" Key="Software\Classes\Interface\{34DAF0D6-9E6D-4B39-B72C-4F40F6176DA0}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__15" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__150" Root="2" Key="Software\Classes\Interface\{34DAF0D6-9E6D-4B39-B72C-4F40F6176DA0}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__151" Root="2" Key="Software\Classes\Interface\{359F97F5-A5A7-4676-A25A-55B850373DDA}" Value="IRISAGlobalLicensingController2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__152" Root="2" Key="Software\Classes\Interface\{359F97F5-A5A7-4676-A25A-55B850373DDA}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__153" Root="2" Key="Software\Classes\Interface\{359F97F5-A5A7-4676-A25A-55B850373DDA}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__154" Root="2" Key="Software\Classes\Interface\{371331C1-F66C-4FED-9AE9-B4FF5CCC3CE8}" Value="IRISALicenseManagerObj5_IFeaturePropertiesPT" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__155" Root="2" Key="Software\Classes\Interface\{371331C1-F66C-4FED-9AE9-B4FF5CCC3CE8}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__156" Root="2" Key="Software\Classes\Interface\{371331C1-F66C-4FED-9AE9-B4FF5CCC3CE8}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__157" Root="2" Key="Software\Classes\Interface\{37CA6A47-72E6-44E7-AFD6-5C79B7B3E079}" Value="_IRISAGlobalLicensingControllerPropertiesEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__158" Root="2" Key="Software\Classes\Interface\{37CA6A47-72E6-44E7-AFD6-5C79B7B3E079}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__159" Root="2" Key="Software\Classes\Interface\{37CA6A47-72E6-44E7-AFD6-5C79B7B3E079}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__16" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__160" Root="2" Key="Software\Classes\Interface\{388B5CD2-51AE-41DC-BC6E-D50163E8960E}" Value="IRISALicenseManagerObj5_BatchAquire" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__161" Root="2" Key="Software\Classes\Interface\{388B5CD2-51AE-41DC-BC6E-D50163E8960E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__162" Root="2" Key="Software\Classes\Interface\{388B5CD2-51AE-41DC-BC6E-D50163E8960E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__163" Root="2" Key="Software\Classes\Interface\{39B2008D-F00B-408D-9D44-DA408C3BF69C}" Value="_INotifyRISAFeatureObjProperties3ChangedEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__164" Root="2" Key="Software\Classes\Interface\{39B2008D-F00B-408D-9D44-DA408C3BF69C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__165" Root="2" Key="Software\Classes\Interface\{39B2008D-F00B-408D-9D44-DA408C3BF69C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__166" Root="2" Key="Software\Classes\Interface\{3E0CFF93-0633-4737-8236-1179E223846B}" Value="_IRISALicenseManagerObjEvents5" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__167" Root="2" Key="Software\Classes\Interface\{3E0CFF93-0633-4737-8236-1179E223846B}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__168" Root="2" Key="Software\Classes\Interface\{3E0CFF93-0633-4737-8236-1179E223846B}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__169" Root="2" Key="Software\Classes\Interface\{448E60E0-28ED-452D-8439-2674C113BF02}" Value="_IRISAAssembleSinkEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__17" Root="0" Key="CLSID\{2701a7e5-dd59-4bdf-bb35-f5c9a065395f}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__170" Root="2" Key="Software\Classes\Interface\{448E60E0-28ED-452D-8439-2674C113BF02}\ProxyStubClsid32" Value="[\{]00020420-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__171" Root="2" Key="Software\Classes\Interface\{448E60E0-28ED-452D-8439-2674C113BF02}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__172" Root="2" Key="Software\Classes\Interface\{451315EC-A2F0-43E9-B3ED-B66FB3CF7A6C}" Value="IRISAFeatureObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__173" Root="2" Key="Software\Classes\Interface\{451315EC-A2F0-43E9-B3ED-B66FB3CF7A6C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__174" Root="2" Key="Software\Classes\Interface\{451315EC-A2F0-43E9-B3ED-B66FB3CF7A6C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__175" Root="2" Key="Software\Classes\Interface\{47FF31CA-E73F-475C-8038-D98794183AA3}" Value="_INotifyRISALicenseTypeManagerObjPropertiesEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__176" Root="2" Key="Software\Classes\Interface\{47FF31CA-E73F-475C-8038-D98794183AA3}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__177" Root="2" Key="Software\Classes\Interface\{47FF31CA-E73F-475C-8038-D98794183AA3}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__178" Root="2" Key="Software\Classes\Interface\{4AE18A7E-4FD2-4348-9D78-70207DA10F74}" Value="IRISALicenseManagerObj3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__179" Root="2" Key="Software\Classes\Interface\{4AE18A7E-4FD2-4348-9D78-70207DA10F74}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__18" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}" Value="RISA_3DFeatureObj2 class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__180" Root="2" Key="Software\Classes\Interface\{4AE18A7E-4FD2-4348-9D78-70207DA10F74}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__181" Root="2" Key="Software\Classes\Interface\{4CE701B6-B0E3-46F5-ADA6-9FC3CFFEB9A4}" Value="IRISALicenseManagerObj5_IFeaturePropertiesGfValues" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__182" Root="2" Key="Software\Classes\Interface\{4CE701B6-B0E3-46F5-ADA6-9FC3CFFEB9A4}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__183" Root="2" Key="Software\Classes\Interface\{4CE701B6-B0E3-46F5-ADA6-9FC3CFFEB9A4}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__184" Root="2" Key="Software\Classes\Interface\{4D8ABA44-0D69-4B99-BCF3-628AA0E83DE0}" Value="IRISAGlobalLicensingController3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__185" Root="2" Key="Software\Classes\Interface\{4D8ABA44-0D69-4B99-BCF3-628AA0E83DE0}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__186" Root="2" Key="Software\Classes\Interface\{4D8ABA44-0D69-4B99-BCF3-628AA0E83DE0}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__187" Root="2" Key="Software\Classes\Interface\{4EE0867A-0029-42DF-A30B-37198888FBAD}" Value="IRISAKeyLicenseTypeManagerObjProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__188" Root="2" Key="Software\Classes\Interface\{4EE0867A-0029-42DF-A30B-37198888FBAD}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__189" Root="2" Key="Software\Classes\Interface\{4EE0867A-0029-42DF-A30B-37198888FBAD}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__19" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__190" Root="2" Key="Software\Classes\Interface\{50818282-A908-4CC1-ADC3-5B2DE8390A16}" Value="_INotifyRISATestEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__191" Root="2" Key="Software\Classes\Interface\{50818282-A908-4CC1-ADC3-5B2DE8390A16}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__192" Root="2" Key="Software\Classes\Interface\{50818282-A908-4CC1-ADC3-5B2DE8390A16}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__193" Root="2" Key="Software\Classes\Interface\{516A60AF-07E5-448A-B80A-B308D3C7FE8E}" Value="IRISALicenseManagerObj5_Borrow" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__194" Root="2" Key="Software\Classes\Interface\{516A60AF-07E5-448A-B80A-B308D3C7FE8E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__195" Root="2" Key="Software\Classes\Interface\{516A60AF-07E5-448A-B80A-B308D3C7FE8E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__196" Root="2" Key="Software\Classes\Interface\{51AC67A0-1152-4EDC-BB7D-A6FE0CE51AFE}" Value="_INotifyRISAKeyLicenseTypeManagerObjPropertiesEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__197" Root="2" Key="Software\Classes\Interface\{51AC67A0-1152-4EDC-BB7D-A6FE0CE51AFE}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__198" Root="2" Key="Software\Classes\Interface\{51AC67A0-1152-4EDC-BB7D-A6FE0CE51AFE}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__199" Root="2" Key="Software\Classes\Interface\{52BAB744-04F6-4571-BBF8-AE2F38AA19BF}" Value="IRISAFeatureObjProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__20" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__200" Root="2" Key="Software\Classes\Interface\{52BAB744-04F6-4571-BBF8-AE2F38AA19BF}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__201" Root="2" Key="Software\Classes\Interface\{52BAB744-04F6-4571-BBF8-AE2F38AA19BF}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__202" Root="2" Key="Software\Classes\Interface\{53B3144F-1CE3-4B6E-AF96-4ECBE9ED5DE3}" Value="IRISALicenseManagerObj4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__203" Root="2" Key="Software\Classes\Interface\{53B3144F-1CE3-4B6E-AF96-4ECBE9ED5DE3}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__204" Root="2" Key="Software\Classes\Interface\{53B3144F-1CE3-4B6E-AF96-4ECBE9ED5DE3}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__205" Root="2" Key="Software\Classes\Interface\{54E406C1-545A-447A-9ECA-52190D3680B4}" Value="IRISALicenseManagerObj5_Peek" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__206" Root="2" Key="Software\Classes\Interface\{54E406C1-545A-447A-9ECA-52190D3680B4}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__207" Root="2" Key="Software\Classes\Interface\{54E406C1-545A-447A-9ECA-52190D3680B4}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__208" Root="2" Key="Software\Classes\Interface\{57865E8A-BDD8-4101-A1FE-355B5760860C}" Value="IRISALicenseManagerObj5_IFeaturePropertiesSE" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__209" Root="2" Key="Software\Classes\Interface\{57865E8A-BDD8-4101-A1FE-355B5760860C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__21" Root="0" Key="CLSID\{2a23338b-fcc9-43a3-a80b-128f30f88dde}\Version" Value="1.15" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__210" Root="2" Key="Software\Classes\Interface\{57865E8A-BDD8-4101-A1FE-355B5760860C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__211" Root="2" Key="Software\Classes\Interface\{599A0A0A-F5A2-4FD0-B3CA-9C42B6B362EB}" Value="IRISALicenseManagerObj5_ILicenseFile" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__212" Root="2" Key="Software\Classes\Interface\{599A0A0A-F5A2-4FD0-B3CA-9C42B6B362EB}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__213" Root="2" Key="Software\Classes\Interface\{599A0A0A-F5A2-4FD0-B3CA-9C42B6B362EB}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__214" Root="2" Key="Software\Classes\Interface\{5A031E95-851D-4385-B027-E9E9B0FFC8BF}" Value="_INotifyRISALicenseTypeManagerObjEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__215" Root="2" Key="Software\Classes\Interface\{5A031E95-851D-4385-B027-E9E9B0FFC8BF}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__216" Root="2" Key="Software\Classes\Interface\{5A031E95-851D-4385-B027-E9E9B0FFC8BF}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__217" Root="2" Key="Software\Classes\Interface\{5AF24EEE-86CA-4644-84AF-C8402979CD43}" Value="IRISALicenseTypeManagerObj2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__218" Root="2" Key="Software\Classes\Interface\{5AF24EEE-86CA-4644-84AF-C8402979CD43}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__219" Root="2" Key="Software\Classes\Interface\{5AF24EEE-86CA-4644-84AF-C8402979CD43}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__22" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}" Value="RISA_ABFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__220" Root="2" Key="Software\Classes\Interface\{5E44EBF1-50DA-45CC-B868-6E89F7EC6AAB}" Value="IRISALicenseManagerObj5" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__221" Root="2" Key="Software\Classes\Interface\{5E44EBF1-50DA-45CC-B868-6E89F7EC6AAB}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__222" Root="2" Key="Software\Classes\Interface\{5E44EBF1-50DA-45CC-B868-6E89F7EC6AAB}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__223" Root="2" Key="Software\Classes\Interface\{62CB57A5-641F-413E-9A81-ECC8B253995D}" Value="IRISAGlobalLicensingControllerProperties2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__224" Root="2" Key="Software\Classes\Interface\{62CB57A5-641F-413E-9A81-ECC8B253995D}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__225" Root="2" Key="Software\Classes\Interface\{62CB57A5-641F-413E-9A81-ECC8B253995D}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__226" Root="2" Key="Software\Classes\Interface\{67CDFBCF-3A9C-4F7B-A7E8-22EFED78A0E1}" Value="IRISALicenseManagerObj5_Tag" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__227" Root="2" Key="Software\Classes\Interface\{67CDFBCF-3A9C-4F7B-A7E8-22EFED78A0E1}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__228" Root="2" Key="Software\Classes\Interface\{67CDFBCF-3A9C-4F7B-A7E8-22EFED78A0E1}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__229" Root="2" Key="Software\Classes\Interface\{6BF9C261-4D56-4C92-8261-A4B986397633}" Value="_IRISALicenseManagerObjEvents3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__23" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__230" Root="2" Key="Software\Classes\Interface\{6BF9C261-4D56-4C92-8261-A4B986397633}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__231" Root="2" Key="Software\Classes\Interface\{6BF9C261-4D56-4C92-8261-A4B986397633}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__232" Root="2" Key="Software\Classes\Interface\{74A4EFEB-6B84-4F60-8DE2-721CC6BBD281}" Value="_IRISAGlobalLicensingControllerPropertiesEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__233" Root="2" Key="Software\Classes\Interface\{74A4EFEB-6B84-4F60-8DE2-721CC6BBD281}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__234" Root="2" Key="Software\Classes\Interface\{74A4EFEB-6B84-4F60-8DE2-721CC6BBD281}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__235" Root="2" Key="Software\Classes\Interface\{7632FFF7-4E22-4D52-84D5-C4A02013D0CA}" Value="IRISALicenseTypeManagerObjProperties2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__236" Root="2" Key="Software\Classes\Interface\{7632FFF7-4E22-4D52-84D5-C4A02013D0CA}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__237" Root="2" Key="Software\Classes\Interface\{7632FFF7-4E22-4D52-84D5-C4A02013D0CA}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__238" Root="2" Key="Software\Classes\Interface\{78A4CE02-2508-4FAA-8AB2-26D0F6DC3D5F}" Value="_IRISALicenseManagerObjEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__239" Root="2" Key="Software\Classes\Interface\{78A4CE02-2508-4FAA-8AB2-26D0F6DC3D5F}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__24" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__240" Root="2" Key="Software\Classes\Interface\{78A4CE02-2508-4FAA-8AB2-26D0F6DC3D5F}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__241" Root="2" Key="Software\Classes\Interface\{7A524561-1A79-4E3D-A210-2133BAA981A3}" Value="IRISALicenseManagerObj5_IFeatureProperties3D" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__242" Root="2" Key="Software\Classes\Interface\{7A524561-1A79-4E3D-A210-2133BAA981A3}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__243" Root="2" Key="Software\Classes\Interface\{7A524561-1A79-4E3D-A210-2133BAA981A3}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__244" Root="2" Key="Software\Classes\Interface\{7E955556-19C0-4AF1-B9C4-108C8370E674}" Value="IRISALicenseManagerObj5_IBasic" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__245" Root="2" Key="Software\Classes\Interface\{7E955556-19C0-4AF1-B9C4-108C8370E674}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__246" Root="2" Key="Software\Classes\Interface\{7E955556-19C0-4AF1-B9C4-108C8370E674}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__247" Root="2" Key="Software\Classes\Interface\{7F55328F-3F4B-4D29-B4A7-9B68EDCD4C67}" Value="_INotifyRISALicenseTypeManagerRolloverEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__248" Root="2" Key="Software\Classes\Interface\{7F55328F-3F4B-4D29-B4A7-9B68EDCD4C67}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__249" Root="2" Key="Software\Classes\Interface\{7F55328F-3F4B-4D29-B4A7-9B68EDCD4C67}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__25" Root="0" Key="CLSID\{36985d3b-1d82-4551-9e98-c4bcd21c7eb1}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__250" Root="2" Key="Software\Classes\Interface\{7FDE60E8-9AAA-426B-A7DE-C0B2541F8587}" Value="IRISASLSLicenseManagerObj5" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__251" Root="2" Key="Software\Classes\Interface\{7FDE60E8-9AAA-426B-A7DE-C0B2541F8587}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__252" Root="2" Key="Software\Classes\Interface\{7FDE60E8-9AAA-426B-A7DE-C0B2541F8587}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__253" Root="2" Key="Software\Classes\Interface\{84BCFD27-0D90-4054-8F72-9448BA7B343A}" Value="IRISAAssembleSink" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__254" Root="2" Key="Software\Classes\Interface\{84BCFD27-0D90-4054-8F72-9448BA7B343A}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__255" Root="2" Key="Software\Classes\Interface\{84BCFD27-0D90-4054-8F72-9448BA7B343A}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__256" Root="2" Key="Software\Classes\Interface\{8D0CA923-F911-41BE-887C-066399351925}" Value="IRISALicenseManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__257" Root="2" Key="Software\Classes\Interface\{8D0CA923-F911-41BE-887C-066399351925}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__258" Root="2" Key="Software\Classes\Interface\{8D0CA923-F911-41BE-887C-066399351925}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__259" Root="2" Key="Software\Classes\Interface\{8D396DE0-8291-440D-B457-550B85167A0D}" Value="IRISALicenseManagerObj5_ILicenseFileProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__26" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}" Value="RISAKeyLicenseManagerObj5 class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__260" Root="2" Key="Software\Classes\Interface\{8D396DE0-8291-440D-B457-550B85167A0D}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__261" Root="2" Key="Software\Classes\Interface\{8D396DE0-8291-440D-B457-550B85167A0D}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__262" Root="2" Key="Software\Classes\Interface\{8EC14FCE-1D41-45C4-870A-DF0F1CB01027}" Value="IRISAGlobalLicensingControllerProperties3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__263" Root="2" Key="Software\Classes\Interface\{8EC14FCE-1D41-45C4-870A-DF0F1CB01027}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__264" Root="2" Key="Software\Classes\Interface\{8EC14FCE-1D41-45C4-870A-DF0F1CB01027}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__265" Root="2" Key="Software\Classes\Interface\{9064A409-2474-4082-B28E-FCB90E83B005}" Value="IRISALicenseManagerObj5_IFeaturePropertiesBP" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__266" Root="2" Key="Software\Classes\Interface\{9064A409-2474-4082-B28E-FCB90E83B005}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__267" Root="2" Key="Software\Classes\Interface\{9064A409-2474-4082-B28E-FCB90E83B005}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__268" Root="2" Key="Software\Classes\Interface\{93CEE66F-1250-4C1D-AACC-9A401DBB4AEC}" Value="IRISAFeatureObjProperties3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__269" Root="2" Key="Software\Classes\Interface\{93CEE66F-1250-4C1D-AACC-9A401DBB4AEC}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__27" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__270" Root="2" Key="Software\Classes\Interface\{93CEE66F-1250-4C1D-AACC-9A401DBB4AEC}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__271" Root="2" Key="Software\Classes\Interface\{94079351-368A-4265-8D6E-784802890E37}" Value="_IRISALicenseManagerObjEvents6" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__272" Root="2" Key="Software\Classes\Interface\{94079351-368A-4265-8D6E-784802890E37}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__273" Root="2" Key="Software\Classes\Interface\{94079351-368A-4265-8D6E-784802890E37}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__274" Root="2" Key="Software\Classes\Interface\{97BEB6D9-4D16-4345-8E9A-AD579BED1A1B}" Value="IRISALicenseManagerObj5_IFeaturePropertiesF2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__275" Root="2" Key="Software\Classes\Interface\{97BEB6D9-4D16-4345-8E9A-AD579BED1A1B}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__276" Root="2" Key="Software\Classes\Interface\{97BEB6D9-4D16-4345-8E9A-AD579BED1A1B}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__277" Root="2" Key="Software\Classes\Interface\{985F8FF9-B51D-41AB-85C7-D67A686543C4}" Value="IRISALicenseManagerObj5_IFeaturePropertiesRP" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__278" Root="2" Key="Software\Classes\Interface\{985F8FF9-B51D-41AB-85C7-D67A686543C4}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__279" Root="2" Key="Software\Classes\Interface\{985F8FF9-B51D-41AB-85C7-D67A686543C4}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__28" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__280" Root="2" Key="Software\Classes\Interface\{9CBDD16A-F235-4065-95F9-0869C6C0E7D5}" Value="_IRISALicenseManagerObjEvents4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__281" Root="2" Key="Software\Classes\Interface\{9CBDD16A-F235-4065-95F9-0869C6C0E7D5}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__282" Root="2" Key="Software\Classes\Interface\{9CBDD16A-F235-4065-95F9-0869C6C0E7D5}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__283" Root="2" Key="Software\Classes\Interface\{9E4033AD-CE1C-4240-876F-FC8E5586AFB0}" Value="_INotifyRISAGlobalAssembleEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__284" Root="2" Key="Software\Classes\Interface\{9E4033AD-CE1C-4240-876F-FC8E5586AFB0}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__285" Root="2" Key="Software\Classes\Interface\{9E4033AD-CE1C-4240-876F-FC8E5586AFB0}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__286" Root="2" Key="Software\Classes\Interface\{9EB24336-0BDD-4CD6-9E11-128B85B27432}" Value="IRISASLSLicenseTypeManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__287" Root="2" Key="Software\Classes\Interface\{9EB24336-0BDD-4CD6-9E11-128B85B27432}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__288" Root="2" Key="Software\Classes\Interface\{9EB24336-0BDD-4CD6-9E11-128B85B27432}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__289" Root="2" Key="Software\Classes\Interface\{A0E7CFB8-7614-4718-B95B-C4E4A210E4BB}" Value="IRISALicenseManagerObj5_IFeaturePropertiesES" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__29" Root="0" Key="CLSID\{429c65a9-fa60-4549-826f-bd9c6bb7b882}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__290" Root="2" Key="Software\Classes\Interface\{A0E7CFB8-7614-4718-B95B-C4E4A210E4BB}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__291" Root="2" Key="Software\Classes\Interface\{A0E7CFB8-7614-4718-B95B-C4E4A210E4BB}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__292" Root="2" Key="Software\Classes\Interface\{A2853DD1-B576-4A42-BB76-12D37F8A0146}" Value="IRISAKeyLicenseTypeManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__293" Root="2" Key="Software\Classes\Interface\{A2853DD1-B576-4A42-BB76-12D37F8A0146}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__294" Root="2" Key="Software\Classes\Interface\{A2853DD1-B576-4A42-BB76-12D37F8A0146}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__295" Root="2" Key="Software\Classes\Interface\{A43AE8B6-57E1-404C-ACEF-1B6436FF7BC6}" Value="IRISALicenseTypeManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__296" Root="2" Key="Software\Classes\Interface\{A43AE8B6-57E1-404C-ACEF-1B6436FF7BC6}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__297" Root="2" Key="Software\Classes\Interface\{A43AE8B6-57E1-404C-ACEF-1B6436FF7BC6}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__298" Root="2" Key="Software\Classes\Interface\{A7421205-0081-4DE7-AC88-FAF39159CE48}" Value="IRISANetworkLicenseTypeManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__299" Root="2" Key="Software\Classes\Interface\{A7421205-0081-4DE7-AC88-FAF39159CE48}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__3" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__30" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}" Value="RISA_3DFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__300" Root="2" Key="Software\Classes\Interface\{A7421205-0081-4DE7-AC88-FAF39159CE48}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__301" Root="2" Key="Software\Classes\Interface\{AC300C11-D0C7-4527-BDC5-4D72C74A26F8}" Value="IRISAKeyManagerProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__302" Root="2" Key="Software\Classes\Interface\{AC300C11-D0C7-4527-BDC5-4D72C74A26F8}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__303" Root="2" Key="Software\Classes\Interface\{AC300C11-D0C7-4527-BDC5-4D72C74A26F8}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__304" Root="2" Key="Software\Classes\Interface\{AD8B7D35-DC04-43AC-AB8C-26F7DA6A2FFA}" Value="_INotifyRISAFeatureObjPropertiesChangedEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__305" Root="2" Key="Software\Classes\Interface\{AD8B7D35-DC04-43AC-AB8C-26F7DA6A2FFA}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__306" Root="2" Key="Software\Classes\Interface\{AD8B7D35-DC04-43AC-AB8C-26F7DA6A2FFA}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__307" Root="2" Key="Software\Classes\Interface\{AFB1D61B-7D11-4C07-B1EF-952F2E3CA8A7}" Value="IRISALicenseManagerObj5_ErrorMessage" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__308" Root="2" Key="Software\Classes\Interface\{AFB1D61B-7D11-4C07-B1EF-952F2E3CA8A7}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__309" Root="2" Key="Software\Classes\Interface\{AFB1D61B-7D11-4C07-B1EF-952F2E3CA8A7}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__31" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__310" Root="2" Key="Software\Classes\Interface\{B79E4FA1-5D85-4A34-BB6F-1A52D5A02B8B}" Value="IRISALicenseTypeManagerObjProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__311" Root="2" Key="Software\Classes\Interface\{B79E4FA1-5D85-4A34-BB6F-1A52D5A02B8B}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__312" Root="2" Key="Software\Classes\Interface\{B79E4FA1-5D85-4A34-BB6F-1A52D5A02B8B}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__313" Root="2" Key="Software\Classes\Interface\{BDB80CAF-9DA9-4B71-B207-D3C5A95FD23F}" Value="IRISAGlobalLicensingController" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__314" Root="2" Key="Software\Classes\Interface\{BDB80CAF-9DA9-4B71-B207-D3C5A95FD23F}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__315" Root="2" Key="Software\Classes\Interface\{BDB80CAF-9DA9-4B71-B207-D3C5A95FD23F}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__316" Root="2" Key="Software\Classes\Interface\{BF6C5551-A32D-46B8-961F-F3D6E5ABA147}" Value="_INotifyRISAGlobalLicensingControllerEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__317" Root="2" Key="Software\Classes\Interface\{BF6C5551-A32D-46B8-961F-F3D6E5ABA147}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__318" Root="2" Key="Software\Classes\Interface\{BF6C5551-A32D-46B8-961F-F3D6E5ABA147}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__319" Root="2" Key="Software\Classes\Interface\{C112CEDE-D1B7-4BEF-A3F7-794ADD571854}" Value="IRISAFeatureObjProperties2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__32" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__320" Root="2" Key="Software\Classes\Interface\{C112CEDE-D1B7-4BEF-A3F7-794ADD571854}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__321" Root="2" Key="Software\Classes\Interface\{C112CEDE-D1B7-4BEF-A3F7-794ADD571854}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__322" Root="2" Key="Software\Classes\Interface\{C2BAB013-1BB2-404C-AC2B-3D5FA3D9FA82}" Value="IRISALicenseManagerObj5_IFeatureProperties2D" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__323" Root="2" Key="Software\Classes\Interface\{C2BAB013-1BB2-404C-AC2B-3D5FA3D9FA82}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__324" Root="2" Key="Software\Classes\Interface\{C2BAB013-1BB2-404C-AC2B-3D5FA3D9FA82}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__325" Root="2" Key="Software\Classes\Interface\{C62DBBA1-17C4-419C-9AAE-5216DD88F0B5}" Value="_INotifyRISALicenseTypeManagerObjPropertiesEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__326" Root="2" Key="Software\Classes\Interface\{C62DBBA1-17C4-419C-9AAE-5216DD88F0B5}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__327" Root="2" Key="Software\Classes\Interface\{C62DBBA1-17C4-419C-9AAE-5216DD88F0B5}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__328" Root="2" Key="Software\Classes\Interface\{CA22F89E-3990-4E39-B76B-40AF9850976C}" Value="IRISALicenseTypeList" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__329" Root="2" Key="Software\Classes\Interface\{CA22F89E-3990-4E39-B76B-40AF9850976C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__33" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Version" Value="1.4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__330" Root="2" Key="Software\Classes\Interface\{CA22F89E-3990-4E39-B76B-40AF9850976C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__331" Root="2" Key="Software\Classes\Interface\{CD65BFB7-DB6A-49B9-985A-5EA7F03F46F4}" Value="_IRISAGlobalLicensingControllerPropertiesEvents4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__332" Root="2" Key="Software\Classes\Interface\{CD65BFB7-DB6A-49B9-985A-5EA7F03F46F4}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__333" Root="2" Key="Software\Classes\Interface\{CD65BFB7-DB6A-49B9-985A-5EA7F03F46F4}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__334" Root="2" Key="Software\Classes\Interface\{CECF78FC-2F0D-4D27-8985-97562E32567B}" Value="IRISALicenseManagerObj5_IFeaturePropertiesFD" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__335" Root="2" Key="Software\Classes\Interface\{CECF78FC-2F0D-4D27-8985-97562E32567B}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__336" Root="2" Key="Software\Classes\Interface\{CECF78FC-2F0D-4D27-8985-97562E32567B}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__337" Root="2" Key="Software\Classes\Interface\{CF59A12E-76BB-4269-A436-04AD84831AA0}" Value="IRISALicenseManagerObj5_IFeaturePropertiesBR" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__338" Root="2" Key="Software\Classes\Interface\{CF59A12E-76BB-4269-A436-04AD84831AA0}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__339" Root="2" Key="Software\Classes\Interface\{CF59A12E-76BB-4269-A436-04AD84831AA0}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__34" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}" Value="RISAGlobalLicensingController class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__340" Root="2" Key="Software\Classes\Interface\{D0E8F7EF-0090-424F-A691-F1495A81551D}" Value="_INotifyRISAKeyLicenseTypeManagerObjEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__341" Root="2" Key="Software\Classes\Interface\{D0E8F7EF-0090-424F-A691-F1495A81551D}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__342" Root="2" Key="Software\Classes\Interface\{D0E8F7EF-0090-424F-A691-F1495A81551D}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__343" Root="2" Key="Software\Classes\Interface\{D2A6F213-2FA9-4BD9-A85F-63C17FDB413C}" Value="_INotifyRISAFeatureObjProperties2ChangedEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__344" Root="2" Key="Software\Classes\Interface\{D2A6F213-2FA9-4BD9-A85F-63C17FDB413C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__345" Root="2" Key="Software\Classes\Interface\{D2A6F213-2FA9-4BD9-A85F-63C17FDB413C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__346" Root="2" Key="Software\Classes\Interface\{D42F36A4-1DA6-43D1-B96A-6554014C205E}" Value="_IRISALicenseManagerObjEvents2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__347" Root="2" Key="Software\Classes\Interface\{D42F36A4-1DA6-43D1-B96A-6554014C205E}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__348" Root="2" Key="Software\Classes\Interface\{D42F36A4-1DA6-43D1-B96A-6554014C205E}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__349" Root="2" Key="Software\Classes\Interface\{D561777E-303D-450F-8BA1-836FE07EF9E3}" Value="IRISANetworkLicenseManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__35" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__350" Root="2" Key="Software\Classes\Interface\{D561777E-303D-450F-8BA1-836FE07EF9E3}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__351" Root="2" Key="Software\Classes\Interface\{D561777E-303D-450F-8BA1-836FE07EF9E3}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__352" Root="2" Key="Software\Classes\Interface\{D6853070-F8F7-443E-BAF2-8579708B116F}" Value="IRISALicenseManagerObj5_Expiration" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__353" Root="2" Key="Software\Classes\Interface\{D6853070-F8F7-443E-BAF2-8579708B116F}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__354" Root="2" Key="Software\Classes\Interface\{D6853070-F8F7-443E-BAF2-8579708B116F}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__355" Root="2" Key="Software\Classes\Interface\{DA5E038B-12AF-428D-9F08-CA7F5B9CE1A0}" Value="IRISARMSLicenseManagerObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__356" Root="2" Key="Software\Classes\Interface\{DA5E038B-12AF-428D-9F08-CA7F5B9CE1A0}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__357" Root="2" Key="Software\Classes\Interface\{DA5E038B-12AF-428D-9F08-CA7F5B9CE1A0}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__358" Root="2" Key="Software\Classes\Interface\{DA8C114B-CE6F-476B-98E0-CCFDFD7464BF}" Value="IRISALicenseTypeManagerProperties" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__359" Root="2" Key="Software\Classes\Interface\{DA8C114B-CE6F-476B-98E0-CCFDFD7464BF}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__36" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__360" Root="2" Key="Software\Classes\Interface\{DA8C114B-CE6F-476B-98E0-CCFDFD7464BF}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__361" Root="2" Key="Software\Classes\Interface\{DB0B94AE-084C-49E0-847E-45AF6530F773}" Value="IRISALicenseManagerObj5_IAcquire" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__362" Root="2" Key="Software\Classes\Interface\{DB0B94AE-084C-49E0-847E-45AF6530F773}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__363" Root="2" Key="Software\Classes\Interface\{DB0B94AE-084C-49E0-847E-45AF6530F773}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__364" Root="2" Key="Software\Classes\Interface\{DD29850B-79AA-4C4C-BB52-7C5D0D7A08C2}" Value="IRISAFeatureBaseObj" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__365" Root="2" Key="Software\Classes\Interface\{DD29850B-79AA-4C4C-BB52-7C5D0D7A08C2}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__366" Root="2" Key="Software\Classes\Interface\{DD29850B-79AA-4C4C-BB52-7C5D0D7A08C2}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__367" Root="2" Key="Software\Classes\Interface\{E267124C-0673-41E0-BFCD-EF8D88FE4E3D}" Value="_INotifyRISAKeyManagerPropertiesChangedEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__368" Root="2" Key="Software\Classes\Interface\{E267124C-0673-41E0-BFCD-EF8D88FE4E3D}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__369" Root="2" Key="Software\Classes\Interface\{E267124C-0673-41E0-BFCD-EF8D88FE4E3D}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__37" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Version" Value="1.6" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__370" Root="2" Key="Software\Classes\Interface\{E4B8C72C-8D9A-4233-B559-8CFCDAAB5F7A}" Value="IRISALicenseTypeManagerObj3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__371" Root="2" Key="Software\Classes\Interface\{E4B8C72C-8D9A-4233-B559-8CFCDAAB5F7A}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__372" Root="2" Key="Software\Classes\Interface\{E4B8C72C-8D9A-4233-B559-8CFCDAAB5F7A}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__373" Root="2" Key="Software\Classes\Interface\{E68F1686-D826-4584-92C8-920C73FC7E3B}" Value="IRISALicenseManagerObj5_IFeaturePropertiesCN" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__374" Root="2" Key="Software\Classes\Interface\{E68F1686-D826-4584-92C8-920C73FC7E3B}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__375" Root="2" Key="Software\Classes\Interface\{E68F1686-D826-4584-92C8-920C73FC7E3B}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__376" Root="2" Key="Software\Classes\Interface\{ED7F760C-D6E5-4487-B895-5E89A2A8AF35}" Value="_INotifyRISAGlobalAssembleEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__377" Root="2" Key="Software\Classes\Interface\{ED7F760C-D6E5-4487-B895-5E89A2A8AF35}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__378" Root="2" Key="Software\Classes\Interface\{ED7F760C-D6E5-4487-B895-5E89A2A8AF35}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__379" Root="2" Key="Software\Classes\Interface\{EE56722E-BEA8-4A26-8C2B-00B0FBD0030F}" Value="_IRISAKeyManagerEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__38" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}" Value="RISANetworkLicenseManagerObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__380" Root="2" Key="Software\Classes\Interface\{EE56722E-BEA8-4A26-8C2B-00B0FBD0030F}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__381" Root="2" Key="Software\Classes\Interface\{EE56722E-BEA8-4A26-8C2B-00B0FBD0030F}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__382" Root="2" Key="Software\Classes\Interface\{F0FF4540-1B85-4094-88F3-8806C08AA0E5}" Value="IRISADashboard" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__383" Root="2" Key="Software\Classes\Interface\{F0FF4540-1B85-4094-88F3-8806C08AA0E5}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__384" Root="2" Key="Software\Classes\Interface\{F0FF4540-1B85-4094-88F3-8806C08AA0E5}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__385" Root="2" Key="Software\Classes\Interface\{F1211777-A1C7-4B08-91A9-0A7A78D46E35}" Value="_IRISALicenseManagerObjEvents7" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__386" Root="2" Key="Software\Classes\Interface\{F1211777-A1C7-4B08-91A9-0A7A78D46E35}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__387" Root="2" Key="Software\Classes\Interface\{F1211777-A1C7-4B08-91A9-0A7A78D46E35}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__388" Root="2" Key="Software\Classes\Interface\{F12F587D-8FF5-46AD-B2C4-EC0C84B67E82}" Value="IRISAKeyLicenseManagerObj5" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__389" Root="2" Key="Software\Classes\Interface\{F12F587D-8FF5-46AD-B2C4-EC0C84B67E82}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__39" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__390" Root="2" Key="Software\Classes\Interface\{F12F587D-8FF5-46AD-B2C4-EC0C84B67E82}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__391" Root="2" Key="Software\Classes\Interface\{F49373B6-E266-4EE8-81EA-A5BACA80C103}" Value="_INotifyRISAAssembleEvents" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__392" Root="2" Key="Software\Classes\Interface\{F49373B6-E266-4EE8-81EA-A5BACA80C103}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__393" Root="2" Key="Software\Classes\Interface\{F49373B6-E266-4EE8-81EA-A5BACA80C103}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__394" Root="2" Key="Software\Classes\Interface\{F574D139-DCFE-48F1-8AD5-DBCCFAF6C650}" Value="IRISAGlobalLicensingController4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__395" Root="2" Key="Software\Classes\Interface\{F574D139-DCFE-48F1-8AD5-DBCCFAF6C650}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__396" Root="2" Key="Software\Classes\Interface\{F574D139-DCFE-48F1-8AD5-DBCCFAF6C650}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__397" Root="2" Key="Software\Classes\Interface\{F9F4E84D-7230-445F-852C-EBFFD397923A}" Value="IRISAFeatureObj2" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__398" Root="2" Key="Software\Classes\Interface\{F9F4E84D-7230-445F-852C-EBFFD397923A}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__399" Root="2" Key="Software\Classes\Interface\{F9F4E84D-7230-445F-852C-EBFFD397923A}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__4" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__40" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__400" Root="2" Key="Software\Classes\Interface\{FAA8DEA4-8FDB-4F1E-9732-65E16BF13E70}" Value="IRISALicenseManagerObj5_IFeaturePropertiesF3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__401" Root="2" Key="Software\Classes\Interface\{FAA8DEA4-8FDB-4F1E-9732-65E16BF13E70}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__402" Root="2" Key="Software\Classes\Interface\{FAA8DEA4-8FDB-4F1E-9732-65E16BF13E70}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__403" Root="2" Key="Software\Classes\Interface\{FC314F0A-AE62-4D0A-99B1-8A3D72353752}" Value="IRISAFeatureObj3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__404" Root="2" Key="Software\Classes\Interface\{FC314F0A-AE62-4D0A-99B1-8A3D72353752}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__405" Root="2" Key="Software\Classes\Interface\{FC314F0A-AE62-4D0A-99B1-8A3D72353752}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__407" Root="2" Key="Software\Classes\TypeLib\{8EA3125E-6B37-4540-9181-53343E2BE11A}\1.10" Value="RISALicenseManagerCOMLib" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__409" Root="2" Key="Software\Classes\TypeLib\{8EA3125E-6B37-4540-9181-53343E2BE11A}\1.10\0\win64" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__41" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Version" Value="1.3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__410" Root="2" Key="Software\Classes\TypeLib\{8EA3125E-6B37-4540-9181-53343E2BE11A}\1.10\FLAGS" Value="0" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__411" Root="2" Key="Software\Classes\TypeLib\{8EA3125E-6B37-4540-9181-53343E2BE11A}\1.10\HELPDIR" Value="[NewFolder1_Dir]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__42" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}" Value="RISA_F2FeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__43" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__44" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__45" Root="0" Key="CLSID\{879a7c25-d4e2-4512-a09a-ddba42131b6a}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__46" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}" Value="RISAKeyLicenseTypeManagerObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__47" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__48" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__49" Root="0" Key="CLSID\{8d44764e-b064-4b76-88ba-63f91779d329}\Version" Value="1.4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__5" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__50" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}" Value="RISAFeatureBaseObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__51" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__52" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__53" Root="0" Key="CLSID\{95efb0d1-2c30-44b5-90d8-e17c3f1a8663}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__54" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}" Value="RISAObjectList class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__55" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__56" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__57" Root="0" Key="CLSID\{a08bc545-c3eb-46c5-a619-904b2640cf18}\Version" Value="1.9" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__58" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}" Value="RISAAssembleSink class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__59" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__6" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}" Value="RISABPFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__60" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__61" Root="0" Key="CLSID\{ab0e1596-64ea-415c-81c9-989902db6833}\Version" Value="1.7" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__62" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}" Value="RISA_PTFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__63" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__64" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__65" Root="0" Key="CLSID\{ac60e50c-ab63-4e8f-97d1-d755c2fcc97b}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__66" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}" Value="RISALicenseManagerObj Class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__67" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__68" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__69" Root="0" Key="CLSID\{ADCB3F64-52C5-42C4-AA5C-7209E562665F}\Version" Value="1.3" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__7" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__70" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}" Value="RISASLSLicenseTypeManagerObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__71" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__72" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__73" Root="0" Key="CLSID\{d0007ac3-8f06-4e9c-8b3d-0b9398210f0d}\Version" Value="1.4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__74" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}" Value="RISARMSLicenseManagerObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__75" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__76" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__77" Root="0" Key="CLSID\{d58410f1-64f2-4eeb-b1bd-c308865fb502}\Version" Value="1.4" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__78" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}" Value="RISA_CNFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__79" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__8" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__80" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__81" Root="0" Key="CLSID\{ded3191c-23b1-4a67-a0a1-eaf897957dd2}\Version" Value="1.12" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__82" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}" Value="RISA_BFFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__83" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__84" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__85" Root="0" Key="CLSID\{e353cf65-bb86-4a4d-9ec3-e9b5b4cb6367}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__86" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}" Value="RISALicenseTypeList class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__87" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__88" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__89" Root="0" Key="CLSID\{f7164f5a-b524-48b3-bdf6-f99bf49938e9}\Version" Value="1.10" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__9" Root="0" Key="CLSID\{18c8dd6c-fb7b-4f3a-bcce-f72e2c5c4e2f}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__90" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}" Value="RISA_RPFeatureObj class" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__91" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}\InprocServer32" Value="[#RISALicenseManagerCOM.dll]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__92" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__93" Root="0" Key="CLSID\{fdbf8ed5-66a4-4992-849a-2de2e4d89d56}\Version" Value="1.16" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__94" Root="2" Key="Software\Classes\Interface\{01482DE1-4636-401F-A00C-118B0C389CC4}" Value="IRISALicenseManagerObj5_Pause" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__95" Root="2" Key="Software\Classes\Interface\{01482DE1-4636-401F-A00C-118B0C389CC4}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__96" Root="2" Key="Software\Classes\Interface\{01482DE1-4636-401F-A00C-118B0C389CC4}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__97" Root="2" Key="Software\Classes\Interface\{02CE27CE-47EE-4260-A25A-C6F5408CF75C}" Value="IRISALicenseManagerObj5_IFeaturePropertiesAB" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__98" Root="2" Key="Software\Classes\Interface\{02CE27CE-47EE-4260-A25A-C6F5408CF75C}\ProxyStubClsid32" Value="[\{]00020424-0000-0000-C000-000000000046[\}]" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="__99" Root="2" Key="Software\Classes\Interface\{02CE27CE-47EE-4260-A25A-C6F5408CF75C}\TypeLib" Value="[\{]8EA3125E-6B37-4540-9181-53343E2BE11A[\}]" Component_="RISALicenseManagerCOM.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServCtrlComponent">
+    <ROW ServiceControl="ServiceName" Name="RISA32" Event="3" Wait="1" Component_="RISALicenseManagerCOM.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="FileUploader" Directory_="Utilities_Dir" Name="FILEUP~1|File Uploader" Component_="FileUploader.exe" Target="[#FileUploader.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="bin_Dir"/>
+    <ROW Shortcut="LicensingDashboard" Directory_="Utilities_Dir" Name="LICENS~1|Licensing Dashboard" Component_="LicensingDashboard.exe" Target="[#LicensingDashboard.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="bin_Dir"/>
+    <ROW Shortcut="RISAChangeLicenseType" Directory_="Utilities_Dir" Name="RISACH~1|RISA Change License Type" Component_="RISAChangeLicenseType.exe" Target="[#RISAChangeLicenseType.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="bin_Dir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
+    <ROW ModuleID="RISALicenseManager" Version="1.0.0" GUID="EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Name="RISA License Manager" Manufacturer="RISA Technologies" Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="bin_Dir" SourcePath="..\..\Source Files\Common Files\License\Utilities\bin" Feature="TargetFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
+  </COMPONENT>
+</DOCUMENT>
