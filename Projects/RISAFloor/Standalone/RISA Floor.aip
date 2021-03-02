@@ -180,7 +180,8 @@
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
-    <ROW Module="RISACoreFiles.msm" Path="..\Common\Merge Modules\RISACoreFiles\RISACoreFiles-SetupFiles\RISACoreFiles.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
+    <ROW Module="RISACoreFiles.msm" Path="..\..\Common\Merge Modules\RISA Core Files\RISA Core Files-SetupFiles\RISA Core Files.msm" Feature="MainFeature" Directory="APPDIR" Order="2"/>
+    <ROW Module="RISALicenseManager.msm" Path="..\..\RISA License Manager\RISA License Manager-SetupFiles\RISA License Manager.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
