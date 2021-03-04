@@ -1,2 +1,18 @@
 Source Files/
 Projects/*/*-SetupFiles/
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.dll
+*.suo
+*.sln.docstates
+*.cache
+**/packages
+**/debug
+**/obj
+**/sqlite3
+**/release
+.vs/*
+
