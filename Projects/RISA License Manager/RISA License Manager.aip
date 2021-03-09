@@ -192,12 +192,20 @@
     <ROW Fragment="MSMSequences.aip" Path="&lt;AI_FRAGS&gt;MSMSequences.aip"/>
     <ROW Fragment="MsmValidation.aip" Path="&lt;AI_FRAGS&gt;MsmValidation.aip"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="InstallSentinelSystemDriver" Description="Installing Sentinel System Drivers"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="RISA_CustomActions" SourcePath="..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\Debug\RISA_CustomActionsLib.CA.dll"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="Utilities_Dir" Component_="Utilities" ManualDelete="false"/>
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="InstallSentinelSystemDriver" Type="1106" Source="SentinelSystemDriverInstaller7.6" Target="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;"/>
+    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStartRISA32"/>
+    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStopRISA32"/>
+    <ROW Action="InstallSentinelSystemDriver" Type="3154" Source="SentinelSystemDriverInstaller7.6" Target="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="TargetFeature" Component_="RISALicenseManagerCOM.dll"/>
@@ -294,7 +302,6 @@
     <ROW Registry="Programmable_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
-    <ROW Registry="SetId" Root="2" Key="System\CurrentControlSet\Control\GraphicsDrivers\Connectivity\SHP14B90_16_07E3_16^9221B588BAF921789CD31B1F8A7B86DE" Name="SetId" Value="SHP14B90_16_07E3_16" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Software" Root="2" Key="Software" Name="+" Component_="Software"/>
     <ROW Registry="TARGETDIRRISAKeyManagerRISAKeyManag" Root="2" Key="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" Name="[APPDIR]\RISA Key Manager\RISA Key Manager.exe" Value="~ WIN7RTM" Component_="TARGETDIRRISAKeyManagerRISAKeyManag"/>
     <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
@@ -842,6 +849,8 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleInstExSeqComponent">
     <ROW Action="InstallSentinelSystemDriver" BaseAction="PublishProduct" After="1"/>
+    <ROW Action="CustomServiceStopRISA32" BaseAction="ProcessComponents" After="1"/>
+    <ROW Action="CustomServiceStartRISA32" BaseAction="InstallSentinelSystemDriver" After="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
     <ROW ModuleID="RISALicenseManager" Version="1.0.0" GUID="EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Name="RISA License Manager" Manufacturer="RISA" Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>

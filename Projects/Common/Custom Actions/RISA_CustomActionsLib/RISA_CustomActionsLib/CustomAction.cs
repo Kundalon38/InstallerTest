@@ -69,6 +69,7 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static  ActionResult ServiceControlStopRISA32(Session session)
         {
+            session.Log("ServiceControlStopRISA32");
             var services = ServiceController.GetServices();
 
             var risaSvc = services.FirstOrDefault(x => x.ServiceName == _risaServiceName);
@@ -80,17 +81,22 @@ namespace RISA_CustomActionsLib
             //
             try
             {
+                session.Log("Attempting to stop RISA32");
                 risaSvc.Stop();             // asynchronous, call returns before service actually stops
 
                 for (var nWaits = 0; nWaits < _maxWaitForService_Seconds * _num_SleepsPerSecond; nWaits++)
                 {
                     Thread.Sleep(_sleep_millisecs);
+                    risaSvc.Refresh();
                     if (risaSvc.Status == ServiceControllerStatus.Stopped) return ActionResult.Success;
+                    session.Log("RISA32 service not stopped yet");
                 }
             }
             catch
             {
+                session.Log("Stopping RISA32 service: threw an exception");
             }
+            session.Log("ServiceControlStopRISA32: Returning failue");
             return ActionResult.Failure;
         }
 
@@ -110,6 +116,7 @@ namespace RISA_CustomActionsLib
             //
             try
             {
+                session.Log("Attempting to start RISA32");
                 risaSvc.Start();             // asynchronous, call returns before service actually starts
 
             //    for (var nWaits = 0; nWaits < _maxWaitForService_Seconds * _num_SleepsPerSecond; nWaits++)
