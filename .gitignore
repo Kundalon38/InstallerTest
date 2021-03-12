@@ -14,5 +14,7 @@ Projects/*/*-SetupFiles/
 **/obj
 **/sqlite3
 **/release
+**/*SetupFiles
+**/*-cache
 .vs/*
 
