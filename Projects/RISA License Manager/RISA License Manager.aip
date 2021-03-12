@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="17.9" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.0" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
   </COMPONENT>

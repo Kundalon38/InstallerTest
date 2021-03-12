@@ -18,8 +18,13 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult DetectRoaming(Session session)
         {
+            const string installTypePropertyName = "INSTALL_TYPE";
             const string outputPropertyName = "USERFILES_RISA";
-            const string outputDirIfRoaming = @"C:\RISA";
+            
+            string installTypeProperty = session[installTypePropertyName];
+            string folderName = (installTypeProperty == "Demo") ? "RISADemo" : "RISA";
+
+            string outputDirIfRoaming = @"C:\" + folderName;
             //
             // typical myDocsPath:      C:\Users\<username>\Documents
             // typical userProfilePath: C:\Users\<username>
@@ -42,7 +47,7 @@ namespace RISA_CustomActionsLib
 
             session[outputPropertyName] = isRoaming
                 ? outputDirIfRoaming
-                : Path.Combine(myDocsPath, "RISA");
+                : Path.Combine(myDocsPath, folderName);
 
             return ActionResult.Success;
         }
