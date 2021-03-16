@@ -93,7 +93,7 @@
     <ROW Directory="NewFolder_3_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="TIMEHI~1|Time History"/>
     <ROW Directory="NewFolder_4_Dir" Directory_Parent="WoodSchedules_Dir" DefaultDir="Straps"/>
     <ROW Directory="NewFolder_5_Dir" Directory_Parent="RegionDefaults_Dir" DefaultDir=".:REGION~3|Region Defaults Foundation"/>
-    <ROW Directory="NewFolder_Dir" Directory_Parent="APPDIR" DefaultDir="DXF"/>
+    <ROW Directory="NewFolder_Dir" Directory_Parent="APPDIR" DefaultDir="DXFFIL~1|DXF Files"/>
     <ROW Directory="Old_1_Dir" Directory_Parent="IJoists_Dir" DefaultDir="Old"/>
     <ROW Directory="Old_Dir" Directory_Parent="IJoists_1_Dir" DefaultDir="Old"/>
     <ROW Directory="OnlineHelpFileTopics_Dir" Directory_Parent="Content_Dir" DefaultDir="ONLINE~1|Online Help File Topics"/>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Product xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" ProductCode="Sentinel System Driver Installer 7.6.0">
+  <PackageFiles>
+    <PackageFile Name="Sentinel System Driver Installer 7.6.0.exe"/>
+  </PackageFiles>
+  <InstallChecks>
+    <RegistryCheck Property="Property1" Key="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver" Value="CurrentVersion"/>
+  </InstallChecks>
+  <Commands>
+    <Command PackageFile="Sentinel System Driver Installer 7.6.0.exe" Arguments="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;">
+      <InstallConditions>
+        <BypassIf Property="Property1" Compare="VersionGreaterThanOrEqualTo" Value="7.6.1"/>
+        <BypassIf Property="VersionNT" Compare="VersionGreaterThanOrEqualTo"/>
+      </InstallConditions>
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success"/>
+        <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure"/>
+      </ExitCodes>
+    </Command>
+  </Commands>
+</Product>

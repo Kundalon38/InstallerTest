@@ -192,9 +192,6 @@
     <ROW Fragment="MSMSequences.aip" Path="&lt;AI_FRAGS&gt;MSMSequences.aip"/>
     <ROW Fragment="MsmValidation.aip" Path="&lt;AI_FRAGS&gt;MsmValidation.aip"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
-    <ROW Action="InstallSentinelSystemDriver" Description="Installing Sentinel System Drivers"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="RISA_CustomActions" SourcePath="..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\Debug\RISA_CustomActionsLib.CA.dll"/>
   </COMPONENT>
@@ -205,7 +202,6 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStartRISA32"/>
     <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStopRISA32"/>
-    <ROW Action="InstallSentinelSystemDriver" Type="3154" Source="SentinelSystemDriverInstaller7.6" Target="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="TargetFeature" Component_="RISALicenseManagerCOM.dll"/>
@@ -848,9 +844,8 @@
     <ROW Shortcut="RISAKeyManager" Directory_="RISA_Dir" Name="RISAKE~1|RISA Key Manager" Component_="RISAKeyManager.exe" Target="[#RISAKeyManager.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="NewFolder_1_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleInstExSeqComponent">
-    <ROW Action="InstallSentinelSystemDriver" BaseAction="PublishProduct" After="1"/>
     <ROW Action="CustomServiceStopRISA32" BaseAction="ProcessComponents" After="1"/>
-    <ROW Action="CustomServiceStartRISA32" BaseAction="InstallSentinelSystemDriver" After="1"/>
+    <ROW Action="CustomServiceStartRISA32" BaseAction="PublishProduct" After="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
     <ROW ModuleID="RISALicenseManager" Version="1.0.0" GUID="EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Name="RISA License Manager" Manufacturer="RISA" Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
