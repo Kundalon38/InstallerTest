@@ -15,7 +15,7 @@
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
     <ROW Property="ProductCode" Value="1033:{5C16B8A9-871C-40C4-8AFB-95DA0D8A7A1E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="RISA Floor [|ProductVersion]"/>
+    <ROW Property="ProductName" Value="RISA Floor"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
@@ -75,7 +75,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="SetupFiles" PackageFileName="install_fl_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_xx" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="SetupFiles" PackageFileName="install_fl_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_xx" MsiPackageType="x64" UACExecutionLevel="2"/>
     <ROW BuildKey="ExeBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fl_demo_xx" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_demo_xx" MsiPackageType="x64"/>
     <ROW BuildKey="WebInstallerBuild" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Floor" Languages="en" InstallationType="3" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" MainAppUrl="http://localhost/test/RISA Floor.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_web" MsiPackageType="x64"/>
   </COMPONENT>
@@ -178,8 +178,8 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="USERFILES_RISA.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[USERFILES_RISA]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder][Manufacturer]"/>
-    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder][Manufacturer]#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder][Manufacturer]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">

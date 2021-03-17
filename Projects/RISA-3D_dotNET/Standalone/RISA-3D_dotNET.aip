@@ -12,11 +12,12 @@
     <ROW Property="ARPPRODUCTICON" Value="D.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
-    <ROW Property="PRODUCT_VERSION2" Value="1.0"/>
-    <ROW Property="ProductCode" Value="1033:{04C7D72C-CA5F-4E06-8117-01E028C3A9FD} " Type="16"/>
+    <ROW Property="PRODUCT_VERSION2" Value="19.0"/>
+    <ROW Property="ProductCode" Value="1033:{06EDFE2D-CF65-477A-9621-BD753849AE4E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="RISA-3D [|ProductVersion]"/>
-    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="ProductName" Value="RISA-3D"/>
+    <ROW Property="ProductVersion" Value="19.0.0" Type="32"/>
+    <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
     <ROW Property="UpgradeCode" Value="{38D64B69-E97A-461B-A8CD-C30DCD7EE581}"/>
@@ -55,20 +56,30 @@
     <ROW Component="AutoMapper.dll_1" ComponentId="{68C0C367-D568-475B-9686-80C195E4CD79}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="AutoMapper.dll_1"/>
     <ROW Component="CSInfrastructure.dll" ComponentId="{582105C6-43B7-4838-B661-B6D729C1C5A0}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="CSInfrastructure.dll"/>
     <ROW Component="CSInfrastructure.dll_1" ComponentId="{2BA992C5-C8F8-44CA-921F-8EEC2B0EB791}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="CSInfrastructure.dll_1"/>
+    <ROW Component="Default" ComponentId="{597008A9-423B-484F-85F0-95A580FD2F6D}" Directory_="APPDIR" Attributes="260" KeyPath="Default"/>
+    <ROW Component="Default_2" ComponentId="{04608998-8A14-4FF9-9B34-89197A4F4996}" Directory_="APPDIR" Attributes="260" KeyPath="Default_2"/>
+    <ROW Component="Default_3" ComponentId="{1446CAC7-1703-44BB-A0EF-AB2729BD2917}" Directory_="APPDIR" Attributes="260" KeyPath="Default_3"/>
     <ROW Component="EPPlus.dll" ComponentId="{F1808F09-C63E-43E0-BC40-7AC77958DB2E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="EPPlus.dll"/>
     <ROW Component="EPPlus.dll_1" ComponentId="{73F09079-3D72-4F9D-8A50-D8C070E5AD0C}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="EPPlus.dll_1"/>
+    <ROW Component="EXEPath" ComponentId="{D486F276-00C2-421E-83D8-9EA88E638F7D}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
+    <ROW Component="EXEPath_1" ComponentId="{B08CE687-9E3D-44DE-B248-19E84AF3E561}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_1"/>
     <ROW Component="ExcelDataReader.DataSet.dll" ComponentId="{605D7F85-A1D3-4DF4-9A18-BF4D28BC6B23}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ExcelDataReader.DataSet.dll"/>
     <ROW Component="ExcelDataReader.DataSet.dll_1" ComponentId="{74BAF412-9DF9-49C4-AD03-CCDA7C9D0544}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="ExcelDataReader.DataSet.dll_1"/>
     <ROW Component="ExcelDataReader.dll" ComponentId="{A57D0550-8B9F-45DB-A55F-6A25F0673673}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ExcelDataReader.dll"/>
     <ROW Component="ExcelDataReader.dll_1" ComponentId="{995934AD-5D28-4A66-BC36-1C5C93E4FD84}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="ExcelDataReader.dll_1"/>
     <ROW Component="FluentValidation.dll" ComponentId="{61E850E6-E9C1-4AC2-A48A-97943138C63A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="FluentValidation.dll"/>
     <ROW Component="FluentValidation.dll_1" ComponentId="{785E2467-189A-4DE0-800E-66755BC5B3F2}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="FluentValidation.dll_1"/>
+    <ROW Component="INIPath" ComponentId="{6D4B9D9E-AD3F-41EA-8BEA-2B855EEFB30D}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
+    <ROW Component="INIPath_1" ComponentId="{85570B3D-9AD7-4DE7-8ED5-B30ACAC5CACE}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
     <ROW Component="Infrastructure.Geometry.dll" ComponentId="{05F697DE-6DE8-465C-9EB6-ACC2927F5DE9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Infrastructure.Geometry.dll"/>
     <ROW Component="Infrastructure.Geometry.dll_1" ComponentId="{8A3D21D0-502C-48FE-86F2-342BA0FB283B}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="Infrastructure.Geometry.dll_1"/>
     <ROW Component="Interop.RISALicenseManagerCOMLib.dll" ComponentId="{976D4A56-4EEE-4A69-AD45-C268A7FD3AA6}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="Interop.RISALicenseManagerCOMLib.dll"/>
     <ROW Component="Interop.RISALicenseManagerCOMLib.dll_1" ComponentId="{3D708421-CD8B-4F9E-9A21-FE13C01B4F9D}" Directory_="RISA3D_1_Dir" Attributes="256" KeyPath="Interop.RISALicenseManagerCOMLib.dll_1"/>
     <ROW Component="LibTessDotNet.Double.dll" ComponentId="{65D07862-F2BC-4F2A-9062-29D930E6F8B4}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="LibTessDotNet.Double.dll"/>
     <ROW Component="LibTessDotNet.dll" ComponentId="{2538051C-29C9-4653-AB93-B57A10061B8E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="LibTessDotNet.dll"/>
+    <ROW Component="LicenseType" ComponentId="{454EE8F8-4B72-4827-9EB1-6A05657591B4}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
+    <ROW Component="LicenseTypeList" ComponentId="{8DEB6AE7-C023-4948-A5A9-F687F8DE3BEE}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
+    <ROW Component="LocalUpdateCheck" ComponentId="{24F64035-A891-4DDB-965C-7C89A08DCAD9}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
     <ROW Component="Material_mapping.xlsx" ComponentId="{48F144C3-B6E1-4F1F-96A7-DD5D89B5D941}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="Material_mapping.xlsx" Type="0"/>
     <ROW Component="MathNet.Numerics.dll" ComponentId="{32464D7F-73A6-4B1B-BE50-9ABBF9ED0F89}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="MathNet.Numerics.dll"/>
     <ROW Component="MathNet.Numerics.dll_1" ComponentId="{EDA7AD33-E116-41E8-9DDF-CC51BD7B079C}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="MathNet.Numerics.dll_1"/>
@@ -144,7 +155,10 @@
     <ROW Component="NLog.dll_1" ComponentId="{F7753EEE-0E4F-474C-AEB6-D0A194487721}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="NLog.dll_1"/>
     <ROW Component="Newtonsoft.Json.dll" ComponentId="{5E4F2598-76DE-4E5A-8C5A-0E0EE651BA9C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="Newtonsoft.Json.dll_1" ComponentId="{3C5C1FD3-6B1C-4327-BA21-BD486869E098}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll_1"/>
-    <ROW Component="ProductInformation" ComponentId="{A3824B34-DEDC-4226-9E4A-C72CF5EF24A3}" Directory_="APPDIR" Attributes="276" KeyPath="Version"/>
+    <ROW Component="PRODUCT_VERSION2" ComponentId="{3D79D34E-EBD8-4061-BDC3-00098DB5A63A}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
+    <ROW Component="ProductName" ComponentId="{B70F51C7-4642-4CE8-90D9-388051389992}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName_1"/>
+    <ROW Component="RISA_COMPANY_KEY" ComponentId="{ECB3C296-5E1A-4730-B165-A44AFB1420E8}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
+    <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{5AFDA187-ABAD-437F-B1F7-A993806780B4}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll" ComponentId="{26EA71C9-66D7-48FA-ABFD-CAE9BA99EF34}" Directory_="RISA3D_Dir" Attributes="272" KeyPath="RISAtech.CalatravaLink.Contract.dll"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_1" ComponentId="{D05450F1-58F8-4E12-8F7C-11D2CB5A98BD}" Directory_="SAF3D_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.Contract.dll_1"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_2" ComponentId="{0C48B088-7598-488D-BDE0-C184C32DA746}" Directory_="RISA3D_1_Dir" Attributes="272" KeyPath="RISAtech.CalatravaLink.Contract.dll_2"/>
@@ -169,9 +183,11 @@
     <ROW Component="RISAtech.Presentation.DX.Contract.R3D.dll_1" ComponentId="{3D20B804-A997-4BE5-9832-35BC0D211170}" Directory_="RISA3D_1_Dir" Attributes="272" KeyPath="RISAtech.Presentation.DX.Contract.R3D.dll_1"/>
     <ROW Component="RISAtech.RISA3D.dll" ComponentId="{9C086C1F-557F-4371-B547-05D1284E6504}" Directory_="RISA3D_Dir" Attributes="272" KeyPath="RISAtech.RISA3D.dll"/>
     <ROW Component="RISAtech.RISA3D.dll_1" ComponentId="{DFF99F3E-CAD7-44D7-8032-E8E221F1E448}" Directory_="RISA3D_1_Dir" Attributes="272" KeyPath="RISAtech.RISA3D.dll_1"/>
+    <ROW Component="Region_1" ComponentId="{4B707412-ED15-4E2D-87ED-BB6A7BA573FA}" Directory_="APPDIR" Attributes="260" KeyPath="Region_1"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{783D23F6-B850-43E8-8867-8C2FA78C3CF5}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="SimpleInjector.dll" ComponentId="{659A4627-7329-49E6-BFD2-BE5245EC8783}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="SimpleInjector.dll"/>
     <ROW Component="SimpleInjector.dll_1" ComponentId="{0454AF4A-6911-4E8F-99DE-33258C795B6F}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="SimpleInjector.dll_1"/>
+    <ROW Component="Software" ComponentId="{BDEA2D43-E1DA-4DA1-9908-E02456364F08}" Directory_="APPDIR" Attributes="260" KeyPath="Software_2"/>
     <ROW Component="System.AppContext.dll" ComponentId="{E180AE64-EC22-4C1F-AB5B-ECD3F2E43987}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.AppContext.dll"/>
     <ROW Component="System.AppContext.dll_1" ComponentId="{A90E4998-5C24-4687-86C2-BDAF7E4C5EA3}" Directory_="SAF3D_1_Dir" Attributes="0" KeyPath="System.AppContext.dll_1"/>
     <ROW Component="System.Collections.Concurrent.dll" ComponentId="{505CA709-49EB-4E8F-B244-9A49EBCD7722}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Collections.Concurrent.dll"/>
@@ -393,6 +409,7 @@
     <ROW Component="Unity.Abstractions.dll_1" ComponentId="{40E6C5D0-E2A4-4667-B4AF-634E58AE3A5D}" Directory_="RISA3D_1_Dir" Attributes="16" KeyPath="Unity.Abstractions.dll_1"/>
     <ROW Component="Unity.Container.dll" ComponentId="{342FC340-EAE4-499A-9B07-1A4D9AFEBBA1}" Directory_="RISA3D_Dir" Attributes="16" KeyPath="Unity.Container.dll"/>
     <ROW Component="Unity.Container.dll_1" ComponentId="{622DE852-32A9-4AC4-9449-88F923B54E52}" Directory_="RISA3D_1_Dir" Attributes="16" KeyPath="Unity.Container.dll_1"/>
+    <ROW Component="VERSION2" ComponentId="{6F1F308D-7A62-427D-81CC-695AB377E1EC}" Directory_="APPDIR" Attributes="260" KeyPath="VERSION2"/>
     <ROW Component="WpfMath.dll" ComponentId="{EA2EC86E-1BB6-4D4E-8E5A-65F3AF7D6219}" Directory_="RISA3D_Dir" Attributes="16" KeyPath="WpfMath.dll"/>
     <ROW Component="WpfMath.dll_1" ComponentId="{3B24203B-B6A4-4B75-A2B6-55A16237EB3E}" Directory_="RISA3D_1_Dir" Attributes="16" KeyPath="WpfMath.dll_1"/>
     <ROW Component="netstandard.dll" ComponentId="{E087ACFD-FA57-42EF-B00A-D186201FFB5B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="netstandard.dll"/>
@@ -770,7 +787,7 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_3d" MsiPackageType="x64"/>
+    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_3d" MsiPackageType="x64" UACExecutionLevel="2"/>
     <ROW BuildKey="ExeBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_3d_demo" MsiPackageType="x64"/>
     <ROW BuildKey="WebInstallerBuild" BuildName="WebInstallerBuild" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="3" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" MainAppUrl="http://localhost/test/RISA-3D_dotNET.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_3d_demo" MsiPackageType="x64"/>
   </COMPONENT>
@@ -869,13 +886,12 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="USERFILES_RISA.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[USERFILES_RISA]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder][Manufacturer]"/>
-    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder][Manufacturer]#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder][Manufacturer]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
-    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
     <ROW Feature_="MainFeature" Component_="Interop.RISALicenseManagerCOMLib.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.Expression.Interactions.dll"/>
@@ -1229,6 +1245,23 @@
     <ROW Feature_="MainFeature" Component_="risa3dw.exe.config_1"/>
     <ROW Feature_="MainFeature" Component_="risa3dw17.exe"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY"/>
+    <ROW Feature_="MainFeature" Component_="ProductName"/>
+    <ROW Feature_="MainFeature" Component_="VERSION2"/>
+    <ROW Feature_="MainFeature" Component_="EXEPath"/>
+    <ROW Feature_="MainFeature" Component_="INIPath"/>
+    <ROW Feature_="MainFeature" Component_="Default"/>
+    <ROW Feature_="MainFeature" Component_="Software"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
+    <ROW Feature_="MainFeature" Component_="PRODUCT_VERSION2"/>
+    <ROW Feature_="MainFeature" Component_="EXEPath_1"/>
+    <ROW Feature_="MainFeature" Component_="INIPath_1"/>
+    <ROW Feature_="MainFeature" Component_="Region_1"/>
+    <ROW Feature_="MainFeature" Component_="Default_2"/>
+    <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
+    <ROW Feature_="MainFeature" Component_="Default_3"/>
+    <ROW Feature_="MainFeature" Component_="LicenseType"/>
+    <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="D.exe" SourcePath="..\Assets\3D.ico" Index="0"/>
@@ -1289,8 +1322,23 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
-    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
-    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="Default" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="*" Component_="Default"/>
+    <ROW Registry="Default_2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="Default_2"/>
+    <ROW Registry="Default_3" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="Default_3"/>
+    <ROW Registry="EXEPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath"/>
+    <ROW Registry="EXEPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath_1"/>
+    <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
+    <ROW Registry="INIPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath_1"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="License Type" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="License Type List" Component_="LicenseTypeList"/>
+    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
+    <ROW Registry="PRODUCT_VERSION2" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="*" Component_="PRODUCT_VERSION2"/>
+    <ROW Registry="ProductName_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="*" Component_="ProductName"/>
+    <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
+    <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
+    <ROW Registry="Region_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="Region" Value="UNITED_STATES" Component_="Region_1"/>
+    <ROW Registry="Software_2" Root="2" Key="Software" Name="+" Component_="Software"/>
+    <ROW Registry="VERSION2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="*" Component_="VERSION2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="PRODUCT_NAMEPRODUCT_VERSION" Directory_="DesktopFolder" Name="RISA-3~2.0|[|ProductName]" Component_="risa3dw.exe_1" Target="[#risa3dw.exe_1]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="RISA3D_2_Dir"/>
