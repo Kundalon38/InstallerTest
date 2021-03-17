@@ -11,7 +11,7 @@
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#ExeBuild:1#WebInstallerBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="Floor.exe" Type="8"/>
     <ROW Property="INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
-    <ROW Property="Manufacturer" Value="RISA"/>
+    <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
     <ROW Property="ProductCode" Value="1033:{5C16B8A9-871C-40C4-8AFB-95DA0D8A7A1E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
