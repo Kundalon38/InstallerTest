@@ -4,6 +4,7 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_PROPPATH_PERBUILD_risafnd.exe" Value="..\..\..\Source Files\RISAFoundation\Exes\risafnd.exe" MultiBuildValue="MsiBuild:..\..\..\Source Files\RISAFoundation\Exes\Demo\risafnd.exe"/>
     <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="ALLUSERS" Value="1"/>
@@ -12,11 +13,15 @@
     <ROW Property="ARPPRODUCTICON" Value="Foundation.exe" Type="8"/>
     <ROW Property="INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
-    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
+    <ROW Property="PRODUCT_VERSION2" Value="13.0"/>
     <ROW Property="ProductCode" Value="1033:{0DF53BB8-C061-453F-A8A3-A7844CB9CF8F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISA Foundation"/>
     <ROW Property="ProductVersion" Value="13.0.0" Type="32"/>
+    <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.2345"/>
+    <ROW Property="RISA_REGION_NAME" Value="United States"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
     <ROW Property="UpgradeCode" Value="{6996880C-E654-4E33-A3FB-F4246CCE3045}"/>
@@ -35,16 +40,45 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DemoBackup_Dir" Directory_Parent="APPDIR" DefaultDir="DEMOBA~1|DemoBackup"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_ExePath" ComponentId="{5046031C-4278-40C4-9B12-C32B9A1FA69D}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F875DE03-D1A4-4DA7-80F9-958DAFC721F4}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="ProductInformation" ComponentId="{F67DC650-546F-4027-8A6C-F43D4414892F}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="EXEPath" ComponentId="{7C10C2E4-B680-47CD-983C-47AD5CC9B997}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
+    <ROW Component="EXE_PATH" ComponentId="{97EA77A1-E172-4DAB-AAF0-3277F4244E5C}" Directory_="APPDIR" Attributes="260" KeyPath="EXE_PATH"/>
+    <ROW Component="INIPath" ComponentId="{ACDAA0E5-EEB1-4C6B-99A8-12A5D6EEA520}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
+    <ROW Component="INI_PATH" ComponentId="{AF203AAA-BB33-46E3-9EA3-06893D27F808}" Directory_="APPDIR" Attributes="260" KeyPath="INI_PATH"/>
+    <ROW Component="InstallGUID" ComponentId="{5794896F-03B2-420B-B5D5-49A9BF9A5B1C}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
+    <ROW Component="LicenseType" ComponentId="{5884F01D-1C21-4F44-AFAD-8ECF2DC8D914}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
+    <ROW Component="LicenseTypeList" ComponentId="{C5627D15-C497-4D07-9E39-30034C1176FF}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
+    <ROW Component="LocalUpdateCheck" ComponentId="{0685ED11-A624-4E12-BB50-9BF4C52452BF}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
+    <ROW Component="PRODUCT_VERSION2" ComponentId="{C8D830CD-8CFB-4991-B7C4-FE36EA96394E}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
+    <ROW Component="ProductName" ComponentId="{8A201A8F-86C9-4B19-B534-6AFFF3D347EC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
+    <ROW Component="RISA_COMPANY_KEY" ComponentId="{A8B350BD-7E31-4EA3-8933-9069990D97CF}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
+    <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{03DDF735-1361-4DDF-B65D-384F2F008ABD}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
+    <ROW Component="Region" ComponentId="{96CCE83A-65E4-426A-A589-E7858BACB6ED}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
+    <ROW Component="RevisionGUID" ComponentId="{919C214A-B7AF-4D51-96A2-A9029F9B9D25}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{05ADFC2E-FAC4-4F68-9ADF-8DEEB2A7A6BC}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Version" ComponentId="{2D7EDD2A-802C-4A86-A4F5-F30F04708DF2}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="_" ComponentId="{274F922A-2BEA-4ACC-8B89-0E6FCB1D7B49}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
+    <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
+    <ROW Component="risafnd.exe" ComponentId="{88D696C2-3BE4-400E-8A8A-6785F2F7A388}" Directory_="APPDIR" Attributes="256" KeyPath="risafnd.exe"/>
+    <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="risafnd.exe" Component_="risafnd.exe" FileName="risafnd.exe" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_risafnd.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="risafnd.exe_1" Component_="risafnd.exe_1" FileName="risafnd.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation\Exes\Demo\risafnd.exe" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_risafnd.exe" Path="[|AI_PROPPATH_PERBUILD_risafnd.exe]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -55,7 +89,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="install_fd_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_xx" MsiPackageType="x64" UACExecutionLevel="2"/>
     <ROW BuildKey="MsiBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fd_demo_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="install_fd_demo_xx" MsiPackageType="x64"/>
-    <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Foundation" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/RISA Foundation.msi" UseLargeSchema="true" ExeName="install_fd_web" MsiPackageType="x64"/>
+    <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Foundation" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/RISA Foundation.msi" UseLargeSchema="true" ExeName="install_fd_web" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -125,6 +159,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -151,14 +186,33 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="USERFILES_RISA.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[USERFILES_RISA]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]#MsiBuild_1:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
-    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder]RISA#MsiBuild_1:[ProgramFiles64Folder]RISA"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#MsiBuild:[ProgramMenuFolder]RISA#MsiBuild_1:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
-    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
+    <ROW Feature_="MainFeature" Component_="ProductName"/>
+    <ROW Feature_="MainFeature" Component_="PRODUCT_VERSION2"/>
+    <ROW Feature_="MainFeature" Component_="_"/>
+    <ROW Feature_="MainFeature" Component_="EXEPath"/>
+    <ROW Feature_="MainFeature" Component_="INIPath"/>
+    <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
+    <ROW Feature_="MainFeature" Component_="__1"/>
+    <ROW Feature_="MainFeature" Component_="EXE_PATH"/>
+    <ROW Feature_="MainFeature" Component_="INI_PATH"/>
+    <ROW Feature_="MainFeature" Component_="Region"/>
+    <ROW Feature_="MainFeature" Component_="LicenseType"/>
+    <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
+    <ROW Feature_="MainFeature" Component_="InstallGUID"/>
+    <ROW Feature_="MainFeature" Component_="RevisionGUID"/>
+    <ROW Feature_="MainFeature" Component_="Version"/>
+    <ROW Feature_="MainFeature" Component_="risafnd.exe"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="risafnd.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Foundation.exe" SourcePath="..\Assets\Foundation.ico" Index="0"/>
@@ -218,8 +272,27 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
-    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
-    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="EXEPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath"/>
+    <ROW Registry="EXE_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE_PATH" Value="[APPDIR]" Component_="EXE_PATH"/>
+    <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
+    <ROW Registry="INI_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI_PATH" Value="%USERPROFILE\Documents\RISA" Component_="INI_PATH"/>
+    <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="LicenseType" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="LicenseTypeList" Component_="LicenseTypeList"/>
+    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
+    <ROW Registry="PRODUCT_VERSION2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="+" Component_="PRODUCT_VERSION2"/>
+    <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="+" Component_="ProductName"/>
+    <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
+    <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
+    <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
+    <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
+    <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
+    <ROW Registry="_" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="_"/>
+    <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="__1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
