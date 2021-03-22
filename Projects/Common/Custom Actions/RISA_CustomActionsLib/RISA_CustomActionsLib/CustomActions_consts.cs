@@ -3,57 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Deployment.WindowsInstaller;
 
 namespace RISA_CustomActionsLib
 {
     public partial class CustomActions
     {
+        // many consts are public for the sake of unit testing
+        // - they really should be private
+
         #region Property Name consts
 
-        private const string _propMSI_ProductName = "ProductName";
-        private const string _propMSI_ProductVersion = "ProductVersion";
+        public const string _propMSI_ProductName = "ProductName";
+        public const string _propMSI_ProductVersion = "ProductVersion";
 
-        private const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
-        private const string _propRISA_REGISTRY_PRODUCT_NAME = "RISA_REGISTRY_PRODUCT_NAME";
-        private const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
+        public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
+        public const string _propRISA_REGISTRY_PRODUCT_NAME = "RISA_REGISTRY_PRODUCT_NAME";
+        public const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
 
-        private const string _propRISA_PRODUCT_VERSION2 = "RISA_PRODUCT_VERSION2";
-        private const string _propRISA_PRODUCT_VERSION34 = "RISA_PRODUCT_VERSION34";
+        public const string _propRISA_PRODUCT_VERSION2 = "RISA_PRODUCT_VERSION2";
+        public const string _propRISA_PRODUCT_VERSION34 = "RISA_PRODUCT_VERSION34";
 
-        private const string _propRISA_PRODUCT_TITLE2_INSTYPE = "RISA_PRODUCT_TITLE2_INSTYPE";
-
-
-        private const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
-        private const string _propRISA_REGION_NAME = "RISA_REGION_NAME";
-        private const string _propRISA_UPDATE_DATA_VALUE = "RISA_UPDATE_DATA_VALUE";
-
-        private const string _propUSERFILES_RISA = "USERFILES_RISA";
-        private const string _propRISA_USERFILES = "RISA_USERFILES";
+        public const string _propRISA_PRODUCT_TITLE2_INSTYPE = "RISA_PRODUCT_TITLE2_INSTYPE";
 
 
-        private const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
+        public const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
+        public const string _propRISA_REGION_NAME = "RISA_REGION_NAME";
+        public const string _propRISA_UPDATE_DATA_VALUE = "RISA_UPDATE_DATA_VALUE";
+
+        public const string _propUSERFILES_RISA = "USERFILES_RISA"; // deprecate
+        public const string _propRISA_USERFILES = "RISA_USERFILES";
 
 
-        private const string _propRISA_SILENT_FILE = "RISA_SILENT_FILE";
-        private const string _propRISA_SILENT_LOG = "RISA_SILENT_LOG";
-        private const string _propRISA_IS_SILENT = "RISA_IS_SILENT";
+        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
 
 
-        private const string _propRISA_STATUS_CODE = "RISA_STATUS_CODE";
-        private const string _propRISA_STATUS_TEXT = "RISA_STATUS_TEXT";
+        public const string _propRISA_SILENT_FILE = "RISA_SILENT_FILE";
+        public const string _propRISA_SILENT_LOG = "RISA_SILENT_LOG";
+        public const string _propRISA_IS_SILENT = "RISA_IS_SILENT";
+
+
+        public const string _propRISA_STATUS_CODE = "RISA_STATUS_CODE";
+        public const string _propRISA_STATUS_TEXT = "RISA_STATUS_TEXT";
 
         #endregion
 
         #region RISA_STATUS_CODE values
 
-        private const string _sts_EXCP = "RISA_STS_EXCP";
-        private const string _sts_OK = "RISA_STS_OK";
+        public const string _sts_EXCP = "RISA_STS_EXCP";
+        public const string _sts_OK = "RISA_STS_OK";
         //private const string _sts_WARN = "RISA_STS_WARN";
 
-        private const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
-        private const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
-        private const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
-        private const string _sts_WARN_VERSION3 = "RISA_WARN_VERSION3";
+        public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
+        public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
+        public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
+        public const string _sts_WARN_VERSION3 = "RISA_WARN_VERSION3";
 
 
         #endregion
@@ -136,6 +140,49 @@ namespace RISA_CustomActionsLib
 
         private const string _licenseTypeSubKeyName = "License Type";
         private const string _defLicenseType = "Cloud";
+
+        #endregion
+
+        #region Session / SessionDTO property copying
+        private static SessionDTO initSessionDTO(Session session)
+        {
+            var sessDTO = new SessionDTO(session.Log)
+            {
+                // props set by installer
+                [_propMSI_ProductName] = session[_propMSI_ProductName],
+                [_propMSI_ProductVersion] = session[_propMSI_ProductVersion],
+                [_propRISA_COMPANY_KEY] = session[_propRISA_COMPANY_KEY],
+                [_propRISA_INSTALL_TYPE] = session[_propRISA_INSTALL_TYPE],
+                [_propRISA_REGISTRY_PRODUCT_NAME] = session[_propRISA_REGISTRY_PRODUCT_NAME],
+
+                // props set here
+                [_propRISA_LICENSE_TYPE] = session[_propRISA_LICENSE_TYPE],
+                [_propRISA_PRODUCT_TITLE2_INSTYPE] = session[_propRISA_PRODUCT_TITLE2_INSTYPE],
+                [_propRISA_PRODUCT_VERSION2] = session[_propRISA_PRODUCT_VERSION2],
+                [_propRISA_PRODUCT_VERSION34] = session[_propRISA_PRODUCT_VERSION34],
+                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
+                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
+                [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
+                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
+                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA]    // deprecate
+            };
+            return sessDTO;
+        }
+
+        private static void copyDTOtoSession(Session session, SessionDTO sessDTO)
+        {
+            // don't overwrite items set by caller, only those set here
+            //
+            session[_propRISA_LICENSE_TYPE] = sessDTO[_propRISA_LICENSE_TYPE];
+            session[_propRISA_PRODUCT_TITLE2_INSTYPE] = sessDTO[_propRISA_PRODUCT_TITLE2_INSTYPE];
+            session[_propRISA_PRODUCT_VERSION2] = sessDTO[_propRISA_PRODUCT_VERSION2];
+            session[_propRISA_PRODUCT_VERSION34] = sessDTO[_propRISA_PRODUCT_VERSION34];
+            session[_propRISA_STATUS_CODE] = sessDTO[_propRISA_STATUS_CODE];
+            session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
+            session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
+            session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
+            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
+        }
 
         #endregion
 
