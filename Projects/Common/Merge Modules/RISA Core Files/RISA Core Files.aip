@@ -4313,6 +4313,8 @@
     <ROW File="RISAFoundationV13SilentInstall.b" Component_="STAAD_Mapping_File.xml_1" FileName="RISAFO~2.BAT|RISAFoundation V13-Silent Install.bat" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFoundation\Silent Install\RISAFoundation V13-Silent Install.bat" SelfReg="false"/>
     <ROW File="RISAFloorV14SilentInstall.bat" Component_="STAAD_Mapping_File.xml_1" FileName="RISAFL~1.BAT|RISAFloor V14-Silent Install.bat" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Silent Install\RISAFloor V14-Silent Install.bat" SelfReg="false"/>
     <ROW File="RISAFloorV15SilentInstall.bat" Component_="STAAD_Mapping_File.xml_1" FileName="RISAFL~2.BAT|RISAFloor V15-Silent Install.bat" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Silent Install\RISAFloor V15-Silent Install.bat" SelfReg="false"/>
+    <ROW File="Release_Notes_Floor.pdf" Component_="Manuals" FileName="RELEAS~2.PDF|Release_Notes_Floor.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Release Notes\Release_Notes_Floor.pdf" SelfReg="false"/>
+    <ROW File="Release_Notes_Foundation.pdf" Component_="Manuals" FileName="RELEAS~3.PDF|Release_Notes_Foundation.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFoundation\Release Notes\Release_Notes_Foundation.pdf" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="RISA3DGeneralReference0" Shortcut_="RISA3DGeneralReference" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>

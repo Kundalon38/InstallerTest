@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.0" Modules="enterprise" RootPath="." Language="en" Id="{188EFCDF-111F-4A8F-BAEB-6D999BD02317}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="18.0" version="18.0" Modules="enterprise" RootPath="." Language="en" Id="{7A05D186-29FB-48FC-88C9-5A3CA6101E18}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
-    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION;AI_DETECTED_DOTNET_VERSION"/>
-    <ROW Property="AI_PROPPATH_PERBUILD_risafloor.exe" Value="..\..\..\Source Files\RISAFloor\Exes\risafloor.exe" MultiBuildValue="ExeBuild:..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_PROPPATH_PERBUILD_risafnd.exe" Value="..\..\..\Source Files\RISAFoundation\Exes\risafnd.exe" MultiBuildValue="MsiBuild:..\..\..\Source Files\RISAFoundation\Exes\Demo\risafnd.exe"/>
     <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#ExeBuild:1#WebInstallerBuild:1"/>
-    <ROW Property="ARPPRODUCTICON" Value="Floor.exe" Type="8"/>
-    <ROW Property="INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#MsiBuild:1#MsiBuild_1:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="Foundation.exe" Type="8"/>
+    <ROW Property="INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
-    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
-    <ROW Property="PRODUCT_VERSION2" Value="15.0"/>
-    <ROW Property="ProductCode" Value="1033:{5C16B8A9-871C-40C4-8AFB-95DA0D8A7A1E} " Type="16"/>
+    <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
+    <ROW Property="PRODUCT_VERSION2" Value="13.0"/>
+    <ROW Property="ProductCode" Value="1033:{0DF53BB8-C061-453F-A8A3-A7844CB9CF8F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="RISA Floor"/>
-    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="ProductName" Value="RISA Foundation"/>
+    <ROW Property="ProductVersion" Value="13.0.0" Type="32"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.234"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.2345"/>
     <ROW Property="RISA_REGION_NAME" Value="United States"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
-    <ROW Property="UpgradeCode" Value="{FF423049-5021-45B7-B697-E7D9A4495FEE}"/>
-    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="UpgradeCode" Value="{6996880C-E654-4E33-A3FB-F4246CCE3045}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0#ExeBuild:Windows NT 4.0#WebInstallerBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0#ExeBuild:Windows NT 4.0#WebInstallerBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000#ExeBuild:Windows 2000#WebInstallerBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000#ExeBuild:Windows 2000#WebInstallerBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003#ExeBuild:Windows XP/2003#WebInstallerBuild:Windows XP/2003" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003#ExeBuild:Windows XP/2003#WebInstallerBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0#MsiBuild:Windows NT 4.0#MsiBuild_1:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0#MsiBuild:Windows NT 4.0#MsiBuild_1:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000#MsiBuild:Windows 2000#MsiBuild_1:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000#MsiBuild:Windows 2000#MsiBuild_1:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003#MsiBuild:Windows XP/2003#MsiBuild_1:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003#MsiBuild:Windows XP/2003#MsiBuild_1:Windows XP/2003" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT64" MultiBuildValue="DefaultBuild:Windows Vista x64, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT64Display" MultiBuildValue="DefaultBuild:Windows Vista x64, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64" ValueLocId="-"/>
     <ROW Property="WindowsTypeNTDisplay" MultiBuildValue="DefaultBuild:32-bit Windows versions" ValueLocId="-"/>
@@ -41,60 +41,44 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DemoBackup_Dir" Directory_Parent="APPDIR" DefaultDir="DEMOBA~1|DemoBackup"/>
-    <ROW Directory="Packages_1_Dir" Directory_Parent="VS_BOOTSTRAPPER_40_PATH" DefaultDir="Packages"/>
-    <ROW Directory="Packages_Dir" Directory_Parent="VS_BOOTSTRAPPER_35_PATH" DefaultDir="Packages"/>
-    <ROW Directory="SentinelSystemDriverInstaller7._Dir" Directory_Parent="Packages_Dir" DefaultDir="SENTIN~1.0|Sentinel System Driver Installer 7.6.0"/>
-    <ROW Directory="SentinelSystemDriverInstaller_1_Dir" Directory_Parent="Packages_1_Dir" DefaultDir="SENTIN~1.0|Sentinel System Driver Installer 7.6.0"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
-    <ROW Directory="VS_BOOTSTRAPPER_35_PATH" Directory_Parent="TARGETDIR" DefaultDir="VS_BOO~1|VS_BOOTSTRAPPER_35_PATH" IsPseudoRoot="1"/>
-    <ROW Directory="VS_BOOTSTRAPPER_40_PATH" Directory_Parent="TARGETDIR" DefaultDir="VS_BOO~2|VS_BOOTSTRAPPER_40_PATH" IsPseudoRoot="1"/>
-    <ROW Directory="en_1_Dir" Directory_Parent="SentinelSystemDriverInstaller_1_Dir" DefaultDir="en"/>
-    <ROW Directory="en_Dir" Directory_Parent="SentinelSystemDriverInstaller7._Dir" DefaultDir="en"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_ExePath" ComponentId="{D945002E-CE08-4356-8344-BF3839E66DF7}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
-    <ROW Component="APPDIR" ComponentId="{8B1CA24C-DEBE-4DE1-97FF-C30AD799F8F0}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="EXEPath" ComponentId="{1565BF0F-2D5C-4233-9BCB-50F03F05ED88}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
-    <ROW Component="EXEPath_1" ComponentId="{306B8B83-5712-456A-B6E3-DA4608F038C8}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_1"/>
-    <ROW Component="INIPath" ComponentId="{7FBE2BAF-5FA6-4E0C-88DD-085D78C8112D}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
-    <ROW Component="INIPath_1" ComponentId="{6F8C3331-E202-46CE-AAB6-DAA079AB6C60}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
-    <ROW Component="InstallGUID" ComponentId="{3ECAD2D0-378B-4CB5-A181-797F37ED323A}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
-    <ROW Component="LocalUpdateCheck" ComponentId="{C479CCFB-AAAD-4AA3-A7D9-7DF6326362FE}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
-    <ROW Component="PRODUCT_VERSION2" ComponentId="{0C51ED8B-5901-46DC-AF09-3872D2E838D0}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
-    <ROW Component="ProductName" ComponentId="{5389ADEE-A83E-4A3F-818A-914FC438E593}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
-    <ROW Component="ProductName_1" ComponentId="{B37E7233-8A4A-48F5-A946-AA0A0726FEFC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName_1"/>
-    <ROW Component="RISA_COMPANY_KEY" ComponentId="{38C87CB9-30E3-4FD7-A7D5-7BAF8F57BCE3}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
-    <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{00157264-5585-4D40-9BA2-D5FBB4C141CC}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
-    <ROW Component="Region" ComponentId="{9F8C2FA1-D6EE-4444-B3BD-8EA3059563AD}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
-    <ROW Component="RevisionGUID" ComponentId="{045798C2-56E9-4D2F-B671-D87C4749054E}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
-    <ROW Component="SentinelSystemDriverInstaller7.6.0.exe" ComponentId="{F8BB3E10-2313-4DE8-9722-6714D9C00BCD}" Directory_="SentinelSystemDriverInstaller7._Dir" Attributes="0" Condition="VS_BOOTSTRAPPER_35_PATH" KeyPath="SentinelSystemDriverInstaller7.6.0.exe"/>
-    <ROW Component="SentinelSystemDriverInstaller7.6.0.exe_1" ComponentId="{1774836C-4281-42D3-8629-BBFF533AB0B2}" Directory_="SentinelSystemDriverInstaller_1_Dir" Attributes="0" Condition="VS_BOOTSTRAPPER_40_PATH" KeyPath="SentinelSystemDriverInstaller7.6.0.exe_1"/>
-    <ROW Component="Version" ComponentId="{88EF90D8-EE3D-429A-82EC-419DC768ED6A}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="_" ComponentId="{D7BAE7BD-8504-4D2A-85DD-1B6E34430D77}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
-    <ROW Component="__1" ComponentId="{845A3BA3-1B4E-41F4-BA89-6605B146B238}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
-    <ROW Component="package.xml" ComponentId="{162B0C12-1DB1-43BC-9F78-FB85EF0E5B52}" Directory_="en_Dir" Attributes="0" KeyPath="package.xml" Type="0"/>
-    <ROW Component="package.xml_1" ComponentId="{EF01729A-F863-47E4-BC48-A9E429F1EBDD}" Directory_="en_1_Dir" Attributes="0" KeyPath="package.xml_1" Type="0"/>
-    <ROW Component="product.xml" ComponentId="{D0D5930C-7447-474D-B032-E28AD6E35442}" Directory_="SentinelSystemDriverInstaller7._Dir" Attributes="0" Condition="VS_BOOTSTRAPPER_35_PATH" KeyPath="product.xml" Type="0"/>
-    <ROW Component="product.xml_1" ComponentId="{94EDD55A-4ECC-4EC3-A872-AA4E7B3347AF}" Directory_="SentinelSystemDriverInstaller_1_Dir" Attributes="0" Condition="VS_BOOTSTRAPPER_40_PATH" KeyPath="product.xml_1" Type="0"/>
-    <ROW Component="risafloor.exe" ComponentId="{54AB4D24-AAB3-4701-BAC7-36E2F109EA94}" Directory_="APPDIR" Attributes="256" KeyPath="risafloor.exe"/>
-    <ROW Component="risafloor.exe_1" ComponentId="{0119DC65-827B-4F9E-A4FC-AC9745046548}" Directory_="DemoBackup_Dir" Attributes="256" Condition="INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafloor.exe_1"/>
+    <ROW Component="AI_ExePath" ComponentId="{5046031C-4278-40C4-9B12-C32B9A1FA69D}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
+    <ROW Component="APPDIR" ComponentId="{F875DE03-D1A4-4DA7-80F9-958DAFC721F4}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="EXEPath" ComponentId="{7C10C2E4-B680-47CD-983C-47AD5CC9B997}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
+    <ROW Component="EXE_PATH" ComponentId="{97EA77A1-E172-4DAB-AAF0-3277F4244E5C}" Directory_="APPDIR" Attributes="260" KeyPath="EXE_PATH"/>
+    <ROW Component="INIPath" ComponentId="{ACDAA0E5-EEB1-4C6B-99A8-12A5D6EEA520}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
+    <ROW Component="INI_PATH" ComponentId="{AF203AAA-BB33-46E3-9EA3-06893D27F808}" Directory_="APPDIR" Attributes="260" KeyPath="INI_PATH"/>
+    <ROW Component="InstallGUID" ComponentId="{5794896F-03B2-420B-B5D5-49A9BF9A5B1C}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
+    <ROW Component="LicenseType" ComponentId="{5884F01D-1C21-4F44-AFAD-8ECF2DC8D914}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
+    <ROW Component="LicenseTypeList" ComponentId="{C5627D15-C497-4D07-9E39-30034C1176FF}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
+    <ROW Component="LocalUpdateCheck" ComponentId="{0685ED11-A624-4E12-BB50-9BF4C52452BF}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
+    <ROW Component="PRODUCT_VERSION2" ComponentId="{C8D830CD-8CFB-4991-B7C4-FE36EA96394E}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
+    <ROW Component="ProductName" ComponentId="{8A201A8F-86C9-4B19-B534-6AFFF3D347EC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
+    <ROW Component="RISA_COMPANY_KEY" ComponentId="{A8B350BD-7E31-4EA3-8933-9069990D97CF}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
+    <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{03DDF735-1361-4DDF-B65D-384F2F008ABD}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
+    <ROW Component="Region" ComponentId="{96CCE83A-65E4-426A-A589-E7858BACB6ED}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
+    <ROW Component="RevisionGUID" ComponentId="{919C214A-B7AF-4D51-96A2-A9029F9B9D25}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{05ADFC2E-FAC4-4F68-9ADF-8DEEB2A7A6BC}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Version" ComponentId="{2D7EDD2A-802C-4A86-A4F5-F30F04708DF2}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="_" ComponentId="{274F922A-2BEA-4ACC-8B89-0E6FCB1D7B49}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
+    <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
+    <ROW Component="risafnd.exe" ComponentId="{88D696C2-3BE4-400E-8A8A-6785F2F7A388}" Directory_="APPDIR" Attributes="256" KeyPath="risafnd.exe"/>
+    <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="package.xml" Component_="package.xml" FileName="package.xml" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\en\package.xml" SelfReg="false"/>
-    <ROW File="product.xml" Component_="product.xml" FileName="product.xml" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\product.xml" SelfReg="false"/>
-    <ROW File="SentinelSystemDriverInstaller7.6.0.exe" Component_="SentinelSystemDriverInstaller7.6.0.exe" FileName="SENTIN~1.EXE|Sentinel System Driver Installer 7.6.0.exe" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\Sentinel System Driver Installer 7.6.0.exe" SelfReg="false"/>
-    <ROW File="package.xml_1" Component_="package.xml_1" FileName="package.xml" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\en\package.xml" SelfReg="false"/>
-    <ROW File="product.xml_1" Component_="product.xml_1" FileName="product.xml" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\product.xml" SelfReg="false"/>
-    <ROW File="SentinelSystemDriverInstaller7.6.0.exe_1" Component_="SentinelSystemDriverInstaller7.6.0.exe_1" FileName="SENTIN~1.EXE|Sentinel System Driver Installer 7.6.0.exe" Attributes="0" SourcePath="Sentinel System Driver Installer 7.6.0\Sentinel System Driver Installer 7.6.0.exe" SelfReg="false"/>
-    <ROW File="risafloor.exe" Component_="risafloor.exe" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_risafloor.exe&gt;" SelfReg="false"/>
-    <ROW File="risafloor.exe_1" Component_="risafloor.exe_1" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="risafnd.exe" Component_="risafnd.exe" FileName="risafnd.exe" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_risafnd.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="risafnd.exe_1" Component_="risafnd.exe_1" FileName="risafnd.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation\Exes\Demo\risafnd.exe" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
-    <ROW Name="AI_APPPATH_PERBUILD_risafloor.exe" Path="[|AI_PROPPATH_PERBUILD_risafloor.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_risafnd.exe" Path="[|AI_PROPPATH_PERBUILD_risafnd.exe]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -103,12 +87,9 @@
     <ROW Action="AI_DetectSoftware" Sequence="151"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="SetupFiles" PackageFileName="install_fl_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_xx" MsiPackageType="x64" UACExecutionLevel="2"/>
-    <ROW BuildKey="ExeBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fl_demo_xx" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_demo_xx" MsiPackageType="x64"/>
-    <ROW BuildKey="WebInstallerBuild" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Floor" Languages="en" InstallationType="3" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" MainAppUrl="http://localhost/test/RISA Floor.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_web" MsiPackageType="x64"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
-    <ATTRIBUTE name="Enable" value="false"/>
+    <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="install_fd_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_xx" MsiPackageType="x64" UACExecutionLevel="2"/>
+    <ROW BuildKey="MsiBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fd_demo_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="install_fd_demo_xx" MsiPackageType="x64"/>
+    <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Foundation" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/RISA Foundation.msi" UseLargeSchema="true" ExeName="install_fd_web" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -139,10 +120,8 @@
     <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
-    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Property="VS_BOOTSTRAPPER_35_PATH" Signature_="VsBoostrapper35SearchSign"/>
-    <ROW Property="VS_BOOTSTRAPPER_40_PATH" Signature_="VsBoostrapper40SearchSign"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild;MsiBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
@@ -172,14 +151,15 @@
     <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
     <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
     <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
-    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
-    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
     <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -206,40 +186,36 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="USERFILES_RISA.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[USERFILES_RISA]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
-    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder]RISA#MsiBuild_1:[ProgramFiles64Folder]RISA"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#MsiBuild:[ProgramMenuFolder]RISA#MsiBuild_1:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
-    <ROW Feature_="MainFeature" Component_="package.xml"/>
-    <ROW Feature_="MainFeature" Component_="product.xml"/>
-    <ROW Feature_="MainFeature" Component_="SentinelSystemDriverInstaller7.6.0.exe"/>
-    <ROW Feature_="MainFeature" Component_="package.xml_1"/>
-    <ROW Feature_="MainFeature" Component_="product.xml_1"/>
-    <ROW Feature_="MainFeature" Component_="SentinelSystemDriverInstaller7.6.0.exe_1"/>
     <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Feature_="MainFeature" Component_="ProductName"/>
     <ROW Feature_="MainFeature" Component_="PRODUCT_VERSION2"/>
     <ROW Feature_="MainFeature" Component_="_"/>
     <ROW Feature_="MainFeature" Component_="EXEPath"/>
     <ROW Feature_="MainFeature" Component_="INIPath"/>
     <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
-    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
-    <ROW Feature_="MainFeature" Component_="ProductName_1"/>
     <ROW Feature_="MainFeature" Component_="__1"/>
-    <ROW Feature_="MainFeature" Component_="EXEPath_1"/>
-    <ROW Feature_="MainFeature" Component_="INIPath_1"/>
+    <ROW Feature_="MainFeature" Component_="EXE_PATH"/>
+    <ROW Feature_="MainFeature" Component_="INI_PATH"/>
     <ROW Feature_="MainFeature" Component_="Region"/>
+    <ROW Feature_="MainFeature" Component_="LicenseType"/>
+    <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
     <ROW Feature_="MainFeature" Component_="InstallGUID"/>
     <ROW Feature_="MainFeature" Component_="RevisionGUID"/>
     <ROW Feature_="MainFeature" Component_="Version"/>
-    <ROW Feature_="MainFeature" Component_="risafloor.exe"/>
-    <ROW Feature_="MainFeature" Component_="risafloor.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="risafnd.exe"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="risafnd.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="Floor.exe" SourcePath="..\..\..\Source Files\Common Files\Icons\Floor.ico" Index="0"/>
+    <ROW Name="Foundation.exe" SourcePath="..\Assets\Foundation.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -248,21 +224,21 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
-    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild;ExeBuild"/>
-    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild;ExeBuild"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild;MsiBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild;MsiBuild"/>
     <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
-    <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Sequence="201"/>
-    <ROW Action="AI_DetectSoftware" Sequence="102"/>
-    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -271,21 +247,20 @@
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
-    <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
+    <ROW Action="AI_AppSearchEx" Sequence="102"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Sequence="201"/>
-    <ROW Action="AI_DetectSoftware" Sequence="102"/>
-    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType = 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType = 1)) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
     <ROW Condition="( Version9X OR VersionNT64 )" Description="[ProductName] cannot be installed on [WindowsTypeNTDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT" IsPredefined="true" Builds="DefaultBuild"/>
-    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
-    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
-    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild;MsiBuild;MsiBuild_1"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild;MsiBuild;MsiBuild_1"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild;MsiBuild;MsiBuild_1"/>
     <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
-    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="DefaultBuild"/>
-    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
-    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild;MsiBuild;MsiBuild_1"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;MsiBuild;MsiBuild_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
     <ROW Module="RISACoreFiles.msm" Path="..\..\Common\Merge Modules\RISA Core Files\RISA Core Files-SetupFiles\RISA Core Files.msm" Feature="MainFeature" Directory="APPDIR" Order="2"/>
@@ -294,20 +269,19 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
     <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
-    <ROW Signature_="VsBoostrapper35SearchSign" Root="2" Key="SOFTWARE\Microsoft\GenericBootstrapper\3.5" Name="Path" Type="0"/>
-    <ROW Signature_="VsBoostrapper40SearchSign" Root="2" Key="SOFTWARE\Microsoft\GenericBootstrapper\4.0" Name="Path" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
     <ROW Registry="EXEPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath"/>
-    <ROW Registry="EXEPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath_1"/>
+    <ROW Registry="EXE_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="EXE_PATH" Value="[APPDIR]" Component_="EXE_PATH"/>
     <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
-    <ROW Registry="INIPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath_1"/>
+    <ROW Registry="INI_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="INI_PATH" Value="%USERPROFILE\Documents\RISA" Component_="INI_PATH"/>
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="LicenseType" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="LicenseTypeList" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
     <ROW Registry="PRODUCT_VERSION2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="+" Component_="PRODUCT_VERSION2"/>
     <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="+" Component_="ProductName"/>
-    <ROW Registry="ProductName_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]" Name="+" Component_="ProductName_1"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
@@ -315,6 +289,10 @@
     <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
     <ROW Registry="_" Root="1" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="_"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[ProductName]\[PRODUCT_VERSION2]\Default" Component_="__1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -324,10 +302,11 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
-    <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ymv" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
+    <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" VersionMin="7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
     <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
+    <ROW SearchKey="SystemFolderfile.dll" Prereq="SentinelSystemDriv" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch"/>
   </COMPONENT>
 </DOCUMENT>
