@@ -5,16 +5,30 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISA_CustomActionsLib", "RISA_CustomActionsLib\RISA_CustomActionsLib.csproj", "{235D810D-4043-4F0D-A401-D42CDF9462D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RISA_CustomActionsLib.Test", "RISA_CustomActionsLib.Test\RISA_CustomActionsLib.Test.csproj", "{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Debug|x86.ActiveCfg = Debug|x86
 		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Debug|x86.Build.0 = Debug|x86
+		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Release|Any CPU.ActiveCfg = Release|x86
 		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Release|x86.ActiveCfg = Release|x86
 		{235D810D-4043-4F0D-A401-D42CDF9462D6}.Release|x86.Build.0 = Release|x86
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{17BB7150-D3C8-4A42-B25A-2A7DB3F8C7C1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

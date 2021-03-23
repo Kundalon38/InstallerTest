@@ -11,9 +11,11 @@ namespace RISA_CustomActionsLib
     // - very low bar, most / all customer machines wil have this,
     //   eliminating the need to provision the customer machine for this lib
     //
-    public class CustomActions
+    public partial class CustomActions
     {
         #region DetectRoaming
+
+        // Deprecated - functionality is subsumed in InitProperties.assignDocumentPath()
 
         [CustomAction]
         public static ActionResult DetectRoaming(Session session)
@@ -24,7 +26,7 @@ namespace RISA_CustomActionsLib
             string installTypeProperty = session[installTypePropertyName];
             string folderName = (installTypeProperty == "Demo") ? "RISADemo" : "RISA";
 
-            string outputDirIfRoaming = @"C:\" + folderName;
+            string outputDirIfRoaming = @"C:\" + folderName;        // TODO hardwiring C: is wrong
             //
             // typical myDocsPath:      C:\Users\<username>\Documents
             // typical userProfilePath: C:\Users\<username>
