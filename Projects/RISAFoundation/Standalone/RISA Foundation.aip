@@ -88,8 +88,8 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="install_fd_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_xx" MsiPackageType="x64" UACExecutionLevel="2"/>
-    <ROW BuildKey="MsiBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fd_demo_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="install_fd_demo_xx" MsiPackageType="x64"/>
-    <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Foundation" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/RISA Foundation.msi" UseLargeSchema="true" ExeName="install_fd_web" MsiPackageType="x64" UACExecutionLevel="2"/>
+    <ROW BuildKey="MsiBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fd_demo_xx" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_demo_xx" MsiPackageType="x64"/>
+    <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Foundation" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/RISA Foundation.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_web" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -302,11 +302,13 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" Options="yim" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" VersionMin="7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
     <ROW SearchKey="SystemFolderfile.dll" Prereq="SentinelSystemDriv" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch"/>
+    <ROW SearchKey="SystemFolderfile.dll_1" Prereq="MicrosoftVisualC" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_2"/>
   </COMPONENT>
 </DOCUMENT>
