@@ -2,7 +2,7 @@
 <DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.0" Modules="msm" RootPath="." Language="en" Id="{478B6CF1-13D7-41CF-8C49-A48B1B75D7F9}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="USERFILES_RISA" Value="[|]"/>
+    <ROW Property="RISA_USERFILES" Value="[|]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="." IsPseudoRoot="1"/>
@@ -18,7 +18,7 @@
     <ROW Directory="CANADA_1_Dir" Directory_Parent="RegionDefaultsFloor_Dir" DefaultDir="CANADA"/>
     <ROW Directory="CANADA_2_Dir" Directory_Parent="NewFolder_5_Dir" DefaultDir="CANADA"/>
     <ROW Directory="CANADA_Dir" Directory_Parent="RegionDefaults_1_Dir" DefaultDir="CANADA"/>
-    <ROW Directory="CFSSchedules_1_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="CFSSCH~1|CFS Schedules"/>
+    <ROW Directory="CFSSchedules_1_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="CFSSCH~1|CFS Schedules"/>
     <ROW Directory="CFSSchedules_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="CFSSCH~1|CFS Schedules"/>
     <ROW Directory="ColdFormedSteelDesign_files_Dir" Directory_Parent="Images_Dir" DefaultDir="COLDFO~1|Cold Formed Steel Design_files"/>
     <ROW Directory="Common_Design_Dir" Directory_Parent="Content_Dir" DefaultDir="COMMON~1|Common_Design"/>
@@ -32,8 +32,8 @@
     <ROW Directory="D_2D_Only_Topics_Dir" Directory_Parent="Content_Dir" DefaultDir="3D_2D_~1|3D_2D_Only_Topics"/>
     <ROW Directory="D_NET_Dir" Directory_Parent="Images_Dir" DefaultDir="3D_NET"/>
     <ROW Directory="Data_Dir" Directory_Parent="RISA3D_Dir" DefaultDir="Data"/>
-    <ROW Directory="Databases_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="DATABA~1|Databases"/>
-    <ROW Directory="Decks_1_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="Decks"/>
+    <ROW Directory="Databases_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="DATABA~1|Databases"/>
+    <ROW Directory="Decks_1_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="Decks"/>
     <ROW Directory="Decks_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="Decks"/>
     <ROW Directory="Default_Dir" Directory_Parent="Skins_Dir" DefaultDir="Default"/>
     <ROW Directory="Defaults_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="Defaults"/>
@@ -80,9 +80,9 @@
     <ROW Directory="MemberResults_files_Dir" Directory_Parent="Images_Dir" DefaultDir="MEMBER~1|Member Results_files"/>
     <ROW Directory="Members_files_Dir" Directory_Parent="Images_Dir" DefaultDir="MEMBER~2|Members_files"/>
     <ROW Directory="Misc_1_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="Misc"/>
-    <ROW Directory="Misc_2_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="Misc"/>
+    <ROW Directory="Misc_2_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="Misc"/>
     <ROW Directory="Misc_Dir" Directory_Parent="APPDIR" DefaultDir="Misc"/>
-    <ROW Directory="ModelFiles_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="MODELF~1|Model Files"/>
+    <ROW Directory="ModelFiles_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="MODELF~1|Model Files"/>
     <ROW Directory="ModelMerge_files_Dir" Directory_Parent="Images_Dir" DefaultDir="MODELM~1|Model Merge_files"/>
     <ROW Directory="ModelingTips_files_Dir" Directory_Parent="Images_Dir" DefaultDir="MODELI~1|Modeling Tips_files"/>
     <ROW Directory="MovingLoads_files_Dir" Directory_Parent="Images_Dir" DefaultDir="MOVING~1|Moving Loads_files"/>
@@ -90,7 +90,7 @@
     <ROW Directory="NEW_ZEALAND_Dir" Directory_Parent="RegionDefaults_1_Dir" DefaultDir="NEW_ZE~1|NEW_ZEALAND"/>
     <ROW Directory="NewFolder_1_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="DATABA~1|Databases"/>
     <ROW Directory="NewFolder_2_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="DETAIL~1|Detail Reports"/>
-    <ROW Directory="NewFolder_3_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="TIMEHI~1|Time History"/>
+    <ROW Directory="NewFolder_3_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="TIMEHI~1|Time History"/>
     <ROW Directory="NewFolder_4_Dir" Directory_Parent="WoodSchedules_Dir" DefaultDir="Straps"/>
     <ROW Directory="NewFolder_5_Dir" Directory_Parent="RegionDefaults_Dir" DefaultDir=".:REGION~3|Region Defaults Foundation"/>
     <ROW Directory="NewFolder_Dir" Directory_Parent="APPDIR" DefaultDir="DXFFIL~1|DXF Files"/>
@@ -113,8 +113,9 @@
     <ROW Directory="RISAFloor_Dir" Directory_Parent="Images_Dir" DefaultDir="RISAFL~1|RISAFloor"/>
     <ROW Directory="RISAFoot_Dir" Directory_Parent="Images_Dir" DefaultDir="RISAFoot"/>
     <ROW Directory="RISAFoundation_Dir" Directory_Parent="Images_Dir" DefaultDir="RISAFO~1|RISAFoundation"/>
-    <ROW Directory="RISASectionFiles_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="RISASE~1|RISASection Files"/>
+    <ROW Directory="RISASectionFiles_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="RISASE~1|RISASection Files"/>
     <ROW Directory="RISA_Dir" Directory_Parent="ProgramMenuFolder" DefaultDir="RISA"/>
+    <ROW Directory="RISA_USERFILES" Directory_Parent="TARGETDIR" DefaultDir="USERFI~1|RISA_USERFILES" IsPseudoRoot="1"/>
     <ROW Directory="RegionDefaultsFloor_Dir" Directory_Parent="RegionDefaults_Dir" DefaultDir=".:REGION~1|Region Defaults Floor"/>
     <ROW Directory="RegionDefaults_1_Dir" Directory_Parent="RegionDefaults_Dir" DefaultDir=".:REGION~2|Region Defaults 3D"/>
     <ROW Directory="RegionDefaults_Dir" Directory_Parent="APPDIR" DefaultDir="REGION~1|Region Defaults"/>
@@ -143,7 +144,7 @@
     <ROW Directory="SurfaceLoads_files_Dir" Directory_Parent="Images_Dir" DefaultDir="SURFAC~1|Surface Loads_files"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="TableStyles_Dir" Directory_Parent="Resources_Dir" DefaultDir="TABLES~1|TableStyles"/>
-    <ROW Directory="Temp_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="Temp"/>
+    <ROW Directory="Temp_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="Temp"/>
     <ROW Directory="ThermalLoads_files_Dir" Directory_Parent="Images_Dir" DefaultDir="THERMA~1|Thermal Loads_files"/>
     <ROW Directory="TimberDesign_files_Dir" Directory_Parent="Images_Dir" DefaultDir="TIMBER~1|Timber Design_files"/>
     <ROW Directory="TimeHistory_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="TIMEHI~1|Time History"/>
@@ -159,11 +160,10 @@
     <ROW Directory="UNITED_STATES_1_Dir" Directory_Parent="RegionDefaultsFloor_Dir" DefaultDir="UNITED~1|UNITED_STATES"/>
     <ROW Directory="UNITED_STATES_2_Dir" Directory_Parent="NewFolder_5_Dir" DefaultDir="UNITED~1|UNITED_STATES"/>
     <ROW Directory="UNITED_STATES_Dir" Directory_Parent="RegionDefaults_1_Dir" DefaultDir="UNITED~1|UNITED_STATES"/>
-    <ROW Directory="USERFILES_RISA" Directory_Parent="TARGETDIR" DefaultDir="USERFI~1|USERFILES_RISA" IsPseudoRoot="1"/>
     <ROW Directory="UserDefaults_Dir" Directory_Parent="APPDIR" DefaultDir="USERDE~1|User Defaults"/>
-    <ROW Directory="WoodSchedules_1_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="WOODSC~1|Wood Schedules"/>
+    <ROW Directory="WoodSchedules_1_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="WOODSC~1|Wood Schedules"/>
     <ROW Directory="WoodSchedules_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="WOODSC~1|Wood Schedules"/>
-    <ROW Directory="YieldLinks_1_Dir" Directory_Parent="USERFILES_RISA" DefaultDir="YIELDL~1|Yield Links"/>
+    <ROW Directory="YieldLinks_1_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="YIELDL~1|Yield Links"/>
     <ROW Directory="YieldLinks_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="YIELDL~1|Yield Links"/>
     <ROW Directory="icracked_Dir" Directory_Parent="Images_Dir" DefaultDir="icracked"/>
     <ROW Directory="mesherdocumentation_Dir" Directory_Parent="Images_Dir" DefaultDir="MESHER~1|mesherdocumentation"/>
@@ -4315,6 +4315,7 @@
     <ROW File="RISAFloorV15SilentInstall.bat" Component_="STAAD_Mapping_File.xml_1" FileName="RISAFL~2.BAT|RISAFloor V15-Silent Install.bat" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Silent Install\RISAFloor V15-Silent Install.bat" SelfReg="false"/>
     <ROW File="Release_Notes_Floor.pdf" Component_="Manuals" FileName="RELEAS~2.PDF|Release_Notes_Floor.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Release Notes\Release_Notes_Floor.pdf" SelfReg="false"/>
     <ROW File="Release_Notes_Foundation.pdf" Component_="Manuals" FileName="RELEAS~3.PDF|Release_Notes_Foundation.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFoundation\Release Notes\Release_Notes_Foundation.pdf" SelfReg="false"/>
+    <ROW File="SearchPhrase_Chunk112.js" Component_="Alias.js" FileName="SEAR~128.JS|SearchPhrase_Chunk112.js" Attributes="0" SourcePath="..\..\..\..\Source Files\RISA-3D\Help\RISA-3D\Data\SearchPhrase_Chunk112.js" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="RISA3DGeneralReference0" Shortcut_="RISA3DGeneralReference" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -4342,7 +4343,7 @@
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="USERFILES_RISA = [USERFILES_RISA]&#13;\n |Default title |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="RISA_USERFILES = [RISA_USERFILES]&#13;\n |Default title |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
     <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
