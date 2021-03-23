@@ -11,7 +11,7 @@
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#MsiBuild:1#MsiBuild_1:1"/>
     <ROW Property="ARPPRODUCTICON" Value="Foundation.exe" Type="8"/>
-    <ROW Property="INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
+    <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
     <ROW Property="PRODUCT_VERSION2" Value="13.0"/>
@@ -22,6 +22,7 @@
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="1.2345"/>
     <ROW Property="RISA_REGION_NAME" Value="United States"/>
+    <ROW Property="RISA_USERFILES" Value="[|]"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
     <ROW Property="UpgradeCode" Value="{6996880C-E654-4E33-A3FB-F4246CCE3045}"/>
@@ -67,7 +68,7 @@
     <ROW Component="_" ComponentId="{274F922A-2BEA-4ACC-8B89-0E6FCB1D7B49}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
     <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
     <ROW Component="risafnd.exe" ComponentId="{88D696C2-3BE4-400E-8A8A-6785F2F7A388}" Directory_="APPDIR" Attributes="256" KeyPath="risafnd.exe"/>
-    <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
+    <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -185,7 +186,7 @@
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
-    <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="USERFILES_RISA.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[USERFILES_RISA]"/>
+    <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder]RISA#MsiBuild_1:[ProgramFiles64Folder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#MsiBuild:[ProgramMenuFolder]RISA#MsiBuild_1:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
