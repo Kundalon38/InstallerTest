@@ -34,6 +34,7 @@ namespace RISA_CustomActionsLib
         public const string _propUSERFILES_RISA = "USERFILES_RISA"; // deprecate
         public const string _propRISA_USERFILES = "RISA_USERFILES";
 
+        public const string _propRISA_PROPS_ARE_INITIALIZED = "RISA_PROPS_ARE_INITIALIZED";
 
         public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
 
@@ -164,7 +165,8 @@ namespace RISA_CustomActionsLib
                 [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
                 [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
                 [_propRISA_USERFILES] = session[_propRISA_USERFILES],
-                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA]    // deprecate
+                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA],   // deprecate
+                [_propRISA_PROPS_ARE_INITIALIZED] = session[_propRISA_PROPS_ARE_INITIALIZED]
             };
             return sessDTO;
         }
@@ -182,6 +184,7 @@ namespace RISA_CustomActionsLib
             session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
             session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
             session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
+            session[_propRISA_PROPS_ARE_INITIALIZED] = sessDTO[_propRISA_PROPS_ARE_INITIALIZED];
         }
 
         #endregion

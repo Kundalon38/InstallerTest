@@ -85,6 +85,7 @@ namespace RISA_CustomActionsLib
             finally
             {
                 sessLog(sessDTO, msgText);
+                sessDTO[_propRISA_PROPS_ARE_INITIALIZED] = "True";
             }
             return actionResult;
         }

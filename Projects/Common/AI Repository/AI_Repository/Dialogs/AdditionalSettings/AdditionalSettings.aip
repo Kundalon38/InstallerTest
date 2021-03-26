@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FRAGMENT Type="ReadOnly" CreateVersion="18.0" RootPath="." Language="en">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="RISA_CHECK_UPDATES" Type="4" ValueLocId="Property.RISA_CHECK_UPDATES"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdditionalSettings" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Order="100" TextLocId="Control.Text.AdditionalSettings#Next" Options="1"/>
+    <ROW Dialog_="AdditionalSettings" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Order="200" TextLocId="Control.Text.AdditionalSettings#Cancel" Options="1"/>
+    <ROW Dialog_="AdditionalSettings" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Order="300" TextLocId="Control.Text.AdditionalSettings#Back" Options="1"/>
+    <ROW Dialog_="AdditionalSettings" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Order="400" TextLocId="Control.Text.AdditionalSettings#BannerBitmap"/>
+    <ROW Dialog_="AdditionalSettings" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="AdditionalSettings" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="AdditionalSettings" Control="Description" Type="Text" X="25" Y="23" Width="253" Height="21" Attributes="196611" Order="700" TextLocId="Control.Text.AdditionalSettings#Description"/>
+    <ROW Dialog_="AdditionalSettings" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Order="800" TextLocId="Control.Text.AdditionalSettings#Logo"/>
+    <ROW Dialog_="AdditionalSettings" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" TextStyle="DlgFontBold8_847DE2AC_BC6D_4190_AF7" Order="900" TextLocId="Control.Text.AdditionalSettings#Title"/>
+    <ROW Dialog_="AdditionalSettings" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Order="1000" TextLocId="Control.Text.AdditionalSettings#RadioButtonGroup_1"/>
+    <ROW Dialog_="AdditionalSettings" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Order="1100" TextLocId="Control.Text.AdditionalSettings#CheckBox_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="AdditionalSettings" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="AdditionalSettings" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Control_Default="Next" Control_Cancel="Cancel" TitleLocId="Dialog.AdditionalSettings"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
+    <ROW Property="RISA_REGION_NAME" Order="1" Value="United States" X="7" Y="8" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#1"/>
+    <ROW Property="RISA_REGION_NAME" Order="2" Value="Canada" X="7" Y="37" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#2"/>
+    <ROW Property="RISA_REGION_NAME" Order="3" Value="Britian" X="7" Y="66" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#3"/>
+    <ROW Property="RISA_REGION_NAME" Order="4" Value="Europe" X="7" Y="95" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#4"/>
+    <ROW Property="RISA_REGION_NAME" Order="5" Value="India" X="7" Y="124" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#5"/>
+    <ROW Property="RISA_REGION_NAME" Order="6" Value="Australia" X="113" Y="9" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#6"/>
+    <ROW Property="RISA_REGION_NAME" Order="7" Value="New Zealand" X="113" Y="38" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#7"/>
+    <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="113" Y="66" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#8"/>
+    <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="113" Y="94" Width="84" Height="9" TextLocId="RadioButton.Text.RISA_REGION_NAME#9"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="DlgFontBold8_847DE2AC_BC6D_4190_AF7" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
+  </COMPONENT>
+</FRAGMENT>

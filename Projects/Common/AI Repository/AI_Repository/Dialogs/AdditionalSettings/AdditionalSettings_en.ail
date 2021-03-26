@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DICTIONARY type="singlelanguage" lang="en" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="dictionary.xsd">
+  <STRING id="Control.Text.AdditionalSettings#Back" value="[ButtonText_Back]"/>
+  <STRING id="Control.Text.AdditionalSettings#BannerBitmap" value="[BannerBitmap]"/>
+  <STRING id="Control.Text.AdditionalSettings#Cancel" value="[ButtonText_Cancel]"/>
+  <STRING id="Control.Text.AdditionalSettings#CheckBox_1" value="Check for Updates at Program Launch"/>
+  <STRING id="Control.Text.AdditionalSettings#Description" value="Default region settings for codes, databases and load combinations.  These defaults can be changed later."/>
+  <STRING id="Control.Text.AdditionalSettings#Logo" value="Advanced Installer"/>
+  <STRING id="Control.Text.AdditionalSettings#Next" value="[ButtonText_Next]"/>
+  <STRING id="Control.Text.AdditionalSettings#RadioButtonGroup_1" value="RadioButtonGroup"/>
+  <STRING id="Control.Text.AdditionalSettings#Title" value="Additional Settings"/>
+  <STRING id="Dialog.AdditionalSettings" value="[ProductName] [RISA_PRODUCT_VERSION2] [Setup]"/>
+  <STRING id="Property.RISA_CHECK_UPDATES" value="CheckBox"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#1" value="United States"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#2" value="Canada"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#3" value="Britain"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#4" value="Europe"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#5" value="India"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#6" value="Australia"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#7" value="New Zealand"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#8" value="Mexico"/>
+  <STRING id="RadioButton.Text.RISA_REGION_NAME#9" value="Saudi Arabia"/>
+</DICTIONARY>
