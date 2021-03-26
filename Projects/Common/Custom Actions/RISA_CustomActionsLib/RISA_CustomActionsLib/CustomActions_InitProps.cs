@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
+using RISA_CustomActionsLib.Models;
 
 
 namespace RISA_CustomActionsLib
@@ -21,7 +22,7 @@ namespace RISA_CustomActionsLib
             SessionDTO sessDTO;
             try
             {
-                sessDTO = initSessionDTO(session);
+                sessDTO = initProperties_copyFromSession(session);
             }
             catch (Exception e)
             {
@@ -35,7 +36,7 @@ namespace RISA_CustomActionsLib
             #region copy SessionDTO props back to Session
             try
             {
-                copyDTOtoSession(session, sessDTO);
+                initProperties_copyToSession(session, sessDTO);
             }
             catch (Exception e)
             {
@@ -46,6 +47,51 @@ namespace RISA_CustomActionsLib
 
             return actionResult;
         }
+
+        #region InitProperties - Session / SessionDTO property copying
+        private static SessionDTO initProperties_copyFromSession(Session session)
+        {
+            var sessDTO = new SessionDTO(session.Log)
+            {
+                // props set by installer
+                [_propMSI_ProductName] = session[_propMSI_ProductName],
+                [_propMSI_ProductVersion] = session[_propMSI_ProductVersion],
+                [_propRISA_COMPANY_KEY] = session[_propRISA_COMPANY_KEY],
+                [_propRISA_INSTALL_TYPE] = session[_propRISA_INSTALL_TYPE],
+                [_propRISA_REGISTRY_PRODUCT_NAME] = session[_propRISA_REGISTRY_PRODUCT_NAME],
+
+                // props set here
+                [_propRISA_INSTALLED_PRODUCTS] = session[_propRISA_INSTALLED_PRODUCTS],
+                [_propRISA_LICENSE_TYPE] = session[_propRISA_LICENSE_TYPE],
+                [_propRISA_PRODUCT_TITLE2_INSTYPE] = session[_propRISA_PRODUCT_TITLE2_INSTYPE],
+                [_propRISA_PRODUCT_VERSION2] = session[_propRISA_PRODUCT_VERSION2],
+                [_propRISA_PRODUCT_VERSION34] = session[_propRISA_PRODUCT_VERSION34],
+                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
+                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
+                [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
+                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
+                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA]    // deprecate
+            };
+            return sessDTO;
+        }
+
+        private static void initProperties_copyToSession(Session session, SessionDTO sessDTO)
+        {
+            // don't overwrite items set by caller, only those set here
+            //
+            session[_propRISA_INSTALLED_PRODUCTS] = sessDTO[_propRISA_INSTALLED_PRODUCTS];
+            session[_propRISA_LICENSE_TYPE] = sessDTO[_propRISA_LICENSE_TYPE];
+            session[_propRISA_PRODUCT_TITLE2_INSTYPE] = sessDTO[_propRISA_PRODUCT_TITLE2_INSTYPE];
+            session[_propRISA_PRODUCT_VERSION2] = sessDTO[_propRISA_PRODUCT_VERSION2];
+            session[_propRISA_PRODUCT_VERSION34] = sessDTO[_propRISA_PRODUCT_VERSION34];
+            session[_propRISA_STATUS_CODE] = sessDTO[_propRISA_STATUS_CODE];
+            session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
+            session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
+            session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
+            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
+        }
+
+        #endregion
 
         #region initProperties - without Session wrapper, for unit testing
 
@@ -60,6 +106,7 @@ namespace RISA_CustomActionsLib
                 if (!validInstallType(sessDTO)) return ActionResult.Failure;
 
                 assignVersionBasedProperties(sessDTO);
+                if(!serializeMatchingInstalledProducts(sessDTO)) return ActionResult.Failure;
                 assignRemainingIdentityBasedProperties(sessDTO);
                 assignDocumentPath(sessDTO);
                 assignDefaultLicenseType(sessDTO);
@@ -256,6 +303,16 @@ namespace RISA_CustomActionsLib
             sessDTO.Log($"InitProperties: {msg}");
         }
 
+
+        #endregion
+
+        #region Helpers
+
+        private static string displayedInstallType(string installType)
+        {
+            // note the space before " Demo" - resulting usage: 'RISA-3D 19.0' or 'RISA-3D 19.0 Demo'
+            return installType == _insTypeDemo ? $" {_insTypeDemo}" : string.Empty;
+        }
 
         #endregion
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RISA_CustomActionsLib
+namespace RISA_CustomActionsLib.Models
 {
     // mirrors the Session object passed in from MSI,
     // used for testing Custom Actions

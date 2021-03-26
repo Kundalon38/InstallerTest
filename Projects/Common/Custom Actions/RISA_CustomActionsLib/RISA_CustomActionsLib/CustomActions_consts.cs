@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Deployment.WindowsInstaller;
+using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
@@ -16,6 +17,7 @@ namespace RISA_CustomActionsLib
 
         public const string _propMSI_ProductName = "ProductName";
         public const string _propMSI_ProductVersion = "ProductVersion";
+        public const string _propMSI_TARGETDIR = "TARGETDIR";
 
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
         public const string _propRISA_REGISTRY_PRODUCT_NAME = "RISA_REGISTRY_PRODUCT_NAME";
@@ -52,7 +54,7 @@ namespace RISA_CustomActionsLib
 
         public const string _sts_EXCP = "RISA_STS_EXCP";
         public const string _sts_OK = "RISA_STS_OK";
-        //private const string _sts_WARN = "RISA_STS_WARN";
+        public const string _sts_ERR_INSTALL_OLD_VERSION = "RISA_ERR_INSTALL_OLD_VERSION";
 
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
@@ -68,8 +70,8 @@ namespace RISA_CustomActionsLib
 
         #region Installation Types
 
-        private const string _insTypeDemo = "Demo";
-        private const string _insTypeStandalone = "Standalone";
+        public const string _insTypeDemo = "Demo";
+        public const string _insTypeStandalone = "Standalone";
 
         private static readonly string[] _insTypeList = new[]
         {
@@ -132,57 +134,12 @@ namespace RISA_CustomActionsLib
 
         #endregion
 
-
         #endregion
-
 
         #region Misc consts
 
         private const string _licenseTypeSubKeyName = "License Type";
         private const string _defLicenseType = "Cloud";
-
-        #endregion
-
-        #region Session / SessionDTO property copying
-        private static SessionDTO initSessionDTO(Session session)
-        {
-            var sessDTO = new SessionDTO(session.Log)
-            {
-                // props set by installer
-                [_propMSI_ProductName] = session[_propMSI_ProductName],
-                [_propMSI_ProductVersion] = session[_propMSI_ProductVersion],
-                [_propRISA_COMPANY_KEY] = session[_propRISA_COMPANY_KEY],
-                [_propRISA_INSTALL_TYPE] = session[_propRISA_INSTALL_TYPE],
-                [_propRISA_REGISTRY_PRODUCT_NAME] = session[_propRISA_REGISTRY_PRODUCT_NAME],
-
-                // props set here
-                [_propRISA_LICENSE_TYPE] = session[_propRISA_LICENSE_TYPE],
-                [_propRISA_PRODUCT_TITLE2_INSTYPE] = session[_propRISA_PRODUCT_TITLE2_INSTYPE],
-                [_propRISA_PRODUCT_VERSION2] = session[_propRISA_PRODUCT_VERSION2],
-                [_propRISA_PRODUCT_VERSION34] = session[_propRISA_PRODUCT_VERSION34],
-                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
-                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
-                [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
-                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
-                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA]    // deprecate
-            };
-            return sessDTO;
-        }
-
-        private static void copyDTOtoSession(Session session, SessionDTO sessDTO)
-        {
-            // don't overwrite items set by caller, only those set here
-            //
-            session[_propRISA_LICENSE_TYPE] = sessDTO[_propRISA_LICENSE_TYPE];
-            session[_propRISA_PRODUCT_TITLE2_INSTYPE] = sessDTO[_propRISA_PRODUCT_TITLE2_INSTYPE];
-            session[_propRISA_PRODUCT_VERSION2] = sessDTO[_propRISA_PRODUCT_VERSION2];
-            session[_propRISA_PRODUCT_VERSION34] = sessDTO[_propRISA_PRODUCT_VERSION34];
-            session[_propRISA_STATUS_CODE] = sessDTO[_propRISA_STATUS_CODE];
-            session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
-            session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
-            session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
-            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
-        }
 
         #endregion
 

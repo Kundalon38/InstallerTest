@@ -1,0 +1,100 @@
+﻿<mah:MetroWindow x:Class="FindRemInstalledProductsWPF.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FindRemInstalledProductsWPF.ViewModels"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:helpers="clr-namespace:FindRemInstalledProductsWPF.Helpers"
+        mc:Ignorable="d"
+        SaveWindowPosition="True" ShowMaxRestoreButton="False"
+        ResizeMode="CanResizeWithGrip"
+        Title="Find + Remove Installed Products"
+        TitleCharacterCasing="Normal"
+        Loaded="MainView_OnLoaded" MinHeight="150" MinWidth="225">
+    <mah:MetroWindow.Resources>
+        <Style TargetType="Button"  BasedOn="{StaticResource AccentedSquareButtonStyle}">
+            <Setter Property="mah:ButtonHelper.PreserveTextCase" Value="True"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <helpers:ConvertLogMessageTypeToColor x:Key="ConvertLogMessageTypeToColor" />
+        <helpers:ConvertToRbChecked x:Key="ConvertToRbChecked"/>
+    </mah:MetroWindow.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="Product Name (SA + Demo have same ProductName):" VerticalAlignment="Center"></Label>
+            <TextBox Text="{Binding ProductName, UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     helpers:FocusExtension.IsFocused="True" VerticalAlignment="Center"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="Install Type:" VerticalAlignment="Center"></Label>
+            <RadioButton Content="Demo" IsChecked="{Binding InstallType,
+                Converter={StaticResource ConvertToRbChecked},ConverterParameter={x:Static local:MainViewModel.Demo}}"/>
+            <RadioButton Content="Standalone" IsChecked="{Binding InstallType,
+                Converter={StaticResource ConvertToRbChecked},ConverterParameter={x:Static local:MainViewModel.Standalone}}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="ProductVersion4:" VerticalAlignment="Center"></Label>
+            <TextBox Text="{Binding ProductVersion, UpdateSourceTrigger=PropertyChanged}" Width="150" 
+                     VerticalAlignment="Center"></TextBox>
+            <Button Name="ClearVersion" Content="X" Margin="5" Width="25"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3"  Orientation="Horizontal">
+            <Button Name="FindProducts" Content="Find" Margin="15,5,5,5" Width="80"/>
+            <Label Content="DisplayName:" VerticalAlignment="Center"></Label>
+            <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Label Content="TARGETDIR:" VerticalAlignment="Center"></Label>
+            <TextBox Text="{Binding TargetDir, UpdateSourceTrigger=PropertyChanged}" Width="400"
+                     helpers:FocusExtension.IsFocused="True" VerticalAlignment="Center"></TextBox>
+        </StackPanel>
+        <Button Grid.Row="5" Name="RemoveProducts" Content="UnInstall" Margin="5"
+                Width="80" HorizontalAlignment="Left"/>
+
+        <ListBox Grid.Row="6" ItemsSource="{Binding Messages}"
+                 Background="{StaticResource LogPanelBackground}"
+                 Foreground="{StaticResource LogPanelForeground_Normal}"
+                 FontFamily="Verdana" FontSize="{StaticResource LogPanelFontSize}">
+            <ListBox.ItemContainerStyle>
+                <Style>
+                    <!-- necessary otherwise the Margin/Padding area doesn't get background color we want -->
+                    <Setter Property="Control.Margin" Value="8,0,0,0"/>
+                    <Setter Property="Control.Padding" Value="0"/>
+                    <Setter Property="Control.Background" Value="{StaticResource LogPanelBackground}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Style.Setters>
+                                    <Setter Property="FontFamily" Value="Verdana" />
+                                    <Setter Property="FontSize" Value="{StaticResource LogPanelFontSize}" />
+                                    <Setter Property="Foreground" Value="{Binding MessageType, Converter={StaticResource ConvertLogMessageTypeToColor}}" />
+                                </Style.Setters>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="{Binding MessageDT, StringFormat={}{0:dd-MMM-yy HH:mm:ss}}" />
+                        <TextBlock Text="{Binding MessageStr}" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="6" Orientation="Horizontal"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10">
+            <Button Name="Clear" Width="60">clear</Button>
+            <Button Name="Copy" Width="60" Margin="5,0,0,0">copy</Button>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

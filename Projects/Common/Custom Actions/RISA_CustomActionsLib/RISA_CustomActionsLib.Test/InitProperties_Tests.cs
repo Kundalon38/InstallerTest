@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using Microsoft.Deployment.WindowsInstaller;
+using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib.Test
 {
