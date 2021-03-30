@@ -29,7 +29,7 @@
     <ROW Property="RISA_PRODUCT_VERSION2" Value="[|]"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="[|]"/>
     <ROW Property="RISA_REGION_NAME" Value="United States"/>
-    <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|]"/>
+    <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_USERFILES" Value="[|]"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="USERFILES_RISA" Value="[|]"/>
@@ -1211,7 +1211,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
-    <ROW Name="RISA_CustomActionsLib.CA.dll" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\Debug\RISA_CustomActionsLib.CA.dll"/>
+    <ROW Name="RISA_CustomActionsLib.CA.dll_1" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="header_logo.bmp" SourcePath="..\..\Common\Assets\header_logo.bmp"/>
@@ -1292,7 +1292,7 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="MessageBox" Type="1025" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
-    <ROW Action="RISA_InitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
+    <ROW Action="RISA_InitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll_1" Target="InitProperties"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>

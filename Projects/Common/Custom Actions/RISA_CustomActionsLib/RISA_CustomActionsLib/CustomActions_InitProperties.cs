@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
-
+using System.Windows.Forms;
 
 namespace RISA_CustomActionsLib
 {
@@ -17,6 +18,12 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult InitProperties(Session session)
         {
+#if DEBUG
+            int processId = Process.GetCurrentProcess().Id;
+            string message = string.Format("Init Properties: Please attach the debugger (elevated) to process [{0}].", processId);
+            MessageBox.Show(message, "Debug");
+#endif
+
             #region copy Session props to SessionDTO
             SessionDTO sessDTO;
             try
