@@ -4,8 +4,12 @@ using System.IO;
 using System.Linq;
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
+<<<<<<< HEAD:Projects/Common/Custom Actions/RISA_CustomActionsLib/RISA_CustomActionsLib/CustomActions_InitProps.cs
 using RISA_CustomActionsLib.Models;
 
+=======
+using System.Windows.Forms;
+>>>>>>> dev:Projects/Common/Custom Actions/RISA_CustomActionsLib/RISA_CustomActionsLib/CustomActions_InitProperties.cs
 
 namespace RISA_CustomActionsLib
 {

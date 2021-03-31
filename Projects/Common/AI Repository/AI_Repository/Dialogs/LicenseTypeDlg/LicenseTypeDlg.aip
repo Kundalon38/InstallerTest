@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FRAGMENT Type="ReadOnly" CreateVersion="18.0" RootPath="." Language="en">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="RISA_LICENSE_TYPE" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="LicenseTypeDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Order="100" TextLocId="Control.Text.LicenseTypeDlg#Next" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Order="200" TextLocId="Control.Text.LicenseTypeDlg#Cancel" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Order="300" TextLocId="Control.Text.LicenseTypeDlg#Back" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Order="400" TextLocId="Control.Text.LicenseTypeDlg#BannerBitmap"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Order="700"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Order="800" TextLocId="Control.Text.LicenseTypeDlg#Logo"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" TextStyle="DlgFontBold8_0EE1ABFE_B51D_450C_A97" Order="900" TextLocId="Control.Text.LicenseTypeDlg#Title"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="21" Y="66" Width="300" Height="152" Attributes="3" Property="RISA_LICENSE_TYPE" Order="1000" TextLocId="Control.Text.LicenseTypeDlg#RadioButtonGroup_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="LicenseTypeDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Control_Default="Next" Control_Cancel="Cancel" TitleLocId="Dialog.LicenseTypeDlg"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
+    <ROW Property="RISA_LICENSE_TYPE" Order="1" Value="Cloud" X="64" Y="40" Width="200" Height="20" TextLocId="RadioButton.Text.RISA_LICENSE_TYPE#1"/>
+    <ROW Property="RISA_LICENSE_TYPE" Order="2" Value="Network" X="64" Y="59" Width="200" Height="20" TextLocId="RadioButton.Text.RISA_LICENSE_TYPE#2"/>
+    <ROW Property="RISA_LICENSE_TYPE" Order="3" Value="Key" X="64" Y="78" Width="200" Height="20" TextLocId="RadioButton.Text.RISA_LICENSE_TYPE#3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="DlgFontBold8_0EE1ABFE_B51D_450C_A97" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
+  </COMPONENT>
+</FRAGMENT>

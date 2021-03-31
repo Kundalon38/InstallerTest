@@ -144,6 +144,8 @@ namespace RISA_CustomActionsLib
 
         #endregion
 
+<<<<<<< HEAD
+=======
         #region Session / SessionDTO property copying
         private static SessionDTO initSessionDTO(Session session)
         {
@@ -189,5 +191,6 @@ namespace RISA_CustomActionsLib
 
         #endregion
 
+>>>>>>> dev
     }
 }
