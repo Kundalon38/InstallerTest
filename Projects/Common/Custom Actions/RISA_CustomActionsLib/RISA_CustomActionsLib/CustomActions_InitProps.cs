@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
 using RISA_CustomActionsLib.Models;
