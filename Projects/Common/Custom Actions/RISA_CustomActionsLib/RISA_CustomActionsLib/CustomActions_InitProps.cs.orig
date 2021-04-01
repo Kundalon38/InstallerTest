@@ -23,7 +23,7 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult InitProperties(Session session)
         {
-#if DEBUG
+#if false
             int processId = Process.GetCurrentProcess().Id;
             string message = string.Format("Init Properties: Please attach the debugger (elevated) to process [{0}].", processId);
             MessageBox.Show(message, "Debug");
@@ -143,7 +143,6 @@ namespace RISA_CustomActionsLib
             finally
             {
                 sessLog(sessDTO, msgText);
-                sessDTO[_propRISA_PROPS_ARE_INITIALIZED] = "True";
             }
             return actionResult;
         }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.0" Modules="msm" RootPath="." Language="en" Id="{478B6CF1-13D7-41CF-8C49-A48B1B75D7F9}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.1.1" Modules="msm" RootPath="." Language="en" Id="{478B6CF1-13D7-41CF-8C49-A48B1B75D7F9}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="RISA_USERFILES" Value="[|]"/>
   </COMPONENT>
@@ -4331,9 +4332,6 @@
     <ROW Fragment="MSMSequences.aip" Path="&lt;AI_FRAGS&gt;MSMSequences.aip"/>
     <ROW Fragment="MsmValidation.aip" Path="&lt;AI_FRAGS&gt;MsmValidation.aip"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
-    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="Databases_Dir" Component_="Databases_2" ManualDelete="false"/>
     <ROW Directory_="Backups_Dir" Component_="Backups" ManualDelete="false"/>
@@ -4341,10 +4339,6 @@
     <ROW Directory_="RISASectionFiles_Dir" Component_="RISASectionFiles" ManualDelete="false"/>
     <ROW Directory_="Defaults_Dir" Component_="Defaults" ManualDelete="false"/>
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="RISA_USERFILES = [RISA_USERFILES]&#13;\n |Default title |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
-    <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="TargetFeature" Component_="DXF"/>
@@ -4508,10 +4502,6 @@
     <ROW Shortcut="RISAFoundationGeneralReference" Directory_="RISA_Dir" Name="RISAFO~1|RISAFoundation General Reference" Component_="General_Reference_Foundation.pdf" Target="[#General_Reference_Foundation.pdf]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="Manuals_Dir"/>
     <ROW Shortcut="RISAFoundationTutorials" Directory_="RISA_Dir" Name="RISAFO~2|RISAFoundation Tutorials" Component_="Tutorials_Foundation.pdf" Target="[#Tutorials_Foundation.pdf]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="Manuals_Dir"/>
     <ROW Shortcut="RISALicensingHelp" Directory_="RISA_Dir" Name="RISALI~1|RISA Licensing Help" Component_="RISALicensing.chm" Target="[#RISALicensing.chm]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleInstExSeqComponent">
-    <ROW Action="MessageBox" BaseAction="FindRelatedProducts" After="1"/>
-    <ROW Action="AI_DATA_SETTER" BaseAction="MessageBox" After="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
     <ROW ModuleID="MergeMod" Version="1.0.0" GUID="D309AC61_F11F_4342_8D41_6F61928420A3" Name="RISA Core Files" Manufacturer="RISA Tech, Inc." Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
