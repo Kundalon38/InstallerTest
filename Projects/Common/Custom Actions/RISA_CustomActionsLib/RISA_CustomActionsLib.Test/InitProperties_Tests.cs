@@ -29,8 +29,7 @@ namespace RISA_CustomActionsLib.Test
                 [CustomActions._propRISA_STATUS_CODE] = string.Empty,
                 [CustomActions._propRISA_STATUS_TEXT] = string.Empty,
                 [CustomActions._propRISA_UPDATE_DATA_VALUE] = string.Empty,
-                [CustomActions._propRISA_USERFILES] = string.Empty,
-                [CustomActions._propRISA_PROPS_ARE_INITIALIZED] = string.Empty
+                [CustomActions._propRISA_USERFILES] = string.Empty
             };
         }
         private SessionDTO _sessDTO;
@@ -406,35 +405,6 @@ namespace RISA_CustomActionsLib.Test
             Console.WriteLine(_sessDTO.ToString());
             Assert.IsTrue(sts == ActionResult.Failure);
         }
-
-        [TestMethod]
-        [TestCategory("initProperties")]
-        public void InitProperties_Flag_Success()
-        {
-            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
-            _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
-
-            var sts = CustomActions.initProperties(_sessDTO);
-            Console.WriteLine(_sessDTO.ToString());
-            expecting(_sessDTO[CustomActions._propRISA_PROPS_ARE_INITIALIZED] == "True");
-        }
-
-        [TestMethod]
-        [TestCategory("initProperties")]
-        public void InitProperties_Flag_Failure()
-        {
-            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Garbage";
-            _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
-
-            var sts = CustomActions.initProperties(_sessDTO);
-            Console.WriteLine(_sessDTO.ToString());
-            expecting(_sessDTO[CustomActions._propRISA_PROPS_ARE_INITIALIZED] == "True");
-        }
-
 
         #endregion
 
