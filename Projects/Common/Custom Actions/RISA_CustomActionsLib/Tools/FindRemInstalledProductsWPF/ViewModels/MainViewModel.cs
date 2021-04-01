@@ -18,8 +18,8 @@ namespace FindRemInstalledProductsWPF.ViewModels
             _sessDTO = new SessionDTO(display)
                 {[CustomActions._propRISA_INSTALLED_PRODUCTS] = string.Empty};
         }
-
         private SessionDTO _sessDTO;
+
 
         #region UI
 
@@ -94,26 +94,17 @@ namespace FindRemInstalledProductsWPF.ViewModels
 
         public void FindProducts()
         {
-            var sessDTO = initSession();
-            var result = CustomActions.serializeMatchingInstalledProducts(sessDTO);
+            _sessDTO[CustomActions._propMSI_ProductName] = ProductName;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = ProductVersion;
+            _sessDTO[CustomActions._propMSI_TARGETDIR] = string.Empty;
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = InstallType.ToString();
+            _sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] = DisplayName;
+            _sessDTO[CustomActions._propRISA_INSTALLED_PRODUCTS] = string.Empty;
+            _sessDTO[CustomActions._propRISA_STATUS_CODE] = string.Empty;
+            _sessDTO[CustomActions._propRISA_STATUS_TEXT] = string.Empty;
+            var result = CustomActions.serializeMatchingInstalledProducts(_sessDTO);
             display($"serializeMatchingInstalledProducts returns {result}");
-            display(sessDTO.ToString());
-        }
-
-        private SessionDTO initSession()
-        {
-            _sessDTO = new SessionDTO(display)
-            {
-                [CustomActions._propMSI_ProductName] = ProductName,
-                [CustomActions._propMSI_ProductVersion] = ProductVersion,
-                [CustomActions._propMSI_TARGETDIR] = string.Empty,
-                [CustomActions._propRISA_INSTALL_TYPE] = InstallType.ToString(),
-                [CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] = DisplayName,
-                [CustomActions._propRISA_INSTALLED_PRODUCTS] = string.Empty,
-                [CustomActions._propRISA_STATUS_CODE] = string.Empty,
-                [CustomActions._propRISA_STATUS_TEXT] = string.Empty
-            };
-            return _sessDTO;
+            display(_sessDTO.ToString());
         }
 
         public string TargetDir

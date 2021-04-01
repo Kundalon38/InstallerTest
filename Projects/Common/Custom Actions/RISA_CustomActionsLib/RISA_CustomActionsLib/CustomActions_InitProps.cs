@@ -221,10 +221,12 @@ namespace RISA_CustomActionsLib
         public static void assignDocumentPath(SessionDTO session, bool? isRoamingValue = null)
         {
             // typical myDocsPath:      C:\Users\<username>\Documents
-            // typical userProfilePath: C:\Users\<username>
-            //
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var usingOneDrive = pathContainsOneDrive(myDocsPath);
+
+            // typical userProfilePath: C:\Users\<username>
             var userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            if (!usingOneDrive) usingOneDrive = pathContainsOneDrive(userProfilePath);
 
             // roaming if a unc path
             var isRoaming = isRoamingValue.HasValue ? isRoamingValue.Value : myDocsPath.StartsWith(@"\\");
@@ -245,7 +247,7 @@ namespace RISA_CustomActionsLib
             string folderName = (installTypeProperty == _insTypeDemo) ? "RISADemo" : "RISA";
 
             string docsPath;
-            if (isRoaming)
+            if (isRoaming || usingOneDrive)
             {
                 // this is about finding the correct drive letter based on where the Windows directory lives
                 // nearly everyone will be using C:\
@@ -263,6 +265,17 @@ namespace RISA_CustomActionsLib
 
             session[_propRISA_USERFILES] = docsPath;
             session[_propUSERFILES_RISA] = docsPath;           // deprecated
+        }
+
+        public static bool pathContainsOneDrive(string path)
+        {
+            // OneDrive is at:      C:\Users\<username>\OneDrive    users can add subdirs to this
+            // but not completely sure of all use cases
+            //
+            const int bash = 92;
+            var pathParts = path.Split((char) bash);
+            if (pathParts.Length < 4) return false;     // C: - Users - <username> - OneDrive - maybeMore
+            return (pathParts[3] == "OneDrive");
         }
 
         #endregion

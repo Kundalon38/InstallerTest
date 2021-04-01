@@ -9,6 +9,7 @@ Projects/*/*-SetupFiles/
 *.suo
 *.sln.docstates
 *.cache
+*.testlog
 **/packages
 **/debug
 **/obj

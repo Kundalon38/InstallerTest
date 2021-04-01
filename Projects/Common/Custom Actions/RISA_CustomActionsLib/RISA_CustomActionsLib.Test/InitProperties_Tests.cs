@@ -352,6 +352,32 @@ namespace RISA_CustomActionsLib.Test
             Assert.IsTrue(true);
         }
 
+        #region OneDrive
+
+        [TestMethod]
+        [TestCategory("pathContainsOneDrive")]
+        public void Typical_OneDrive_Path()
+        {
+            const string testPath = @"C:\Users\Bob\OneDrive";
+            Assert.IsTrue(CustomActions.pathContainsOneDrive(testPath));
+        }
+        [TestMethod]
+        [TestCategory("pathContainsOneDrive")]
+        public void Longer_OneDrive_Path()
+        {
+            const string testPath = @"C:\Users\Bob\OneDrive\Documents";
+            Assert.IsTrue(CustomActions.pathContainsOneDrive(testPath));
+        }
+        [TestMethod]
+        [TestCategory("pathContainsOneDrive")]
+        public void Not_OneDrive_Path()
+        {
+            const string testPath = @"C:\Users\Bob\";
+            Assert.IsFalse(CustomActions.pathContainsOneDrive(testPath));
+        }
+
+        #endregion
+
         #endregion
 
         #region Default License Type
