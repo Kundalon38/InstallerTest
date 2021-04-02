@@ -32,7 +32,6 @@ namespace RISA_CustomActionsLib
         public const string _propRISA_REGION_NAME = "RISA_REGION_NAME";
         public const string _propRISA_UPDATE_DATA_VALUE = "RISA_UPDATE_DATA_VALUE";
 
-        public const string _propUSERFILES_RISA = "USERFILES_RISA"; // deprecate
         public const string _propRISA_USERFILES = "RISA_USERFILES";
 
         public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
@@ -163,8 +162,7 @@ namespace RISA_CustomActionsLib
                 [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
                 [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
                 [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
-                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
-                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA],   // deprecate
+                [_propRISA_USERFILES] = session[_propRISA_USERFILES]
             };
             return sessDTO;
         }
@@ -181,7 +179,6 @@ namespace RISA_CustomActionsLib
             session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
             session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
             session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
-            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
         }
 
         #endregion

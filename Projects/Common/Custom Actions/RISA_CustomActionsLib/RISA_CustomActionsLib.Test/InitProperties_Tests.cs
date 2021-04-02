@@ -295,7 +295,6 @@ namespace RISA_CustomActionsLib.Test
             var expectPath = Path.Combine(myDocsPath, "RISADemo");
 
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
-            expecting(_sessDTO[CustomActions._propUSERFILES_RISA] == expectPath);
             Assert.IsTrue(true);
         }
 
@@ -313,7 +312,6 @@ namespace RISA_CustomActionsLib.Test
             var expectPath = Path.Combine(myDocsPath, "RISA");
 
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
-            expecting(_sessDTO[CustomActions._propUSERFILES_RISA] == expectPath);
             Assert.IsTrue(true);
         }
         [TestMethod]
@@ -329,7 +327,6 @@ namespace RISA_CustomActionsLib.Test
             var expectPath = @"C:\RISADemo";
 
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
-            expecting(_sessDTO[CustomActions._propUSERFILES_RISA] == expectPath);
             Assert.IsTrue(true);
         }
 
@@ -346,7 +343,6 @@ namespace RISA_CustomActionsLib.Test
             var expectPath = @"C:\RISA";
 
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
-            expecting(_sessDTO[CustomActions._propUSERFILES_RISA] == expectPath);
             Assert.IsTrue(true);
         }
 

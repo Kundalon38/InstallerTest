@@ -213,7 +213,6 @@ namespace RISA_CustomActionsLib
             else docsPath = Path.Combine(myDocsPath, folderName);
 
             session[_propRISA_USERFILES] = docsPath;
-            session[_propUSERFILES_RISA] = docsPath;           // deprecated
         }
 
         #endregion

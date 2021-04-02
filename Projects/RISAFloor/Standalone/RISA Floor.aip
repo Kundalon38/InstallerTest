@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.0" Modules="enterprise" RootPath="." Language="en" Id="{188EFCDF-111F-4A8F-BAEB-6D999BD02317}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.1.1" Modules="enterprise" RootPath="." Language="en" Id="{188EFCDF-111F-4A8F-BAEB-6D999BD02317}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION;AI_DETECTED_DOTNET_VERSION"/>
     <ROW Property="AI_PROPPATH_PERBUILD_risafloor.exe" Value="..\..\..\Source Files\RISAFloor\Exes\risafloor.exe" MultiBuildValue="ExeBuild:..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe"/>
     <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
+    <ROW Property="AI_ThemeStyle" Value="aero" MsiKey="AI_ThemeStyle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#ExeBuild:1#WebInstallerBuild:1"/>
@@ -17,17 +19,16 @@
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
     <ROW Property="ProductCode" Value="1033:{5C16B8A9-871C-40C4-8AFB-95DA0D8A7A1E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="RISA Floor"/>
+    <ROW Property="ProductName" Value="RISAFloor"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
-    <ROW Property="RISA_PRODUCT_VERSION2" Value="15.0"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.234"/>
+    <ROW Property="RISA_PRODUCT_VERSION2" Value="0.0"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="0.0"/>
     <ROW Property="RISA_REGION_NAME" Value="United States"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
-    <ROW Property="RISA_USERFILES" Value="[|]"/>
+    <ROW Property="RISA_USERFILES" Value="C:\RISA"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="USERFILES_RISA" Value="[|]"/>
     <ROW Property="UpgradeCode" Value="{FF423049-5021-45B7-B697-E7D9A4495FEE}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -63,10 +64,11 @@
     <ROW Component="INIPath" ComponentId="{7FBE2BAF-5FA6-4E0C-88DD-085D78C8112D}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
     <ROW Component="INIPath_1" ComponentId="{6F8C3331-E202-46CE-AAB6-DAA079AB6C60}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
     <ROW Component="InstallGUID" ComponentId="{3ECAD2D0-378B-4CB5-A181-797F37ED323A}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
+    <ROW Component="LicenseType" ComponentId="{12214455-BFA7-4A93-9750-6C0397A69523}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
+    <ROW Component="LicenseTypeList" ComponentId="{8543F6DE-9CE6-418D-A9FF-CF56F8304F5C}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
     <ROW Component="LocalUpdateCheck" ComponentId="{C479CCFB-AAAD-4AA3-A7D9-7DF6326362FE}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
     <ROW Component="PRODUCT_VERSION2" ComponentId="{0C51ED8B-5901-46DC-AF09-3872D2E838D0}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
     <ROW Component="ProductName" ComponentId="{5389ADEE-A83E-4A3F-818A-914FC438E593}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
-    <ROW Component="ProductName_1" ComponentId="{B37E7233-8A4A-48F5-A946-AA0A0726FEFC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName_1"/>
     <ROW Component="RISA_COMPANY_KEY" ComponentId="{38C87CB9-30E3-4FD7-A7D5-7BAF8F57BCE3}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{00157264-5585-4D40-9BA2-D5FBB4C141CC}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="Region" ComponentId="{9F8C2FA1-D6EE-4444-B3BD-8EA3059563AD}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
@@ -111,9 +113,6 @@
     <ROW BuildKey="ExeBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="install_fl_demo_xx" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_demo_xx" MsiPackageType="x64"/>
     <ROW BuildKey="WebInstallerBuild" BuildName="WebInstaller" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA Floor" Languages="en" InstallationType="3" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\..\..\Source Files\Common Files\Icons\install_floor.ico" MainAppUrl="http://localhost/test/RISA Floor.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_fl_web" MsiPackageType="x64"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
-    <ATTRIBUTE name="Enable" value="false"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
@@ -155,7 +154,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
-    <ROW Name="RISA_CustomActionsLib.CA.dll" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\Debug\RISA_CustomActionsLib.CA.dll"/>
+    <ROW Name="RISA_CustomActionsLib.CA.dll" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="header_logo.bmp" SourcePath="..\..\Common\Assets\header_logo.bmp"/>
@@ -224,8 +223,8 @@
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="BuildUserFilesPropertyFromRoaming" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="DetectRoaming"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
+    <ROW Action="RISA_InitProperties" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -246,7 +245,6 @@
     <ROW Feature_="MainFeature" Component_="INIPath"/>
     <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
     <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
-    <ROW Feature_="MainFeature" Component_="ProductName_1"/>
     <ROW Feature_="MainFeature" Component_="__1"/>
     <ROW Feature_="MainFeature" Component_="EXEPath_1"/>
     <ROW Feature_="MainFeature" Component_="INIPath_1"/>
@@ -257,6 +255,8 @@
     <ROW Feature_="MainFeature" Component_="risafloor.exe"/>
     <ROW Feature_="MainFeature" Component_="risafloor.exe_1"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="LicenseType"/>
+    <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Floor.exe" SourcePath="..\..\..\Source Files\Common Files\Icons\Floor.ico" Index="0"/>
@@ -280,9 +280,9 @@
     <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild;ExeBuild"/>
     <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
-    <ROW Action="BuildUserFilesPropertyFromRoaming" Sequence="201"/>
     <ROW Action="AI_DetectSoftware" Sequence="102"/>
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="RISA_InitProperties" Sequence="201"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -292,9 +292,9 @@
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
-    <ROW Action="BuildUserFilesPropertyFromRoaming" Sequence="201"/>
     <ROW Action="AI_DetectSoftware" Sequence="102"/>
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="RISA_InitProperties" Sequence="201"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType = 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType = 1)) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
@@ -324,10 +324,11 @@
     <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
     <ROW Registry="INIPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath_1"/>
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
     <ROW Registry="PRODUCT_VERSION2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="+" Component_="PRODUCT_VERSION2"/>
     <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="ProductName"/>
-    <ROW Registry="ProductName_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="ProductName_1"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>

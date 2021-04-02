@@ -24,18 +24,17 @@
     <ROW Property="ProductVersion" Value="19.0.0.1" Type="32"/>
     <ROW Property="REBOOT" MultiBuildValue="MsiBuild:ReallySuppress"/>
     <ROW Property="REVISION_GUID_3D_17" Value="{2ba0cf7b-b7b6-43d6-a446-fe4423a2429e}"/>
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
     <ROW Property="RISA_IS_SILENT" Value="False" MultiBuildValue="MsiBuild:True"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
-    <ROW Property="RISA_PRODUCT_VERSION2" Value="[|]"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="[|]"/>
-    <ROW Property="RISA_PROPS_ARE_INITIALIZED" Value="[|]"/>
+    <ROW Property="RISA_PRODUCT_VERSION2" Value="0.0"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="0.0"/>
     <ROW Property="RISA_REGION_NAME" Value="United States"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_USERFILES" Value="C:\RISA"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="USERFILES_RISA" Value="[|]"/>
     <ROW Property="UpgradeCode" Value="{38D64B69-E97A-461B-A8CD-C30DCD7EE581}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -1172,17 +1171,15 @@
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="Standalone" BuildOrder="1" BuildType="1" PackageFolder="Setup Files" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_3d" MsiPackageType="x64" UACExecutionLevel="2"/>
     <ROW BuildKey="ExeBuild" BuildName="Demo" BuildOrder="2" BuildType="1" PackageFolder="DemoSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="install_3d_demo" MsiPackageType="x64"/>
-    <ROW BuildKey="MsiBuild" BuildName="Silent" BuildOrder="4" BuildType="1" PackageFolder="SilentSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" MsiCmdLine="/qb!- /norestart" UseLargeSchema="true" MsiPackageType="x64" UACExecutionLevel="2"/>
+    <ROW BuildKey="MsiBuild" BuildName="Silent" BuildOrder="4" BuildType="1" PackageFolder="SilentSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" MsiCmdLine="/qb!- /norestart" ExtUI="true" UseLargeSchema="true" MsiPackageType="x64" UACExecutionLevel="2"/>
     <ROW BuildKey="WebInstallerBuild" BuildName="WebInstallerBuild" BuildOrder="3" BuildType="1" PackageFolder="WebInstallerSetupFiles" PackageFileName="RISA-3D_dotNET" Languages="en" InstallationType="3" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_3d.ico" MainAppUrl="http://localhost/test/RISA-3D_dotNET.msi" ExtUI="true" UseLargeSchema="true" ExeName="install_3d_demo" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
     <ROW Path="&lt;AI_REPOSITORY&gt;Dialogs\LicenseTypeDlg\LicenseTypeDlg_en.ail"/>
-    <ROW Path="&lt;AI_REPOSITORY&gt;Dialogs\AdditionalSettings\AdditionalSettings_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
-    <ROW Fragment="AdditionalSettings.aip" Path="&lt;AI_REPOSITORY&gt;Dialogs\AdditionalSettings\AdditionalSettings.aip"/>
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
     <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
     <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\LicenseAgreementDlg.aip"/>
@@ -1221,7 +1218,21 @@
     <ROW Name="install_background.bmp" SourcePath="..\..\Common\Assets\install_background.bmp"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdditionalSettings3D" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="Description" Type="Text" X="25" Y="23" Width="279" Height="21" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="700"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="900"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="1000" TextLocId="Control.Text.AdditionalSettings#RadioButtonGroup_1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Text="Check for Updates at Program Launch" Order="1100" TextLocId="Control.Text.AdditionalSettings#CheckBox_1"/>
     <ROW Dialog_="FolderDlg" Control="Description" Type="Text" X="25" Y="23" Width="253" Height="21" Attributes="196611" Text="This is the folder where [ProductName] will be installed." Order="1200" TextLocId="Control.Text.FolderDlg#Description" MsiKey="FolderDlg#Description"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="20" Y="60" Width="330" Height="120" Attributes="7" Text="..\..\Common\Assets\license.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText" MsiKey="LicenseAgreementDlg#AgreementText"/>
     <ROW Dialog_="PrerequisitesDlg" Control="Description" Type="Text" X="25" Y="23" Width="253" Height="21" Attributes="196611" Text="Select which prerequisites will be installed" Order="700" TextLocId="Control.Text.PrerequisitesDlg#Description" MsiKey="PrerequisitesDlg#Description"/>
@@ -1252,7 +1263,7 @@
     <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
-    <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="3"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettings3D" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="3"/>
     <ROW Dialog_="LicenseTypeDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="[FolderDlg_Cond]" Argument="1" Condition="RISA_IS_SILENT &lt;&gt; &quot;True&quot;" Ordering="2"/>
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="[FolderDlg_Cond]" Argument="{}" Condition="1" Ordering="1"/>
@@ -1261,9 +1272,10 @@
     <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="201"/>
     <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="202"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="3"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
-    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettings3D" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="AdditionalSettings3D" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettings3D" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL AND FolderDlg_Cond" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -1273,6 +1285,7 @@
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="Replace this message box with the custom action to uninstall the previous version of the product. |Uninstall Previous Version |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
     <ROW Action="AI_DATA_SETTER_3" Type="51" Source="CustomActionData" Target="RISA_USERFILES=[RISA_USERFILES], RISA_LICENSE_TYPE = [RISA_LICENSE_TYPE], RISA_REGION_NAME = [RISA_REGION_NAME]&#13;\n&#13;\n |After InitProperties (execution stage) |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
     <ROW Action="AI_DATA_SETTER_5" Type="51" Source="CustomActionData" Target="RISA_USERFILES=[RISA_USERFILES], RISA_LICENSE_TYPE = [RISA_LICENSE_TYPE], RISA_REGION_NAME = [RISA_REGION_NAME] |After InitProperties (Wizard stage) |MB_OK,MB_ICONINFORMATION,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
@@ -1294,6 +1307,7 @@
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="MessageBoxAfterIP" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_3"/>
     <ROW Action="MessageBoxAfterIPW" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_5"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
@@ -1301,6 +1315,9 @@
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="AdditionalSettings3D" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
@@ -1906,6 +1923,8 @@
     <ROW Action="RISA_InitProperties" Sequence="201"/>
     <ROW Action="MessageBoxAfterIPW" Sequence="203"/>
     <ROW Action="AI_DATA_SETTER_5" Sequence="202"/>
+    <ROW Action="MessageBox" Sequence="1298"/>
+    <ROW Action="AI_DATA_SETTER_1" Sequence="1297"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="( Version9X OR ( NOT VersionNT64 ) OR ( VersionNT64 AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 600) OR (MsiNTProductType = 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType &lt;&gt; 1)) AND ((VersionNT64 &lt;&gt; 601) OR (MsiNTProductType = 1)) ) )" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT64Display]." DescriptionLocId="AI.LaunchCondition.NoSpecificNT64" IsPredefined="true" Builds="DefaultBuild"/>
@@ -1914,13 +1933,24 @@
     <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild;MsiBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild;MsiBuild"/>
     <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
-    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
+    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild;MsiBuild"/>
     <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild;MsiBuild"/>
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild;MsiBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
     <ROW Module="RISACoreFiles.msm" Path="..\..\Common\Merge Modules\RISA Core Files\RISA Core Files-SetupFiles\RISA Core Files.msm" Feature="MainFeature" Directory="APPDIR" Order="2"/>
     <ROW Module="RISALicenseManager.msm" Path="..\..\RISA License Manager\RISA License Manager-SetupFiles\RISA License Manager.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
+    <ROW Property="RISA_REGION_NAME" Order="1" Value="United States" X="7" Y="8" Width="84" Height="9" Text="United States" TextLocId="RadioButton.Text.RISA_REGION_NAME#1"/>
+    <ROW Property="RISA_REGION_NAME" Order="2" Value="Canada" X="7" Y="37" Width="84" Height="9" Text="Canada" TextLocId="RadioButton.Text.RISA_REGION_NAME#2"/>
+    <ROW Property="RISA_REGION_NAME" Order="3" Value="Britian" X="7" Y="66" Width="84" Height="9" Text="Britain" TextLocId="RadioButton.Text.RISA_REGION_NAME#3"/>
+    <ROW Property="RISA_REGION_NAME" Order="4" Value="Europe" X="7" Y="95" Width="84" Height="9" Text="Europe" TextLocId="RadioButton.Text.RISA_REGION_NAME#4"/>
+    <ROW Property="RISA_REGION_NAME" Order="5" Value="India" X="7" Y="124" Width="84" Height="9" Text="India" TextLocId="RadioButton.Text.RISA_REGION_NAME#5"/>
+    <ROW Property="RISA_REGION_NAME" Order="6" Value="Australia" X="113" Y="9" Width="84" Height="9" Text="Australia" TextLocId="RadioButton.Text.RISA_REGION_NAME#6"/>
+    <ROW Property="RISA_REGION_NAME" Order="7" Value="New Zealand" X="113" Y="38" Width="84" Height="9" Text="New Zealand" TextLocId="RadioButton.Text.RISA_REGION_NAME#7"/>
+    <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="113" Y="66" Width="84" Height="9" Text="Mexico" TextLocId="RadioButton.Text.RISA_REGION_NAME#8"/>
+    <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="113" Y="94" Width="84" Height="9" Text="Saudi Arabia" TextLocId="RadioButton.Text.RISA_REGION_NAME#9"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
@@ -1945,12 +1975,12 @@
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
     <ROW Registry="InstallGUID_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Name="InstallGUID" Value="[INSTALL_GUID_3D_17]" Component_="InstallGUID_1"/>
     <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
-    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Component_="LicenseTypeList"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
     <ROW Registry="ProductName_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="*" Component_="ProductName"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
-    <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0\Default" Name="Region" Value="UNITED_STATES" Component_="Region"/>
+    <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
     <ROW Registry="Region_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region_1"/>
     <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
     <ROW Registry="RevisionGUID_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Name="RevisionGUID" Value="[REVISION_GUID_3D_17]" Component_="RevisionGUID_1"/>
@@ -1976,8 +2006,8 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
-    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="y" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
-    <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
+    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver 7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
     <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
