@@ -8,7 +8,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions_StopStartService
+    public partial class CustomActions
     {
         // many consts are public for the sake of unit testing
         // - they really should be private

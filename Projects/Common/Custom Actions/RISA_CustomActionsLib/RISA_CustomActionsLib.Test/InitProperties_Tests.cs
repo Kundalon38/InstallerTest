@@ -17,20 +17,20 @@ namespace RISA_CustomActionsLib.Test
                 // init property names - clone of initSessionDTO()
                 // props set by installer
 
-                [CustomActions_StopStartService._propMSI_ProductName] = string.Empty,
-                [CustomActions_StopStartService._propMSI_ProductVersion] = string.Empty,
-                [CustomActions_StopStartService._propRISA_COMPANY_KEY] = "RISA Technologies",
-                [CustomActions_StopStartService._propRISA_INSTALL_TYPE] = string.Empty,
+                [CustomActions._propMSI_ProductName] = string.Empty,
+                [CustomActions._propMSI_ProductVersion] = string.Empty,
+                [CustomActions._propRISA_COMPANY_KEY] = "RISA Technologies",
+                [CustomActions._propRISA_INSTALL_TYPE] = string.Empty,
 
                 // props set by Custom Action
-                [CustomActions_StopStartService._propRISA_LICENSE_TYPE] = string.Empty,
-                [CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] = string.Empty,
-                [CustomActions_StopStartService._propRISA_PRODUCT_VERSION2] = string.Empty,
-                [CustomActions_StopStartService._propRISA_PRODUCT_VERSION34] = string.Empty,
-                [CustomActions_StopStartService._propRISA_STATUS_CODE] = string.Empty,
-                [CustomActions_StopStartService._propRISA_STATUS_TEXT] = string.Empty,
-                [CustomActions_StopStartService._propRISA_UPDATE_DATA_VALUE] = string.Empty,
-                [CustomActions_StopStartService._propRISA_USERFILES] = string.Empty
+                [CustomActions._propRISA_LICENSE_TYPE] = string.Empty,
+                [CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] = string.Empty,
+                [CustomActions._propRISA_PRODUCT_VERSION2] = string.Empty,
+                [CustomActions._propRISA_PRODUCT_VERSION34] = string.Empty,
+                [CustomActions._propRISA_STATUS_CODE] = string.Empty,
+                [CustomActions._propRISA_STATUS_TEXT] = string.Empty,
+                [CustomActions._propRISA_UPDATE_DATA_VALUE] = string.Empty,
+                [CustomActions._propRISA_USERFILES] = string.Empty
             };
         }
         private SessionDTO _sessDTO;
@@ -43,12 +43,12 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("validProductName")]
         public void ProductName_InValid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = "MyProduct";
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = "MyProduct";
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.validProductName(_sessDTO);
-            expecting(returnCode(CustomActions_StopStartService._sts_BAD_PRODUCTNAME));
+            var result = CustomActions.validProductName(_sessDTO);
+            expecting(returnCode(CustomActions._sts_BAD_PRODUCTNAME));
             Assert.IsFalse(result);
         }
 
@@ -56,11 +56,11 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("validProductName")]
         public void ProductName_Valid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.validProductName(_sessDTO);
+            var result = CustomActions.validProductName(_sessDTO);
             Assert.IsTrue(result);
         }
 
@@ -72,12 +72,12 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("validInstallType")]
         public void InstallType_InValid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = "MyProduct";
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "";
+            _sessDTO[CustomActions._propMSI_ProductName] = "MyProduct";
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "";
 
-            var result = CustomActions_StopStartService.validInstallType(_sessDTO);
-            expecting(returnCode(CustomActions_StopStartService._sts_BAD_INSTALLTYPE));
+            var result = CustomActions.validInstallType(_sessDTO);
+            expecting(returnCode(CustomActions._sts_BAD_INSTALLTYPE));
             Assert.IsFalse(result);
         }
 
@@ -85,11 +85,11 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("validInstallType")]
         public void InstallType_Standalone_Valid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.validInstallType(_sessDTO);
+            var result = CustomActions.validInstallType(_sessDTO);
             Assert.IsTrue(result);
         }
 
@@ -97,11 +97,11 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("validInstallType")]
         public void InstallType_Demo_Valid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            var result = CustomActions_StopStartService.validInstallType(_sessDTO);
+            var result = CustomActions.validInstallType(_sessDTO);
             Assert.IsTrue(result);
         }
 
@@ -113,46 +113,46 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("processProductVersion")]
         public void ProductVersion_2_InValid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
-            expecting(returnCode(CustomActions_StopStartService._sts_BAD_PRODUCTVERSION));
+            var result = CustomActions.processProductVersion(_sessDTO);
+            expecting(returnCode(CustomActions._sts_BAD_PRODUCTVERSION));
             Assert.IsFalse(result);
         }
         [TestMethod]
         [TestCategory("processProductVersion")]
         public void ProductVersion_Omitted_InValid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = string.Empty;
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = string.Empty;
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
-            expecting(returnCode(CustomActions_StopStartService._sts_BAD_PRODUCTVERSION));
+            var result = CustomActions.processProductVersion(_sessDTO);
+            expecting(returnCode(CustomActions._sts_BAD_PRODUCTVERSION));
             Assert.IsFalse(result);
         }
         [TestMethod]
         [TestCategory("processProductVersion")]
         public void ProductVersion_3_Valid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             Assert.IsTrue(result);
         }
         [TestMethod]
         [TestCategory("processProductVersion")]
         public void ProductVersion_4_Valid()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.0.0.0";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.0.0.0";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             Assert.IsTrue(result);
         }
 
@@ -164,32 +164,32 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignVersionBasedProperties")]
         public void ProductVersion_3_Demo_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             expecting(result);
-            CustomActions_StopStartService.assignVersionBasedProperties(_sessDTO);
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION2] == "1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2 Demo");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION34] == "3.0");
+            CustomActions.assignVersionBasedProperties(_sessDTO);
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION2] == "1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2 Demo");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION34] == "3.0");
             Assert.IsTrue(result);
         }
         [TestMethod]
         [TestCategory("assignVersionBasedProperties")]
         public void ProductVersion_4_Demo_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             expecting(result);
-            CustomActions_StopStartService.assignVersionBasedProperties(_sessDTO);
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION2] == "1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2 Demo");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION34] == "3.4");
+            CustomActions.assignVersionBasedProperties(_sessDTO);
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION2] == "1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2 Demo");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION34] == "3.4");
             Assert.IsTrue(result);
         }
 
@@ -197,32 +197,32 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignVersionBasedProperties")]
         public void ProductVersion_3_Standalone_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             expecting(result);
-            CustomActions_StopStartService.assignVersionBasedProperties(_sessDTO);
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION2] == "1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION34] == "3.0");
+            CustomActions.assignVersionBasedProperties(_sessDTO);
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION2] == "1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION34] == "3.0");
             Assert.IsTrue(result);
         }
         [TestMethod]
         [TestCategory("assignVersionBasedProperties")]
         public void ProductVersion_4_Standalone_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            var result = CustomActions_StopStartService.processProductVersion(_sessDTO);
+            var result = CustomActions.processProductVersion(_sessDTO);
             expecting(result);
-            CustomActions_StopStartService.assignVersionBasedProperties(_sessDTO);
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION2] == "1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2");
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_VERSION34] == "3.4");
+            CustomActions.assignVersionBasedProperties(_sessDTO);
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION2] == "1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] == $"{_risa3D} 1.2");
+            expecting(_sessDTO[CustomActions._propRISA_PRODUCT_VERSION34] == "3.4");
             Assert.IsTrue(result);
         }
 
@@ -234,48 +234,48 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignRemainingIdentityBasedProperties")]
         public void R3D_Demo_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            CustomActions_StopStartService.assignRemainingIdentityBasedProperties(_sessDTO);
-            Assert.IsTrue(_sessDTO[CustomActions_StopStartService._propRISA_UPDATE_DATA_VALUE] == "UpdateData3D_Demo");
+            CustomActions.assignRemainingIdentityBasedProperties(_sessDTO);
+            Assert.IsTrue(_sessDTO[CustomActions._propRISA_UPDATE_DATA_VALUE] == "UpdateData3D_Demo");
         }
 
         [TestMethod]
         [TestCategory("assignRemainingIdentityBasedProperties")]
         public void R3D_Standalone_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            CustomActions_StopStartService.assignRemainingIdentityBasedProperties(_sessDTO);
-            Assert.IsTrue(_sessDTO[CustomActions_StopStartService._propRISA_UPDATE_DATA_VALUE] == "UpdateData3D_SA");
+            CustomActions.assignRemainingIdentityBasedProperties(_sessDTO);
+            Assert.IsTrue(_sessDTO[CustomActions._propRISA_UPDATE_DATA_VALUE] == "UpdateData3D_SA");
         }
 
         [TestMethod]
         [TestCategory("assignRemainingIdentityBasedProperties")]
         public void Floor_Demo_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risaFloor;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risaFloor;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            CustomActions_StopStartService.assignRemainingIdentityBasedProperties(_sessDTO);
-            Assert.IsTrue(_sessDTO[CustomActions_StopStartService._propRISA_UPDATE_DATA_VALUE] == "UpdateDataRF_Demo");
+            CustomActions.assignRemainingIdentityBasedProperties(_sessDTO);
+            Assert.IsTrue(_sessDTO[CustomActions._propRISA_UPDATE_DATA_VALUE] == "UpdateDataRF_Demo");
         }
 
         [TestMethod]
         [TestCategory("assignRemainingIdentityBasedProperties")]
         public void Floor_Standalone_Assign()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risaFloor;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risaFloor;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            CustomActions_StopStartService.assignRemainingIdentityBasedProperties(_sessDTO);
-            Assert.IsTrue(_sessDTO[CustomActions_StopStartService._propRISA_UPDATE_DATA_VALUE] == "UpdateDataRF_SA");
+            CustomActions.assignRemainingIdentityBasedProperties(_sessDTO);
+            Assert.IsTrue(_sessDTO[CustomActions._propRISA_UPDATE_DATA_VALUE] == "UpdateDataRF_SA");
         }
 
         #endregion
@@ -286,16 +286,16 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignDocumentPath")]
         public void DocPath_Demo_NoRoam()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            CustomActions_StopStartService.assignDocumentPath(_sessDTO, false);
+            CustomActions.assignDocumentPath(_sessDTO, false);
 
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var expectPath = Path.Combine(myDocsPath, "RISADemo");
 
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_USERFILES] == expectPath);
+            expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
 
@@ -303,31 +303,31 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignDocumentPath")]
         public void DocPath_Standalone_NoRoam()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            CustomActions_StopStartService.assignDocumentPath(_sessDTO, false);
+            CustomActions.assignDocumentPath(_sessDTO, false);
 
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var expectPath = Path.Combine(myDocsPath, "RISA");
 
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_USERFILES] == expectPath);
+            expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
         [TestMethod]
         [TestCategory("assignDocumentPath")]
         public void DocPath_Demo_Roam()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Demo";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Demo";
 
-            CustomActions_StopStartService.assignDocumentPath(_sessDTO, true);
+            CustomActions.assignDocumentPath(_sessDTO, true);
 
             var expectPath = @"C:\RISADemo";
 
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_USERFILES] == expectPath);
+            expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
 
@@ -335,15 +335,15 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("assignDocumentPath")]
         public void DocPath_Standalone_Roam()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
 
-            CustomActions_StopStartService.assignDocumentPath(_sessDTO, true);
+            CustomActions.assignDocumentPath(_sessDTO, true);
 
             var expectPath = @"C:\RISA";
 
-            expecting(_sessDTO[CustomActions_StopStartService._propRISA_USERFILES] == expectPath);
+            expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
 
@@ -354,21 +354,21 @@ namespace RISA_CustomActionsLib.Test
         public void Typical_OneDrive_Path()
         {
             const string testPath = @"C:\Users\Bob\OneDrive";
-            Assert.IsTrue(CustomActions_StopStartService.pathContainsOneDrive(testPath));
+            Assert.IsTrue(CustomActions.pathContainsOneDrive(testPath));
         }
         [TestMethod]
         [TestCategory("pathContainsOneDrive")]
         public void Longer_OneDrive_Path()
         {
             const string testPath = @"C:\Users\Bob\OneDrive\Documents";
-            Assert.IsTrue(CustomActions_StopStartService.pathContainsOneDrive(testPath));
+            Assert.IsTrue(CustomActions.pathContainsOneDrive(testPath));
         }
         [TestMethod]
         [TestCategory("pathContainsOneDrive")]
         public void Not_OneDrive_Path()
         {
             const string testPath = @"C:\Users\Bob\";
-            Assert.IsFalse(CustomActions_StopStartService.pathContainsOneDrive(testPath));
+            Assert.IsFalse(CustomActions.pathContainsOneDrive(testPath));
         }
 
         #endregion
@@ -387,13 +387,13 @@ namespace RISA_CustomActionsLib.Test
             //
             // if neither of these conditions aren met, the "Test" will still pass
             //
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
-            _sessDTO[CustomActions_StopStartService._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
 
-            CustomActions_StopStartService.assignDefaultLicenseType(_sessDTO);
-            Console.WriteLine(_sessDTO[CustomActions_StopStartService._propRISA_LICENSE_TYPE]);
+            CustomActions.assignDefaultLicenseType(_sessDTO);
+            Console.WriteLine(_sessDTO[CustomActions._propRISA_LICENSE_TYPE]);
             Assert.IsTrue(true);
         }
 
@@ -405,12 +405,12 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("initProperties")]
         public void InitProperties_Success()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "Standalone";
-            _sessDTO[CustomActions_StopStartService._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
 
-            var sts = CustomActions_StopStartService.initProperties(_sessDTO);
+            var sts = CustomActions.initProperties(_sessDTO);
             Console.WriteLine(_sessDTO.ToString());
             Assert.IsTrue(sts == ActionResult.Success);
         }
@@ -419,12 +419,12 @@ namespace RISA_CustomActionsLib.Test
         [TestCategory("initProperties")]
         public void InitProperties_Fail()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = "1.2.3.4";
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = "MyProduct";
-            _sessDTO[CustomActions_StopStartService._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "MyProduct";
+            _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
 
-            var sts = CustomActions_StopStartService.initProperties(_sessDTO);
+            var sts = CustomActions.initProperties(_sessDTO);
             Console.WriteLine(_sessDTO.ToString());
             Assert.IsTrue(sts == ActionResult.Failure);
         }
@@ -440,7 +440,7 @@ namespace RISA_CustomActionsLib.Test
         }
         private bool returnCode(string returnCodeValue)
         {
-            return (_sessDTO[CustomActions_StopStartService._propRISA_STATUS_CODE] == returnCodeValue);
+            return (_sessDTO[CustomActions._propRISA_STATUS_CODE] == returnCodeValue);
         }
 
         #endregion
