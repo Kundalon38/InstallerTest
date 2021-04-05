@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define ATTACH_DEBUGGER
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -10,7 +11,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions
+    public partial class CustomActions_StopStartService
     {
         // many minor methods are public for the sake of unit testing
         // - they really should be private
@@ -20,7 +21,8 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult InitProperties(Session session)
         {
-#if DEBUG
+            const string methodName = "InitProperties";
+#if ATTACH_DEBUGGER
             int processId = Process.GetCurrentProcess().Id;
             string message = string.Format("Init Properties: Please attach the debugger (elevated) to process [{0}].", processId);
             MessageBox.Show(message, "Debug");
@@ -30,11 +32,11 @@ namespace RISA_CustomActionsLib
             SessionDTO sessDTO;
             try
             {
-                sessDTO = initProperties_copyFromSession(session);
+                sessDTO = initProperties_getFromSession(session);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                sessLog(session, e.Message);
+                excpLog(session, methodName, ex);
                 return ActionResult.Failure;
             }
             #endregion
@@ -44,11 +46,11 @@ namespace RISA_CustomActionsLib
             #region copy SessionDTO props back to Session
             try
             {
-                initProperties_copyToSession(session, sessDTO);
+                initProperties_returnToSession(session, sessDTO);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                sessLog(session, e.Message);
+                excpLog(session, methodName, ex);
                 return ActionResult.Failure;
             }
             #endregion
@@ -57,33 +59,33 @@ namespace RISA_CustomActionsLib
         }
 
         #region InitProperties - Session / SessionDTO property copying
-        private static SessionDTO initProperties_copyFromSession(Session session)
+ 
+        private static SessionDTO initProperties_getFromSession(Session session)
         {
-            var sessDTO = new SessionDTO(session.Log)
-            {
-                // props set by installer
-                [_propMSI_ProductName] = session[_propMSI_ProductName],
-                [_propMSI_ProductVersion] = session[_propMSI_ProductVersion],
-                [_propRISA_COMPANY_KEY] = session[_propRISA_COMPANY_KEY],
-                [_propRISA_INSTALL_TYPE] = session[_propRISA_INSTALL_TYPE],
-                [_propRISA_REGISTRY_PRODUCT_NAME] = session[_propRISA_REGISTRY_PRODUCT_NAME],
+            _doTrace = true;        // hardwire for now, but eventually set from _propRISA_CA_TRACE
 
-                // props set here
-                [_propRISA_INSTALLED_PRODUCTS] = session[_propRISA_INSTALLED_PRODUCTS],
-                [_propRISA_LICENSE_TYPE] = session[_propRISA_LICENSE_TYPE],
-                [_propRISA_PRODUCT_TITLE2_INSTYPE] = session[_propRISA_PRODUCT_TITLE2_INSTYPE],
-                [_propRISA_PRODUCT_VERSION2] = session[_propRISA_PRODUCT_VERSION2],
-                [_propRISA_PRODUCT_VERSION34] = session[_propRISA_PRODUCT_VERSION34],
-                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
-                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
-                [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
-                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
-                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA]    // deprecate
-            };
+            var sessDTO = new SessionDTO(session.Log);
+            // prop values set in aip
+            copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
+            copySinglePropFromSession(sessDTO, session, _propMSI_ProductVersion);
+            copySinglePropFromSession(sessDTO, session, _propRISA_COMPANY_KEY);
+            copySinglePropFromSession(sessDTO, session, _propRISA_INSTALL_TYPE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_REGISTRY_PRODUCT_NAME);
+            //
+            // prop values set by InitProperties
+            copySinglePropFromSession(sessDTO, session, _propRISA_INSTALLED_PRODUCTS);
+            copySinglePropFromSession(sessDTO, session, _propRISA_LICENSE_TYPE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_PRODUCT_TITLE2_INSTYPE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_PRODUCT_VERSION2);
+            copySinglePropFromSession(sessDTO, session, _propRISA_PRODUCT_VERSION34);
+            copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_CODE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_TEXT);
+            copySinglePropFromSession(sessDTO, session, _propRISA_UPDATE_DATA_VALUE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_USERFILES);
             return sessDTO;
         }
 
-        private static void initProperties_copyToSession(Session session, SessionDTO sessDTO)
+        private static void initProperties_returnToSession(Session session, SessionDTO sessDTO)
         {
             // don't overwrite items set by caller, only those set here
             //
@@ -96,7 +98,9 @@ namespace RISA_CustomActionsLib
             session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
             session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
             session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
-            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
+            //
+            const string methodName = "initProperties_returnToSession";
+            Trace(methodName, sessDTO.ToString());
         }
 
         #endregion
@@ -105,6 +109,7 @@ namespace RISA_CustomActionsLib
 
         public static ActionResult initProperties(SessionDTO sessDTO)
         {
+            const string methodName = "initProperties";
             var actionResult = ActionResult.Success;
             string msgText = null;
             try
@@ -139,12 +144,10 @@ namespace RISA_CustomActionsLib
             }
             finally
             {
-                sessLog(sessDTO, msgText);
-                sessDTO[_propRISA_PROPS_ARE_INITIALIZED] = "True";
+                sessLog(sessDTO, methodName, msgText);
             }
             return actionResult;
         }
-
 
         #endregion
 
@@ -262,9 +265,7 @@ namespace RISA_CustomActionsLib
                 docsPath = outputDirIfRoaming;
             }
             else docsPath = Path.Combine(myDocsPath, folderName);
-
             session[_propRISA_USERFILES] = docsPath;
-            session[_propUSERFILES_RISA] = docsPath;           // deprecated
         }
 
         public static bool pathContainsOneDrive(string path)
@@ -284,9 +285,11 @@ namespace RISA_CustomActionsLib
 
         public static bool validProductName(SessionDTO session)
         {
+
             var inpProdName = session[_propMSI_ProductName];
             if (_productNameList.Any(x => x == inpProdName)) return true;
-            return reportError(session, _sts_BAD_PRODUCTNAME,
+            const string methodName = "validProductName";
+            return reportError(session, methodName,_sts_BAD_PRODUCTNAME,
                 $"Unsupported ProductName: {inpProdName}");
         }
 
@@ -294,7 +297,8 @@ namespace RISA_CustomActionsLib
         {
             var inpInstallType = session[_propRISA_INSTALL_TYPE];
             if (_insTypeList.Any(x => x == inpInstallType)) return true;
-            return reportError(session, _sts_BAD_INSTALLTYPE,
+            const string methodName = "validInstallType";
+            return reportError(session, methodName, _sts_BAD_INSTALLTYPE,
                 $"Unsupported Install Type: {inpInstallType}");
         }
         public static bool processProductVersion(SessionDTO session)
@@ -303,28 +307,10 @@ namespace RISA_CustomActionsLib
             _versionParts = inpVersion.Split('.');
             var partCt = _versionParts.Length;
             if (partCt == 3 || partCt == 4) return true;
-            return reportError(session, _sts_BAD_PRODUCTVERSION,
+            const string methodName = "processProductVersion";
+            return reportError(session, methodName, _sts_BAD_PRODUCTVERSION,
                 $"Invalid ProductVersion: {inpVersion}, require 3 or 4 part version");
         }
-
-        private static bool reportError(SessionDTO session, string statusCode, string statusText)
-        {
-            session[_propRISA_STATUS_CODE] = statusCode;
-            session[_propRISA_STATUS_TEXT] = statusText;
-            sessLog(session, statusText);
-            return false;
-        }
-
-        private static void sessLog(Session session, string msg)
-        {
-            session.Log($"InitProperties: {msg}");
-        }
-
-        private static void sessLog(SessionDTO sessDTO, string msg)
-        {
-            sessDTO.Log($"InitProperties: {msg}");
-        }
-
 
         #endregion
 

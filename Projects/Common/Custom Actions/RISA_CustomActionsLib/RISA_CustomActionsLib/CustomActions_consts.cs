@@ -8,7 +8,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions
+    public partial class CustomActions_StopStartService
     {
         // many consts are public for the sake of unit testing
         // - they really should be private
@@ -34,7 +34,6 @@ namespace RISA_CustomActionsLib
         public const string _propRISA_REGION_NAME = "RISA_REGION_NAME";
         public const string _propRISA_UPDATE_DATA_VALUE = "RISA_UPDATE_DATA_VALUE";
 
-        public const string _propUSERFILES_RISA = "USERFILES_RISA"; // deprecate
         public const string _propRISA_USERFILES = "RISA_USERFILES";
 
         public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
@@ -47,6 +46,7 @@ namespace RISA_CustomActionsLib
 
         public const string _propRISA_STATUS_CODE = "RISA_STATUS_CODE";
         public const string _propRISA_STATUS_TEXT = "RISA_STATUS_TEXT";
+        public const string _propRISA_CA_TRACE = "RISA_CA_TRACE";
 
         #endregion
 
@@ -143,48 +143,21 @@ namespace RISA_CustomActionsLib
 
         #endregion
 
-        #region Session / SessionDTO property copying
-        private static SessionDTO initSessionDTO(Session session)
+        #region Misc functions
+
+        private static void copySinglePropFromSession(SessionDTO sessDTO, Session session, string propName)
         {
-            var sessDTO = new SessionDTO(session.Log)
+            // the whole idea is to provide enough info (property name) should an installer fail to establish a required prop
+            try
             {
-                // props set by installer
-                [_propMSI_ProductName] = session[_propMSI_ProductName],
-                [_propMSI_ProductVersion] = session[_propMSI_ProductVersion],
-                [_propRISA_COMPANY_KEY] = session[_propRISA_COMPANY_KEY],
-                [_propRISA_INSTALL_TYPE] = session[_propRISA_INSTALL_TYPE],
-                [_propRISA_REGISTRY_PRODUCT_NAME] = session[_propRISA_REGISTRY_PRODUCT_NAME],
-
-                // props set here
-                [_propRISA_LICENSE_TYPE] = session[_propRISA_LICENSE_TYPE],
-                [_propRISA_PRODUCT_TITLE2_INSTYPE] = session[_propRISA_PRODUCT_TITLE2_INSTYPE],
-                [_propRISA_PRODUCT_VERSION2] = session[_propRISA_PRODUCT_VERSION2],
-                [_propRISA_PRODUCT_VERSION34] = session[_propRISA_PRODUCT_VERSION34],
-                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
-                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
-                [_propRISA_UPDATE_DATA_VALUE] = session[_propRISA_UPDATE_DATA_VALUE],
-                [_propRISA_USERFILES] = session[_propRISA_USERFILES],
-                [_propUSERFILES_RISA] = session[_propUSERFILES_RISA],   // deprecate
-            };
-            return sessDTO;
-        }
-
-        private static void copyDTOtoSession(Session session, SessionDTO sessDTO)
-        {
-            // don't overwrite items set by caller, only those set here
-            //
-            session[_propRISA_LICENSE_TYPE] = sessDTO[_propRISA_LICENSE_TYPE];
-            session[_propRISA_PRODUCT_TITLE2_INSTYPE] = sessDTO[_propRISA_PRODUCT_TITLE2_INSTYPE];
-            session[_propRISA_PRODUCT_VERSION2] = sessDTO[_propRISA_PRODUCT_VERSION2];
-            session[_propRISA_PRODUCT_VERSION34] = sessDTO[_propRISA_PRODUCT_VERSION34];
-            session[_propRISA_STATUS_CODE] = sessDTO[_propRISA_STATUS_CODE];
-            session[_propRISA_STATUS_TEXT] = sessDTO[_propRISA_STATUS_TEXT];
-            session[_propRISA_UPDATE_DATA_VALUE] = sessDTO[_propRISA_UPDATE_DATA_VALUE];
-            session[_propRISA_USERFILES] = sessDTO[_propRISA_USERFILES];
-            session[_propUSERFILES_RISA] = sessDTO[_propUSERFILES_RISA];    // deprecate
+                sessDTO[propName] = session[propName];
+            }
+            catch (Exception ex)
+            {
+                throw new IndexOutOfRangeException($"Error retrieving Session property {propName}", ex);
+            }
         }
 
         #endregion
-
     }
 }

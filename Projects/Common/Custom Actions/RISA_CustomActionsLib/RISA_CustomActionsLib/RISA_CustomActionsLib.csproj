@@ -61,10 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomActions.cs" />
+    <Compile Include="CustomActions_StopStartService.cs" />
     <Compile Include="CustomActions_consts.cs" />
     <Compile Include="CustomActions_InitProps_FindInstalled.cs" />
     <Compile Include="CustomActions_InitProps.cs" />
+    <Compile Include="CustomActions_logging.cs" />
     <Compile Include="CustomActions_RemoveInstalled.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\InstalledProduct.cs" />

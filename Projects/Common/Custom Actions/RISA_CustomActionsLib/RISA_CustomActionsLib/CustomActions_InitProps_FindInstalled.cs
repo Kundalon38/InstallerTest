@@ -6,7 +6,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions
+    public partial class CustomActions_StopStartService
     {
         public static bool serializeMatchingInstalledProducts(SessionDTO sessDTO)
         {

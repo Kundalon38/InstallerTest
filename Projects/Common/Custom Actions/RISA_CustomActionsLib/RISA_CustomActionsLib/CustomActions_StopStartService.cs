@@ -1,6 +1,4 @@
 using Microsoft.Deployment.WindowsInstaller;
-using System;
-using System.IO;
 using System.Linq;
 using System.ServiceProcess;
 using System.Threading;
@@ -11,51 +9,8 @@ namespace RISA_CustomActionsLib
     // - very low bar, most / all customer machines wil have this,
     //   eliminating the need to provision the customer machine for this lib
     //
-    public partial class CustomActions
+    public partial class CustomActions_StopStartService
     {
-        #region DetectRoaming
-
-        // Deprecated - functionality is subsumed in InitProperties.assignDocumentPath()
-
-        [CustomAction]
-        public static ActionResult DetectRoaming(Session session)
-        {
-            const string installTypePropertyName = "INSTALL_TYPE";
-            const string outputPropertyName = "USERFILES_RISA";
-            
-            string installTypeProperty = session[installTypePropertyName];
-            string folderName = (installTypeProperty == "Demo") ? "RISADemo" : "RISA";
-
-            string outputDirIfRoaming = @"C:\" + folderName;        // TODO hardwiring C: is wrong
-            //
-            // typical myDocsPath:      C:\Users\<username>\Documents
-            // typical userProfilePath: C:\Users\<username>
-            //
-            var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-
-            var isRoaming = myDocsPath.StartsWith(@"\\");       // roaming if a unc path
-            if (!isRoaming)
-            {
-                // myDocsPath must stem from userProfilePath, otherwise isRoaming=T; will this comparison always work?
-                isRoaming = !myDocsPath.StartsWith(userProfilePath);
-            }
-
-            if (!isRoaming)
-            {
-                // require both paths to exist, otherwise isRoaming=T
-                isRoaming = !(Directory.Exists(myDocsPath) && Directory.Exists(userProfilePath));
-            }
-
-            session[outputPropertyName] = isRoaming
-                ? outputDirIfRoaming
-                : Path.Combine(myDocsPath, folderName);
-
-            return ActionResult.Success;
-        }
-
-        #endregion
-
         #region Stop / Start RISA32 Service
 
         //

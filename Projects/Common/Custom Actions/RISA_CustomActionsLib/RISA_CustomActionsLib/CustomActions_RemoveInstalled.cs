@@ -6,20 +6,21 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions
+    public partial class CustomActions_StopStartService
     {
         [CustomAction]
         public static ActionResult RemoveInstalledProducts(Session session)
         {
+            const string methodName = "RemoveInstalledProducts";
             #region copy Session props to SessionDTO
             SessionDTO sessDTO;
             try
             {
-                sessDTO = remInstalled_copyFromSession(session);
+                sessDTO = remInstalled_getFromSession(session);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                sessLog(session, e.Message);
+                excpLog(session, methodName, ex);
                 return ActionResult.Failure;
             }
             #endregion
@@ -29,11 +30,11 @@ namespace RISA_CustomActionsLib
             #region copy SessionDTO props back to Session
             try
             {
-                remInstalled_copyToSession(session, sessDTO);
+                remInstalled_returnToSession(session, sessDTO);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                sessLog(session, e.Message);
+                excpLog(session, methodName, ex);
                 return ActionResult.Failure;
             }
             #endregion
@@ -43,6 +44,7 @@ namespace RISA_CustomActionsLib
 
         public static ActionResult removeInstalledProducts(SessionDTO sessDTO)
         {
+            const string methodName = "removeInstalledProducts";
             var actionResult = ActionResult.Success;
             string msgText = null;
             try
@@ -77,30 +79,34 @@ namespace RISA_CustomActionsLib
             }
             finally
             {
-                sessLog(sessDTO, msgText);
+                sessLog(sessDTO, methodName, msgText);
             }
             return actionResult;
         }
 
         #region RemoveInstalledProducts - Session / SessionDTO property copying
-        private static SessionDTO remInstalled_copyFromSession(Session session)
-        {
-            var sessDTO = new SessionDTO(session.Log)
-            {
-                // props set by installer
-                [_propMSI_ProductName] = session[_propMSI_ProductName],
 
-                // props set by other CA, read here
-                [_propRISA_INSTALLED_PRODUCTS] = session[_propRISA_INSTALLED_PRODUCTS],
-                //
-                // props created by installer
-                [_propRISA_STATUS_CODE] = session[_propRISA_STATUS_CODE],
-                [_propRISA_STATUS_TEXT] = session[_propRISA_STATUS_TEXT],
-            };
+        private static SessionDTO remInstalled_getFromSession(Session session)
+        {
+            _doTrace = true;        // hardwire for now, but eventually set from _propRISA_CA_TRACE
+
+            var sessDTO = new SessionDTO(session.Log);
+            // prop values set in aip
+            copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
+            //
+            // prop values set by antecedent call to InitProperties
+            copySinglePropFromSession(sessDTO, session, _propRISA_INSTALLED_PRODUCTS);
+            //
+            // prop values set by RemoveInstalledProducts
+            copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_CODE);
+            copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_TEXT);
+            //
+            const string methodName = "remInstalled_getFromSession";
+            Trace(methodName, sessDTO.ToString());
             return sessDTO;
         }
 
-        private static void remInstalled_copyToSession(Session session, SessionDTO sessDTO)
+        private static void remInstalled_returnToSession(Session session, SessionDTO sessDTO)
         {
             // don't overwrite items set by caller, only those set here
             //
