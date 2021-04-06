@@ -30,8 +30,8 @@ namespace RISA_CustomActionsLib.Models
 
         // DisplayNames are:  'RISA-3D 19.0' or 'RISA-3D 19.0 Demo'
         //  older product versions have a lot more decorators following the major.minor version
-        [XmlIgnore] public string InStallType => DisplayName.Contains(CustomActions_StopStartService._insTypeDemo)
-                        ? CustomActions_StopStartService._insTypeDemo : CustomActions_StopStartService._insTypeStandalone;
+        [XmlIgnore] public string InStallType => DisplayName.Contains(CustomActions._insTypeDemo)
+                        ? CustomActions._insTypeDemo : CustomActions._insTypeStandalone;
         [XmlIgnore] public string ProductName => DisplayName.Split(' ')[0];
         [XmlIgnore] public Version ProductVersion => ProductVersionStr.ToVersion();
 

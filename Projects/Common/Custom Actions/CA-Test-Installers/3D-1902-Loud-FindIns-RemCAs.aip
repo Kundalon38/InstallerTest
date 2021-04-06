@@ -14,7 +14,8 @@
     <ROW Property="ProductCode" Value="1033:{4374F1EA-3580-4E24-B12B-E2207CC65594} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISA-3D"/>
-    <ROW Property="ProductVersion" Value="19.0.1" Type="32"/>
+    <ROW Property="ProductVersion" Value="19.0.1.0" Type="32"/>
+    <ROW Property="RISA_STATUS_TEXT" Value="[|]"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{22666A33-19CF-426E-83E3-416A37DF74EF}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -398,6 +399,12 @@
     <ROW File="UnitsNet.dll" Component_="UnitsNet.dll" FileName="UnitsNet.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\SAF-3D\UnitsNet.dll" SelfReg="false"/>
     <ROW File="RISAtech.CalatravaLink.dll.config" Component_="RISAtech.CalatravaLink.dll.config" FileName="RISATE~1.CON|RISAtech.CalatravaLink.dll.config" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\SAF-3D\RISAtech.CalatravaLink.dll.config" SelfReg="false"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.AiInstallUISequenceAliasComponent">
+    <ROW AliasRowId="AI_ResolveKnownFolders" AliasRowOperation="2" Sequence="64"/>
+    <ROW AliasRowId="AI_DpiContentScale" AliasRowOperation="2" Sequence="63"/>
+    <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="62"/>
+    <ROW AliasRowId="InitPropertiesErrorDlg" AliasRowOperation="2" Condition="RISA_STATUS_CODE&lt;&gt;&quot;RISA_STS_OK&quot;" Sequence="52"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiPropertyAliasComponent">
     <ROW AliasRowOperation="0" Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW AliasRowOperation="0" Property="RISA_INSTALL_TYPE" Value="Standalone"/>
@@ -411,7 +418,6 @@
     <ROW AliasRowOperation="0" Property="RISA_USERFILES" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="USERFILES_RISA" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_STATUS_CODE" Value="[|]"/>
-    <ROW AliasRowOperation="0" Property="RISA_STATUS_TEXT" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_INSTALLED_PRODUCTS" Value="[|]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
@@ -454,6 +460,15 @@
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="0" Text="[ButtonText_Back]" Order="400" Options="1"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="An Error Occurred" TextStyle="VerdanaBold13" Order="500"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Property="RISA_STATUS_TEXT" Text="[RISA_STATUS_TEXT]" Order="600"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
@@ -478,6 +493,8 @@
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="DoAction" Argument="RemoveInstalledProducts" Condition="AI_INSTALL" Ordering="501"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100"/>
+    <ROW Dialog_="InitPropertiesErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -509,6 +526,9 @@
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]RISA\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
+    <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
@@ -721,6 +741,7 @@
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
     <ROW Action="InitProperties" Sequence="51"/>
+    <ROW Action="InitPropertiesErrorDlg" Condition="AI_INSTALL" Sequence="74" SeqType="3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>

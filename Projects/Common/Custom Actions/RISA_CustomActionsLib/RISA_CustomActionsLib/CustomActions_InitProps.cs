@@ -11,17 +11,21 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions_StopStartService
+    public partial class CustomActions
     {
         // many minor methods are public for the sake of unit testing
         // - they really should be private
         // - these methods begin in lowerCase
         // - public methods called by MSI begin in UpperCase
+        //
+        // return ActionResult.Success otherwise AI shows a (useless) generic failure screen
+        // follow a call to these CustomActions with a dialog that's conditioned on RISA_STATUS_CODE<>"RISA_STS_OK"
 
         [CustomAction]
         public static ActionResult InitProperties(Session session)
         {
             const string methodName = "InitProperties";
+
 #if ATTACH_DEBUGGER
             int processId = Process.GetCurrentProcess().Id;
             string message = string.Format("Init Properties: Please attach the debugger (elevated) to process [{0}].", processId);
@@ -37,7 +41,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Failure;
+                return ActionResult.Success;
             }
             #endregion
 
@@ -51,7 +55,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Failure;
+                return ActionResult.Success;
             }
             #endregion
 
@@ -114,12 +118,12 @@ namespace RISA_CustomActionsLib
             string msgText = null;
             try
             {
-                if (!validProductName(sessDTO)) return ActionResult.Failure;
-                if (!processProductVersion(sessDTO)) return ActionResult.Failure;
-                if (!validInstallType(sessDTO)) return ActionResult.Failure;
+                if (!validProductName(sessDTO)) return ActionResult.Success;
+                if (!processProductVersion(sessDTO)) return ActionResult.Success;
+                if (!validInstallType(sessDTO)) return ActionResult.Success;
 
                 assignVersionBasedProperties(sessDTO);
-                if(!serializeMatchingInstalledProducts(sessDTO)) return ActionResult.Failure;
+                if(!serializeMatchingInstalledProducts(sessDTO)) return ActionResult.Success;
                 assignRemainingIdentityBasedProperties(sessDTO);
                 assignDocumentPath(sessDTO);
                 assignDefaultLicenseType(sessDTO);
@@ -140,7 +144,7 @@ namespace RISA_CustomActionsLib
             {
                 sessDTO[_propRISA_STATUS_CODE] = _sts_EXCP;
                 msgText = $"{e.Message}{Environment.NewLine}{e.StackTrace}";
-                actionResult = ActionResult.Failure;
+                actionResult = ActionResult.Success;
             }
             finally
             {

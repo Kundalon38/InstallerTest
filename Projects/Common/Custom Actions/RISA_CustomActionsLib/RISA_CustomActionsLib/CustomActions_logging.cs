@@ -5,7 +5,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions_StopStartService
+    public partial class CustomActions
     {
 
         private static bool reportError(SessionDTO sessDTO, string loc, string statusCode, string statusText)

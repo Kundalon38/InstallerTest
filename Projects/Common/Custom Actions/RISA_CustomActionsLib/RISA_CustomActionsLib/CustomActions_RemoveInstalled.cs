@@ -6,7 +6,7 @@ using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib
 {
-    public partial class CustomActions_StopStartService
+    public partial class CustomActions
     {
         [CustomAction]
         public static ActionResult RemoveInstalledProducts(Session session)
@@ -21,7 +21,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Failure;
+                return ActionResult.Success;
             }
             #endregion
 
@@ -35,7 +35,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Failure;
+                return ActionResult.Success;
             }
             #endregion
 
@@ -75,7 +75,7 @@ namespace RISA_CustomActionsLib
             {
                 sessDTO[_propRISA_STATUS_CODE] = _sts_EXCP;
                 msgText = $"{e.Message}{Environment.NewLine}{e.StackTrace}";
-                actionResult = ActionResult.Failure;
+                actionResult = ActionResult.Success;
             }
             finally
             {

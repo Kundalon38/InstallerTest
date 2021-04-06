@@ -9,7 +9,7 @@ namespace RISA_CustomActionsLib
     // - very low bar, most / all customer machines wil have this,
     //   eliminating the need to provision the customer machine for this lib
     //
-    public partial class CustomActions_StopStartService
+    public partial class CustomActions
     {
         #region Stop / Start RISA32 Service
 
@@ -29,15 +29,15 @@ namespace RISA_CustomActionsLib
         private const int _maxWaitForService_Seconds = 60;
 
         [CustomAction]
-        public static  ActionResult ServiceControlStopRISA32(Session session)
+        public static  CustomActions ServiceControlStopRISA32(Session session)
         {
             session.Log("ServiceControlStopRISA32");
             var services = ServiceController.GetServices();
 
             var risaSvc = services.FirstOrDefault(x => x.ServiceName == _risaServiceName);
 
-            if (risaSvc == null) return ActionResult.Success;                                   // service isn't installed
-            if (risaSvc.Status != ServiceControllerStatus.Running) return ActionResult.Success; // service isn't running
+            if (risaSvc == null) return CustomActions.Success;                                   // service isn't installed
+            if (risaSvc.Status != ServiceControllerStatus.Running) return CustomActions.Success; // service isn't running
             //
             // stop service
             //
@@ -50,7 +50,7 @@ namespace RISA_CustomActionsLib
                 {
                     Thread.Sleep(_sleep_millisecs);
                     risaSvc.Refresh();
-                    if (risaSvc.Status == ServiceControllerStatus.Stopped) return ActionResult.Success;
+                    if (risaSvc.Status == ServiceControllerStatus.Stopped) return CustomActions.Success;
                     session.Log("RISA32 service not stopped yet");
                 }
             }

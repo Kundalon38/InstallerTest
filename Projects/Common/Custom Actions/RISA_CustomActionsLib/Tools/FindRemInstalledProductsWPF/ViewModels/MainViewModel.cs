@@ -16,7 +16,7 @@ namespace FindRemInstalledProductsWPF.ViewModels
             Messages = new BindableCollection<LogMessage>();
             ProductName = "RISA-3D";
             _sessDTO = new SessionDTO(display)
-                {[CustomActions_StopStartService._propRISA_INSTALLED_PRODUCTS] = string.Empty};
+                {[CustomActions._propRISA_INSTALLED_PRODUCTS] = string.Empty};
         }
         private SessionDTO _sessDTO;
 
@@ -94,15 +94,15 @@ namespace FindRemInstalledProductsWPF.ViewModels
 
         public void FindProducts()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductName] = ProductName;
-            _sessDTO[CustomActions_StopStartService._propMSI_ProductVersion] = ProductVersion;
-            _sessDTO[CustomActions_StopStartService._propMSI_TARGETDIR] = string.Empty;
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALL_TYPE] = InstallType.ToString();
-            _sessDTO[CustomActions_StopStartService._propRISA_PRODUCT_TITLE2_INSTYPE] = DisplayName;
-            _sessDTO[CustomActions_StopStartService._propRISA_INSTALLED_PRODUCTS] = string.Empty;
-            _sessDTO[CustomActions_StopStartService._propRISA_STATUS_CODE] = string.Empty;
-            _sessDTO[CustomActions_StopStartService._propRISA_STATUS_TEXT] = string.Empty;
-            var result = CustomActions_StopStartService.serializeMatchingInstalledProducts(_sessDTO);
+            _sessDTO[CustomActions._propMSI_ProductName] = ProductName;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = ProductVersion;
+            _sessDTO[CustomActions._propMSI_TARGETDIR] = string.Empty;
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = InstallType.ToString();
+            _sessDTO[CustomActions._propRISA_PRODUCT_TITLE2_INSTYPE] = DisplayName;
+            _sessDTO[CustomActions._propRISA_INSTALLED_PRODUCTS] = string.Empty;
+            _sessDTO[CustomActions._propRISA_STATUS_CODE] = string.Empty;
+            _sessDTO[CustomActions._propRISA_STATUS_TEXT] = string.Empty;
+            var result = CustomActions.serializeMatchingInstalledProducts(_sessDTO);
             display($"serializeMatchingInstalledProducts returns {result}");
             display(_sessDTO.ToString());
         }
@@ -122,8 +122,8 @@ namespace FindRemInstalledProductsWPF.ViewModels
 
         public void RemoveProducts()
         {
-            _sessDTO[CustomActions_StopStartService._propMSI_TARGETDIR] = TargetDir;
-            CustomActions_StopStartService.removeInstalledProducts(_sessDTO);
+            _sessDTO[CustomActions._propMSI_TARGETDIR] = TargetDir;
+            CustomActions.removeInstalledProducts(_sessDTO);
         }
 
         public bool CanRemoveProducts => !string.IsNullOrEmpty(TargetDir);
