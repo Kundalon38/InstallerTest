@@ -66,8 +66,6 @@ namespace RISA_CustomActionsLib
  
         private static SessionDTO initProperties_getFromSession(Session session)
         {
-            _doTrace = true;        // hardwire for now, but eventually set from _propRISA_CA_TRACE
-
             var sessDTO = new SessionDTO(session.Log);
             // prop values set in aip
             copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
@@ -75,6 +73,9 @@ namespace RISA_CustomActionsLib
             copySinglePropFromSession(sessDTO, session, _propRISA_COMPANY_KEY);
             copySinglePropFromSession(sessDTO, session, _propRISA_INSTALL_TYPE);
             copySinglePropFromSession(sessDTO, session, _propRISA_REGISTRY_PRODUCT_NAME);
+            //
+            copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG,false);
+            setupDebugIfRequested(session, sessDTO);
             //
             // prop values set by InitProperties
             copySinglePropFromSession(sessDTO, session, _propRISA_INSTALLED_PRODUCTS);
@@ -128,17 +129,8 @@ namespace RISA_CustomActionsLib
                 assignDocumentPath(sessDTO);
                 assignDefaultLicenseType(sessDTO);
 
-                if (_versionParts.Length == 3)
-                {
-                    sessDTO[_propRISA_STATUS_CODE] = _sts_WARN_VERSION3;
-                    msgText = "ProductVersion should have 4 version parts";
-                }
-                else
-                {
-                    sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
-                    msgText = "Success";
-                }
-                sessDTO[_propRISA_STATUS_TEXT] = msgText;
+                sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
+                sessDTO[_propRISA_STATUS_TEXT] = "Success"; ;
             }
             catch (Exception e)
             {

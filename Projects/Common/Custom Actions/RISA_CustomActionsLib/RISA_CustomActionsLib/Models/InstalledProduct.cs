@@ -59,6 +59,8 @@ namespace RISA_CustomActionsLib.Models
                     //
                     const string cmdArgsIA = @"/S MODIFY=FALSE REMOVE=TRUE UNINSTALL=YES";
                     uninsProcess = Process.Start(UnInstallStr.Dq(), cmdArgsIA);
+                    CustomActions.Trace("UnInstall", $"UnInstallStr.Dq()={UnInstallStr.Dq()} args={cmdArgsIA}");
+
                     break;
 
                 case eInstallerVendor.AdvancedInstaller:

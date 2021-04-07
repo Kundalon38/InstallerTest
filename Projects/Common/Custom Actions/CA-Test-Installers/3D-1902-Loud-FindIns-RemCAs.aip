@@ -14,7 +14,7 @@
     <ROW Property="ProductCode" Value="1033:{4374F1EA-3580-4E24-B12B-E2207CC65594} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISA-3D"/>
-    <ROW Property="ProductVersion" Value="19.0.1.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="19.0.3.0" Type="32"/>
     <ROW Property="RISA_STATUS_TEXT" Value="[|]"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{22666A33-19CF-426E-83E3-416A37DF74EF}"/>
@@ -424,7 +424,7 @@
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="C:\Users\Kirk\Desktop" PackageFileName="install_3D_1901_AI" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="C:\Advanced Installer\Projects\RISA-3D_dotNET\Assets\icon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="install_3D_1901_AI" MsiPackageType="x64" UACExecutionLevel="2"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="C:\Users\Kirk\Desktop" PackageFileName="install_3D_1903_AI" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="C:\Advanced Installer\Projects\RISA-3D_dotNET\Assets\icon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="install_3D_1903_AI" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -523,7 +523,7 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="InitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
     <ROW Action="RemoveInstalledProducts" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="RemoveInstalledProducts" WithoutSeq="true"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]RISA\[ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFilesFolder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>

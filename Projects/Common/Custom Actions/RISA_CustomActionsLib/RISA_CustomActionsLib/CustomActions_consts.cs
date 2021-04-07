@@ -18,6 +18,7 @@ namespace RISA_CustomActionsLib
         public const string _propMSI_ProductName = "ProductName";
         public const string _propMSI_ProductVersion = "ProductVersion";
         public const string _propMSI_TARGETDIR = "TARGETDIR";
+        public const string _propAI_APPDIR = "APPDIR";
         public const string _propMSI_CustomActionData = "CustomActionData";
 
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
@@ -46,7 +47,9 @@ namespace RISA_CustomActionsLib
 
         public const string _propRISA_STATUS_CODE = "RISA_STATUS_CODE";
         public const string _propRISA_STATUS_TEXT = "RISA_STATUS_TEXT";
-        public const string _propRISA_CA_TRACE = "RISA_CA_TRACE";
+        public const string _propRISA_CA_DEBUG = "RISA_CA_DEBUG";
+
+        public const string _debug_Trace = "TRACEFILE";
 
         #endregion
 
@@ -59,7 +62,6 @@ namespace RISA_CustomActionsLib
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
         public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
-        public const string _sts_WARN_VERSION3 = "RISA_WARN_VERSION3";
 
 
         #endregion
@@ -145,7 +147,7 @@ namespace RISA_CustomActionsLib
 
         #region Misc functions
 
-        private static void copySinglePropFromSession(SessionDTO sessDTO, Session session, string propName)
+        private static void copySinglePropFromSession(SessionDTO sessDTO, Session session, string propName, bool propMustExist=true)
         {
             // the whole idea is to provide enough info (property name) should an installer fail to establish a required prop
             try
@@ -154,7 +156,24 @@ namespace RISA_CustomActionsLib
             }
             catch (Exception ex)
             {
+                if (!propMustExist) return;
                 throw new IndexOutOfRangeException($"Error retrieving Session property {propName}", ex);
+            }
+        }
+
+        private static void setupDebugIfRequested(Session session, SessionDTO sessDTO)
+        {
+
+            copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);
+            if (!sessDTO.PropertyExists(_propRISA_CA_DEBUG)) return;
+            switch (sessDTO[_propRISA_CA_DEBUG])
+            {
+                case _debug_Trace:
+                    _doTrace = true;
+                    break;
+                // other debug types here
+                default:
+                    break;
             }
         }
 

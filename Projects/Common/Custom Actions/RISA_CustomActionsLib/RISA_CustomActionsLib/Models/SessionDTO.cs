@@ -32,6 +32,11 @@ namespace RISA_CustomActionsLib.Models
             set => _propDict[propName] = value;
         }
 
+        public bool PropertyExists(string propName)
+        {
+            return _propDict.ContainsKey(propName);
+        }
+
         public override string ToString()
         {
             var outStr = string.Empty;

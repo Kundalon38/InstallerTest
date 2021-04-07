@@ -56,15 +56,16 @@ namespace RISA_CustomActionsLib
                     var insProductList = InstalledProductList.Deserialize(insProdListXml);
                     //
                     // normalize the two directory strings, sometimes there's a trailing bash, sometimes not
+                    // - AI install directory is APPDIR (result of their dialog), not TARGETDIR
                     //
-
-                    var normalizedTargetDir = sessDTO[_propMSI_TARGETDIR].EnsureTrailingBash();
+                    var normalizedAppDir = sessDTO[_propAI_APPDIR].EnsureTrailingBash();
+                    Trace(methodName, $"normalizedAppDir={normalizedAppDir}");
                     foreach (var insProd in insProductList)
                     {
-                        if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedTargetDir,
+                        if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedAppDir,
                             StringComparison.CurrentCultureIgnoreCase)) tbRemoved.Add(insProd);
                     }
-
+                    Trace(methodName, $"tbRemoved.Count={tbRemoved.Count}");
                     foreach (var insProd in tbRemoved) insProd.UnInstall();
                 }
                 sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
@@ -88,11 +89,14 @@ namespace RISA_CustomActionsLib
 
         private static SessionDTO remInstalled_getFromSession(Session session)
         {
-            _doTrace = true;        // hardwire for now, but eventually set from _propRISA_CA_TRACE
-
             var sessDTO = new SessionDTO(session.Log);
             // prop values set in aip
             copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
+            copySinglePropFromSession(sessDTO, session, _propAI_APPDIR);
+            //
+            copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);
+            setupDebugIfRequested(session, sessDTO);
+            //
             //
             // prop values set by antecedent call to InitProperties
             copySinglePropFromSession(sessDTO, session, _propRISA_INSTALLED_PRODUCTS);
