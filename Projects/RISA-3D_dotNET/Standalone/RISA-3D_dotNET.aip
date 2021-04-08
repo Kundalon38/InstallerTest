@@ -2015,7 +2015,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
-    <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="\VC,redist.x64,amd64,14.28,bundle\Version\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
+    <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
     <ROW SearchKey="Version_1" Prereq="MicrosoftVisualC_1" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x86,x86,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
