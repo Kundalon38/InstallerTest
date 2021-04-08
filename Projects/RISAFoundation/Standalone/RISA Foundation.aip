@@ -16,6 +16,7 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#MsiBuild:install_background.bmp#MsiBuild_1:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
+    <ROW Property="PRODUCT_VERSION2" Value="PRODUCT_VERSION2"/>
     <ROW Property="ProductCode" Value="1033:{0DF53BB8-C061-453F-A8A3-A7844CB9CF8F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
@@ -338,8 +339,8 @@
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -349,12 +350,14 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
-    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="MicrosoftVisualC_1" DisplayName="Microsoft Visual C++ 2019 Redistributable (x86)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x86.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29913\VC_redist.x86.exe"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver 7.6.0" VersionMin="7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC MicrosoftVisualC_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
+    <ROW SearchKey="VCredist.x86x8614.28bundle" Prereq="MicrosoftVisualC_1" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x86,x86,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_3"/>
   </COMPONENT>
 </DOCUMENT>

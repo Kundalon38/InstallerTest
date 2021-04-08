@@ -9,6 +9,8 @@ Projects/*/*-SetupFiles/
 *.suo
 *.sln.docstates
 *.cache
+*.back.aip
+*.testlog
 **/packages
 **/debug
 **/obj
@@ -17,4 +19,3 @@ Projects/*/*-SetupFiles/
 **/*SetupFiles
 **/*-cache
 .vs/*
-

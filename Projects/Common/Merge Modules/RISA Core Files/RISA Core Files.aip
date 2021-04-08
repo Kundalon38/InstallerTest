@@ -94,6 +94,7 @@
     <ROW Directory="NewFolder_3_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="TIMEHI~1|Time History"/>
     <ROW Directory="NewFolder_4_Dir" Directory_Parent="WoodSchedules_Dir" DefaultDir="Straps"/>
     <ROW Directory="NewFolder_5_Dir" Directory_Parent="RegionDefaults_Dir" DefaultDir=".:REGION~3|Region Defaults Foundation"/>
+    <ROW Directory="NewFolder_6_Dir" Directory_Parent="RISA_USERFILES" DefaultDir="Defaults"/>
     <ROW Directory="NewFolder_Dir" Directory_Parent="APPDIR" DefaultDir="DXFFIL~1|DXF Files"/>
     <ROW Directory="Old_1_Dir" Directory_Parent="IJoists_Dir" DefaultDir="Old"/>
     <ROW Directory="Old_Dir" Directory_Parent="IJoists_1_Dir" DefaultDir="Old"/>
@@ -222,6 +223,7 @@
     <ROW Component="LoadCombinations" ComponentId="{1ABB2446-94FC-4154-A58B-3728BA1CC4D0}" Directory_="LoadCombinations_Dir" Attributes="16" KeyPath="Australian_RF.xml" Type="0"/>
     <ROW Component="Manuals" ComponentId="{D4B29EFE-4628-41C4-9780-EF43B8B0C601}" Directory_="Manuals_Dir" Attributes="0" KeyPath="Release_Notes_3D.pdf" Type="0"/>
     <ROW Component="Multithreading.png" ComponentId="{A7612074-2439-4B52-A930-E4BAF430554E}" Directory_="Results_files_Dir" Attributes="0" KeyPath="Multithreading.png" Type="0"/>
+    <ROW Component="NewFolder" ComponentId="{8DF68527-DD23-4DC8-9461-DD58C611D5C5}" Directory_="NewFolder_6_Dir" Attributes="0"/>
     <ROW Component="RISA" ComponentId="{338B905C-2B98-4634-B549-ADC7A8F261BA}" Directory_="RISA_Dir" Attributes="0"/>
     <ROW Component="RISALicensing.chm" ComponentId="{75A3854F-B509-46F1-9E81-CC833A9D2C49}" Directory_="APPDIR" Attributes="0" KeyPath="RISALicensing.chm" Type="1"/>
     <ROW Component="RISASectionFiles" ComponentId="{0D5A9B77-C4DA-4958-A320-341CF6D756BC}" Directory_="RISASectionFiles_Dir" Attributes="0"/>
@@ -4317,6 +4319,22 @@
     <ROW File="Release_Notes_Floor.pdf" Component_="Manuals" FileName="RELEAS~2.PDF|Release_Notes_Floor.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFloor\Release Notes\Release_Notes_Floor.pdf" SelfReg="false"/>
     <ROW File="Release_Notes_Foundation.pdf" Component_="Manuals" FileName="RELEAS~3.PDF|Release_Notes_Foundation.pdf" Attributes="0" SourcePath="..\..\..\..\Source Files\RISAFoundation\Release Notes\Release_Notes_Foundation.pdf" SelfReg="false"/>
     <ROW File="SearchPhrase_Chunk112.js" Component_="Alias.js" FileName="SEAR~128.JS|SearchPhrase_Chunk112.js" Attributes="0" SourcePath="..\..\..\..\Source Files\RISA-3D\Help\RISA-3D\Data\SearchPhrase_Chunk112.js" SelfReg="false"/>
+    <ROW File="APAPRI405.xml_2" Component_="IJoistsOld" FileName="APAPRI~1.XML|APA PRI-405.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\APA PRI-405.xml" SelfReg="false"/>
+    <ROW File="BoiseCascadeOLD.xml" Component_="IJoistsOld" FileName="BOISEC~1.XML|Boise Cascade OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Boise Cascade OLD.xml" SelfReg="false"/>
+    <ROW File="CANTrusJoist.xml_2" Component_="IJoistsOld" FileName="CANTRU~1.XML|CAN Trus Joist.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\CAN Trus Joist.xml" SelfReg="false"/>
+    <ROW File="iLevel.xml" Component_="IJoistsOld" FileName="iLevel.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\iLevel.xml" SelfReg="false"/>
+    <ROW File="LousianaPacificOLD.xml" Component_="IJoistsOld" FileName="LOUSIA~1.XML|Lousiana Pacific OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Lousiana Pacific OLD.xml" SelfReg="false"/>
+    <ROW File="RoseburgForestProducts.xml_2" Component_="IJoistsOld" FileName="ROSEBU~1.XML|Roseburg Forest Products.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Roseburg Forest Products.xml" SelfReg="false"/>
+    <ROW File="TrusJoistOLD.xml" Component_="IJoistsOld" FileName="TRUSJO~1.XML|Trus Joist OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Trus Joist OLD.xml" SelfReg="false"/>
+    <ROW File="TrusJoist.xml_2" Component_="IJoistsOld" FileName="TRUSJO~2.XML|Trus Joist.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Trus Joist.xml" SelfReg="false"/>
+    <ROW File="APAPRI405.xml_3" Component_="IJoistsOld_2" FileName="APAPRI~1.XML|APA PRI-405.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\APA PRI-405.xml" SelfReg="false"/>
+    <ROW File="BoiseCascadeOLD.xml_1" Component_="IJoistsOld_2" FileName="BOISEC~1.XML|Boise Cascade OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Boise Cascade OLD.xml" SelfReg="false"/>
+    <ROW File="CANTrusJoist.xml_3" Component_="IJoistsOld_2" FileName="CANTRU~1.XML|CAN Trus Joist.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\CAN Trus Joist.xml" SelfReg="false"/>
+    <ROW File="iLevel.xml_1" Component_="IJoistsOld_2" FileName="iLevel.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\iLevel.xml" SelfReg="false"/>
+    <ROW File="LousianaPacificOLD.xml_1" Component_="IJoistsOld_2" FileName="LOUSIA~1.XML|Lousiana Pacific OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Lousiana Pacific OLD.xml" SelfReg="false"/>
+    <ROW File="RoseburgForestProducts.xml_3" Component_="IJoistsOld_2" FileName="ROSEBU~1.XML|Roseburg Forest Products.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Roseburg Forest Products.xml" SelfReg="false"/>
+    <ROW File="TrusJoistOLD.xml_1" Component_="IJoistsOld_2" FileName="TRUSJO~1.XML|Trus Joist OLD.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Trus Joist OLD.xml" SelfReg="false"/>
+    <ROW File="TrusJoist.xml_3" Component_="IJoistsOld_2" FileName="TRUSJO~2.XML|Trus Joist.xml" Attributes="0" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old\Trus Joist.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.MsiShortcutPropertyComponent">
     <ROW MsiShortcutProperty="RISA3DGeneralReference0" Shortcut_="RISA3DGeneralReference" PropertyKey="System.AppUserModel.PreventPinning" PropVariantValue="1"/>
@@ -4339,6 +4357,7 @@
     <ROW Directory_="RISASectionFiles_Dir" Component_="RISASectionFiles" ManualDelete="false"/>
     <ROW Directory_="Defaults_Dir" Component_="Defaults" ManualDelete="false"/>
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
+    <ROW Directory_="NewFolder_6_Dir" Component_="NewFolder" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="TargetFeature" Component_="DXF"/>
@@ -4486,6 +4505,7 @@
     <ROW Feature_="TargetFeature" Component_="arrowdown.png"/>
     <ROW Feature_="TargetFeature" Component_="Slideshow.css"/>
     <ROW Feature_="TargetFeature" Component_="RISALicensing.chm"/>
+    <ROW Feature_="TargetFeature" Component_="NewFolder"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRemoveFileComponent">
     <ROW FileKey="NetworkInstallationInstructions.pdf" Component_="Manuals" FileName="Network Installations Instructions.pdf" DirProperty="Manuals_Dir" InstallMode="1"/>
@@ -4522,8 +4542,8 @@
     <ROW Directory_="Decks_1_Dir" SourcePath="..\..\..\..\Source Files\RISAFloor\RISA_Decks" Feature="TargetFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" ExcludeSubFolders="true" FileAddOptions="4"/>
     <ROW Directory_="HoldDowns_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\HoldDowns" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="HoldDowns_1_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\HoldDowns" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
-    <ROW Directory_="IJoists_1_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" ExcludeSubFolders="true" FileAddOptions="4"/>
-    <ROW Directory_="IJoists_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" ExcludeSubFolders="true" FileAddOptions="4"/>
+    <ROW Directory_="IJoists_1_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
+    <ROW Directory_="IJoists_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="Old_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old" Feature="TargetFeature" IncludePattern="*.asc" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="Old_1_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\I-Joists\Old" Feature="TargetFeature" IncludePattern="*.asc" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
     <ROW Directory_="ShearPanels_2_Dir" SourcePath="..\..\..\..\Source Files\Common Files\RISA_Wood_Schedules\ShearPanels" Feature="TargetFeature" IncludePattern="*.xml" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" ExcludeSubFolders="true" FileAddOptions="4"/>
