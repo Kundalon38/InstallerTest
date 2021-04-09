@@ -35,6 +35,11 @@ namespace RISA_CustomActionsLib.Models
         [XmlIgnore] public string ProductName => DisplayName.Split(' ')[0];
         [XmlIgnore] public Version ProductVersion => ProductVersionStr.ToVersion();
 
+        public string ToDisplayString()
+        {
+            return $"{DisplayName} ({ProductVersionStr})";
+        }
+
         public override string ToString()
         {
             return $"Vendor = {Vendor}{Environment.NewLine}" 

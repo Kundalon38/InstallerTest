@@ -95,7 +95,6 @@
     <ROW Component="RISAtech.CoreAccess.Contract.Common.dll" ComponentId="{52982940-46F0-4DEE-BFD7-139E5AA09AC0}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.CoreAccess.Contract.Common.dll"/>
     <ROW Component="RISAtech.CoreAccess.Contract.R3D.dll" ComponentId="{3F6D0993-6D59-4E50-BD08-2EFD48DF7DF1}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.CoreAccess.Contract.R3D.dll"/>
     <ROW Component="RISAtech.CoreAccess.R3D.dll" ComponentId="{655458D5-276D-46D5-8547-012912CF71B0}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.CoreAccess.R3D.dll"/>
-    <ROW Component="RISAtech.Draw.dll" ComponentId="{AB02A4C3-DFF3-4AF7-BA23-69E4F1A35C0E}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.Draw.dll"/>
     <ROW Component="RISAtech.GlibRes.dll" ComponentId="{9F6AB6AA-2182-48A8-8392-51DBC6585B28}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.GlibRes.dll"/>
     <ROW Component="RISAtech.Presentation.DX.Contract.Common.dll" ComponentId="{CE94C194-03E7-4DE8-BBCB-D7E8DFA8E371}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.Presentation.DX.Contract.Common.dll"/>
     <ROW Component="RISAtech.Presentation.DX.Contract.R3D.dll" ComponentId="{5EBF0BAF-94BB-4186-BE7A-968F3B19B207}" Directory_="RISA3D_Dir" Attributes="256" KeyPath="RISAtech.Presentation.DX.Contract.R3D.dll"/>
@@ -232,7 +231,6 @@
     <ROW File="RISAtech.CoreAccess.Contract.Common.dll" Component_="RISAtech.CoreAccess.Contract.Common.dll" FileName="RISATE~2.DLL|RISAtech.CoreAccess.Contract.Common.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.CoreAccess.Contract.Common.dll" SelfReg="false"/>
     <ROW File="RISAtech.CoreAccess.Contract.R3D.dll" Component_="RISAtech.CoreAccess.Contract.R3D.dll" FileName="RISATE~3.DLL|RISAtech.CoreAccess.Contract.R3D.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.CoreAccess.Contract.R3D.dll" SelfReg="false"/>
     <ROW File="RISAtech.CoreAccess.R3D.dll" Component_="RISAtech.CoreAccess.R3D.dll" FileName="RISATE~4.DLL|RISAtech.CoreAccess.R3D.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.CoreAccess.R3D.dll" SelfReg="false"/>
-    <ROW File="RISAtech.Draw.dll" Component_="RISAtech.Draw.dll" FileName="RISATE~5.DLL|RISAtech.Draw.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.Draw.dll" SelfReg="false"/>
     <ROW File="RISAtech.GlibRes.dll" Component_="RISAtech.GlibRes.dll" FileName="RISATE~6.DLL|RISAtech.GlibRes.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.GlibRes.dll" SelfReg="false"/>
     <ROW File="RISAtech.Presentation.DX.Contract.Common.dll" Component_="RISAtech.Presentation.DX.Contract.Common.dll" FileName="RISATE~7.DLL|RISAtech.Presentation.DX.Contract.Common.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.Presentation.DX.Contract.Common.dll" SelfReg="false"/>
     <ROW File="RISAtech.Presentation.DX.Contract.R3D.dll" Component_="RISAtech.Presentation.DX.Contract.R3D.dll" FileName="RISATE~8.DLL|RISAtech.Presentation.DX.Contract.R3D.dll" Attributes="0" SourcePath="C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.Presentation.DX.Contract.R3D.dll" SelfReg="false"/>
@@ -404,19 +402,18 @@
     <ROW AliasRowId="AI_DpiContentScale" AliasRowOperation="2" Sequence="63"/>
     <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="62"/>
     <ROW AliasRowId="InitPropertiesErrorDlg" AliasRowOperation="2" Condition="RISA_STATUS_CODE&lt;&gt;&quot;RISA_STS_OK&quot;" Sequence="52"/>
+    <ROW AliasRowId="RemoveInstalledProductsErrorDlg" AliasRowOperation="2" Condition="AI_INSTALL AND RISA_STATUS_CODE&lt;&gt;&quot;RISA_STS_OK&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiPropertyAliasComponent">
     <ROW AliasRowOperation="0" Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW AliasRowOperation="0" Property="RISA_INSTALL_TYPE" Value="Standalone"/>
-    <ROW AliasRowOperation="0" Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|]"/>
-    <ROW AliasRowOperation="0" Property="RISA_CA_TRACE" Value="DESKTOP"/>
+    <ROW AliasRowOperation="0" Property="RISA_REGISTRY_PRODUCT_NAME" Value="[ProductName]"/>
     <ROW AliasRowOperation="0" Property="RISA_LICENSE_TYPE" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_PRODUCT_VERSION2" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_PRODUCT_VERSION34" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_UPDATE_DATA_VALUE" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_USERFILES" Value="[|]"/>
-    <ROW AliasRowOperation="0" Property="USERFILES_RISA" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_STATUS_CODE" Value="[|]"/>
     <ROW AliasRowOperation="0" Property="RISA_INSTALLED_PRODUCTS" Value="[|]"/>
   </COMPONENT>
@@ -468,6 +465,13 @@
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="An Error Occurred" TextStyle="VerdanaBold13" Order="500"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Property="RISA_STATUS_TEXT" Text="[RISA_STATUS_TEXT]" Order="600"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="0" Text="[ButtonText_Back]" Order="400" Options="1"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="An Error Occurred" TextStyle="VerdanaBold13" Order="500"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="[RISA_STATUS_TEXT]" Order="600"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
@@ -495,6 +499,8 @@
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="DoAction" Argument="RemoveInstalledProducts" Condition="AI_INSTALL" Ordering="501"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="1" Ordering="100"/>
+    <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -529,6 +535,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="RemoveInstalledProductsErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
@@ -543,7 +550,6 @@
     <ROW Feature_="MainFeature" Component_="RISAtech.CoreAccess.Contract.Common.dll"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.CoreAccess.Contract.R3D.dll"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.CoreAccess.R3D.dll"/>
-    <ROW Feature_="MainFeature" Component_="RISAtech.Draw.dll"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.GlibRes.dll"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.Presentation.DX.Contract.Common.dll"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.Presentation.DX.Contract.R3D.dll"/>
@@ -742,6 +748,7 @@
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
     <ROW Action="InitProperties" Sequence="51"/>
     <ROW Action="InitPropertiesErrorDlg" Condition="AI_INSTALL" Sequence="74" SeqType="3"/>
+    <ROW Action="RemoveInstalledProductsErrorDlg" Condition="AI_INSTALL" Sequence="1231" SeqType="3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
@@ -762,6 +769,9 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="risa3dw" Directory_="DesktopFolder" Name="risa3dw" Component_="risa3dw.exe" Target="[#risa3dw.exe]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="risa3dw_1" Directory_="RISA_Dir" Name="risa3dw" Component_="risa3dw.exe" Target="[#risa3dw.exe]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="VerdanaBold13_VerdanaBold13" FaceName="Verdana" Size="13" Color="0" StyleBits="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>

@@ -12,7 +12,9 @@ namespace RISA_CustomActionsLib
         {
             var insProdList = findInstalledProducts(sessDTO);
             //
-            // ensure that user is not installing old product when newer one is installed
+            // return F if incoming product is older than newer one already installed
+            // return T otherwise, plus the serialized installed product list in _propRISA_INSTALLED_PRODUCTS
+            //
             // this version exactly matches the INSTALL_TYPE, for better or worse matching InstallAware implementation
             // - this is regardless of TARGETDIR
             //

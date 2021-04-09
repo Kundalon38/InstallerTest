@@ -59,7 +59,7 @@ namespace RISA_CustomActionsLib
                 session.Log("Stopping RISA32 service: threw an exception");
             }
             session.Log("ServiceControlStopRISA32: Returning failue");
-            return ActionResult.Failure;
+            return ActionResult.Success;
         }
 
         [CustomAction]

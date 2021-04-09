@@ -1,5 +1,6 @@
 ﻿//#define ATTACH_DEBUGGER
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace RISA_CustomActionsLib
             }
             #endregion
 
-            var actionResult = initProperties(sessDTO);
+            initProperties(sessDTO);
 
             #region copy SessionDTO props back to Session
             try
@@ -59,11 +60,11 @@ namespace RISA_CustomActionsLib
             }
             #endregion
 
-            return actionResult;
+            return ActionResult.Success;
         }
 
         #region InitProperties - Session / SessionDTO property copying
- 
+
         private static SessionDTO initProperties_getFromSession(Session session)
         {
             var sessDTO = new SessionDTO(session.Log);
@@ -112,19 +113,19 @@ namespace RISA_CustomActionsLib
 
         #region initProperties - without Session wrapper, for unit testing
 
-        public static ActionResult initProperties(SessionDTO sessDTO)
+        public static void initProperties(SessionDTO sessDTO)
         {
             const string methodName = "initProperties";
-            var actionResult = ActionResult.Success;
             string msgText = null;
             try
             {
-                if (!validProductName(sessDTO)) return ActionResult.Success;
-                if (!processProductVersion(sessDTO)) return ActionResult.Success;
-                if (!validInstallType(sessDTO)) return ActionResult.Success;
+                if (!validProductName(sessDTO)) return;
+                if (!processProductVersion(sessDTO)) return;
+                if (!validInstallType(sessDTO)) return;
+                if (!noRISAproductsAreRunning(sessDTO)) return;
 
                 assignVersionBasedProperties(sessDTO);
-                if(!serializeMatchingInstalledProducts(sessDTO)) return ActionResult.Success;
+                if(!serializeMatchingInstalledProducts(sessDTO)) return;
                 assignRemainingIdentityBasedProperties(sessDTO);
                 assignDocumentPath(sessDTO);
                 assignDefaultLicenseType(sessDTO);
@@ -136,13 +137,11 @@ namespace RISA_CustomActionsLib
             {
                 sessDTO[_propRISA_STATUS_CODE] = _sts_EXCP;
                 msgText = $"{e.Message}{Environment.NewLine}{e.StackTrace}";
-                actionResult = ActionResult.Success;
             }
             finally
             {
                 sessLog(sessDTO, methodName, msgText);
             }
-            return actionResult;
         }
 
         #endregion
@@ -211,6 +210,54 @@ namespace RISA_CustomActionsLib
                 // ignore
             }
             session[_propRISA_LICENSE_TYPE] = licenseTypeValue;
+        }
+
+        #endregion
+
+        #region InitProperties - ensure no products are running
+
+        public static bool noRISAproductsAreRunning(SessionDTO sessDTO)
+        {
+            // exclude risaservice because 1) it's not a product and 2) probing it may throw Access denied excp
+            // shutting down risaservice is directly handled by those installers that need to update it
+
+            // merely testing the process names is shaky, esp a common name like "adapt"
+            // - deeper probing is possible if tricky, see the "stash for possible future need" region below
+
+            var allProcessNamesLC = Process.GetProcesses().Select(x => x.ProcessName.ToLower());
+            var risaProcessNamesLC = allProcessNamesLC
+                .Where(x => (x.StartsWith("risa") || x.StartsWith("adapt")) && x != "risaservice");
+
+            if (!risaProcessNamesLC.Any()) return true;
+            const string methodName = "noRISAproductsAreRunning";
+            return reportError(sessDTO, methodName, _sts_ERR_PRODUCT_ACTIVE,
+                $"Other RISA/ADAPT product(s) are active.  Please save your work, close them and restart this installer.");
+
+            #region stash for possible future need
+
+            // deeper checks could be done, by getting the exe's FileVersionInfo block, but watch out for excps:
+            // code lifted from Licensing Dashboard, where it never really was used:
+            //        try
+            //        {
+            //            if (rp.MainModule == null) continue;
+            //            var fvi = rp.MainModule.FileVersionInfo;
+            //            var uniqueProductNameSnippet =
+            //                App.UniqueProductNameSnippets.FirstOrDefault(snippet => fvi.ProductName.Contains(snippet));
+            //            if (uniqueProductNameSnippet == null) continue;
+            //            knownRISAprocesses.Add(rp);
+            //        }
+            //        catch(Exception ex)
+            //        {
+            //            // a variety of excps are possible, including, program exit (why is it still in the processs list?)
+            //            //  and Win32 excp: 32 bit process being queried by a 64 bit process (this one), and vice versa.
+            //            // RISA Section is 32 bit, but all other contemporary versions are 64 bit.
+            //            // Tools such as RISA Change License Type can be 32 bits and will come here.
+            //            // Allow that there could be old 32 bit stuff out there.
+            //            var processName = rp.ProcessName ?? string.Empty;
+            //            App.Trace.Excp(ex,$"Process: {processName}; loc {loc()}");
+            //        }
+
+            #endregion
         }
 
         #endregion

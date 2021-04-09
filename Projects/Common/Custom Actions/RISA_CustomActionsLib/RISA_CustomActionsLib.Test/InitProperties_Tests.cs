@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using Microsoft.Deployment.WindowsInstaller;
 using RISA_CustomActionsLib.Models;
 
 namespace RISA_CustomActionsLib.Test
@@ -406,13 +405,14 @@ namespace RISA_CustomActionsLib.Test
         public void InitProperties_Success()
         {
             _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
-            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            // make sure ProductVersion is beyond any possible real version that could actually be installed
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "400.2.3.4";
             _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
             _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
 
-            var sts = CustomActions.initProperties(_sessDTO);
+            CustomActions.initProperties(_sessDTO);
             Console.WriteLine(_sessDTO.ToString());
-            Assert.IsTrue(sts == ActionResult.Success);
+            Assert.IsTrue(_sessDTO[CustomActions._propRISA_STATUS_CODE] == CustomActions._sts_OK);
         }
 
         [TestMethod]
@@ -424,13 +424,12 @@ namespace RISA_CustomActionsLib.Test
             _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "MyProduct";
             _sessDTO[CustomActions._propRISA_REGISTRY_PRODUCT_NAME] = _risa3D;
 
-            var sts = CustomActions.initProperties(_sessDTO);
+            CustomActions.initProperties(_sessDTO);
             Console.WriteLine(_sessDTO.ToString());
-            Assert.IsTrue(sts == ActionResult.Failure);
+            Assert.IsFalse(_sessDTO[CustomActions._propRISA_STATUS_CODE] == CustomActions._sts_OK);
         }
 
         #endregion
-
 
         #region Helpers
 

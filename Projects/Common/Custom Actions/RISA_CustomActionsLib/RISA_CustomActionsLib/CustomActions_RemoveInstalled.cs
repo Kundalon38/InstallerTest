@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Deployment.WindowsInstaller;
 using RISA_CustomActionsLib.Extensions;
 using RISA_CustomActionsLib.Models;
@@ -25,7 +26,7 @@ namespace RISA_CustomActionsLib
             }
             #endregion
 
-            var actionResult = removeInstalledProducts(sessDTO);
+            removeInstalledProducts(sessDTO);
 
             #region copy SessionDTO props back to Session
             try
@@ -42,47 +43,59 @@ namespace RISA_CustomActionsLib
             return ActionResult.Success;
         }
 
-        public static ActionResult removeInstalledProducts(SessionDTO sessDTO)
+        public static void removeInstalledProducts(SessionDTO sessDTO)
         {
             const string methodName = "removeInstalledProducts";
-            var actionResult = ActionResult.Success;
             string msgText = null;
             try
             {
                 var insProdListXml = sessDTO[_propRISA_INSTALLED_PRODUCTS];
-                if (!string.IsNullOrEmpty(insProdListXml))
+                if (string.IsNullOrEmpty(insProdListXml))
                 {
-                    var tbRemoved = new List<InstalledProduct>();
-                    var insProductList = InstalledProductList.Deserialize(insProdListXml);
-                    //
-                    // normalize the two directory strings, sometimes there's a trailing bash, sometimes not
-                    // - AI install directory is APPDIR (result of their dialog), not TARGETDIR
-                    //
-                    var normalizedAppDir = sessDTO[_propAI_APPDIR].EnsureTrailingBash();
-                    Trace(methodName, $"normalizedAppDir={normalizedAppDir}");
-                    foreach (var insProd in insProductList)
-                    {
-                        if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedAppDir,
-                            StringComparison.CurrentCultureIgnoreCase)) tbRemoved.Add(insProd);
-                    }
-                    Trace(methodName, $"tbRemoved.Count={tbRemoved.Count}");
-                    foreach (var insProd in tbRemoved) insProd.UnInstall();
+                    sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
+                    msgText = "Success";
+                    return;
+                }
+                var tbRemoved = new List<InstalledProduct>();
+                var insProductList = InstalledProductList.Deserialize(insProdListXml);
+                //
+                // normalize the two directory strings, sometimes there's a trailing bash, sometimes not
+                // - AI install directory is APPDIR (result of their dialog), not TARGETDIR
+                //
+                var normalizedAppDir = sessDTO[_propAI_APPDIR].EnsureTrailingBash();
+                foreach (var insProd in insProductList)
+                {
+                    if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedAppDir,
+                        StringComparison.CurrentCultureIgnoreCase)) tbRemoved.Add(insProd);
+                }
+
+                foreach (var insProd in tbRemoved) insProd.UnInstall();
+                //
+                // verify, by re-obtaining the installed products list, compare against input list
+                // - this isn't quite accurate - but works for the usual case,
+                //   where there's a collision with one could-not-remove installed product
+                //
+                serializeMatchingInstalledProducts(sessDTO);
+                if (tbRemoved.Count > 0 && insProdListXml == sessDTO[_propRISA_INSTALLED_PRODUCTS])
+                {
+                    sessDTO[_propRISA_STATUS_CODE] = _sts_ERR_REMOVE_INSTALLED_PRODUCT;
+                    var displayStrList = tbRemoved.Select(x => x.ToDisplayString());
+                    msgText = $"Could not remove installed product(s):{Environment.NewLine}{Environment.NewLine}{string.Join(Environment.NewLine, displayStrList)}";
+                    return;
                 }
                 sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
                 msgText = "Success";
-                sessDTO[_propRISA_STATUS_TEXT] = msgText;
             }
             catch (Exception e)
             {
                 sessDTO[_propRISA_STATUS_CODE] = _sts_EXCP;
                 msgText = $"{e.Message}{Environment.NewLine}{e.StackTrace}";
-                actionResult = ActionResult.Success;
             }
             finally
             {
+                sessDTO[_propRISA_STATUS_TEXT] = msgText;
                 sessLog(sessDTO, methodName, msgText);
             }
-            return actionResult;
         }
 
         #region RemoveInstalledProducts - Session / SessionDTO property copying
@@ -92,6 +105,8 @@ namespace RISA_CustomActionsLib
             var sessDTO = new SessionDTO(session.Log);
             // prop values set in aip
             copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
+            copySinglePropFromSession(sessDTO, session, _propMSI_ProductVersion);
+            copySinglePropFromSession(sessDTO, session, _propRISA_INSTALL_TYPE);
             copySinglePropFromSession(sessDTO, session, _propAI_APPDIR);
             //
             copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);

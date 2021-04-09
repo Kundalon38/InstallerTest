@@ -58,6 +58,8 @@ namespace RISA_CustomActionsLib
         public const string _sts_EXCP = "RISA_STS_EXCP";
         public const string _sts_OK = "RISA_STS_OK";
         public const string _sts_ERR_INSTALL_OLD_VERSION = "RISA_ERR_INSTALL_OLD_VERSION";
+        public const string _sts_ERR_REMOVE_INSTALLED_PRODUCT = "RISA_ERR_REMOVE_INSTALLED_PRODUCT";
+        public const string _sts_ERR_PRODUCT_ACTIVE = "RISA_ERR_PRODUCT_ACTIVE";
 
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
