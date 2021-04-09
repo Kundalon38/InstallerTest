@@ -16,6 +16,7 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#MsiBuild:install_background.bmp#MsiBuild_1:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
+    <ROW Property="PRODUCT_VERSION2" Value="PRODUCT_VERSION2"/>
     <ROW Property="ProductCode" Value="1033:{0DF53BB8-C061-453F-A8A3-A7844CB9CF8F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
@@ -52,15 +53,14 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_ExePath" ComponentId="{5046031C-4278-40C4-9B12-C32B9A1FA69D}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F875DE03-D1A4-4DA7-80F9-958DAFC721F4}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="EXEPath" ComponentId="{7C10C2E4-B680-47CD-983C-47AD5CC9B997}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
+    <ROW Component="EXEPath_1" ComponentId="{33D302CB-6E94-4720-8CCB-981FAD9F7A42}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_1"/>
     <ROW Component="EXE_PATH" ComponentId="{97EA77A1-E172-4DAB-AAF0-3277F4244E5C}" Directory_="APPDIR" Attributes="260" KeyPath="EXE_PATH"/>
-    <ROW Component="INIPath" ComponentId="{ACDAA0E5-EEB1-4C6B-99A8-12A5D6EEA520}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
+    <ROW Component="INIPath_1" ComponentId="{16D32E05-638F-4157-90A3-3B9A6F4072BD}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
     <ROW Component="INI_PATH" ComponentId="{AF203AAA-BB33-46E3-9EA3-06893D27F808}" Directory_="APPDIR" Attributes="260" KeyPath="INI_PATH"/>
     <ROW Component="InstallGUID" ComponentId="{5794896F-03B2-420B-B5D5-49A9BF9A5B1C}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
     <ROW Component="LicenseType" ComponentId="{5884F01D-1C21-4F44-AFAD-8ECF2DC8D914}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
     <ROW Component="LicenseTypeList" ComponentId="{C5627D15-C497-4D07-9E39-30034C1176FF}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
-    <ROW Component="LocalUpdateCheck" ComponentId="{0685ED11-A624-4E12-BB50-9BF4C52452BF}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
-    <ROW Component="PRODUCT_VERSION2" ComponentId="{C8D830CD-8CFB-4991-B7C4-FE36EA96394E}" Directory_="APPDIR" Attributes="260" KeyPath="PRODUCT_VERSION2"/>
+    <ROW Component="LocalUpdateCheck_1" ComponentId="{D07BA195-977F-46F8-AF72-71B5F711C0B9}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck_1"/>
     <ROW Component="ProductName" ComponentId="{8A201A8F-86C9-4B19-B534-6AFFF3D347EC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
     <ROW Component="RISA_COMPANY_KEY" ComponentId="{A8B350BD-7E31-4EA3-8933-9069990D97CF}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{03DDF735-1361-4DDF-B65D-384F2F008ABD}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
@@ -68,8 +68,8 @@
     <ROW Component="RevisionGUID" ComponentId="{919C214A-B7AF-4D51-96A2-A9029F9B9D25}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{05ADFC2E-FAC4-4F68-9ADF-8DEEB2A7A6BC}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="Version" ComponentId="{2D7EDD2A-802C-4A86-A4F5-F30F04708DF2}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="_" ComponentId="{274F922A-2BEA-4ACC-8B89-0E6FCB1D7B49}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
     <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
+    <ROW Component="__2" ComponentId="{9847281C-6411-4D2D-AA87-A2997487AB47}" Directory_="APPDIR" Attributes="260" KeyPath="__2"/>
     <ROW Component="risafnd.exe" ComponentId="{88D696C2-3BE4-400E-8A8A-6785F2F7A388}" Directory_="APPDIR" Attributes="256" KeyPath="risafnd.exe"/>
     <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
   </COMPONENT>
@@ -233,11 +233,6 @@
     <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY"/>
     <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Feature_="MainFeature" Component_="ProductName"/>
-    <ROW Feature_="MainFeature" Component_="PRODUCT_VERSION2"/>
-    <ROW Feature_="MainFeature" Component_="_"/>
-    <ROW Feature_="MainFeature" Component_="EXEPath"/>
-    <ROW Feature_="MainFeature" Component_="INIPath"/>
-    <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
     <ROW Feature_="MainFeature" Component_="__1"/>
     <ROW Feature_="MainFeature" Component_="EXE_PATH"/>
     <ROW Feature_="MainFeature" Component_="INI_PATH"/>
@@ -250,6 +245,10 @@
     <ROW Feature_="MainFeature" Component_="risafnd.exe"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
     <ROW Feature_="MainFeature" Component_="risafnd.exe_1"/>
+    <ROW Feature_="MainFeature" Component_="__2"/>
+    <ROW Feature_="MainFeature" Component_="EXEPath_1"/>
+    <ROW Feature_="MainFeature" Component_="INIPath_1"/>
+    <ROW Feature_="MainFeature" Component_="LocalUpdateCheck_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Foundation.exe" SourcePath="..\Assets\Foundation.ico" Index="0"/>
@@ -319,27 +318,26 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
-    <ROW Registry="EXEPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath"/>
+    <ROW Registry="EXEPath_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath_1"/>
     <ROW Registry="EXE_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="EXE_PATH" Value="[APPDIR]" Component_="EXE_PATH"/>
-    <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
+    <ROW Registry="INIPath_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath_1"/>
     <ROW Registry="INI_PATH" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="INI_PATH" Value="%USERPROFILE\Documents\RISA" Component_="INI_PATH"/>
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
-    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="LicenseType" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
-    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="LicenseTypeList" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
-    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
-    <ROW Registry="PRODUCT_VERSION2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="+" Component_="PRODUCT_VERSION2"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
+    <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck_1"/>
     <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="ProductName"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
     <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
     <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
-    <ROW Registry="_" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="_"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
+    <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1|RISA Foundation [PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="RISAFoundationPRODUCT_VERSION2_1" Directory_="DesktopFolder" Name="RISAFO~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
@@ -349,12 +347,14 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
-    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="MicrosoftVisualC_1" DisplayName="Microsoft Visual C++ 2019 Redistributable (x86)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x86.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29913\VC_redist.x86.exe"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver 7.6.0" VersionMin="7.6.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC MicrosoftVisualC_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
+    <ROW SearchKey="VCredist.x86x8614.28bundle" Prereq="MicrosoftVisualC_1" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x86,x86,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_3"/>
   </COMPONENT>
 </DOCUMENT>
