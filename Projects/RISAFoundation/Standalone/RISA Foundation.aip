@@ -16,7 +16,6 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#MsiBuild:install_background.bmp#MsiBuild_1:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild_1:vp"/>
-    <ROW Property="PRODUCT_VERSION2" Value="PRODUCT_VERSION2"/>
     <ROW Property="ProductCode" Value="1033:{0DF53BB8-C061-453F-A8A3-A7844CB9CF8F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
@@ -219,7 +218,7 @@
     <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="MessageBox_1" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_2"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
-    <ROW Action="RISA_CustomActionsLib.CA.dll" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
+    <ROW Action="RISA_InitProperties" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#MsiBuild:[ProgramFiles64Folder]RISA#MsiBuild_1:[ProgramFiles64Folder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#MsiBuild:[ProgramMenuFolder]RISA#MsiBuild_1:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -274,9 +273,9 @@
     <ROW Action="AI_AppSearchEx" Sequence="102"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="204"/>
-    <ROW Action="RISA_CustomActionsLib.CA.dll" Sequence="203"/>
-    <ROW Action="MessageBox" Sequence="202"/>
+    <ROW Action="MessageBox" Sequence="203"/>
     <ROW Action="AI_DATA_SETTER_1" Sequence="201"/>
+    <ROW Action="RISA_InitProperties" Sequence="202"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -288,7 +287,7 @@
     <ROW Action="AI_AppSearchEx" Sequence="102"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="202"/>
-    <ROW Action="RISA_CustomActionsLib.CA.dll" Sequence="201"/>
+    <ROW Action="RISA_InitProperties" Sequence="201"/>
     <ROW Action="MessageBox_1" Sequence="1298"/>
     <ROW Action="AI_DATA_SETTER_2" Sequence="1297"/>
   </COMPONENT>
