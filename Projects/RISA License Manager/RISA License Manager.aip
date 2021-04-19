@@ -234,14 +234,14 @@
     <ROW Fragment="MsmValidation.aip" Path="&lt;AI_FRAGS&gt;MsmValidation.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
-    <ROW Name="RISA_CustomActions" SourcePath="..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\Debug\RISA_CustomActionsLib.CA.dll"/>
+    <ROW Name="RISA_CustomActio_1" SourcePath="..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStartRISA32"/>
-    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActions" Target="ServiceControlStopRISA32"/>
+    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
+    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="TargetFeature" Component_="RISALicenseManagerCOM.dll"/>
@@ -355,6 +355,7 @@
     <ROW Registry="Programmable_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="SHP14B90_16_07E3_169221B588BAF92178" Root="2" Key="System\CurrentControlSet\Control\GraphicsDrivers\Connectivity\SHP14B90_16_07E3_16^9221B588BAF921789CD31B1F8A7B86DE" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Software" Root="2" Key="Software" Name="+" Component_="Software"/>
     <ROW Registry="TARGETDIRRISAKeyManagerRISAKeyManag" Root="2" Key="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" Name="[APPDIR]\RISA Key Manager\RISA Key Manager.exe" Value="~ WIN7RTM" Component_="TARGETDIRRISAKeyManagerRISAKeyManag"/>
     <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>

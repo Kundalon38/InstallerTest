@@ -6,7 +6,8 @@
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1#ExeBuild:1#WebInstallerBuild:1"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1#ExeBuild:1#WebInstallerBuild:1"/>
     <ROW Property="BannerBitmap" Value="banner" MultiBuildValue="DefaultBuild:header_logo.bmp#ExeBuild:header_logo.bmp#WebInstallerBuild:header_logo.bmp" Type="1" MsiKey="BannerBitmap"/>
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#ExeBuild:install_background.bmp#WebInstallerBuild:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
@@ -20,7 +21,7 @@
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
-    <ROW Property="RISA_LICENSE_TYPE" Value="Dummy"/>
+    <ROW Property="RISA_LICENSE_TYPE" Value="Cloud"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
@@ -1548,12 +1549,24 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
-    <ROW Dialog="AdditionalSettings" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="AdditionalSettings" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="AdminBrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="AdminBrowseDlg"/>
+    <ROW Dialog="BrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="BrowseDlg"/>
+    <ROW Dialog="CancelDlg" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="CancelDlg"/>
+    <ROW Dialog="ExitDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Finish" Control_Cancel="Finish" MsiKey="ExitDialog"/>
+    <ROW Dialog="FolderDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="39" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="FolderDlg"/>
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
-    <ROW Dialog="LicenseTypeDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="LicenseAgreementDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseAgreementDlg"/>
+    <ROW Dialog="LicenseTypeDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="NewSeqDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="NewSeqDialog_1" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
-    <ROW Dialog="RemoveInstalledProductsErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="OutOfDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="OK" MsiKey="OutOfDiskDlg"/>
+    <ROW Dialog="OutOfRbDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="OutOfRbDiskDlg"/>
+    <ROW Dialog="PrepareDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="1" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Cancel" Control_Cancel="Cancel" MsiKey="PrepareDlg"/>
+    <ROW Dialog="ProgressDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="1" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Cancel" Control_Cancel="Cancel" MsiKey="ProgressDlg"/>
+    <ROW Dialog="RemoveInstalledProductsErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="VerifyReadyDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="35" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Install" Control_Cancel="Cancel" MsiKey="VerifyReadyDlg"/>
+    <ROW Dialog="WelcomeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="WelcomeDlg"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
@@ -1731,14 +1744,12 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
     <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
-    <ROW PrereqKey="MicrosoftVisualC_1" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x86)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x86.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29913\VC_redist.x86.exe"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" VersionMin="9.50.98.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC MicrosoftVisualC_1"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
-    <ROW SearchKey="Version_1" Prereq="MicrosoftVisualC_1" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x86,x86,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
     <ROW Directory_="RISAConnection_Dir" SourcePath="..\..\..\Source Files\RISAConnection\Exes" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>

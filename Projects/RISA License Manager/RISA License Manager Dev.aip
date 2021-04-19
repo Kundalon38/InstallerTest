@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="17.9" Modules="enterprise" RootPath="." Language="en" Id="{15029446-1166-4018-B2F2-F0136A20D559}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.1.1" Modules="enterprise" RootPath="." Language="en" Id="{15029446-1166-4018-B2F2-F0136A20D559}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="Manufacturer" Value="RISA Technologies"/>
     <ROW Property="ProductCode" Value="1033:{89EB97F6-1230-4AAE-945C-E69877943D9C} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
