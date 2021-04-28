@@ -230,29 +230,29 @@
     <ROW Component="RISALicensing.chm_1" ComponentId="{F94E074A-8D1D-453E-9923-5816A6762449}" Directory_="NewFolder_7_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISALicensing.chm_1" Type="1"/>
     <ROW Component="RISASectionFiles" ComponentId="{0D5A9B77-C4DA-4958-A320-341CF6D756BC}" Directory_="RISASectionFiles_Dir" Attributes="0"/>
     <ROW Component="RedesignLists" ComponentId="{EC03A1D3-D2FB-484A-9059-98D128351C9F}" Directory_="DesignLists_Dir" Attributes="16" KeyPath="AU_BARBeamLst.asc" Type="0"/>
-    <ROW Component="RegionDefaults3D_AUS" ComponentId="{22D6E6CC-666B-4189-86DE-B6698F2DFA73}" Directory_="AUSTRALIA_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def" Type="0"/>
-    <ROW Component="RegionDefaults3D_BRIT" ComponentId="{D4A09AE0-DF87-4EC7-BB04-F42AEF054793}" Directory_="BRITAIN_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_1" Type="0"/>
-    <ROW Component="RegionDefaults3D_CAN" ComponentId="{7908D841-9D07-4EC7-8B15-2DFD923E391D}" Directory_="CANADA_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_2" Type="0"/>
-    <ROW Component="RegionDefaults3D_EU" ComponentId="{22B2120B-04B1-44AF-8130-8E1F690435DA}" Directory_="EUROPE_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_3" Type="0"/>
-    <ROW Component="RegionDefaults3D_IN" ComponentId="{F2D595F6-15D2-4029-A42C-0F11E842BEFA}" Directory_="INDIA_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_4" Type="0"/>
-    <ROW Component="RegionDefaults3D_MEX" ComponentId="{05026AFF-F450-4FA8-90E5-4C7B7E465F4A}" Directory_="MEXICO_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_5" Type="0"/>
-    <ROW Component="RegionDefaults3D_NZ" ComponentId="{823DA921-376C-4215-8829-94126E1DF35A}" Directory_="NEW_ZEALAND_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_6" Type="0"/>
-    <ROW Component="RegionDefaults3D_SA" ComponentId="{53EFBD37-8229-4840-B63A-3945FB625CD4}" Directory_="SAUDI_ARABIA_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_7" Type="0"/>
-    <ROW Component="RegionDefaults3D_US" ComponentId="{87C7E2B2-EBCC-440D-92C9-6C050354F9D6}" Directory_="UNITED_STATES_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_8" Type="0"/>
-    <ROW Component="RegionDefaultsFD_CA" ComponentId="{68026E51-B7EE-477A-8AB5-0D836CE11BCA}" Directory_="CANADA_2_Dir" Attributes="16" KeyPath="_dsgn_rl_mem_fnd.def" Type="0"/>
-    <ROW Component="RegionDefaultsFD_EU" ComponentId="{F30A839E-927E-4CE4-A2D9-C2FF635415E6}" Directory_="EUROPE_2_Dir" Attributes="16" KeyPath="_material_fnd.def_1" Type="0"/>
-    <ROW Component="RegionDefaultsFD_MEX" ComponentId="{0AC58715-BF23-414E-9466-B5F01DE8AE00}" Directory_="MEXICO_2_Dir" Attributes="16" KeyPath="_dsgn_rl_mem_fnd.def_1" Type="0"/>
-    <ROW Component="RegionDefaultsFD_SA" ComponentId="{3B53B2C6-AF0F-41A9-84AF-C67AA3146997}" Directory_="SAUDI_ARABIA_2_Dir" Attributes="16" KeyPath="_dsgn_rl_mem_fnd.def_2" Type="0"/>
-    <ROW Component="RegionDefaultsFD_US" ComponentId="{46967628-9702-4FCE-87AA-461B6F24618F}" Directory_="UNITED_STATES_2_Dir" Attributes="16" KeyPath="_dsgn_rl_mem_fnd.def_3" Type="0"/>
-    <ROW Component="RegionDefaultsFL_AUS" ComponentId="{9B25D59D-5159-45FC-8696-88BE028B9504}" Directory_="AUSTRALIA_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_9" Type="0"/>
-    <ROW Component="RegionDefaultsFL_BRIT" ComponentId="{C8E279F3-3B15-41BB-AD9A-080FDDBD6650}" Directory_="BRITAIN_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_10" Type="0"/>
-    <ROW Component="RegionDefaultsFL_CAN" ComponentId="{B1D94DE4-22B2-49A2-9892-8F9A3D725EFD}" Directory_="CANADA_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_11" Type="0"/>
-    <ROW Component="RegionDefaultsFL_EU" ComponentId="{6F4A52DB-2A8C-4A76-891D-97E549A8EBEC}" Directory_="EUROPE_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_12" Type="0"/>
-    <ROW Component="RegionDefaultsFL_IN" ComponentId="{80339B03-BAE3-4486-93F4-6D8090B5CF9B}" Directory_="INDIA_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_13" Type="0"/>
-    <ROW Component="RegionDefaultsFL_MEX" ComponentId="{3FD6270B-8962-4B11-AA97-1F3453BBDD90}" Directory_="MEXICO_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_14" Type="0"/>
-    <ROW Component="RegionDefaultsFL_NZ" ComponentId="{C450B219-9FF4-4FBE-9745-A77A80734754}" Directory_="NEW_ZEALAND_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_15" Type="0"/>
-    <ROW Component="RegionDefaultsFL_SA" ComponentId="{C49BA45D-325B-4B8C-8BC0-D2A8794684F1}" Directory_="SAUDI_ARABIA_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_16" Type="0"/>
-    <ROW Component="RegionDefaultsFL_US" ComponentId="{3F2941E5-C67A-489E-BFA2-6C5D03FA2E98}" Directory_="UNITED_STATES_1_Dir" Attributes="16" KeyPath="_cf_sch_3d_rf.def_17" Type="0"/>
+    <ROW Component="RegionDefaults3D_AUS" ComponentId="{22D6E6CC-666B-4189-86DE-B6698F2DFA73}" Directory_="AUSTRALIA_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def" Type="0"/>
+    <ROW Component="RegionDefaults3D_BRIT" ComponentId="{D4A09AE0-DF87-4EC7-BB04-F42AEF054793}" Directory_="BRITAIN_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_1" Type="0"/>
+    <ROW Component="RegionDefaults3D_CAN" ComponentId="{7908D841-9D07-4EC7-8B15-2DFD923E391D}" Directory_="CANADA_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_2" Type="0"/>
+    <ROW Component="RegionDefaults3D_EU" ComponentId="{22B2120B-04B1-44AF-8130-8E1F690435DA}" Directory_="EUROPE_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_3" Type="0"/>
+    <ROW Component="RegionDefaults3D_IN" ComponentId="{F2D595F6-15D2-4029-A42C-0F11E842BEFA}" Directory_="INDIA_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_4" Type="0"/>
+    <ROW Component="RegionDefaults3D_MEX" ComponentId="{05026AFF-F450-4FA8-90E5-4C7B7E465F4A}" Directory_="MEXICO_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_5" Type="0"/>
+    <ROW Component="RegionDefaults3D_NZ" ComponentId="{823DA921-376C-4215-8829-94126E1DF35A}" Directory_="NEW_ZEALAND_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_6" Type="0"/>
+    <ROW Component="RegionDefaults3D_SA" ComponentId="{53EFBD37-8229-4840-B63A-3945FB625CD4}" Directory_="SAUDI_ARABIA_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_7" Type="0"/>
+    <ROW Component="RegionDefaults3D_US" ComponentId="{87C7E2B2-EBCC-440D-92C9-6C050354F9D6}" Directory_="UNITED_STATES_Dir" Attributes="16" Condition="ProductName = &quot;RISA-3D&quot;" KeyPath="_cf_sch_3d_rf.def_8" Type="0"/>
+    <ROW Component="RegionDefaultsFD_CA" ComponentId="{68026E51-B7EE-477A-8AB5-0D836CE11BCA}" Directory_="CANADA_2_Dir" Attributes="16" Condition="ProductName = &quot;RISA Foundation&quot;" KeyPath="_dsgn_rl_mem_fnd.def" Type="0"/>
+    <ROW Component="RegionDefaultsFD_EU" ComponentId="{F30A839E-927E-4CE4-A2D9-C2FF635415E6}" Directory_="EUROPE_2_Dir" Attributes="16" Condition="ProductName = &quot;RISA Foundation&quot;" KeyPath="_material_fnd.def_1" Type="0"/>
+    <ROW Component="RegionDefaultsFD_MEX" ComponentId="{0AC58715-BF23-414E-9466-B5F01DE8AE00}" Directory_="MEXICO_2_Dir" Attributes="16" Condition="ProductName = &quot;RISA Foundation&quot;" KeyPath="_dsgn_rl_mem_fnd.def_1" Type="0"/>
+    <ROW Component="RegionDefaultsFD_SA" ComponentId="{3B53B2C6-AF0F-41A9-84AF-C67AA3146997}" Directory_="SAUDI_ARABIA_2_Dir" Attributes="16" Condition="ProductName = &quot;RISA Foundation&quot;" KeyPath="_dsgn_rl_mem_fnd.def_2" Type="0"/>
+    <ROW Component="RegionDefaultsFD_US" ComponentId="{46967628-9702-4FCE-87AA-461B6F24618F}" Directory_="UNITED_STATES_2_Dir" Attributes="16" Condition="ProductName = &quot;RISA Foundation&quot;" KeyPath="_dsgn_rl_mem_fnd.def_3" Type="0"/>
+    <ROW Component="RegionDefaultsFL_AUS" ComponentId="{9B25D59D-5159-45FC-8696-88BE028B9504}" Directory_="AUSTRALIA_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_9" Type="0"/>
+    <ROW Component="RegionDefaultsFL_BRIT" ComponentId="{C8E279F3-3B15-41BB-AD9A-080FDDBD6650}" Directory_="BRITAIN_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_10" Type="0"/>
+    <ROW Component="RegionDefaultsFL_CAN" ComponentId="{B1D94DE4-22B2-49A2-9892-8F9A3D725EFD}" Directory_="CANADA_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_11" Type="0"/>
+    <ROW Component="RegionDefaultsFL_EU" ComponentId="{6F4A52DB-2A8C-4A76-891D-97E549A8EBEC}" Directory_="EUROPE_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_12" Type="0"/>
+    <ROW Component="RegionDefaultsFL_IN" ComponentId="{80339B03-BAE3-4486-93F4-6D8090B5CF9B}" Directory_="INDIA_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_13" Type="0"/>
+    <ROW Component="RegionDefaultsFL_MEX" ComponentId="{3FD6270B-8962-4B11-AA97-1F3453BBDD90}" Directory_="MEXICO_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_14" Type="0"/>
+    <ROW Component="RegionDefaultsFL_NZ" ComponentId="{C450B219-9FF4-4FBE-9745-A77A80734754}" Directory_="NEW_ZEALAND_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_15" Type="0"/>
+    <ROW Component="RegionDefaultsFL_SA" ComponentId="{C49BA45D-325B-4B8C-8BC0-D2A8794684F1}" Directory_="SAUDI_ARABIA_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_16" Type="0"/>
+    <ROW Component="RegionDefaultsFL_US" ComponentId="{3F2941E5-C67A-489E-BFA2-6C5D03FA2E98}" Directory_="UNITED_STATES_1_Dir" Attributes="16" Condition="ProductName = &quot;RISA Floor&quot;" KeyPath="_cf_sch_3d_rf.def_17" Type="0"/>
     <ROW Component="STAAD_Mapping_File.xml" ComponentId="{D9BA9736-A2F0-4D9D-9B6E-CB096EB8445E}" Directory_="Misc_1_Dir" Attributes="0" KeyPath="STAAD_Mapping_File.xml" Type="0"/>
     <ROW Component="STAAD_Mapping_File.xml_1" ComponentId="{7D31D35F-9378-443C-BBDB-B50DC6BA7243}" Directory_="Misc_2_Dir" Attributes="0" KeyPath="STAAD_Mapping_File.xml_1" Type="0"/>
     <ROW Component="ShearPanels" ComponentId="{DB45FAFC-295E-4AA2-ACD5-D84CF9C37DF3}" Directory_="ShearPanels_2_Dir" Attributes="16" KeyPath="AWC2015OSB.xml_2" Type="0"/>
