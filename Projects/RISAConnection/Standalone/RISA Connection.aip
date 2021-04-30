@@ -1429,17 +1429,17 @@
     <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
-    <ROW Dialog_="AdditionalSettings" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
-    <ROW Dialog_="AdditionalSettings" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
-    <ROW Dialog_="AdditionalSettings" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
-    <ROW Dialog_="AdditionalSettings" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
-    <ROW Dialog_="AdditionalSettings" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
-    <ROW Dialog_="AdditionalSettings" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
-    <ROW Dialog_="AdditionalSettings" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
-    <ROW Dialog_="AdditionalSettings" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="800"/>
-    <ROW Dialog_="AdditionalSettings" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="900"/>
-    <ROW Dialog_="AdditionalSettings" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Text="Check for Updates at Program Launch" Order="1000"/>
-    <ROW Dialog_="AdditionalSettings" Control="Description" Type="Text" X="25" Y="23" Width="253" Height="21" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="1100"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="800"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Description" Type="Text" X="25" Y="18" Width="258" Height="20" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="900"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="1000"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Text="Check for Updates at Program Launch" Order="1100"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Exit]" Order="200" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
@@ -1448,15 +1448,15 @@
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="[RISA_STATUS_TEXT]" Order="600"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="20" Y="60" Width="330" Height="120" Attributes="7" Text="..\..\Common\Assets\license.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText" MsiKey="LicenseAgreementDlg#AgreementText"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Licensing Type" TextStyle="[DlgTitleFont]" Order="800"/>
-    <ROW Dialog_="LicenseTypeDialog" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="35" Y="57" Width="300" Height="158" Attributes="3" Property="RISA_LICENSE_TYPE" Text="RadioButtonGroup" Order="900"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Licensing Type" TextStyle="[DlgTitleFont]" Order="800"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="21" Y="66" Width="300" Height="152" Attributes="3" Property="RISA_LICENSE_TYPE" Text="RadioButtonGroup" Order="900"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeLabel" Type="Text" X="105" Y="65" Width="100" Height="10" Attributes="3" Text="&amp;Modify" TextStyle="DlgFontBold8" Order="100" TextLocId="Control.Text.MaintenanceTypeDlg#ChangeLabel" MsiKey="MaintenanceTypeDlg#ChangeLabel"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeButton" Type="PushButton" X="50" Y="65" Width="38" Height="38" Attributes="5767170" Text="[CustomSetupIcon]" Help="Modify Installation|" Order="200" HelpLocId="Control.Help.MaintenanceTypeDlg#ChangeButton" MsiKey="MaintenanceTypeDlg#ChangeButton"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="RepairLabel" Type="Text" X="105" Y="176" Width="100" Height="10" Attributes="2" Text="Re&amp;pair" TextStyle="[DlgTitleFont]" Order="300" TextLocId="Control.Text.MaintenanceTypeDlg#RepairLabel" MsiKey="MaintenanceTypeDlg#RepairLabel"/>
@@ -1469,20 +1469,6 @@
     <ROW Dialog_="MaintenanceTypeDlg" Control="RepairText" Type="Text" X="105" Y="189" Width="230" Height="30" Attributes="2" Text="Repairs errors in the most recent installation state - fixes missing or corrupt files, shortcuts and registry entries." Order="1700" TextLocId="Control.Text.MaintenanceTypeDlg#RepairText" MsiKey="MaintenanceTypeDlg#RepairText"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="RemoveText" Type="Text" X="105" Y="129" Width="230" Height="20" Attributes="3" Text="Removes [ProductName] from your computer." Order="1800" TextLocId="Control.Text.MaintenanceTypeDlg#RemoveText" MsiKey="MaintenanceTypeDlg#RemoveText"/>
     <ROW Dialog_="MaintenanceWelcomeDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="The [Wizard] will allow you to remove [ProductName] from your computer.  Click &quot;[Text_Next]&quot; to continue or &quot;Cancel&quot; to exit the [Wizard]." Order="600" MsiKey="MaintenanceWelcomeDlg#Description"/>
-    <ROW Dialog_="NewSeqDialog" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
-    <ROW Dialog_="NewSeqDialog" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
-    <ROW Dialog_="NewSeqDialog" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
-    <ROW Dialog_="NewSeqDialog" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="1" Text="[ButtonText_Back]" Order="400" Options="1"/>
-    <ROW Dialog_="NewSeqDialog" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="New Dialog" TextStyle="VerdanaBold13" Order="500"/>
-    <ROW Dialog_="NewSeqDialog" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="New Dialog Description..." Order="600"/>
-    <ROW Dialog_="NewSeqDialog" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="1" Text="[ButtonText_Back]" Order="400" Options="1"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="New Dialog" TextStyle="VerdanaBold13" Order="500"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="New Dialog Description..." Order="600"/>
-    <ROW Dialog_="NewSeqDialog_1" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Exit]" Order="200" Options="1"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
@@ -1493,7 +1479,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="LicenseTypeDialog" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="201"/>
     <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="201"/>
@@ -1515,22 +1501,20 @@
     <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
-    <ROW Dialog_="NewSeqDialog" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
-    <ROW Dialog_="LicenseTypeDialog" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
-    <ROW Dialog_="LicenseTypeDialog" Control_="Next" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseTypeDialog" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="NewSeqDialog_1" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Back" Event="NewDialog" Argument="LicenseTypeDialog" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="AI_INSTALL" Ordering="101"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="AI_INSTALL" Ordering="101"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -1566,7 +1550,7 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
-    <ROW Dialog="AdditionalSettings" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="AdditionalSettingsDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="AdminBrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="AdminBrowseDlg"/>
     <ROW Dialog="BrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="BrowseDlg"/>
     <ROW Dialog="CancelDlg" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="CancelDlg"/>
@@ -1574,9 +1558,7 @@
     <ROW Dialog="FolderDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="39" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="FolderDlg"/>
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="LicenseAgreementDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseAgreementDlg"/>
-    <ROW Dialog="LicenseTypeDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
-    <ROW Dialog="NewSeqDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
-    <ROW Dialog="NewSeqDialog_1" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
+    <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="OutOfDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="OK" MsiKey="OutOfDiskDlg"/>
     <ROW Dialog="OutOfRbDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="OutOfRbDiskDlg"/>
     <ROW Dialog="PrepareDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="1" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Cancel" Control_Cancel="Cancel" MsiKey="PrepareDlg"/>

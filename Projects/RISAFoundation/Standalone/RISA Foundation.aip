@@ -22,10 +22,11 @@
     <ROW Property="ProductName" Value="RISAFoundation"/>
     <ROW Property="ProductVersion" Value="13.0.0.1" Type="32"/>
     <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
-    <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE" MsiKey="RISA_LICENSE_TYPE"/>
+    <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
@@ -112,15 +113,11 @@
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
     <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
-    <ROW Path="&lt;AI_REPOSITORY&gt;Dialogs\LicenseTypeDlg\LicenseTypeDlg_en.ail"/>
-    <ROW Path="&lt;AI_REPOSITORY&gt;Dialogs\AdditionalSettings\AdditionalSettings_en.ail"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
-    <ROW Fragment="AdditionalSettings.aip" Path="&lt;AI_REPOSITORY&gt;Dialogs\AdditionalSettings\AdditionalSettings.aip"/>
     <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
     <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
     <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\LicenseAgreementDlg.aip"/>
-    <ROW Fragment="LicenseTypeDlg.aip" Path="&lt;AI_REPOSITORY&gt;Dialogs\LicenseTypeDlg\LicenseTypeDlg.aip"/>
     <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
     <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
     <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PreparePrereqDlg.aip"/>
@@ -155,7 +152,21 @@
     <ROW Name="install_background.bmp" SourcePath="..\..\Common\Assets\install_background.bmp"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Description" Type="Text" X="25" Y="18" Width="258" Height="20" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="700"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="800"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="900"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="1000"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Text="Check For Updates At Program Launch" Order="1100"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Exit]" Order="200" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
@@ -164,6 +175,15 @@
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="[RISA_STATUS_TEXT]" Order="600"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
     <ROW Dialog_="LicenseAgreementDlg" Control="AgreementText" Type="ScrollableText" X="20" Y="60" Width="330" Height="120" Attributes="7" Text="..\..\Common\Assets\license.rtf" Order="400" TextLocId="Control.Text.LicenseAgreementDlg#AgreementText" MsiKey="LicenseAgreementDlg#AgreementText"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Licensing Type" TextStyle="[DlgTitleFont]" Order="800"/>
+    <ROW Dialog_="LicenseTypeDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="21" Y="66" Width="300" Height="152" Attributes="3" Property="RISA_LICENSE_TYPE" Text="RadioButtonGroup" Order="900"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeLabel" Type="Text" X="105" Y="65" Width="100" Height="10" Attributes="2" Text="&amp;Modify" TextStyle="[DlgTitleFont]" Order="100" TextLocId="Control.Text.MaintenanceTypeDlg#ChangeLabel" MsiKey="MaintenanceTypeDlg#ChangeLabel"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeButton" Type="PushButton" X="50" Y="65" Width="38" Height="38" Attributes="5767170" Text="[CustomSetupIcon]" Help="Modify Installation|" Order="200" HelpLocId="Control.Help.MaintenanceTypeDlg#ChangeButton" MsiKey="MaintenanceTypeDlg#ChangeButton"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="RepairLabel" Type="Text" X="105" Y="168" Width="100" Height="10" Attributes="2" Text="Re&amp;pair" TextStyle="[DlgTitleFont]" Order="300" TextLocId="Control.Text.MaintenanceTypeDlg#RepairLabel" MsiKey="MaintenanceTypeDlg#RepairLabel"/>
@@ -210,17 +230,19 @@
     <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
-    <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseTypeDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="AdditionalSettings" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettings" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="AI_INSTALL" Ordering="101"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="DoAction" Argument="RISA_RemoveInstalledProducts" Condition="AI_INSTALL" Ordering="501"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control_="Cancel" Event="EndDialog" Argument="Exit" Condition="AI_INSTALL" Ordering="101"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="LicenseTypeDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -261,7 +283,7 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDialogComponent">
-    <ROW Dialog="AdditionalSettings" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="AdditionalSettings"/>
+    <ROW Dialog="AdditionalSettingsDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="AdminBrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="AdminBrowseDlg"/>
     <ROW Dialog="BrowseDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="Cancel" MsiKey="BrowseDlg"/>
     <ROW Dialog="CancelDlg" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="CancelDlg"/>
@@ -269,7 +291,7 @@
     <ROW Dialog="FolderDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="39" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="FolderDlg"/>
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="LicenseAgreementDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseAgreementDlg"/>
-    <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseTypeDlg"/>
+    <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="OutOfDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="OK" MsiKey="OutOfDiskDlg"/>
     <ROW Dialog="OutOfRbDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="OutOfRbDiskDlg"/>
     <ROW Dialog="PrepareDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="1" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Cancel" Control_Cancel="Cancel" MsiKey="PrepareDlg"/>
@@ -361,10 +383,14 @@
     <ROW Module="RISALicenseManager.msm" Path="..\..\RISA License Manager\RISA License Manager-SetupFiles\RISA License Manager.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
-    <ROW Property="RISA_REGION_NAME" Order="4" Value="Europe" X="7" Y="66" Width="84" Height="9" Text="Europe" TextLocId="RadioButton.Text.RISA_REGION_NAME#4" MsiKey="RISA_REGION_NAME#4"/>
-    <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="7" Y="95" Width="84" Height="9" Text="Mexico" TextLocId="RadioButton.Text.RISA_REGION_NAME#8" MsiKey="RISA_REGION_NAME#8"/>
-    <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="7" Y="124" Width="84" Height="9" Text="Saudi Arabia" TextLocId="RadioButton.Text.RISA_REGION_NAME#9" MsiKey="RISA_REGION_NAME#9"/>
-    <ATTRIBUTE name="DeletedRows" value="AdditionalSettings.aip@RISA_REGION_NAME#5@RISA_REGION_NAME#6@RISA_REGION_NAME#7"/>
+    <ROW Property="RISA_LICENSE_TYPE" Order="1" Value="Cloud" X="64" Y="40" Width="200" Height="20" Text="Subscription License (Cloud Based)"/>
+    <ROW Property="RISA_LICENSE_TYPE" Order="2" Value="Network" X="64" Y="59" Width="200" Height="20" Text="Network Perpetual License (Using your Server)"/>
+    <ROW Property="RISA_LICENSE_TYPE" Order="3" Value="Key" X="64" Y="78" Width="200" Height="20" Text="Standalone Perpetual License (Physical USB Key)"/>
+    <ROW Property="RISA_REGION_NAME" Order="1" Value="United States" X="7" Y="8" Width="84" Height="9" Text="United States"/>
+    <ROW Property="RISA_REGION_NAME" Order="2" Value="Canada" X="7" Y="35" Width="84" Height="9" Text="Canada"/>
+    <ROW Property="RISA_REGION_NAME" Order="3" Value="Britain" X="7" Y="63" Width="84" Height="9" Text="Britain"/>
+    <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="7" Y="91" Width="84" Height="9" Text="Mexico"/>
+    <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="7" Y="118" Width="84" Height="9" Text="Saudi Arabia"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
