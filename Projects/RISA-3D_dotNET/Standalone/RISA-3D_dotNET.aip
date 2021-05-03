@@ -26,12 +26,11 @@
     <ROW Property="REBOOT" MultiBuildValue="MsiBuild:ReallySuppress"/>
     <ROW Property="REVISION_GUID_3D_17" Value="{2ba0cf7b-b7b6-43d6-a446-fe4423a2429e}"/>
     <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
-    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox" Type="4"/>
+    <ROW Property="RISA_CHECK_UPDATES" Value="True" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
     <ROW Property="RISA_IS_SILENT" Value="False" MultiBuildValue="MsiBuild:True"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
-    <ROW Property="RISA_LICENSE_TYPE2" Value="RadioButton_1" Type="4"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
@@ -1276,15 +1275,6 @@
     <ROW Dialog_="LicenseTypeDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
     <ROW Dialog_="LicenseTypeDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Licensing Type" TextStyle="[DlgTitleFont]" Order="800"/>
     <ROW Dialog_="LicenseTypeDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="21" Y="66" Width="300" Height="152" Attributes="3" Property="RISA_LICENSE_TYPE" Text="RadioButtonGroup" Order="900"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="300" Options="1"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Order="400"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="500"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="600"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="700"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Licensing Type" TextStyle="[DlgTitleFont]" Order="800"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="4" Y="62" Width="90" Height="45" Attributes="3" Property="RISA_LICENSE_TYPE2" Text="RadioButtonGroup" Order="900"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeLabel" Type="Text" X="105" Y="65" Width="100" Height="10" Attributes="2" Text="&amp;Modify" TextStyle="[DlgTitleFont]" Order="100" TextLocId="Control.Text.MaintenanceTypeDlg#ChangeLabel" MsiKey="MaintenanceTypeDlg#ChangeLabel"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="ChangeButton" Type="PushButton" X="50" Y="65" Width="38" Height="38" Attributes="5767170" Text="[CustomSetupIcon]" Help="Modify Installation|" Order="200" HelpLocId="Control.Help.MaintenanceTypeDlg#ChangeButton" MsiKey="MaintenanceTypeDlg#ChangeButton"/>
     <ROW Dialog_="MaintenanceTypeDlg" Control="RepairLabel" Type="Text" X="105" Y="169" Width="100" Height="10" Attributes="2" Text="Re&amp;pair" TextStyle="[DlgTitleFont]" Order="300" TextLocId="Control.Text.MaintenanceTypeDlg#RepairLabel" MsiKey="MaintenanceTypeDlg#RepairLabel"/>
@@ -1346,7 +1336,6 @@
     <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="LicenseTypeDlg3D" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="LicenseTypeDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="LicenseTypeDlg" Control_="Next" Event="NewDialog" Argument="AdditionalSettingsDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="LicenseTypeDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
@@ -1398,7 +1387,6 @@
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="LicenseAgreementDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseAgreementDlg"/>
     <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
-    <ROW Dialog="LicenseTypeDlg3D" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="OutOfDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="OK" Control_Cancel="OK" MsiKey="OutOfDiskDlg"/>
     <ROW Dialog="OutOfRbDiskDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="OutOfRbDiskDlg"/>
     <ROW Dialog="PrepareDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="1" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Cancel" Control_Cancel="Cancel" MsiKey="PrepareDlg"/>
@@ -2039,8 +2027,6 @@
     <ROW Module="RISALicenseManager.msm" Path="..\..\RISA License Manager\RISA License Manager-SetupFiles\RISA License Manager.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
-    <ROW Property="RISA_LICENSE_TYPE2" Order="1" Value="RadioButton_1" X="0" Y="8" Width="84" Height="9" Text="RadioButton_1"/>
-    <ROW Property="RISA_LICENSE_TYPE2" Order="2" Value="RadioButton_2" X="0" Y="23" Width="84" Height="9" Text="RadioButton_2"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="1" Value="Cloud" X="64" Y="40" Width="200" Height="20" Text="Subscription License (Cloud Based)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="2" Value="Network" X="64" Y="59" Width="200" Height="20" Text="Network Perpetual License (Using your Server)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="3" Value="Key" X="64" Y="78" Width="200" Height="20" Text="Standalone Perpetual License (Physical USB Key)"/>
@@ -2050,7 +2036,7 @@
     <ROW Property="RISA_REGION_NAME" Order="4" Value="Europe" X="7" Y="95" Width="84" Height="9" Text="Europe"/>
     <ROW Property="RISA_REGION_NAME" Order="5" Value="India" X="7" Y="124" Width="84" Height="9" Text="India"/>
     <ROW Property="RISA_REGION_NAME" Order="6" Value="Australia" X="113" Y="9" Width="84" Height="9" Text="Australia"/>
-    <ROW Property="RISA_REGION_NAME" Order="7" Value="RadioButton_7" X="113" Y="42" Width="84" Height="9" Text="New Zealand"/>
+    <ROW Property="RISA_REGION_NAME" Order="7" Value="New Zealand" X="113" Y="42" Width="84" Height="9" Text="New Zealand"/>
     <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="113" Y="74" Width="84" Height="9" Text="Mexico"/>
     <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="113" Y="107" Width="84" Height="9" Text="Saudi Arabia"/>
   </COMPONENT>

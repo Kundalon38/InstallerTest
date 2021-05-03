@@ -18,10 +18,10 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#ExeBuild:install_background.bmp#WebInstallerBuild:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
-    <ROW Property="ProductCode" Value="1033:{9519A4AC-DB30-4C74-8BD4-46208619B8EB} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{0872C758-FC4C-44A8-8DD6-8E930D6A65DA} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFloor"/>
-    <ROW Property="ProductVersion" Value="16.0.0.1" Type="32"/>
+    <ROW Property="ProductVersion" Value="15.0.2.27" Type="32"/>
     <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
