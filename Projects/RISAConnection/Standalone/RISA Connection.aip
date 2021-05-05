@@ -4,7 +4,9 @@
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
-    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION;AI_DETECTED_DOTNET_VERSION"/>
+    <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
+    <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.8" ValueLocId="-"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
@@ -60,6 +62,7 @@
     <ROW Directory="Default_Dir" Directory_Parent="Skins_Dir" DefaultDir="Default"/>
     <ROW Directory="DemoBackup_Dir" Directory_Parent="RISAConnection_Dir" DefaultDir="DEMOBA~1|DemoBackup"/>
     <ROW Directory="DesignChecks_Dir" Directory_Parent="Content_Dir" DefaultDir="DESIGN~1|Design Checks"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="Examples_1_Dir" Directory_Parent="UserDefaults_Dir" DefaultDir="Examples"/>
     <ROW Directory="Examples_Dir" Directory_Parent="ModelFiles_Dir" DefaultDir="Examples"/>
     <ROW Directory="Exmpls_1_Dir" Directory_Parent="Examples_1_Dir" DefaultDir=".:Exmpls"/>
@@ -107,17 +110,25 @@
     <ROW Component="Capture8544.pngSynoEAStream" ComponentId="{3CD23427-B343-4E24-A469-98250E7FFD0D}" Directory_="eaDir_2_Dir" Attributes="0" KeyPath="Capture8544.pngSynoEAStream" Type="0"/>
     <ROW Component="ConnectionVerificationProblems.pdf" ComponentId="{97DF72BB-9E8F-4F9F-B357-037ABDD76966}" Directory_="Examples_Dir" Attributes="0" KeyPath="ConnectionVerificationProblems.pdf" Type="0"/>
     <ROW Component="ConnectionVerificationProblems.pdf_1" ComponentId="{420DF5FE-D970-4D77-B20B-4104C1C3E794}" Directory_="Examples_1_Dir" Attributes="0" KeyPath="ConnectionVerificationProblems.pdf_1" Type="0"/>
+    <ROW Component="EXEPath" ComponentId="{CCB88D65-A1FC-482F-8D77-A383205B1DAC}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
+    <ROW Component="ExePath" ComponentId="{A80F923E-CA42-4C42-9398-001EA79DC4E2}" Directory_="APPDIR" Attributes="260" KeyPath="ExePath"/>
     <ROW Component="General_Reference_Connection.pdf" ComponentId="{6AEDB73C-E0F9-4412-BC09-C4D81335910A}" Directory_="Manuals_Dir" Attributes="0" KeyPath="General_Reference_Connection.pdf"/>
     <ROW Component="GlobalProjectSettings.htm" ComponentId="{4D7872CD-25EA-4E63-B3B9-15DBACD1BB0E}" Directory_="Interface_Dir" Attributes="0" KeyPath="GlobalProjectSettings.htm" Type="0"/>
+    <ROW Component="INIPath" ComponentId="{81977420-9406-4067-A88B-8088F7A5C1BF}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
+    <ROW Component="INIPath_1" ComponentId="{17CAB60E-95C0-472D-8215-883EFB4F7F75}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
     <ROW Component="INSTDBCN.exe" ComponentId="{C5042349-6135-4A29-A079-3B6B9D417C9D}" Directory_="Misc_Dir" Attributes="0" KeyPath="INSTDBCN.exe"/>
+    <ROW Component="InstallGUID" ComponentId="{79FBD533-E5BE-42D2-9D79-D0C16AD93E03}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
+    <ROW Component="LicenseType" ComponentId="{35310337-3C3D-4A42-B45D-3241057450CD}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
+    <ROW Component="LicenseTypeList" ComponentId="{C17D0DC0-DC5F-4F5B-90E1-D3FEC4F00A9D}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
+    <ROW Component="LocalUpdateCheck" ComponentId="{F94D675E-8546-49A6-9117-DA1BCE622991}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
     <ROW Component="MomentExamples.rcn" ComponentId="{78BCFEDC-353C-4052-81F5-0210ABB66DD3}" Directory_="Exmpls_Dir" Attributes="0" KeyPath="MomentExamples.rcn" Type="0"/>
     <ROW Component="MomentExamples.rcn_1" ComponentId="{B0E2EBFD-B2B3-4C8F-9F38-10E9B92AF19C}" Directory_="Exmpls_1_Dir" Attributes="0" KeyPath="MomentExamples.rcn_1" Type="0"/>
     <ROW Component="NetworkServerInstallationInstructions.pdf" ComponentId="{8B026191-524D-43E9-9C0D-3FF9392064A6}" Directory_="NetworkNetworkOnly_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Network&quot;" KeyPath="NetworkServerInstallationInstructions.pdf" Type="0"/>
+    <ROW Component="New_Key" ComponentId="{B0BF580E-261A-487E-B41A-0AC11522BC4B}" Directory_="APPDIR" Attributes="260" KeyPath="New_Key"/>
     <ROW Component="Newtonsoft.Json.dll" ComponentId="{B6C83132-4808-4010-B633-C01C4B21CB17}" Directory_="Bin.RISAConn_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="Newtonsoft.Json.dll_1" ComponentId="{A3270165-1944-41AC-A572-FB08F07AEDCD}" Directory_="Bin.RISAConn_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Newtonsoft.Json.dll_1"/>
     <ROW Component="Newtonsoft.Json.dll_2" ComponentId="{60BB59A2-3CDE-4BE0-A6D5-117AD9688125}" Directory_="Bin.RISAConn_2_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Newtonsoft.Json.dll_2"/>
     <ROW Component="Newtonsoft.Json.xml" ComponentId="{FEBE789A-7250-4EC4-ABF8-5A97F84C976D}" Directory_="Bin.RISAConn_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Newtonsoft.Json.xml" Type="0"/>
-    <ROW Component="ProductInformation" ComponentId="{5CACCCAC-4F70-4429-85F7-18EDCEB1CC44}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="RC_BeamSpliceDirectWeldMoment.def" ComponentId="{0170025C-FE22-4B42-A7AA-08E565C81897}" Directory_="UNITED_STATES_Dir" Attributes="16" KeyPath="RC_BeamSpliceDirectWeldMoment.def" Type="0"/>
     <ROW Component="RC_ClipAngleShear.def" ComponentId="{3E664121-77DB-4C4A-A987-D4ADF9D92C88}" Directory_="CANADA_Dir" Attributes="16" KeyPath="RC_ClipAngleShear.def" Type="0"/>
     <ROW Component="RISAConnection.Addons.dll" ComponentId="{955D8B21-8785-414B-BEF3-E707653401B7}" Directory_="Bin.RISAConn_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISAConnection.Addons.dll"/>
@@ -143,8 +154,13 @@
     <ROW Component="RISAConnection.exe_2" ComponentId="{3FA98224-52DE-43A7-BB1F-80DAF8EAC909}" Directory_="RISAConnectionDemoOnly_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="RISAConnection.exe_2"/>
     <ROW Component="RISAConnectionV10SilentInstall.bat" ComponentId="{CDFC5249-9627-46D5-A631-4E86529BE202}" Directory_="SilentInstall2NotDemoOnly_Dir" Attributes="0" KeyPath="RISAConnectionV10SilentInstall.bat" Type="0"/>
     <ROW Component="RISALicensing.chm" ComponentId="{094D418D-6954-4BDD-8630-86D830B1A812}" Directory_="NewFolder_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISALicensing.chm" Type="1"/>
+    <ROW Component="RISA_COMPANY_KEY" ComponentId="{9C33FE27-19B0-4973-AACC-6836F804605F}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
+    <ROW Component="RISA_REGISTRY_PRODUCT_NAME" ComponentId="{3B690F2D-E7E0-438A-9607-2C78B8E9504C}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_REGISTRY_PRODUCT_NAME"/>
+    <ROW Component="Region" ComponentId="{E0979D13-AB5B-4CE3-A67C-5910028F5D7C}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
+    <ROW Component="Region_1" ComponentId="{FB7FB8D2-6129-435D-B49E-EF4E3FF08BE1}" Directory_="APPDIR" Attributes="260" KeyPath="Region_1"/>
     <ROW Component="ReleaseNotes.htm" ComponentId="{260EE71A-2D89-42F7-8DB9-A07B6B9043A4}" Directory_="HelpFileTopics_Dir" Attributes="0" KeyPath="ReleaseNotes.htm" Type="0"/>
     <ROW Component="Release_Notes_Connection.pdf" ComponentId="{004E1A5D-7BBD-4844-A934-874FA57DB543}" Directory_="Manuals_Dir" Attributes="0" KeyPath="Release_Notes_Connection.pdf" Type="0"/>
+    <ROW Component="RevisionGUID" ComponentId="{25EAD527-A38B-4C82-BACF-51225C7CF21C}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{8DD397FA-44E5-4860-A13D-8C9ABBBA4AE5}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="Setup.ini" ComponentId="{8D7471BC-FFDD-4BA5-B699-04043017BC0B}" Directory_="SilentInstall1NotDemoOnly_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Setup.ini" Type="0"/>
     <ROW Component="Slideshow.css" ComponentId="{F04B6910-90FF-486C-9217-DDD912626A7E}" Directory_="Stylesheets_2_Dir" Attributes="0" KeyPath="Slideshow.css" Type="0"/>
@@ -187,6 +203,9 @@
     <ROW Component="TelerikCommon.dll" ComponentId="{7A2B0DF5-F87E-41D9-AAD3-63C574B36409}" Directory_="Bin.RISAConn_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="TelerikCommon.dll"/>
     <ROW Component="TelerikCommon.dll_1" ComponentId="{0AADE313-4DE3-4F78-B8EF-2EA7A7CD70D4}" Directory_="Bin.RISAConn_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="TelerikCommon.dll_1"/>
     <ROW Component="TelerikCommon.dll_2" ComponentId="{6F797713-6875-4662-822F-E834306C55BA}" Directory_="Bin.RISAConn_2_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="TelerikCommon.dll_2"/>
+    <ROW Component="Version" ComponentId="{54FF38E7-E5FC-41E2-A7CA-5C7A8D53DE3A}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="_" ComponentId="{059523FD-19D7-4466-882A-8CFC107951F1}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
+    <ROW Component="__1" ComponentId="{CDFA41C2-C508-4F36-A103-A3745C3BE7D1}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
     <ROW Component="_doubCR.png" ComponentId="{A16B72B8-49EF-4A62-A03E-351350729711}" Directory_="Images_Dir" Attributes="0" KeyPath="_doubCR.png" Type="0"/>
     <ROW Component="_global_rc.defSynoEAStream" ComponentId="{FD8B251A-8C83-4B4E-BC07-BAF36A7E728F}" Directory_="eaDir_Dir" Attributes="16" KeyPath="_global_rc.defSynoEAStream" Type="0"/>
     <ROW Component="arrowdown.png" ComponentId="{AA67D98B-4FC6-4FE6-A0CC-7C28EF04A504}" Directory_="Images_2_Dir" Attributes="0" KeyPath="arrowdown.png" Type="0"/>
@@ -1570,7 +1589,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
-    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
     <ROW Feature_="MainFeature" Component_="Aiscdb32.fil"/>
     <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
@@ -1664,6 +1682,23 @@
     <ROW Feature_="MainFeature" Component_="Setup.ini"/>
     <ROW Feature_="MainFeature" Component_="RISAConnectionV10SilentInstall.bat"/>
     <ROW Feature_="MainFeature" Component_="NetworkServerInstallationInstructions.pdf"/>
+    <ROW Feature_="MainFeature" Component_="New_Key"/>
+    <ROW Feature_="MainFeature" Component_="RISA_REGISTRY_PRODUCT_NAME"/>
+    <ROW Feature_="MainFeature" Component_="_"/>
+    <ROW Feature_="MainFeature" Component_="EXEPath"/>
+    <ROW Feature_="MainFeature" Component_="INIPath"/>
+    <ROW Feature_="MainFeature" Component_="LocalUpdateCheck"/>
+    <ROW Feature_="MainFeature" Component_="Region"/>
+    <ROW Feature_="MainFeature" Component_="RISA_COMPANY_KEY"/>
+    <ROW Feature_="MainFeature" Component_="LicenseType"/>
+    <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
+    <ROW Feature_="MainFeature" Component_="InstallGUID"/>
+    <ROW Feature_="MainFeature" Component_="RevisionGUID"/>
+    <ROW Feature_="MainFeature" Component_="Version"/>
+    <ROW Feature_="MainFeature" Component_="__1"/>
+    <ROW Feature_="MainFeature" Component_="ExePath"/>
+    <ROW Feature_="MainFeature" Component_="INIPath_1"/>
+    <ROW Feature_="MainFeature" Component_="Region_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="RISAConnection.exe" SourcePath="..\Assets\Connection.ico" Index="0"/>
@@ -1710,7 +1745,8 @@
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
     <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
-    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="WebInstallerBuild"/>
+    <ROW Condition="AI_DETECTED_DOTNET_VERSION &gt;= AI_REQUIRED_DOTNET_VERSION" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_REQUIRED_DOTNET_DISPLAY]." DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="AI_DETECTED_INTERNET_CONNECTION" Description="[ProductName] requires an active Internet connection for installation. Please check your network configuration and proxy settings." DescriptionLocId="AI.LaunchCondition.Internet" IsPredefined="true" Builds="ExeBuild;WebInstallerBuild"/>
     <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
     <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild;ExeBuild;WebInstallerBuild"/>
   </COMPONENT>
@@ -1730,13 +1766,30 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
-    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
-    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="EXEPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="EXE Path" Value="[APPDIR]" Component_="EXEPath"/>
+    <ROW Registry="ExePath" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Exe Path" Value="[APPDIR]" Component_="ExePath"/>
+    <ROW Registry="INIPath" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath"/>
+    <ROW Registry="INIPath_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="INI Path" Value="%USERPROFILE%\Documents\RISA" Component_="INIPath_1"/>
+    <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
+    <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
+    <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
+    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
+    <ROW Registry="New_Key" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="New_Key"/>
+    <ROW Registry="RISA_COMPANY_KEY" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
+    <ROW Registry="RISA_REGISTRY_PRODUCT_NAME" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="RISA_REGISTRY_PRODUCT_NAME"/>
+    <ROW Registry="Region" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
+    <ROW Registry="Region_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region_1"/>
+    <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
+    <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
+    <ROW Registry="_" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="_"/>
+    <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2Dem" Directory_="SHORTCUTDIR" Name="RISACO~1.0(D|[|ProductName] [|RISA_PRODUCT_VERSION2] (Demo)" Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
-    <ROW Shortcut="RISAConnection" Directory_="SHORTCUTDIR" Name="RISACO~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
+    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="DesktopFolder" Name="RISACO~1|[|ProductName] [|RISA_PRODUCT_VERSION2] " Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
+    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2Dem" Directory_="SHORTCUTDIR" Name="DUMMY(~1|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
+    <ROW Shortcut="RISAConnection" Directory_="SHORTCUTDIR" Name="DUMMY~1|[|RISA_PRODUCT_TITLE2_INSTYPE] " Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
     <ROW Shortcut="RISAConnectionGeneralReference" Directory_="SHORTCUTDIR" Name="RISACO~1|RISAConnection General Reference" Component_="General_Reference_Connection.pdf" Target="[#General_Reference_Connection.pdf]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="Manuals_Dir"/>
+    <ROW Shortcut="RISAConnection_1" Directory_="DesktopFolder" Name="RISACO~2|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
     <ROW Shortcut="RISALicensingHelp" Directory_="SHORTCUTDIR" Name="RISALI~1|RISA Licensing Help" Component_="RISALicensing.chm" Target="[#RISALicensing.chm]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="NewFolder_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
@@ -1748,11 +1801,13 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
     <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2015-2019 Redistributable (x64)" VersionMin="14.28.29913.0" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29913\VC_redist.x64.exe"/>
+    <ROW PrereqKey="RequiredApplication" DisplayName="Microsoft DirectX Runtime 9.0" VersionMin="9.29.952.3110" SetupFileUrl="..\..\..\Source Files\Common Files\DirectX\2010_Jun\bin\DXSETUP.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 7 x64, Windows Server 2008 R2 x64, Windows 8 x64" Operator="1" ComLine="/silent" BasicUiComLine="/silent" NoUiComLine="/silent" Options="yxm" TargetName="dx9c\DXSETUP.exe" AdditionalFiles="Apr2005_d3dx9_25_x64.cab|Apr2006_d3dx9_30_x64.cab|Apr2006_xinput_x64.cab|APR2007_d3dx9_33_x64.cab|APR2007_d3dx10_33_x64.cab|APR2007_xinput_x64.cab|Aug2005_d3dx9_27_x64.cab|AUG2006_xinput_x64.cab|AUG2007_d3dx9_35_x64.cab|AUG2007_d3dx10_35_x64.cab|Aug2008_d3dx9_39_x64.cab|Aug2008_d3dx10_39_x64.cab|Aug2009_D3DCompiler_42_x64.cab|Aug2009_d3dcsx_42_x64.cab|Aug2009_d3dx9_42_x64.cab|Aug2009_d3dx10_42_x64.cab|Aug2009_d3dx11_42_x64.cab|Dec2005_d3dx9_28_x64.cab|DEC2006_d3dx9_32_x64.cab|DEC2006_d3dx10_00_x64.cab|DSETUP.dll|dsetup32.dll|dxdllreg_x86.cab|dxupdate.cab|Feb2005_d3dx9_24_x64.cab|Feb2006_d3dx9_29_x64.cab|Jun2005_d3dx9_26_x64.cab|JUN2007_d3dx9_34_x64.cab|JUN2007_d3dx10_34_x64.cab|JUN2008_d3dx9_38_x64.cab|JUN2008_d3dx10_38_x64.cab|Jun2010_D3DCompiler_43_x64.cab|Jun2010_d3dcsx_43_x64.cab|Jun2010_d3dx9_43_x64.cab|Jun2010_d3dx10_43_x64.cab|Jun2010_d3dx11_43_x64.cab|Mar2008_d3dx9_37_x64.cab|Mar2008_d3dx10_37_x64.cab|Mar2009_d3dx9_41_x64.cab|Mar2009_d3dx10_41_x64.cab|Nov2007_d3dx9_36_x64.cab|Nov2007_d3dx10_36_x64.cab|Nov2008_d3dx9_40_x64.cab|Nov2008_d3dx10_40_x64.cab|Oct2005_xinput_x64.cab|OCT2006_d3dx9_31_x64.cab" RetValPropName="RISA_DX_INSTALL_STATUS"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver Installer 7.6.0" VersionMin="9.50.98.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="ym" TargetName="Sentinel System Driver 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC RequiredApplication"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
+    <ROW SearchKey="SystemFolderfile.dll" Prereq="RequiredApplication" SearchType="0" SearchString="[SystemFolder]\D3DX9_43.dll" VerMin="9.29.952.3110" Order="1" Property="PreReqSearch"/>
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
