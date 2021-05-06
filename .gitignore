@@ -1,6 +1,6 @@
 Source Files/
-Projects/**SetupFiles/
-Projects/**-Setup Files/
+Projects/**/SetupFiles/
+Projects/**/Setup Files/
 *.obj
 *.pdb
 *.user
