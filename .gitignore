@@ -1,7 +1,7 @@
 Source Files/
-Projects/*/*-SetupFiles/
+Projects/**SetupFiles/
+Projects/**-Setup Files/
 *.obj
-*.exe
 *.pdb
 *.user
 *.aps

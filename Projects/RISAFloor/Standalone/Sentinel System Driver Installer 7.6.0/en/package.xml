@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Package xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper" Name="DisplayName" Culture="Culture">
-  <Strings>
-    <String Name="DisplayName">Sentinel System Driver Installer 7.6.0</String>
-    <String Name="Culture">en</String>
-    <String Name="GeneralFailure">A failure occurred attempting to install Sentinel System Driver Installer 7.6.0.</String>
-  </Strings>
-</Package>
