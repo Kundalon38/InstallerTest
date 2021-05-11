@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.1.1" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.2" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
@@ -41,7 +41,7 @@
     <ROW Component="FileUploader.exe" ComponentId="{54DAEEAC-E795-446D-9403-02CEAFB8F739}" Directory_="fo_Dir" Attributes="272" KeyPath="FileUploader.exe"/>
     <ROW Component="FileUploader.exe.config" ComponentId="{2E52810E-6BCD-47A4-8064-5FE270BCECA2}" Directory_="fo_Dir" Attributes="16" KeyPath="FileUploader.exe.config" Type="0"/>
     <ROW Component="FluentFTP.dll" ComponentId="{7B75615B-D1C5-47E9-A0B5-F831FF7A1A02}" Directory_="fo_Dir" Attributes="16" KeyPath="FluentFTP.dll"/>
-    <ROW Component="Interop.RISALicenseManagerCOMLib._1" ComponentId="{5E199D10-7AD4-4E00-87B4-E3374C8F9633}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="Interop.RISALicenseManagerCOML_1"/>
+    <ROW Component="Interop.RISALicenseManagerCOMLib.dl" ComponentId="{525647DC-9C18-4FD4-B27C-BAC5446DD266}" Directory_="NewFolder1_Dir" Attributes="256" KeyPath="Interop.RISALicenseManagerCOMLib"/>
     <ROW Component="LicensingDashboard.exe" ComponentId="{2A7DAC45-80BA-491B-B23A-DC27918174DE}" Directory_="ld_Dir" Attributes="272" KeyPath="LicensingDashboard.exe"/>
     <ROW Component="LicensingDashboard.exe.config" ComponentId="{707005B4-C6E9-45A2-9797-94BC91495FDB}" Directory_="ld_Dir" Attributes="16" KeyPath="LicensingDashboard.exe.config" Type="0"/>
     <ROW Component="MahApps.Metro.IconPacks.Material.dl" ComponentId="{23DBC56F-2174-4383-8865-8AFF94E14254}" Directory_="ld_Dir" Attributes="16" KeyPath="MahApps.Metro.IconPacks.Material"/>
@@ -56,9 +56,9 @@
     <ROW Component="Microsoft.Expression.Interactions_1" ComponentId="{B4AC669D-29F5-4AFA-B145-8C9F8F83D7D0}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Interacti_1"/>
     <ROW Component="Microsoft.Expression.Prototyping.In" ComponentId="{F6543B57-6A7E-483A-AF6D-ACCF2AFA7109}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Prototyping"/>
     <ROW Component="Microsoft.Expression.Prototyping.Sk" ComponentId="{54F687DA-7B00-4C6A-92D5-589FFA68AFF4}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Prototypi_1"/>
-    <ROW Component="Microsoft.Practices.Prism.Mvvm.De_1" ComponentId="{B1DD8166-EFA7-4224-854C-1EBE5DF7096F}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Mvvm_1"/>
-    <ROW Component="Microsoft.Practices.Prism.Mvvm.dl_1" ComponentId="{661220E6-857F-4416-AB13-4FDFF32553CE}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Mvvm_3"/>
-    <ROW Component="Microsoft.Practices.Prism.SharedI_1" ComponentId="{82E8393C-DD00-4F6E-992E-4B799BEF0945}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Shar_1"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.Desk" ComponentId="{03D0CB28-155B-4B93-B4C8-693105E5D718}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm.D"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.dll" ComponentId="{8E9620CC-A4A0-4D9E-86E2-896D39E50691}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Mvvm_1"/>
+    <ROW Component="Microsoft.Practices.Prism.SharedInt" ComponentId="{797A2EDF-957F-497C-8DB4-6BB158E0AA4C}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="Microsoft.Practices.Prism.Shared"/>
     <ROW Component="Microsoft.Practices.ServiceLocation" ComponentId="{2E121881-FE84-4DA6-9C44-03074791E076}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.ServiceLocat"/>
     <ROW Component="Microsoft.Practices.Unity.Configura" ComponentId="{AB851E13-2114-41EF-8D6E-E7D2787672A4}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.Unity.Config"/>
     <ROW Component="Microsoft.Practices.Unity.Registrat" ComponentId="{B92E1AE5-C549-40CF-8A98-5B62AD0F49F0}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.Unity.Regist"/>
@@ -70,7 +70,7 @@
     <ROW Component="Prism.Wpf.dll" ComponentId="{C6DFA027-FD3E-4145-9575-A539099FD542}" Directory_="clt_Dir" Attributes="16" KeyPath="Prism.Wpf.dll"/>
     <ROW Component="Prism.dll" ComponentId="{A24A84A5-F7AC-492B-97D9-9691CA38D594}" Directory_="clt_Dir" Attributes="16" KeyPath="Prism.dll"/>
     <ROW Component="RISA" ComponentId="{9D592B1F-7D11-4F90-8B92-27B3957ED35C}" Directory_="RISA_Dir" Attributes="0"/>
-    <ROW Component="RISABorrowLicense.exe_2" ComponentId="{BB66BC82-963A-4CE0-A9CE-0F7F79795E25}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="RISABorrowLicense.exe_2"/>
+    <ROW Component="RISABorrowLicense.exe" ComponentId="{48A72494-28D0-4D41-9CC5-254075259DDE}" Directory_="NewFolder1_Dir" Attributes="256" KeyPath="RISABorrowLicense.exe"/>
     <ROW Component="RISAChangeLicenseType.exe" ComponentId="{2CAFA1CD-CC6F-4DCF-A0E6-58899C389D0E}" Directory_="clt_Dir" Attributes="272" KeyPath="RISAChangeLicenseType.exe"/>
     <ROW Component="RISAChangeLicenseType.exe.config" ComponentId="{7DF81411-C768-483D-97D6-2DC7EC230439}" Directory_="clt_Dir" Attributes="16" KeyPath="RISAChangeLicenseType.exe.config" Type="0"/>
     <ROW Component="RISAKeyManager.exe" ComponentId="{EEF9AAE9-9733-4884-9C1F-D923403EA89A}" Directory_="NewFolder_1_Dir" Attributes="272" KeyPath="RISAKeyManager.exe"/>
@@ -100,12 +100,12 @@
     <ROW Component="WCF_ServiceLib.LicensingDashboard.d" ComponentId="{B8885338-4CDE-4A89-930E-226439AF131B}" Directory_="ld_Dir" Attributes="272" KeyPath="WCF_ServiceLib.LicensingDashboar"/>
     <ROW Component="WindowsNT" ComponentId="{D9AD7EEA-B80E-4DF3-B3CF-2D6BC1A60C52}" Directory_="APPDIR" Attributes="260" KeyPath="WindowsNT"/>
     <ROW Component="WpfAnimatedGif.dll" ComponentId="{18B39FC9-C44E-4B38-8E63-830BC4998205}" Directory_="ld_Dir" Attributes="0" KeyPath="WpfAnimatedGif.dll"/>
-    <ROW Component="log4net.dll_1" ComponentId="{0CCF0B78-4EAC-45E8-9D8E-2F3DE8A92A01}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="log4net.dll_1"/>
-    <ROW Component="log4net.xml_1" ComponentId="{52D2E2A7-5588-4C17-962E-81026401893D}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="RISABorrowLicense.exe.config_1" Type="0"/>
+    <ROW Component="log4net.dll" ComponentId="{3A8F670D-1C79-4907-8B1C-7F07CB093E83}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="log4net.dll"/>
     <ROW Component="lsapiw64.dll" ComponentId="{FA6B0771-DC4E-4A13-A7E7-7DAB93CFC155}" Directory_="ld_Dir" Attributes="272" KeyPath="lsapiw64.dll"/>
     <ROW Component="lsclean.exe" ComponentId="{416F8383-0E26-488A-AA89-3EA181EBE2DF}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsclean.exe_1"/>
     <ROW Component="lsclean.exe.manifest" ComponentId="{89A29D9F-E359-4AB0-B37F-C3D91398ADD0}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsclean.exe.manifest_1" Type="0"/>
     <ROW Component="lsinitCOREv19.exe" ComponentId="{D36AF451-DEF6-417C-BB08-80A7B440E342}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsinitCOREv19.exe_1"/>
+    <ROW Component="readme.txt" ComponentId="{37A07C4A-19D9-4953-85EE-0D3CA297852B}" Directory_="NewFolder1_Dir" Attributes="0" KeyPath="readme.txt" Type="0"/>
     <ROW Component="wechoid.exe" ComponentId="{34B09E93-C84D-4435-BD4A-E3A15F5FF3A4}" Directory_="Utilities_Dir" Attributes="16" KeyPath="wechoid.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
@@ -114,13 +114,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="RISALicenseManagerCOM.dll" Component_="RISALicenseManagerCOM.dll" FileName="RISALI~1.DLL|RISALicenseManagerCOM.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\RISALicenseManagerCOM.dll" SelfReg="safe" RegSynch="on"/>
-    <ROW File="Interop.RISALicenseManagerCOML_1" Component_="Interop.RISALicenseManagerCOMLib._1" FileName="INTERO~1.DLL|Interop.RISALicenseManagerCOMLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Interop.RISALicenseManagerCOMLib.dll" SelfReg="false"/>
-    <ROW File="log4net.dll_1" Component_="log4net.dll_1" FileName="log4net.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\log4net.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Practices.Prism.Mvvm_1" Component_="Microsoft.Practices.Prism.Mvvm.De_1" FileName="MICROS~1.DLL|Microsoft.Practices.Prism.Mvvm.Desktop.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.Mvvm.Desktop.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Practices.Prism.Mvvm_3" Component_="Microsoft.Practices.Prism.Mvvm.dl_1" FileName="MICROS~2.DLL|Microsoft.Practices.Prism.Mvvm.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.Mvvm.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Practices.Prism.Shar_1" Component_="Microsoft.Practices.Prism.SharedI_1" FileName="MICROS~3.DLL|Microsoft.Practices.Prism.SharedInterfaces.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\Microsoft.Practices.Prism.SharedInterfaces.dll" SelfReg="false"/>
-    <ROW File="RISABorrowLicense.exe_2" Component_="RISABorrowLicense.exe_2" FileName="RISABO~1.EXE|RISABorrowLicense.exe" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\RISABorrowLicense.exe" SelfReg="false"/>
-    <ROW File="RISABorrowLicense.exe.config_1" Component_="log4net.xml_1" FileName="RISABO~1.CON|RISABorrowLicense.exe.config" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Borrow\RISABorrowLicense.exe.config" SelfReg="false"/>
     <ROW File="lsapiw32.dll" Component_="SentinelRMS_lsapiw32.dll" FileName="lsapiw32.dll" Attributes="0" SourcePath="..\..\Source Files\SafeNet\Sentinel RMS\Utilities\lsapiw32.dll" SelfReg="false"/>
     <ROW File="lsclean.exe" Component_="SentinelRMS_lsclean.exe" FileName="lsclean.exe" Attributes="0" SourcePath="..\..\Source Files\SafeNet\Sentinel RMS\Utilities\lsclean.exe" SelfReg="false" DigSign="true"/>
     <ROW File="lsclean.exe.manifest" Component_="SentinelRMS_lsclean.exe" FileName="LSCLEA~1.MAN|lsclean.exe.manifest" Attributes="0" SourcePath="..\..\Source Files\SafeNet\Sentinel RMS\Utilities\lsclean.exe.manifest" SelfReg="false"/>
@@ -218,6 +211,16 @@
     <ROW File="RISARegistryLib.dll_2" Component_="RISARegistryLib.dll_2" FileName="RISARE~1.DLL|RISARegistryLib.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\File Uploader\RISARegistryLib.dll" SelfReg="false"/>
     <ROW File="RISARegistryLib.pdb_2" Component_="RISARegistryLib.dll_2" FileName="RISARE~1.PDB|RISARegistryLib.pdb" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\File Uploader\RISARegistryLib.pdb" SelfReg="false"/>
     <ROW File="System.Windows.Interactivity.d_2" Component_="System.Windows.Interactivity.dll_2" FileName="SYSTEM~1.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\File Uploader\System.Windows.Interactivity.dll" SelfReg="false"/>
+    <ROW File="LicensingDashboard.application" Component_="LicensingDashboard.exe.config" FileName="LICENS~1.APP|LicensingDashboard.application" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\Licensing Dashboard\LicensingDashboard.application" SelfReg="false"/>
+    <ROW File="FileUploader.application" Component_="FileUploader.exe.config" FileName="FILEUP~1.APP|FileUploader.application" Attributes="0" SourcePath="..\..\Source Files\Common Files\License\Utilities\File Uploader\FileUploader.application" SelfReg="false"/>
+    <ROW File="Interop.RISALicenseManagerCOMLib" Component_="Interop.RISALicenseManagerCOMLib.dl" FileName="INTERO~1.DLL|Interop.RISALicenseManagerCOMLib.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\Interop.RISALicenseManagerCOMLib.dll" SelfReg="false"/>
+    <ROW File="log4net.dll" Component_="log4net.dll" FileName="log4net.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\log4net.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm.D" Component_="Microsoft.Practices.Prism.Mvvm.Desk" FileName="MICROS~1.DLL|Microsoft.Practices.Prism.Mvvm.Desktop.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\Microsoft.Practices.Prism.Mvvm.Desktop.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Mvvm_1" Component_="Microsoft.Practices.Prism.Mvvm.dll" FileName="MICROS~2.DLL|Microsoft.Practices.Prism.Mvvm.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\Microsoft.Practices.Prism.Mvvm.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Practices.Prism.Shared" Component_="Microsoft.Practices.Prism.SharedInt" FileName="MICROS~3.DLL|Microsoft.Practices.Prism.SharedInterfaces.dll" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\Microsoft.Practices.Prism.SharedInterfaces.dll" SelfReg="false"/>
+    <ROW File="readme.txt" Component_="readme.txt" FileName="readme.txt" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\readme.txt" SelfReg="false"/>
+    <ROW File="RISABorrowLicense.exe" Component_="RISABorrowLicense.exe" FileName="RISABO~1.EXE|RISABorrowLicense.exe" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\RISABorrowLicense.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="RISABorrowLicense.exe.config" Component_="readme.txt" FileName="RISABO~1.CON|RISABorrowLicense.exe.config" Attributes="0" SourcePath="..\..\Source Files\RISA License Manager\Borrow\RISABorrowLicense.exe.config" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
     <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
@@ -250,13 +253,6 @@
     <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.ServiceLocation"/>
     <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Unity.Configura"/>
     <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Unity.dll"/>
-    <ROW Feature_="TargetFeature" Component_="Interop.RISALicenseManagerCOMLib._1"/>
-    <ROW Feature_="TargetFeature" Component_="log4net.dll_1"/>
-    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.De_1"/>
-    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.dl_1"/>
-    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.SharedI_1"/>
-    <ROW Feature_="TargetFeature" Component_="RISABorrowLicense.exe_2"/>
-    <ROW Feature_="TargetFeature" Component_="log4net.xml_1"/>
     <ROW Feature_="TargetFeature" Component_="SentinelRMS_lsapiw32.dll"/>
     <ROW Feature_="TargetFeature" Component_="SentinelRMS_lsclean.exe"/>
     <ROW Feature_="TargetFeature" Component_="SentinelRMS_ServerBrowser.exe"/>
@@ -327,6 +323,13 @@
     <ROW Feature_="TargetFeature" Component_="Microsoft.SDK.Expression.Blend.dll"/>
     <ROW Feature_="TargetFeature" Component_="RISARegistryLib.dll_2"/>
     <ROW Feature_="TargetFeature" Component_="System.Windows.Interactivity.dll_2"/>
+    <ROW Feature_="TargetFeature" Component_="Interop.RISALicenseManagerCOMLib.dl"/>
+    <ROW Feature_="TargetFeature" Component_="log4net.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.Desk"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.Mvvm.dll"/>
+    <ROW Feature_="TargetFeature" Component_="Microsoft.Practices.Prism.SharedInt"/>
+    <ROW Feature_="TargetFeature" Component_="readme.txt"/>
+    <ROW Feature_="TargetFeature" Component_="RISABorrowLicense.exe"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AppCompatFlags" Root="2" Key="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags" Name="+" Component_="AppCompatFlags"/>
@@ -355,6 +358,7 @@
     <ROW Registry="Programmable_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
+    <ROW Registry="SHP14B90_16_07E3_169221B588BAF92178" Root="2" Key="System\CurrentControlSet\Control\GraphicsDrivers\Connectivity\SHP14B90_16_07E3_16^9221B588BAF921789CD31B1F8A7B86DE" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Software" Root="2" Key="Software" Name="+" Component_="Software"/>
     <ROW Registry="TARGETDIRRISAKeyManagerRISAKeyManag" Root="2" Key="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" Name="[APPDIR]\RISA Key Manager\RISA Key Manager.exe" Value="~ WIN7RTM" Component_="TARGETDIRRISAKeyManagerRISAKeyManag"/>
     <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
