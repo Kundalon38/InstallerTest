@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Deployment.WindowsInstaller;
 using RISA_CustomActionsLib.Models;
 
@@ -15,35 +11,26 @@ namespace RISA_CustomActionsLib
 
         #region Property Name consts
 
+        public const string _propAI_APPDIR = "APPDIR";
         public const string _propMSI_ProductName = "ProductName";
+        public const string _propRISA_REGISTRY_PRODUCT_NAME = "RISA_REGISTRY_PRODUCT_NAME";
         public const string _propMSI_ProductVersion = "ProductVersion";
         public const string _propMSI_TARGETDIR = "TARGETDIR";
-        public const string _propAI_APPDIR = "APPDIR";
         public const string _propMSI_CustomActionData = "CustomActionData";
 
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
-        public const string _propRISA_REGISTRY_PRODUCT_NAME = "RISA_REGISTRY_PRODUCT_NAME";
         public const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
+        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
+        public const string _propRISA_IS_ROAMING_PROFILE = "RISA_IS_ROAMING_PROFILE";
 
+        public const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
+        public const string _propRISA_PRODUCT_TITLE2_INSTYPE = "RISA_PRODUCT_TITLE2_INSTYPE";
         public const string _propRISA_PRODUCT_VERSION2 = "RISA_PRODUCT_VERSION2";
         public const string _propRISA_PRODUCT_VERSION34 = "RISA_PRODUCT_VERSION34";
 
-        public const string _propRISA_PRODUCT_TITLE2_INSTYPE = "RISA_PRODUCT_TITLE2_INSTYPE";
-
-
-        public const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
         public const string _propRISA_REGION_NAME = "RISA_REGION_NAME";
         public const string _propRISA_UPDATE_DATA_VALUE = "RISA_UPDATE_DATA_VALUE";
-
         public const string _propRISA_USERFILES = "RISA_USERFILES";
-
-        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
-
-
-        public const string _propRISA_SILENT_FILE = "RISA_SILENT_FILE";
-        public const string _propRISA_SILENT_LOG = "RISA_SILENT_LOG";
-        public const string _propRISA_IS_SILENT = "RISA_IS_SILENT";
-
 
         public const string _propRISA_STATUS_CODE = "RISA_STATUS_CODE";
         public const string _propRISA_STATUS_TEXT = "RISA_STATUS_TEXT";
@@ -61,10 +48,12 @@ namespace RISA_CustomActionsLib
         public const string _sts_ERR_REMOVE_INSTALLED_PRODUCT = "RISA_ERR_REMOVE_INSTALLED_PRODUCT";
         public const string _sts_ERR_PRODUCT_ACTIVE = "RISA_ERR_PRODUCT_ACTIVE";
 
+        public const string _sts_BAD_DEST_DIR = "RISA_BAD_DEST_DIR";
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
         public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
 
+        public const string _stsText_Success = "Success";
 
         #endregion
 
@@ -144,6 +133,8 @@ namespace RISA_CustomActionsLib
 
         private const string _licenseTypeSubKeyName = "License Type";
         private const string _defLicenseType = "Cloud";
+        public const string _boolTrue = "True";
+        public const string _boolFalse = "False";
 
         #endregion
 

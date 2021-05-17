@@ -61,12 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomActions_StopStartService.cs" />
-    <Compile Include="CustomActions_consts.cs" />
-    <Compile Include="CustomActions_InitProps_FindInstalled.cs" />
-    <Compile Include="CustomActions_InitProps.cs" />
-    <Compile Include="CustomActions_logging.cs" />
-    <Compile Include="CustomActions_RemoveInstalled.cs" />
+    <Compile Include="CustomActions\StopStartService\CustomActions_StopStartService.cs" />
+    <Compile Include="CustomActions\CustomActions_consts.cs" />
+    <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />
+    <Compile Include="CustomActions\InitProps\CustomActions_InitProps.cs" />
+    <Compile Include="CustomActions\CustomActions_logging.cs" />
+    <Compile Include="CustomActions\RemoveInstalled\CustomActions_RemoveInstalled.cs" />
+    <Compile Include="CustomActions\ValidateInstallDirectory\CustomActions_ValidateInstallDirectory.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\InstalledProduct.cs" />
     <Compile Include="Models\InstalledProductList.cs" />

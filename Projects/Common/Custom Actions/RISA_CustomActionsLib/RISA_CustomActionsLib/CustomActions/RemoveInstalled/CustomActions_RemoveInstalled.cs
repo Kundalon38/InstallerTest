@@ -53,7 +53,7 @@ namespace RISA_CustomActionsLib
                 if (string.IsNullOrEmpty(insProdListXml))
                 {
                     sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
-                    msgText = "Success";
+                    msgText = _stsText_Success;
                     return;
                 }
                 var tbRemoved = new List<InstalledProduct>();
@@ -84,7 +84,7 @@ namespace RISA_CustomActionsLib
                     return;
                 }
                 sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
-                msgText = "Success";
+                msgText = _stsText_Success;
             }
             catch (Exception e)
             {

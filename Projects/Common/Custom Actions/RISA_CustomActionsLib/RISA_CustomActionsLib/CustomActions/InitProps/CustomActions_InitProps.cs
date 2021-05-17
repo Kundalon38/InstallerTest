@@ -69,6 +69,7 @@ namespace RISA_CustomActionsLib
         {
             var sessDTO = new SessionDTO(session.Log);
             // prop values set in aip
+            copySinglePropFromSession(sessDTO, session, _propAI_APPDIR);
             copySinglePropFromSession(sessDTO, session, _propMSI_ProductName);
             copySinglePropFromSession(sessDTO, session, _propMSI_ProductVersion);
             copySinglePropFromSession(sessDTO, session, _propRISA_COMPANY_KEY);
@@ -80,6 +81,7 @@ namespace RISA_CustomActionsLib
             //
             // prop values set by InitProperties
             copySinglePropFromSession(sessDTO, session, _propRISA_INSTALLED_PRODUCTS);
+            copySinglePropFromSession(sessDTO, session, _propRISA_IS_ROAMING_PROFILE);
             copySinglePropFromSession(sessDTO, session, _propRISA_LICENSE_TYPE);
             copySinglePropFromSession(sessDTO, session, _propRISA_PRODUCT_TITLE2_INSTYPE);
             copySinglePropFromSession(sessDTO, session, _propRISA_PRODUCT_VERSION2);
@@ -95,7 +97,9 @@ namespace RISA_CustomActionsLib
         {
             // don't overwrite items set by caller, only those set here
             //
+            session[_propAI_APPDIR] = sessDTO[_propAI_APPDIR];
             session[_propRISA_INSTALLED_PRODUCTS] = sessDTO[_propRISA_INSTALLED_PRODUCTS];
+            session[_propRISA_IS_ROAMING_PROFILE] = sessDTO[_propRISA_IS_ROAMING_PROFILE];
             session[_propRISA_LICENSE_TYPE] = sessDTO[_propRISA_LICENSE_TYPE];
             session[_propRISA_PRODUCT_TITLE2_INSTYPE] = sessDTO[_propRISA_PRODUCT_TITLE2_INSTYPE];
             session[_propRISA_PRODUCT_VERSION2] = sessDTO[_propRISA_PRODUCT_VERSION2];
@@ -131,7 +135,7 @@ namespace RISA_CustomActionsLib
                 assignDefaultLicenseType(sessDTO);
 
                 sessDTO[_propRISA_STATUS_CODE] = _sts_OK;
-                sessDTO[_propRISA_STATUS_TEXT] = "Success"; ;
+                sessDTO[_propRISA_STATUS_TEXT] = _stsText_Success; ;
             }
             catch (Exception e)
             {
@@ -266,8 +270,54 @@ namespace RISA_CustomActionsLib
 
         public static void assignDocumentPath(SessionDTO session, bool? isRoamingValue = null)
         {
-            // typical myDocsPath:      C:\Users\<username>\Documents
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            string installTypeProperty = session[_propRISA_INSTALL_TYPE];
+            string folderName = (installTypeProperty == _insTypeDemo) ? "RISADemo" : "RISA";
+
+            string appDir;
+            string isAproblemProfileStr;
+            string docsPath;
+
+            if (isAproblemProfile(isRoamingValue))
+            {
+                appDir = defaultRoamingInstallDir(installTypeProperty);
+                docsPath = appDir;
+                isAproblemProfileStr = _boolTrue;
+            }
+            else
+            {
+                appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), folderName);
+                docsPath = Path.Combine(myDocsPath, folderName);
+                isAproblemProfileStr = _boolFalse;
+            }
+
+            session[_propAI_APPDIR] = appDir;
+            session[_propRISA_IS_ROAMING_PROFILE] = isAproblemProfileStr;
+            session[_propRISA_USERFILES] = docsPath;
+        }
+
+        public static string defaultRoamingInstallDir(string installType)
+        {
+            // this is about finding the correct drive letter based on where the Windows directory lives
+            // nearly everyone will be using C:\
+            //
+            const string bash = @"\";
+            var drives = DriveInfo.GetDrives();
+            var windowsDir = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
+            var outDriveIfRoaming = drives.Select(x => x.Name).SingleOrDefault(x => windowsDir.StartsWith(x));
+            if (outDriveIfRoaming == null) outDriveIfRoaming = @"C:\";
+            else if (!outDriveIfRoaming.EndsWith(bash)) outDriveIfRoaming += bash;
+
+            var folderName = (installType == _insTypeDemo) ? "RISADemo" : "RISA";
+            return $"{outDriveIfRoaming}{folderName}";
+        }
+
+        public static bool isAproblemProfile(bool? isRoamingValue = null)
+        {
+            var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // typical myDocsPath:      C:\Users\<username>\Documents
             var usingOneDrive = pathContainsOneDrive(myDocsPath);
 
             // typical userProfilePath: C:\Users\<username>
@@ -288,27 +338,7 @@ namespace RISA_CustomActionsLib
                 // require both paths to exist, otherwise isRoaming=T
                 isRoaming = !(Directory.Exists(myDocsPath) && Directory.Exists(userProfilePath));
             }
-
-            string installTypeProperty = session[_propRISA_INSTALL_TYPE];
-            string folderName = (installTypeProperty == _insTypeDemo) ? "RISADemo" : "RISA";
-
-            string docsPath;
-            if (isRoaming || usingOneDrive)
-            {
-                // this is about finding the correct drive letter based on where the Windows directory lives
-                // nearly everyone will be using C:\
-                //
-                const string bash = @"\";
-                var drives = DriveInfo.GetDrives();
-                var windowsDir = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
-                var outDriveIfRoaming = drives.Select(x => x.Name).SingleOrDefault(x => windowsDir.StartsWith(x));
-                if (outDriveIfRoaming == null) outDriveIfRoaming = @"C:\";
-                else if (!outDriveIfRoaming.EndsWith(bash)) outDriveIfRoaming += bash;
-                var outputDirIfRoaming = $"{outDriveIfRoaming}{folderName}";
-                docsPath = outputDirIfRoaming;
-            }
-            else docsPath = Path.Combine(myDocsPath, folderName);
-            session[_propRISA_USERFILES] = docsPath;
+            return isRoaming || usingOneDrive;
         }
 
         public static bool pathContainsOneDrive(string path)
@@ -317,7 +347,7 @@ namespace RISA_CustomActionsLib
             // but not completely sure of all use cases
             //
             const int bash = 92;
-            var pathParts = path.Split((char) bash);
+            var pathParts = path.Split((char)bash);
             if (pathParts.Length < 4) return false;     // C: - Users - <username> - OneDrive - maybeMore
             return (pathParts[3] == "OneDrive");
         }
