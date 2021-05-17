@@ -294,6 +294,7 @@ namespace RISA_CustomActionsLib.Test
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var expectPath = Path.Combine(myDocsPath, "RISADemo");
 
+            expecting(_sessDTO[CustomActions._propRISA_IS_ROAMING_PROFILE] == CustomActions._boolFalse);
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
@@ -311,6 +312,7 @@ namespace RISA_CustomActionsLib.Test
             var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             var expectPath = Path.Combine(myDocsPath, "RISA");
 
+            expecting(_sessDTO[CustomActions._propRISA_IS_ROAMING_PROFILE] == CustomActions._boolFalse);
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
@@ -326,6 +328,8 @@ namespace RISA_CustomActionsLib.Test
 
             var expectPath = @"C:\RISADemo";
 
+            expecting(_sessDTO[CustomActions._propRISA_IS_ROAMING_PROFILE] == CustomActions._boolTrue);
+            expecting(_sessDTO[CustomActions._propAI_APPDIR] == expectPath);
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
@@ -342,6 +346,8 @@ namespace RISA_CustomActionsLib.Test
 
             var expectPath = @"C:\RISA";
 
+            expecting(_sessDTO[CustomActions._propRISA_IS_ROAMING_PROFILE] == CustomActions._boolTrue);
+            expecting(_sessDTO[CustomActions._propAI_APPDIR] == expectPath);
             expecting(_sessDTO[CustomActions._propRISA_USERFILES] == expectPath);
             Assert.IsTrue(true);
         }
@@ -371,6 +377,61 @@ namespace RISA_CustomActionsLib.Test
         }
 
         #endregion
+
+        #endregion
+
+        #region Validate Install Directory (roaming profile)
+
+        [TestMethod] [TestCategory("validateInstallDirectory")]
+        public void Roam_InsDir_OK()
+        {
+            var expectPath = @"C:\SomeDir";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propAI_APPDIR] = expectPath;
+
+            CustomActions.validateInstallDirectory(_sessDTO, true);
+
+            expecting(_sessDTO[CustomActions._propAI_APPDIR] == expectPath);
+            expecting(returnCode(CustomActions._sts_OK));
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        [TestCategory("validateInstallDirectory")]
+        public void Roam_InsDir_Bad()
+        {
+            var expectPath = @"C:\RISA";
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propAI_APPDIR] = @"C:\Program Files\RISA";
+
+            CustomActions.validateInstallDirectory(_sessDTO, true);
+
+            expecting(_sessDTO[CustomActions._propAI_APPDIR] == expectPath);
+            expecting(returnCode(CustomActions._sts_BAD_DEST_DIR));
+            Assert.IsTrue(true);
+        }
+
+        [TestMethod]
+        [TestCategory("validateInstallDirectory")]
+        public void NotRoam_InsDir()
+        {
+            _sessDTO[CustomActions._propMSI_ProductName] = _risa3D;
+            _sessDTO[CustomActions._propMSI_ProductVersion] = "1.2.3.4";
+            _sessDTO[CustomActions._propRISA_INSTALL_TYPE] = "Standalone";
+            _sessDTO[CustomActions._propAI_APPDIR] = @"C:\Program Files\RISA";
+
+            CustomActions.validateInstallDirectory(_sessDTO, false);
+
+            //expecting(_sessDTO[CustomActions._propAI_APPDIR] == expectPath);
+            expecting(returnCode(CustomActions._sts_OK));
+            Assert.IsTrue(true);
+        }
+
+
 
         #endregion
 
