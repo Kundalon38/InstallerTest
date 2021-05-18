@@ -91,6 +91,8 @@ namespace RISA_CustomActionsLib
             copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);
             setupDebugIfRequested(session, sessDTO);
             //
+            copySinglePropFromSession(sessDTO, session, _propRISA_INSTALL_TYPE);
+            //
             // prop values set by ValidateInstallDirectory
             copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_CODE);
             copySinglePropFromSession(sessDTO, session, _propRISA_STATUS_TEXT);
