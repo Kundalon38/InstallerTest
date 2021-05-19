@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{235D810D-4043-4F0D-A401-D42CDF9462D6}</ProjectGuid>
+    <ProjectGuid>{4F7DDE79-1AE6-45A1-905F-92D4265A5E68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RISA_CustomActionsLib</RootNamespace>
-    <AssemblyName>RISA_CustomActionsLib</AssemblyName>
+    <RootNamespace>RISA_SilentPreReq_CustomActionLib</RootNamespace>
+    <AssemblyName>RISA_SilentPreReq_CustomActionLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -52,8 +53,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Xml" />
@@ -62,21 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomActions\InitProps-Silent\CustomActions_SilentInitProps.cs" />
-    <Compile Include="CustomActions\StopStartService\CustomActions_StopStartService.cs" />
-    <Compile Include="CustomActions\CustomActions_consts.cs" />
-    <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />
-    <Compile Include="CustomActions\InitProps\CustomActions_InitProps.cs" />
-    <Compile Include="CustomActions\CustomActions_logging.cs" />
-    <Compile Include="CustomActions\RemoveInstalled\CustomActions_RemoveInstalled.cs" />
-    <Compile Include="CustomActions\ValidateInstallDirectory\CustomActions_ValidateInstallDirectory.cs" />
+    <Compile Include="CustomAction_Validate.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\BootstrapperData.cs" />
-    <Compile Include="Models\InstalledProduct.cs" />
-    <Compile Include="Models\InstalledProductList.cs" />
-    <Compile Include="Models\InstallerVendorRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\SessionDTO.cs" />
     <Content Include="CustomAction.config" />
   </ItemGroup>
   <ItemGroup />

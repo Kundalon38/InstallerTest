@@ -20,7 +20,6 @@ namespace RISA_CustomActionsLib
 
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
         public const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
-        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
         public const string _propRISA_IS_ROAMING_PROFILE = "RISA_IS_ROAMING_PROFILE";
 
         public const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
@@ -37,6 +36,13 @@ namespace RISA_CustomActionsLib
         public const string _propRISA_CA_DEBUG = "RISA_CA_DEBUG";
 
         public const string _debug_Trace = "TRACEFILE";
+
+        #region Transfer properties - from One CA to Another
+
+        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
+        public const string _propRISA_SILENT_PREINSTALL_STATUS = "RISA_SILENT_PREINSTALL_STATUS";
+
+        #endregion
 
         #endregion
 

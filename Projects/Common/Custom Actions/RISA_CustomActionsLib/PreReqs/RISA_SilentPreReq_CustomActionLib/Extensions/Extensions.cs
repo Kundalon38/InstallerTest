@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Management;
 
-namespace RISA_CustomActionsLib.Extensions
+namespace RISA_SilentPreReq_CustomActionLib.Extensions
 {
     public static partial class Extensions
     {
