@@ -61,7 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomAction_Validate.cs" />
+    <Compile Include="CustomAction_SilentValidate.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\BootstrapperData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ namespace RISA_SilentPreReq_CustomActionLib
     public class CustomActions
     {
         [CustomAction]
-        public static ActionResult Validate(Session session)
+        public static ActionResult SilentValidate(Session session)
         {
             _doTrace = true;                // TODO set False for production use
             var bootData = FindBootstrapper();
