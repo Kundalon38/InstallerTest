@@ -17,7 +17,7 @@ namespace Silent_PreInstall
             _doTrace = true;                // TODO set False for production use
             var bootData = FindBootstrapper();
             if (bootData != null) writeTrace(bootData.ToString());
-            return 88;                      // some random # to picked up by InitProps-Silent
+            return _sts_SILENT_OK;
         }
 
         // TODO document the (expected) relationship b/t processes
@@ -70,5 +70,16 @@ namespace Silent_PreInstall
 
         private static StreamWriter _sw;
         private static bool _doTrace;
+
+        #region RISA_SI_PREINSTALL_RESULT return values
+
+        // see CustomActions_consts in the main RISA_CustomActionsLib
+        // MSI coerces these into strings to fit into a the RISA_SI_PREINSTALL_RESULT property
+
+        public const int _sts_SILENT_OK = 1;
+        public const int _sts_SILENT_EXCP = 0;
+        public const int _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = -1;
+
+        #endregion
     }
 }

@@ -40,7 +40,7 @@ namespace RISA_CustomActionsLib
         #region Transfer properties - from One CA to Another
 
         public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
-        public const string _propRISA_SILENT_PREINSTALL_STATUS = "RISA_SILENT_PREINSTALL_STATUS";
+        public const string _propRISA_SI_PREINSTALL_RESULT = "RISA_SI_PREINSTALL_RESULT";
 
         #endregion
 
@@ -58,6 +58,12 @@ namespace RISA_CustomActionsLib
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
         public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
+
+        // _propRISA_SI_PREINSTALL_RESULT values must be numeric.ToString()
+
+        public const string _sts_SILENT_OK = "1";
+        public const string _sts_SILENT_EXCP = "0";
+        public const string _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = "-1";
 
         public const string _stsText_Success = "Success";
 

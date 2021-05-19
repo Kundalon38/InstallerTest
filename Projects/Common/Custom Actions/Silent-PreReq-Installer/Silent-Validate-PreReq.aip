@@ -8,7 +8,7 @@
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="ProductCode" Value="1033:{8309FBD3-3406-4CA8-B419-95762D132195} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="SilentValidation"/>
+    <ROW Property="ProductName" Value="SilentValidate"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{ADD69EF5-AF00-4D1D-A87C-73402B90D336}"/>
@@ -27,7 +27,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{2D347ED2-683B-474C-9267-40B3C93D8B27}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="ProductInformation" ComponentId="{B60CF382-E26D-457D-B650-77650B2D9958}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="ProductInformation" ComponentId="{B60CF382-E26D-457D-B650-77650B2D9958}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -37,7 +37,7 @@
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFileName="Silent-Validate-PreReq" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFileName="Silent-Validate-PreReq" Languages="en" InstallationType="4" UseLargeSchema="true" MsiPackageType="x64"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -100,7 +100,7 @@
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
-    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
     <ROW Action="SilentValidate" Type="1" Source="RISA_SilentPreReq_CustomActionLib.CA.dll_1" Target="SilentValidate"/>

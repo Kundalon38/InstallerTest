@@ -32,7 +32,7 @@ namespace RISA_CustomActionsLib
             }
             #endregion
 
-            Trace(methodName,$"{_propRISA_SILENT_PREINSTALL_STATUS}={sessDTO[_propRISA_SILENT_PREINSTALL_STATUS]}");
+            Trace(methodName,$"{_propRISA_SI_PREINSTALL_RESULT}={sessDTO[_propRISA_SI_PREINSTALL_RESULT]}");
             var bootData = FindBootstrapper();
             Trace(methodName, bootData.ToString());
 
@@ -105,7 +105,7 @@ namespace RISA_CustomActionsLib
             copySinglePropFromSession(sessDTO, session, _propRISA_INSTALL_TYPE);
             copySinglePropFromSession(sessDTO, session, _propRISA_REGISTRY_PRODUCT_NAME);
             //
-            copySinglePropFromSession(sessDTO, session, _propRISA_SILENT_PREINSTALL_STATUS);
+            copySinglePropFromSession(sessDTO, session, _propRISA_SI_PREINSTALL_RESULT);
             //
             copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);
             setupDebugIfRequested(session, sessDTO);
