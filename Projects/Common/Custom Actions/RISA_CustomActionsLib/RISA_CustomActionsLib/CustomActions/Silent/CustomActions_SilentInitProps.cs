@@ -15,9 +15,9 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult SilentInitProperties(Session session)
         {
-            const string methodName = "SilentInitProperties";
-
             _doTrace = true;        // TODO debug
+
+            const string methodName = "SilentInitProperties";
 
             #region copy Session props to SessionDTO
             SessionDTO sessDTO;
@@ -33,7 +33,10 @@ namespace RISA_CustomActionsLib
             #endregion
 
             Trace(methodName,$"{_propRISA_SI_PREINSTALL_RESULT}={sessDTO[_propRISA_SI_PREINSTALL_RESULT]}");
-            var bootData = FindBootstrapper();
+
+            if (sessDTO[_propRISA_SI_PREINSTALL_RESULT] != _sts_SILENT_OK) return ActionResult.Failure;
+
+            var bootData = FindBootstrapper(methodName);
             Trace(methodName, bootData.ToString());
 
 
@@ -54,41 +57,6 @@ namespace RISA_CustomActionsLib
             return ActionResult.Success;
         }
 
-        // TODO document the (expected) relationship b/t processes
-        public static BootstrapperData FindBootstrapper()
-        {
-            const string methodName = "SilentInitProperties";
-            BootstrapperData bootData = null;
-
-            var allProcs = Process.GetProcesses(".");
-            foreach (var curProcess in allProcs)
-            {
-                if (string.Compare(curProcess.ProcessName, "msiexec", StringComparison.CurrentCultureIgnoreCase) != 0) continue;
-                var cmdLine = curProcess.GetCommandLine();
-                if (cmdLine == null) continue;
-                var cmdLineUC = cmdLine.ToUpper();
-                if (!cmdLineUC.Contains(@"/I ")) continue;  // looking for msiexec /I
-
-                var parentProcess = curProcess.GetParent();
-                if (parentProcess == null) continue;        // not there, but should be
-
-                cmdLine = parentProcess.GetCommandLine();
-                if (cmdLine == null) continue;
-
-                bootData = new BootstrapperData(cmdLine);
-                if (!bootData.IsSilent) continue;
-
-                Trace(methodName, $"Found Bootstrapper {parentProcess.ProcessName}");
-
-                var exePath = parentProcess.GetExecutablePath(); // yields the entire path, including filename
-                Trace(methodName, $"exePath = {exePath}");
-
-                bootData.LoadFileVersionInfo(FileVersionInfo.GetVersionInfo(exePath));
-                break;
-
-            }
-            return bootData;
-        }
 
 
 

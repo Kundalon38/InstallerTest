@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomActions\InitProps-Silent\CustomActions_SilentInitProps.cs" />
+    <Compile Include="CustomActions\Silent\CustomActions_silentCommon.cs" />
+    <Compile Include="CustomActions\Silent\CustomActions_SilentInitProps.cs" />
+    <Compile Include="CustomActions\Silent\CustomActions_SilentValidate.cs" />
     <Compile Include="CustomActions\StopStartService\CustomActions_StopStartService.cs" />
     <Compile Include="CustomActions\CustomActions_consts.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />

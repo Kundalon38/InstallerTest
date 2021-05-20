@@ -58,7 +58,7 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
-    <ROW Name="RISA_SilentPreReq_CustomActionLib.CA.dll_1" SourcePath="..\RISA_CustomActionsLib\PreReqs\RISA_SilentPreReq_CustomActionLib\bin\x64\Debug\RISA_SilentPreReq_CustomActionLib.CA.dll"/>
+    <ROW Name="RISA_CustomActionsLib.CA.dll" SourcePath="..\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
@@ -103,7 +103,7 @@
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
-    <ROW Action="SilentValidate" Type="1" Source="RISA_SilentPreReq_CustomActionLib.CA.dll_1" Target="SilentValidate"/>
+    <ROW Action="SilentValidate" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="SilentValidate"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>

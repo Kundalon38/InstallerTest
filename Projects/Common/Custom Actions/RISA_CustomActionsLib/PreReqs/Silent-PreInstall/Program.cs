@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Silent_PreInstall.Extensions;
 using Silent_PreInstall.Models;
@@ -15,44 +16,70 @@ namespace Silent_PreInstall
         static int Main(string[] args)
         {
             _doTrace = true;                // TODO set False for production use
+            writeTrace("b4 call FindBootstrapper");
             var bootData = FindBootstrapper();
-            if (bootData != null) writeTrace(bootData.ToString());
-            return _sts_SILENT_OK;
+            if (bootData != null)
+            {
+                writeTrace(bootData.ToString());
+                return _sts_SILENT_OK;
+            }
+            writeTrace("bootData is null");
+
+            //while(true) Thread.Sleep(500);
+            return _sts_SILENT_EXCP;
         }
 
         // TODO document the (expected) relationship b/t processes
         public static BootstrapperData FindBootstrapper()
         {
-            BootstrapperData bootData = null;
+            var curProcess = Process.GetCurrentProcess();
+            var bootStrapperProcess = curProcess.GetParent();
+            if (bootStrapperProcess == null) return null;
 
-            var allProcs = Process.GetProcesses(".");
-            foreach (var curProcess in allProcs)
-            {
-                if (string.Compare(curProcess.ProcessName, "msiexec", StringComparison.CurrentCultureIgnoreCase) != 0) continue;
-                var cmdLine = curProcess.GetCommandLine();
-                if (cmdLine == null) continue;
-                var cmdLineUC = cmdLine.ToUpper();
-                if (!cmdLineUC.Contains(@"/I ")) continue;  // looking for msiexec /I
+            var cmdLine = bootStrapperProcess.GetCommandLine();
+            if (cmdLine == null) return null;
 
-                var parentProcess = curProcess.GetParent();
-                if (parentProcess == null) continue;        // not there, but should be
+            var bootData = new BootstrapperData(cmdLine);
+            if (!bootData.IsSilent) return bootData;
 
-                cmdLine = parentProcess.GetCommandLine();
-                if (cmdLine == null) continue;
+            var exePath = bootStrapperProcess.GetExecutablePath(); // yields the entire path, including filename
+            bootData.LoadFileVersionInfo(FileVersionInfo.GetVersionInfo(exePath));
 
-                bootData = new BootstrapperData(cmdLine);
-                if (!bootData.IsSilent) continue;
-
-                writeTrace($"Found Bootstrapper {parentProcess.ProcessName}");
-
-                var exePath = parentProcess.GetExecutablePath(); // yields the entire path, including filename
-                writeTrace($"exePath = {exePath}");
-
-                bootData.LoadFileVersionInfo(FileVersionInfo.GetVersionInfo(exePath));
-                break;
-
-            }
             return bootData;
+
+
+            //var allProcs = Process.GetProcesses(".");
+            //foreach (var curProcess in allProcs)
+            //{
+            //    if (string.Compare(curProcess.ProcessName, "msiexec", StringComparison.CurrentCultureIgnoreCase) != 0) continue;
+            //    writeTrace($"FindBootStrapper msiexec found, pid={curProcess.Id}");
+            //    var cmdLine = curProcess.GetCommandLine();
+            //    if (cmdLine == null) continue;
+            //    writeTrace($"FindBootStrapper msiexec pid={curProcess.Id}, cmdLine={cmdLine}");
+            //    var cmdLineUC = cmdLine.ToUpper();
+            //    if (!cmdLineUC.Contains(@"/I ")) continue;  // looking for msiexec /I
+
+            //    var parentProcess = curProcess.GetParent();
+            //    if (parentProcess == null) continue;        // not there, but should be
+
+            //    writeTrace($"FindBootStrapper parent msiexec pid={parentProcess.Id}");
+            //    cmdLine = parentProcess.GetCommandLine();
+            //    if (cmdLine == null) continue;
+
+            //    writeTrace($"FindBootStrapper parent msiexec pid={parentProcess.Id}, cmdLine={cmdLine}");
+            //    bootData = new BootstrapperData(cmdLine);
+            //    if (!bootData.IsSilent) continue;
+
+            //    writeTrace($"Found Bootstrapper {parentProcess.ProcessName}");
+
+            //    var exePath = parentProcess.GetExecutablePath(); // yields the entire path, including filename
+            //    writeTrace($"exePath = {exePath}");
+
+            //    bootData.LoadFileVersionInfo(FileVersionInfo.GetVersionInfo(exePath));
+            //    break;
+
+            //}
+            //return bootData;
         }
 
         private static void writeTrace(string msg)
