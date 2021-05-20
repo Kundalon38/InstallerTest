@@ -24,8 +24,10 @@
     <ROW Property="ProductVersion" Value="15.0.2.27" Type="32"/>
     <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
+    <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
+    <ROW Property="RISA_IS_ROAMING_PROFILE" Value="False"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
@@ -166,6 +168,27 @@
     <ROW Dialog_="AdditionalSettingsDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="800"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control="Description" Type="Text" X="25" Y="18" Width="258" Height="20" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="900"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="1000"/>
+    <ROW Dialog_="FolderDlg" Control="FolderDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="FolderDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="200" MsiKey="FolderDlg#BottomLine"/>
+    <ROW Dialog_="FolderDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="300" TextLocId="Control.Text.FolderDlg#Logo" MsiKey="FolderDlg#Logo"/>
+    <ROW Dialog_="FolderDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="400" TextLocId="-" MsiKey="FolderDlg#Cancel" Options="1"/>
+    <ROW Dialog_="FolderDlg" Control="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Back]" Order="500" TextLocId="-" MsiKey="FolderDlg#Back" Options="1"/>
+    <ROW Dialog_="FolderDlg" Control="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" Attributes="1048577" Text="[BannerBitmap]" Help="|" Order="600" HelpLocId="Control.Help.FolderDlg#BannerBitmap" MsiKey="FolderDlg#BannerBitmap"/>
+    <ROW Dialog_="FolderDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Select Installation Folder" TextStyle="[DlgTitleFont]" Order="700" TextLocId="Control.Text.FolderDlg#Title" MsiKey="FolderDlg#Title"/>
+    <ROW Dialog_="FolderDlg" Control="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Attributes="196611" Text="This is the folder where [ProductName] will be installed." Order="800" TextLocId="Control.Text.FolderDlg#Description" MsiKey="FolderDlg#Description"/>
+    <ROW Dialog_="FolderDlg" Control="BannerLine" Type="Line" X="0" Y="44" Width="372" Height="0" Attributes="1" Order="900" MsiKey="FolderDlg#BannerLine"/>
+    <ROW Dialog_="FolderDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="23" Y="79" Width="300" Height="133" Attributes="3" Property="RISA_INSTALLATION_FOLDER_TYPE" Text="RadioButtonGroup" Order="1000"/>
+    <ROW Dialog_="FolderDlg" Control="FolderEdit" Type="PathEdit" X="91" Y="216" Width="232" Height="18" Attributes="0" Property="APPDIR" Help="|" Order="1100" HelpLocId="Control.Help.FolderDlg#FolderEdit"/>
+    <ROW Dialog_="FolderDlg" Control="Browse" Type="PushButton" X="270" Y="149" Width="50" Height="18" Attributes="3" Text="Change..." Help="|" Order="1200" HelpLocId="Control.Help.FolderDlg#Browse"/>
+    <ROW Dialog_="FolderDlg" Control="Text" Type="Text" X="13" Y="63" Width="300" Height="18" Attributes="3" Text="Install [RISA_PRODUCT_TITLE2_INSTYPE] to:" Order="1300"/>
+    <ROW Dialog_="FolderDlg" Control="Text_2" Type="Text" X="37" Y="99" Width="275" Height="25" Attributes="65539" Property="TEXT_1_PROP" Text="With this option all databases and preferences will be stored in a RISA folder under each user&apos;s Documents folder" Order="1400"/>
+    <ROW Dialog_="FolderDlg" Control="Text2" Type="Text" X="107" Y="135" Width="160" Height="10" Attributes="3" Property="TEXT_2_PROP" Text=" (All files will be installed to this folder)" Order="1500"/>
+    <ROW Dialog_="FolderDlg" Control="RoamingNotice" Type="Text" X="34" Y="177" Width="282" Height="30" Attributes="65538" Property="TEXT_2_PROP_1" Text="You are redirecting your Documents folder to OneDrive or roaming over a Windows network.  When roaming, RISA databases and preferences should be installed to a custom location like C:\RISA." TextStyle="DlgFontBold8_DlgFontBold8" Order="1600"/>
+    <ROW Dialog_="FolderDlg" Control="PathEdit_1" Type="PathEdit" X="34" Y="149" Width="232" Height="18" Attributes="3" Property="RISA_CUSTOM_INSTALLATION_FOLDER" Text="{260}" Order="1700"/>
+    <ROW Dialog_="FolderErrorDlg" Control="Yes" Type="PushButton" X="102" Y="57" Width="56" Height="17" Attributes="3" Text="OK" Order="100"/>
+    <ROW Dialog_="FolderErrorDlg" Control="Icon" Type="Icon" X="15" Y="15" Width="24" Height="24" Attributes="5242881" Text="[InfoIcon]" Order="200"/>
+    <ROW Dialog_="FolderErrorDlg" Control="Text" Type="Text" X="48" Y="15" Width="194" Height="30" Attributes="3" Text="[RISA_STATUS_TEXT]" Order="300"/>
+    <ROW Dialog_="FolderErrorDlg" Control="No" Type="PushButton" X="179" Y="57" Width="56" Height="17" Attributes="2" Text="[ButtonText_No]" Order="400"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="2" Text="[ButtonText_Next]" Order="100" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Exit]" Order="200" Options="1"/>
     <ROW Dialog_="InitPropertiesErrorDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" Attributes="1048577" Text="[DialogBitmap]" Order="300"/>
@@ -202,10 +225,19 @@
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Attributes="196611" Text="An error occurred" TextStyle="VerdanaBold13" Order="500"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="Description" Type="Text" X="135" Y="86" Width="220" Height="60" Attributes="196611" Text="[RISA_STATUS_TEXT]" Order="600"/>
     <ROW Dialog_="RemoveInstalledProductsErrorDlg" Control="BottomLine" Type="Line" X="0" Y="234" Width="372" Height="0" Attributes="1" Order="700"/>
+    <ATTRIBUTE name="DeletedRows" value="FolderDlg#Browse@FolderDlg#FolderEdit@FolderDlg#FolderLabel@FolderDlg#Text"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlConditionComponent">
+    <ROW Dialog_="FolderDlg" Control_="RadioButtonGroup_1" Action="Disable" Condition="RISA_IS_ROAMING_PROFILE = &quot;True&quot;"/>
+    <ROW Dialog_="FolderDlg" Control_="Browse" Action="Disable" Condition="RISA_INSTALLATION_FOLDER_TYPE = &quot;Standard&quot;"/>
+    <ROW Dialog_="FolderDlg" Control_="Browse" Action="Enable" Condition="RISA_INSTALLATION_FOLDER_TYPE = &quot;Custom&quot;"/>
+    <ROW Dialog_="FolderDlg" Control_="RoamingNotice" Action="Show" Condition="RISA_IS_ROAMING_PROFILE = &quot;True&quot;"/>
+    <ROW Dialog_="FolderDlg" Control_="PathEdit_1" Action="Enable" Condition="RISA_INSTALLATION_FOLDER_TYPE = &quot;Custom&quot;"/>
+    <ROW Dialog_="FolderDlg" Control_="PathEdit_1" Action="Disable" Condition="RISA_INSTALLATION_FOLDER_TYPE = &quot;Standard&quot;"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
     <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL AND ( RISA_STATUS_CODE = &quot;RISA_STS_OK&quot; )" Ordering="205"/>
     <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="201"/>
@@ -241,6 +273,20 @@
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_INSTALLATION_FOLDER_TYPE]" Argument="Custom" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="4"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="[APPDIR]" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="9"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="[APPDIR]" Argument="C:\Program Files\RISA" Condition="AI_INSTALL AND ( RISA_INSTALLATION_FOLDER_TYPE = &quot;Standard&quot; )" Ordering="199"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="DoAction" Argument="RISA_ValidateInstallDirectory" Condition="AI_INSTALL" Ordering="203"/>
+    <ROW Dialog_="FolderErrorDlg" Control_="No" Event="EndDialog" Argument="Return" Condition="1" Ordering="100"/>
+    <ROW Dialog_="FolderErrorDlg" Control_="Yes" Event="EndDialog" Argument="Return" Condition="1" Ordering="100"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="SpawnDialog" Argument="FolderErrorDlg" Condition="AI_INSTALL AND ( RISA_STATUS_CODE &lt;&gt; &quot;RISA_STS_OK&quot; )" Ordering="204"/>
+    <ROW Dialog_="FolderDlg" Control_="Browse" Event="[_BrowseProperty]" Argument="RISA_CUSTOM_INSTALLATION_FOLDER" Condition="1" Ordering="0"/>
+    <ROW Dialog_="FolderDlg" Control_="Browse" Event="SpawnDialog" Argument="BrowseDlg" Condition="1" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISA" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot; )" Ordering="2"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISADemo" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE = &quot;Demo&quot; )" Ordering="3"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISA" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISA\&quot; )" Ordering="6"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISADemo" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISADemo\&quot; )" Ordering="8"/>
+    <ATTRIBUTE name="DeletedRows" value="FolderDlg#Browse#SpawnDialog#BrowseDlg#1@FolderDlg#Browse#[_BrowseProperty]#APPDIR#1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
@@ -271,8 +317,9 @@
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="PassInstallTypePropertyToCoreMSM" Type="51" Source="RISA_INSTALL_TYPE.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_INSTALL_TYPE]"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
-    <ROW Action="RISA_CustomActionsLib.CA.dll" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="RemoveInstalledProducts" WithoutSeq="true"/>
     <ROW Action="RISA_InitProperties" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
+    <ROW Action="RISA_RemoveInstalledProducts" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="RemoveInstalledProducts" WithoutSeq="true"/>
+    <ROW Action="RISA_ValidateInstallDirectory" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="ValidateInstallDirectory" WithoutSeq="true"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -284,6 +331,7 @@
     <ROW Dialog="CancelDlg" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="No" Control_Cancel="No" MsiKey="CancelDlg"/>
     <ROW Dialog="ExitDialog" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Finish" Control_Cancel="Finish" MsiKey="ExitDialog"/>
     <ROW Dialog="FolderDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="39" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="FolderDlg"/>
+    <ROW Dialog="FolderErrorDlg" HCentering="50" VCentering="50" Width="260" Height="85" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Yes" Control_Cancel="No"/>
     <ROW Dialog="InitPropertiesErrorDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[ProductName] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
     <ROW Dialog="LicenseAgreementDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel" MsiKey="LicenseAgreementDlg"/>
     <ROW Dialog="LicenseTypeDlg" HCentering="50" VCentering="50" Width="370" Height="270" Attributes="3" Title="[RISA_PRODUCT_TITLE2_INSTYPE] [Setup]" Control_Default="Next" Control_Cancel="Cancel"/>
@@ -388,6 +436,8 @@
     <ROW Property="RISA_LICENSE_TYPE" Order="1" Value="Cloud" X="64" Y="40" Width="200" Height="20" Text="Subscription License (Cloud Based)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="2" Value="Network" X="64" Y="59" Width="200" Height="20" Text="Network Perpetual License (Using your Server)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="3" Value="Key" X="64" Y="78" Width="200" Height="20" Text="Standalone Perpetual License (Physical USB Key)"/>
+    <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Order="1" Value="Standard" X="1" Y="8" Width="200" Height="12" Text="[RISA_STANDARD_INSTALLATION_FOLDER]" Help="DlgFontBold8_DlgFontBold8" TextStyle="DlgFontBold8_DlgFontBold8"/>
+    <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Order="2" Value="Custom" X="0" Y="56" Width="83" Height="9" Text="Custom Location" Help="DlgFontBold8_DlgFontBold8" TextStyle="DlgFontBold8_DlgFontBold8"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
     <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
@@ -415,6 +465,9 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFL~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="RISAFloor" Directory_="DesktopFolder" Name="RISAFL~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
+    <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
