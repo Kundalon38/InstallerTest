@@ -4556,8 +4556,8 @@
     <ROW Shortcut="RISAFoundationTutorials" Directory_="RISA_Dir" Name="RISAFO~2|RISAFoundation Tutorials" Component_="Tutorials_Foundation.pdf" Target="[#Tutorials_Foundation.pdf]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="Manuals_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleInstExSeqComponent">
-    <ROW Action="MessageBox" BaseAction="FindRelatedProducts" After="1"/>
-    <ROW Action="AI_DATA_SETTER" BaseAction="MessageBox" After="0"/>
+    <ROW Action="MessageBox" BaseAction="FindRelatedProducts" After="1" Condition="1 = 0"/>
+    <ROW Action="AI_DATA_SETTER" BaseAction="MessageBox" After="0" Condition="1 = 0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
     <ROW ModuleID="MergeMod" Version="1.0.0" GUID="D309AC61_F11F_4342_8D41_6F61928420A3" Name="RISA Core Files" Manufacturer="RISA Tech, Inc." Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
