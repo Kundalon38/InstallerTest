@@ -22,7 +22,7 @@
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFloor"/>
     <ROW Property="ProductVersion" Value="15.0.2.27" Type="32"/>
-    <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
+    <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>

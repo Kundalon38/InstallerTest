@@ -25,7 +25,7 @@
     <ROW Property="ProductVersion" Value="19.0.2.63470" Type="32"/>
     <ROW Property="REBOOT" MultiBuildValue="MsiBuild:ReallySuppress"/>
     <ROW Property="REVISION_GUID_3D_17" Value="{2ba0cf7b-b7b6-43d6-a446-fe4423a2429e}"/>
-    <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
+    <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_CHECK_UPDATES" Value="True" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard" Type="4"/>
@@ -1158,8 +1158,8 @@
     <ROW Action="RISA_InitProperties" Sequence="51"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="52"/>
     <ROW Action="PassInstallTypePropertyToCoreMSM" Sequence="53"/>
-    <ROW Action="MessageBoxAfterIP" Sequence="55"/>
-    <ROW Action="AI_DATA_SETTER_3" Sequence="54"/>
+    <ROW Action="MessageBoxAfterIP" Condition="1 = 0" Sequence="55"/>
+    <ROW Action="AI_DATA_SETTER_3" Condition="1 = 0" Sequence="54"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>

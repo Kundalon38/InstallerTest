@@ -21,7 +21,7 @@
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
     <ROW Property="ProductVersion" Value="13.0.0.1" Type="32"/>
-    <ROW Property="RISA_CA_DEBUG" Value="TRACEFILE"/>
+    <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard"/>
@@ -399,8 +399,8 @@
     <ROW Action="RISA_InitProperties" Sequence="51"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="52"/>
     <ROW Action="PassInstallTypePropertyToCoreMSM" Sequence="53"/>
-    <ROW Action="MessageBox_DebugDumpExecutionVars" Sequence="55"/>
-    <ROW Action="AI_DATA_SETTER_1" Sequence="54"/>
+    <ROW Action="MessageBox_DebugDumpExecutionVars" Condition="1 = 0" Sequence="55"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="1 = 0" Sequence="54"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -411,8 +411,8 @@
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103"/>
     <ROW Action="AI_AppSearchEx" Sequence="102"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="MessageBox_DebugDumpVars" Sequence="1298"/>
-    <ROW Action="AI_DATA_SETTER_2" Sequence="1297"/>
+    <ROW Action="MessageBox_DebugDumpVars" Condition="1 = 0" Sequence="1298"/>
+    <ROW Action="AI_DATA_SETTER_2" Condition="1 = 0" Sequence="1297"/>
     <ROW Action="InitPropertiesErrorDlg" Condition="AI_INSTALL AND RISA_STATUS_CODE &lt;&gt; &quot;RISA_STS_OK&quot;" Sequence="72" SeqType="3"/>
     <ROW Action="RISA_InitProperties" Sequence="54"/>
     <ROW Action="RemoveInstalledProductsErrorDlg" Condition="AI_INSTALL AND RISA_STATUS_CODE &lt;&gt; &quot;RISA_STS_OK&quot;" Sequence="1231" SeqType="3"/>
