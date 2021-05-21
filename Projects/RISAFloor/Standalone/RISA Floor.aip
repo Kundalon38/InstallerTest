@@ -32,7 +32,7 @@
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
-    <ROW Property="RISA_REGION_NAME" Value="United States"/>
+    <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_STATUS_CODE" Value="Dummy"/>
     <ROW Property="RISA_STATUS_TEXT" Value="Dummy"/>
@@ -424,15 +424,15 @@
     <ROW Module="RISALicenseManager.msm" Path="..\..\RISA License Manager\RISA License Manager-SetupFiles\RISA License Manager.msm" Feature="MainFeature" Directory="APPDIR" Order="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRadioButtonComponent">
-    <ROW Property="RISA_REGION_NAME" Order="1" Value="United States" X="7" Y="8" Width="84" Height="9" Text="United States"/>
-    <ROW Property="RISA_REGION_NAME" Order="2" Value="Canada" X="7" Y="36" Width="84" Height="9" Text="Canada"/>
-    <ROW Property="RISA_REGION_NAME" Order="3" Value="Britian" X="7" Y="64" Width="84" Height="9" Text="Britain"/>
-    <ROW Property="RISA_REGION_NAME" Order="4" Value="Europe" X="7" Y="92" Width="84" Height="9" Text="Europe"/>
-    <ROW Property="RISA_REGION_NAME" Order="5" Value="India" X="7" Y="119" Width="84" Height="9" Text="India"/>
-    <ROW Property="RISA_REGION_NAME" Order="6" Value="Australia" X="113" Y="9" Width="84" Height="9" Text="Australia"/>
-    <ROW Property="RISA_REGION_NAME" Order="7" Value="New Zealand" X="113" Y="38" Width="84" Height="9" Text="New Zealand"/>
-    <ROW Property="RISA_REGION_NAME" Order="8" Value="Mexico" X="113" Y="66" Width="84" Height="9" Text="Mexico"/>
-    <ROW Property="RISA_REGION_NAME" Order="9" Value="Saudi Arabia" X="113" Y="94" Width="84" Height="9" Text="Saudi Arabia"/>
+    <ROW Property="RISA_REGION_NAME" Order="1" Value="UNITED_STATES" X="7" Y="8" Width="84" Height="9" Text="United States"/>
+    <ROW Property="RISA_REGION_NAME" Order="2" Value="CANADA" X="7" Y="36" Width="84" Height="9" Text="Canada"/>
+    <ROW Property="RISA_REGION_NAME" Order="3" Value="BRITAIN" X="7" Y="64" Width="84" Height="9" Text="Britain"/>
+    <ROW Property="RISA_REGION_NAME" Order="4" Value="EUROPE" X="7" Y="92" Width="84" Height="9" Text="Europe"/>
+    <ROW Property="RISA_REGION_NAME" Order="5" Value="INDIA" X="7" Y="119" Width="84" Height="9" Text="India"/>
+    <ROW Property="RISA_REGION_NAME" Order="6" Value="AUSTRALIA" X="113" Y="9" Width="84" Height="9" Text="Australia"/>
+    <ROW Property="RISA_REGION_NAME" Order="7" Value="NEW_ZEALAND" X="113" Y="38" Width="84" Height="9" Text="New Zealand"/>
+    <ROW Property="RISA_REGION_NAME" Order="8" Value="MEXICO" X="113" Y="66" Width="84" Height="9" Text="Mexico"/>
+    <ROW Property="RISA_REGION_NAME" Order="9" Value="SAUDI_ARABIA" X="113" Y="94" Width="84" Height="9" Text="Saudi Arabia"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="1" Value="Cloud" X="64" Y="40" Width="200" Height="20" Text="Subscription License (Cloud Based)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="2" Value="Network" X="64" Y="59" Width="200" Height="20" Text="Network Perpetual License (Using your Server)"/>
     <ROW Property="RISA_LICENSE_TYPE" Order="3" Value="Key" X="64" Y="78" Width="200" Height="20" Text="Standalone Perpetual License (Physical USB Key)"/>
