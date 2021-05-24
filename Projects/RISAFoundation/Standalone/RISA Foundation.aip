@@ -24,6 +24,7 @@
     <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
+    <ROW Property="RISA_FORCE_ROAMING_DEBUG" Value="False"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard"/>
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
@@ -276,19 +277,20 @@
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Cancel" Event="SpawnDialog" Argument="CancelDlg" Condition="1" Ordering="100"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Next" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL" Ordering="1"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control_="Back" Event="NewDialog" Argument="LicenseTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISA" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISA\&quot; )" Ordering="8"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_INSTALLATION_FOLDER_TYPE]" Argument="Custom" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="7"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISA" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISA\&quot; )" Ordering="10"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_INSTALLATION_FOLDER_TYPE]" Argument="Custom" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="9"/>
     <ROW Dialog_="FolderDlg" Control_="Next" Event="[APPDIR]" Argument="[RISA_STANDARD_INSTALLATION_FOLDER]" Condition="AI_INSTALL AND ( RISA_INSTALLATION_FOLDER_TYPE = &quot;Standard&quot; )" Ordering="198"/>
     <ROW Dialog_="FolderDlg" Control_="Next" Event="DoAction" Argument="RISA_ValidateInstallDirectory" Condition="AI_INSTALL" Ordering="211"/>
     <ROW Dialog_="FolderErrorDlg" Control_="No" Event="EndDialog" Argument="Return" Condition="1" Ordering="100"/>
     <ROW Dialog_="FolderErrorDlg" Control_="Yes" Event="EndDialog" Argument="Return" Condition="1" Ordering="100"/>
     <ROW Dialog_="FolderDlg" Control_="Next" Event="SpawnDialog" Argument="FolderErrorDlg" Condition="AI_INSTALL AND ( RISA_STATUS_CODE &lt;&gt; &quot;RISA_STS_OK&quot; )" Ordering="212"/>
     <ROW Dialog_="FolderDlg" Control_="Browse" Event="[_BrowseProperty]" Argument="RISA_CUSTOM_INSTALLATION_FOLDER" Condition="1" Ordering="100" MsiKey="FolderDlg#Browse#[_BrowseProperty]#APPDIR#1"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISA" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot; )" Ordering="5"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISADemo" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE = &quot;Demo&quot; )" Ordering="6"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISADemo" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISADemo\&quot; )" Ordering="9"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISA" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot; )" Ordering="7"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_STANDARD_INSTALLATION_FOLDER]" Argument="C:\Program Files\RISADemo" Condition="AI_INSTALL AND ( RISA_INSTALL_TYPE = &quot;Demo&quot; )" Ordering="8"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="C:\RISADemo" Condition="AI_INSTALL AND ( APPDIR = &quot;C:\Program Files\RISADemo\&quot; )" Ordering="11"/>
     <ROW Dialog_="FolderDlg" Control_="Next" Event="[APPDIR]" Argument="[RISA_CUSTOM_INSTALLATION_FOLDER]" Condition="AI_INSTALL AND ( RISA_INSTALLATION_FOLDER_TYPE = &quot;Custom&quot; )" Ordering="199"/>
-    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="[APPDIR]" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="10"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_CUSTOM_INSTALLATION_FOLDER]" Argument="[APPDIR]" Condition="AI_INSTALL AND ( RISA_IS_ROAMING_PROFILE = &quot;True&quot; )" Ordering="12"/>
+    <ROW Dialog_="FolderDlg" Control_="FolderDlgDialogInitializer" Event="[RISA_IS_ROAMING_PROFILE]" Argument="True" Condition="AI_INSTALL AND ( RISA_FORCE_ROAMING_DEBUG = &quot;True&quot; )" Ordering="6"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
