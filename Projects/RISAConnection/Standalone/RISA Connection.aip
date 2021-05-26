@@ -1829,7 +1829,7 @@
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
     <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
     <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
-    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
+    <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="[RISA_CHECK_UPDATES]" Component_="LocalUpdateCheck"/>
     <ROW Registry="New_Key" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="New_Key"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_REGISTRY_PRODUCT_NAME" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="RISA_REGISTRY_PRODUCT_NAME"/>

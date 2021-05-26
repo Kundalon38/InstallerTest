@@ -23,6 +23,7 @@
     <ROW Property="ProductName" Value="RISAFloor"/>
     <ROW Property="ProductVersion" Value="15.0.2.27" Type="32"/>
     <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
     <ROW Property="RISA_FORCE_ROAMING_DEBUG" Value="False"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard"/>
@@ -158,6 +159,9 @@
     <ROW Name="install_background.bmp" SourcePath="..\..\Common\Assets\install_background.bmp"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCheckBoxComponent">
+    <ROW Property="RISA_CHECK_UPDATES" Value="CheckBox"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
     <ROW Dialog_="AdditionalSettingsDlg" Control="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Next]" Order="100" Options="1"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Attributes="3" Text="[ButtonText_Cancel]" Order="200" Options="1"/>
@@ -169,6 +173,7 @@
     <ROW Dialog_="AdditionalSettingsDlg" Control="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Attributes="196611" Text="Additional Settings" TextStyle="[DlgTitleFont]" Order="800"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control="Description" Type="Text" X="25" Y="18" Width="258" Height="20" Attributes="196611" Text="Default region settings for codes, databases and load combinations.  These defaults can be changed later." Order="900"/>
     <ROW Dialog_="AdditionalSettingsDlg" Control="RadioButtonGroup_1" Type="RadioButtonGroup" X="25" Y="56" Width="295" Height="139" Attributes="3" Property="RISA_REGION_NAME" Text="RadioButtonGroup" Order="1000"/>
+    <ROW Dialog_="AdditionalSettingsDlg" Control="CheckBox_1" Type="CheckBox" X="25" Y="204" Width="200" Height="15" Attributes="3" Property="RISA_CHECK_UPDATES" Text="Check For Updates At Program Launch" Order="1100"/>
     <ROW Dialog_="FolderDlg" Control="FolderDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
     <ROW Dialog_="FolderDlg" Control="BottomLine" Type="Line" X="5" Y="234" Width="368" Height="0" Attributes="1" Order="200" MsiKey="FolderDlg#BottomLine"/>
     <ROW Dialog_="FolderDlg" Control="Logo" Type="Text" X="4" Y="228" Width="70" Height="12" Attributes="1" Text="Advanced Installer" Order="300" TextLocId="Control.Text.FolderDlg#Logo" MsiKey="FolderDlg#Logo"/>
@@ -457,7 +462,7 @@
     <ROW Registry="InstallGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="InstallGUID" Value="[ProductCode]" Component_="InstallGUID"/>
     <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
     <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
-    <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck_1"/>
+    <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="[RISA_CHECK_UPDATES]" Component_="LocalUpdateCheck_1"/>
     <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="ProductName"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
