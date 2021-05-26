@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Serialization;
 using RISA_CustomActionsLib.Extensions;
+using RISA_CustomActionsLib.Models.Linked;
 
 namespace RISA_CustomActionsLib.Models
 {
@@ -63,8 +64,8 @@ namespace RISA_CustomActionsLib.Models
                     // C:\ProgramData\{334a52d5-d212-485d-8e9b-f4ed60154877}\install_3d_1900.exe
                     //
                     const string cmdArgsIA = @"/S MODIFY=FALSE REMOVE=TRUE UNINSTALL=YES";
-                    uninsProcess = Process.Start(UnInstallStr.Dq(), cmdArgsIA);
-                    CustomActions.Trace("UnInstall", $"UnInstallStr.Dq()={UnInstallStr.Dq()} args={cmdArgsIA}");
+                    uninsProcess = Process.Start(Linked.Extensions.Dq(UnInstallStr), cmdArgsIA);
+                    CustomActions.Trace("UnInstall", $"UnInstallStr.Dq()={Linked.Extensions.Dq(UnInstallStr)} args={cmdArgsIA}");
 
                     break;
 

@@ -28,17 +28,6 @@ namespace RISA_CustomActionsLib.Extensions
             return path += bash;
         }
 
-        public static Version ToVersion(this string versionStr)
-        {
-            //normalize inpVersion so it has 4 parts
-            var inv = versionStr;
-            while (inv.EndsWith(".")) inv = inv.Substring(0, inv.Length - 1);
-            if (inv.Length == 0) inv = "1";
-            var versionPartsCt = inv.Split('.').Length;
-            for (var i = versionPartsCt; i < 4; i++) inv += ".0";
-            return new Version(inv);
-        }
-
         public static Version ToVersion2(this string versionStr)
         {
             //normalize inpVersion so it has 4 parts
@@ -56,55 +45,6 @@ namespace RISA_CustomActionsLib.Extensions
             while (inv.EndsWith(".")) inv = inv.Substring(0, inv.Length - 1);
             if (inv.Length == 0) inv = "1";
             return inv.Split('.').Length;
-        }
-
-        // Silent Install extensions
-
-        public static Process GetParent(this Process process)
-        {
-            try
-            {
-                using (var query = new ManagementObjectSearcher(
-                    "SELECT * " +
-                    "FROM Win32_Process " +
-                    "WHERE ProcessId=" + process.Id))
-                {
-                    return query
-                        .Get()
-                        .OfType<ManagementObject>()
-                        .Select(p => Process.GetProcessById((int)(uint)p["ParentProcessId"]))
-                        .FirstOrDefault();
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        public static string GetCommandLine(this Process process)
-        {
-            var queryStr = $"SELECT CommandLine FROM Win32_Process WHERE ProcessId={process.Id}";
-            try
-            {
-                using (var searcher = new ManagementObjectSearcher(queryStr))
-                using (var objects = searcher.Get())
-                {
-                    return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"]?.ToString();
-                }
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-        }
-        public static string GetExecutablePath(this Process process)
-        {
-            var queryStr = $"SELECT ExecutablePath FROM Win32_Process WHERE ProcessId={process.Id}";
-            using (var searcher = new ManagementObjectSearcher(queryStr))
-            using (var objects = searcher.Get())
-            {
-                return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["ExecutablePath"]?.ToString();
-            }
         }
 
     }

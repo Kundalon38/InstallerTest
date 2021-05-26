@@ -62,21 +62,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomActions\Silent\CustomActions_silentCommon.cs" />
+    <Compile Include="CustomActions\CustomActions_misc.cs" />
     <Compile Include="CustomActions\Silent\CustomActions_SilentInitProps.cs" />
     <Compile Include="CustomActions\Silent\CustomActions_SilentValidate.cs" />
     <Compile Include="CustomActions\StopStartService\CustomActions_StopStartService.cs" />
-    <Compile Include="CustomActions\CustomActions_consts.cs" />
+    <Compile Include="Models\Linked\CustomActions_consts.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps.cs" />
     <Compile Include="CustomActions\CustomActions_logging.cs" />
     <Compile Include="CustomActions\RemoveInstalled\CustomActions_RemoveInstalled.cs" />
     <Compile Include="CustomActions\ValidateInstallDirectory\CustomActions_ValidateInstallDirectory.cs" />
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Models\BootstrapperData.cs" />
+    <Compile Include="Models\Linked\BootstrapperData.cs" />
+    <Compile Include="Models\Linked\BootstrapperData_findBootstrapper.cs" />
+    <Compile Include="Models\Linked\Extensions.cs" />
     <Compile Include="Models\InstalledProduct.cs" />
     <Compile Include="Models\InstalledProductList.cs" />
     <Compile Include="Models\InstallerVendorRegistry.cs" />
+    <Compile Include="Models\Linked\CmdLineProperty.cs" />
+    <Compile Include="Models\Linked\SiError.cs" />
+    <Compile Include="Models\Linked\SiLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\SessionDTO.cs" />
     <Content Include="CustomAction.config" />

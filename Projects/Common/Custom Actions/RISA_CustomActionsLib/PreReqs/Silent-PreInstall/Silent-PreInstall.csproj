@@ -69,8 +69,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData.cs">
+      <Link>Models\Linked\BootstrapperData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData_findBootstrapper.cs">
+      <Link>Models\Linked\BootstrapperData_findBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CmdLineProperty.cs">
+      <Link>Models\Linked\CmdLineProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CustomActions_consts.cs">
+      <Link>Models\Linked\CustomActions_consts.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\Extensions.cs">
+      <Link>Models\Linked\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiError.cs">
+      <Link>Models\Linked\SiError.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiLog.cs">
+      <Link>Models\Linked\SiLog.cs</Link>
+    </Compile>
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Models\BootstrapperData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,5 +100,6 @@
   <ItemGroup>
     <Content Include="risa.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

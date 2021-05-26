@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Deployment.WindowsInstaller;
 using RISA_CustomActionsLib.Extensions;
 using RISA_CustomActionsLib.Models;
+using BootstrapperData = RISA_CustomActionsLib.Models.Linked.BootstrapperData;
 
 namespace RISA_CustomActionsLib
 {
@@ -34,9 +35,13 @@ namespace RISA_CustomActionsLib
 
             Trace(methodName,$"{_propRISA_SI_PREINSTALL_RESULT}={sessDTO[_propRISA_SI_PREINSTALL_RESULT]}");
 
-            if (sessDTO[_propRISA_SI_PREINSTALL_RESULT] != _sts_SILENT_OK) return ActionResult.Failure;
+            if (sessDTO[_propRISA_SI_PREINSTALL_RESULT] != _sts_SILENT_OK)
+            {
+                Trace(methodName, $"returning ActionResult.Failure");
+                return ActionResult.Failure;
+            }
 
-            var bootData = FindBootstrapper(methodName);
+            var bootData = BootstrapperData.FindBootstrapperFromCA();
             Trace(methodName, bootData.ToString());
 
 

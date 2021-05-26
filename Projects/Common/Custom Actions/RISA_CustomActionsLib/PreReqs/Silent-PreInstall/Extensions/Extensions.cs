@@ -57,55 +57,5 @@ namespace Silent_PreInstall.Extensions
             if (inv.Length == 0) inv = "1";
             return inv.Split('.').Length;
         }
-
-        // Silent Install extensions
-
-        public static Process GetParent(this Process process)
-        {
-            try
-            {
-                using (var query = new ManagementObjectSearcher(
-                    "SELECT * " +
-                    "FROM Win32_Process " +
-                    "WHERE ProcessId=" + process.Id))
-                {
-                    return query
-                        .Get()
-                        .OfType<ManagementObject>()
-                        .Select(p => Process.GetProcessById((int)(uint)p["ParentProcessId"]))
-                        .FirstOrDefault();
-                }
-            }
-            catch
-            {
-                return null;
-            }
-        }
-        public static string GetCommandLine(this Process process)
-        {
-            var queryStr = $"SELECT CommandLine FROM Win32_Process WHERE ProcessId={process.Id}";
-            try
-            {
-                using (var searcher = new ManagementObjectSearcher(queryStr))
-                using (var objects = searcher.Get())
-                {
-                    return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"]?.ToString();
-                }
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-        }
-        public static string GetExecutablePath(this Process process)
-        {
-            var queryStr = $"SELECT ExecutablePath FROM Win32_Process WHERE ProcessId={process.Id}";
-            using (var searcher = new ManagementObjectSearcher(queryStr))
-            using (var objects = searcher.Get())
-            {
-                return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["ExecutablePath"]?.ToString();
-            }
-        }
-
     }
 }
