@@ -30,7 +30,7 @@
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
     <ROW Property="RISA_IS_ROAMING_PROFILE" Value="False"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
-    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="Dummy"/>
+    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="LongPlaceholderLongPlaceholder"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
