@@ -17,7 +17,7 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#MsiBuild:install_background.bmp#MsiBuild_1:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild:vp#MsiBuild_1:vp"/>
-    <ROW Property="ProductCode" Value="1033:{6BE930E0-4A39-47BD-BC2A-212B650CB120} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{18B8AC53-1156-46FE-99AD-77E369B38D89} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
     <ROW Property="ProductVersion" Value="13.0.0.1" Type="32"/>
@@ -40,7 +40,7 @@
     <ROW Property="RISA_UPDATE_DATA_VALUE" Value="Dummy"/>
     <ROW Property="RISA_USERFILES" Value="Dummy"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{6996880C-E654-4E33-A3FB-F4246CCE3045}"/>
+    <ROW Property="UpgradeCode" Value="{56AA7796-D0BF-48D0-9701-9E5826775C23}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#MsiBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#MsiBuild_1:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>

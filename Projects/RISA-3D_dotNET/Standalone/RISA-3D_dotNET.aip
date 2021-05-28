@@ -19,10 +19,10 @@
     <ROW Property="INSTALL_GUID_3D_17" Value="{3f37862e-3695-4b99-9f2c-5bdecaa8bb8b}"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp#MsiBuild:vp"/>
-    <ROW Property="ProductCode" Value="1033:{FA0D7AF5-11B0-41F6-AEA1-11A4BCF8B694} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{B3503E75-BE82-4F3C-9837-153A10D83F03} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISA-3D"/>
-    <ROW Property="ProductVersion" Value="19.0.2.63470" Type="32"/>
+    <ROW Property="ProductVersion" Value="19.0.2.63472" Type="32"/>
     <ROW Property="REBOOT" MultiBuildValue="MsiBuild:ReallySuppress"/>
     <ROW Property="REVISION_GUID_3D_17" Value="{2ba0cf7b-b7b6-43d6-a446-fe4423a2429e}"/>
     <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
@@ -44,7 +44,7 @@
     <ROW Property="RISA_UPDATE_DATA_VALUE" Value="Dummy"/>
     <ROW Property="RISA_USERFILES" Value="Dummy"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{38D64B69-E97A-461B-A8CD-C30DCD7EE581}"/>
+    <ROW Property="UpgradeCode" Value="{48CC7FEB-6087-4591-AED0-C1DDCC27F85A}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#ExeBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#WebInstallerBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#MsiBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
@@ -72,32 +72,40 @@
     <ROW Directory="RISA3D_5_Dir" Directory_Parent="Bin_3_Dir" DefaultDir="RISA-3D"/>
     <ROW Directory="RISA3D_6_Dir" Directory_Parent="Bin_4_Dir" DefaultDir="RISA-3D"/>
     <ROW Directory="SAF3D_4_Dir" Directory_Parent="Bin_4_Dir" DefaultDir="SAF-3D"/>
+    <ROW Directory="SAF3D_Dir" Directory_Parent="Bin_1_Dir" DefaultDir="SAF-3D"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_ExePath" ComponentId="{218A1B63-A614-40F6-AA3D-429D4AFDFD04}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{926E0D6A-9B31-4EC6-AE0A-6CA0BE27FE4B}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="AutoMapper.dll" ComponentId="{714C7482-3D59-4A9E-9B0B-83C45AB022CB}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="AutoMapper.dll"/>
     <ROW Component="AutoMapper.dll_4" ComponentId="{001D2C8E-091A-4405-8B58-143BE190CF97}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="AutoMapper.dll_4"/>
+    <ROW Component="CSInfrastructure.dll" ComponentId="{57865DEE-CFE0-4409-99F9-57889CA57930}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="CSInfrastructure.dll"/>
     <ROW Component="CSInfrastructure.dll_4" ComponentId="{CBCD7EE9-9A35-4CAD-AE38-9A58FFF1CABA}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="CSInfrastructure.dll_4"/>
     <ROW Component="Default_1" ComponentId="{4049630D-36CB-4657-B908-3012CDE1ED19}" Directory_="APPDIR" Attributes="260" KeyPath="Default_4"/>
     <ROW Component="Default_3" ComponentId="{1446CAC7-1703-44BB-A0EF-AB2729BD2917}" Directory_="APPDIR" Attributes="260" KeyPath="Default_3"/>
     <ROW Component="Default_4" ComponentId="{E04871F0-0DE8-49AE-8A49-63BE26E9EDC7}" Directory_="APPDIR" Attributes="260" KeyPath="Default_5"/>
     <ROW Component="Default_5" ComponentId="{0821A808-5817-4660-9386-53D7E433CF07}" Directory_="APPDIR" Attributes="260" KeyPath="Default_1"/>
+    <ROW Component="EPPlus.dll" ComponentId="{AFCD1F64-9391-433D-BF15-12BEBD6B155F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="EPPlus.dll"/>
     <ROW Component="EPPlus.dll_4" ComponentId="{A50F568B-7C45-4605-B294-4AA3E34F3D09}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="EPPlus.dll_4"/>
     <ROW Component="EXEPath" ComponentId="{E369EFB6-10D0-4DC9-B65B-99ED8555835E}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath"/>
     <ROW Component="EXEPath_1" ComponentId="{B08CE687-9E3D-44DE-B248-19E84AF3E561}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_1"/>
     <ROW Component="EXEPath_2" ComponentId="{3C6E41A4-D6A5-4300-8351-1BD456DE4569}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_2"/>
     <ROW Component="EXEPath_3" ComponentId="{A6B3DF79-1A51-4B9D-BEE1-354E0A86B21D}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_3"/>
     <ROW Component="EXEPath_4" ComponentId="{068BE256-9180-43EB-9231-7DE67728C832}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_4"/>
+    <ROW Component="ExcelDataReader.DataSet.dll" ComponentId="{CBCFDB2E-F441-4AEC-B282-5BC22BCBC09D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ExcelDataReader.DataSet.dll"/>
     <ROW Component="ExcelDataReader.DataSet.dll_4" ComponentId="{8CF48DC7-ED11-4126-B2B3-DE49AF7383B1}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ExcelDataReader.DataSet.dll_4"/>
+    <ROW Component="ExcelDataReader.dll" ComponentId="{91D46E1F-7310-4376-B9D2-57485A677C68}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ExcelDataReader.dll"/>
     <ROW Component="ExcelDataReader.dll_4" ComponentId="{79B4CD0D-8609-48A4-9EB2-A3BC466A0858}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ExcelDataReader.dll_4"/>
+    <ROW Component="FluentValidation.dll" ComponentId="{EE03B797-7BB1-41E2-9E89-65EDC2C4F34A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="FluentValidation.dll"/>
     <ROW Component="FluentValidation.dll_4" ComponentId="{194DDE88-0217-4054-924F-60704215D507}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="FluentValidation.dll_4"/>
     <ROW Component="INIPath" ComponentId="{D6B60242-2186-45D2-8AA0-ABCE369C2F70}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath"/>
     <ROW Component="INIPath_1" ComponentId="{85570B3D-9AD7-4DE7-8ED5-B30ACAC5CACE}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
     <ROW Component="INIPath_2" ComponentId="{A79A8AA4-AEED-4AE1-A496-FFEA8C0771EF}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_2"/>
     <ROW Component="INIPath_3" ComponentId="{2F448DC7-670A-47C6-8660-3ADA015A61CF}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_3"/>
     <ROW Component="INIPath_4" ComponentId="{32CA4D53-57A3-48A2-9A48-5B4039B1F657}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_4"/>
+    <ROW Component="Infrastructure.Geometry.dll" ComponentId="{A5AD4234-0EBC-4B05-AA3F-3EB0ADB1F181}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Infrastructure.Geometry.dll"/>
     <ROW Component="Infrastructure.Geometry.dll_4" ComponentId="{DB53F395-96CD-4272-A1FE-CB3815D044F8}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="Infrastructure.Geometry.dll_4"/>
     <ROW Component="InstallGUID" ComponentId="{526601E2-86A7-4A71-B4EA-3C4BEC120C48}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID"/>
     <ROW Component="InstallGUID_1" ComponentId="{64FF7EB2-402B-4BCD-B873-988149D3A581}" Directory_="APPDIR" Attributes="260" KeyPath="InstallGUID_1"/>
@@ -111,55 +119,95 @@
     <ROW Component="LocalUpdateCheck" ComponentId="{A81E95A4-FE3B-4488-B2E5-8055AB31A113}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck"/>
     <ROW Component="LocalUpdateCheck_1" ComponentId="{3C166E7D-98D9-4125-98EF-84B35FC52384}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck_1"/>
     <ROW Component="Material_mapping.xlsx" ComponentId="{48F144C3-B6E1-4F1F-96A7-DD5D89B5D941}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="Material_mapping.xlsx" Type="0"/>
+    <ROW Component="MathNet.Numerics.dll" ComponentId="{4518C54B-3C9C-427F-BB9F-83629FCAD829}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="MathNet.Numerics.dll"/>
     <ROW Component="MathNet.Numerics.dll_4" ComponentId="{D6C4C442-1AA4-438A-997B-6B3EAD3EB987}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="MathNet.Numerics.dll_4"/>
+    <ROW Component="MathNet.Spatial.dll" ComponentId="{E054A92C-8EA2-40BC-9897-97C674B91B55}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="MathNet.Spatial.dll"/>
     <ROW Component="MathNet.Spatial.dll_4" ComponentId="{EFD1B975-04F2-4C4A-9CB3-4F3BC513919D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="MathNet.Spatial.dll_4"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_1" ComponentId="{90B224E5-FD1E-4D2B-B0AA-06821B426D3D}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="Microsoft.Expression.Interactions.dll_1"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_4" ComponentId="{F1BF7A03-599A-434E-8F3A-52EBCD723FE4}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interactions.dll_4"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_5" ComponentId="{72945194-D297-43A4-873D-3F82E8317A99}" Directory_="RISA3D_6_Dir" Attributes="0" KeyPath="Microsoft.Expression.Interactions.dll_5"/>
+    <ROW Component="Microsoft.Win32.Primitives.dll" ComponentId="{6525F732-F487-4D5E-8F06-2314DC9ADC2C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Microsoft.Win32.Primitives.dll"/>
     <ROW Component="Microsoft.Win32.Primitives.dll_4" ComponentId="{967BA41F-E51F-4622-A400-FEA0E08829BF}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="Microsoft.Win32.Primitives.dll_4"/>
+    <ROW Component="ModelExchanger.AnalysisDataModel.Contracts.dll" ComponentId="{07A5AA86-00A8-4DE2-92FD-F1FF7E2E668B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Contracts.dll"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.Contracts.dll_4" ComponentId="{187A43D6-D8A9-48B4-934D-877DD06718FF}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.AnalysisDataModel.DataBuilders.dll" ComponentId="{69DFB577-82B7-415C-802A-F59E7BC797B3}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.DataBuilders.dll"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.DataBuilders.dll_4" ComponentId="{1DEFB793-8861-4BC3-8E94-E67B50506D7F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.DataBuilders.dll_4"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.Example.dll" ComponentId="{271B87CF-BEC4-4B2C-9768-4A6858B98D5F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Example.dll"/>
+    <ROW Component="ModelExchanger.AnalysisDataModel.Implementation.dll" ComponentId="{50EE970F-DAFA-429C-8378-F82F330E647E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Implementation.dll"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.Implementation.dll_4" ComponentId="{3E10D9AD-85DD-430D-842E-652159587070}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll" ComponentId="{A7950D6E-A283-4C9D-A219-EFCA133A5998}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll_4" ComponentId="{C6F8A566-2CA8-4574-93E9-B58A5835C579}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll_4"/>
+    <ROW Component="ModelExchanger.AnalysisDataModel.dll" ComponentId="{81119589-54AD-4646-A309-7E07E496720A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.dll"/>
     <ROW Component="ModelExchanger.AnalysisDataModel.dll_4" ComponentId="{B496A5D9-B5CE-492F-96BB-58A873109F02}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.AnalysisDataModel.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Client.Contracts.dll" ComponentId="{2DEB02E3-3F71-4BF7-B302-7420B4875B2A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Contracts.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Client.Contracts.dll_4" ComponentId="{30234897-DB2B-4D5A-87CE-3B87AA17B441}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Client.Implementation.dll" ComponentId="{84B58C11-2143-4D4F-AF9E-E5D33C9262B0}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Implementation.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Client.Implementation.dll_4" ComponentId="{A89E05E5-5D1B-40D1-AAF9-275B41DB9995}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Client.Models.dll" ComponentId="{DBD09D90-33CA-4749-B10D-52DC5E69B9E6}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Models.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Client.Models.dll_4" ComponentId="{987CBF38-F60B-4261-8CD8-DA3DAEAACA41}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Client.Models.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Conversion.Contracts.dll" ComponentId="{ECEB8192-3BAE-4A4F-9E6A-A13C50C8467C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Conversion.Contracts.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Conversion.Contracts.dll_4" ComponentId="{42D8488F-EB15-4DD2-984F-65BA96FCCFC5}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Conversion.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Conversion.Implementation.dll" ComponentId="{16FF892C-5118-4338-A9F9-1154DB2B630A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Conversion.Implementation.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Conversion.Implementation.dll_4" ComponentId="{790FECE9-75C6-47E2-9B4E-60F02EE02151}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Conversion.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.DataAccess.Contracts.dll" ComponentId="{461D0271-9600-4E82-B58C-C699F3EBA84B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Contracts.dll"/>
     <ROW Component="ModelExchanger.BimPlus.DataAccess.Contracts.dll_4" ComponentId="{CA76EB83-5027-4DAB-8688-F5499D82045C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.DataAccess.Implementation.dll" ComponentId="{207207D4-FFA1-4C8A-B459-CD1801BA401F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Implementation.dll"/>
     <ROW Component="ModelExchanger.BimPlus.DataAccess.Implementation.dll_4" ComponentId="{64138855-8F39-4246-9391-AD222E6B2E89}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.DataAccess.Models.dll" ComponentId="{8AE554D0-50E6-4941-8916-3101AFE5C38A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Models.dll"/>
     <ROW Component="ModelExchanger.BimPlus.DataAccess.Models.dll_4" ComponentId="{6E3339F3-23A8-4726-9704-051EE9B43A74}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.DataAccess.Models.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Drawings.Contracts.dll" ComponentId="{30AD7F0E-260F-42E6-B256-A10D0BFD8019}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Drawings.Contracts.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Drawings.Contracts.dll_4" ComponentId="{E8F756E7-D493-4E9D-81C2-0EF98B23BDAB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Drawings.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Drawings.Implementation.dll" ComponentId="{CF91AC0E-A16E-4994-BA15-C6C8157F30D7}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Drawings.Implementation.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Drawings.Implementation.dll_4" ComponentId="{05782DD1-39BF-4B6F-BF70-F4C2F248BB64}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Drawings.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Geometry.dll" ComponentId="{F11B2DC3-21AF-440A-926D-BEA3AF5B2E8D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Geometry.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Geometry.dll_4" ComponentId="{5AE9683D-E64D-4EEC-BEF5-58ECB88456F0}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Geometry.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.Integration.Bootstrapper.dll" ComponentId="{F2A53D6D-38F1-43C8-B9AF-A9B7ACC86A35}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Integration.Bootstrapper.dll"/>
     <ROW Component="ModelExchanger.BimPlus.Integration.Bootstrapper.dll_4" ComponentId="{6C3D07C5-5D7F-4A3F-BD02-E4033C37192F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.Integration.Bootstrapper.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.WebViewer.Contracts.dll" ComponentId="{7D5B47CE-1520-43D0-BF36-298E3A0F49CF}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Contracts.dll"/>
     <ROW Component="ModelExchanger.BimPlus.WebViewer.Contracts.dll_4" ComponentId="{52A4EF63-189C-438E-BB22-4D6D2A5A46EC}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.WebViewer.Implementation.dll" ComponentId="{A401F7BC-A6CC-48AB-8BB8-07E09B5A85EA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Implementation.dll"/>
     <ROW Component="ModelExchanger.BimPlus.WebViewer.Implementation.dll_4" ComponentId="{E5854913-4CB3-4F41-B678-D31D4CD5F964}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.BimPlus.WebViewer.Models.dll" ComponentId="{05CCF651-E01C-4F31-9608-1A90100F7F32}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Models.dll"/>
     <ROW Component="ModelExchanger.BimPlus.WebViewer.Models.dll_4" ComponentId="{F8189DCC-2078-4BE2-BAB5-D5ABB7477BB9}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.BimPlus.WebViewer.Models.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.Conversion.Contracts.dll" ComponentId="{2EF27889-1741-43F6-81FB-D85B0FD37290}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Conversion.Contracts.dll"/>
     <ROW Component="ModelExchanger.Excel.Conversion.Contracts.dll_4" ComponentId="{56D71926-2828-46B2-B05A-C3E3D8DA42FB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Conversion.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.Conversion.Implementation.dll" ComponentId="{CCE4E03A-079C-4EFB-A22D-CC0E3F66C473}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Conversion.Implementation.dll"/>
     <ROW Component="ModelExchanger.Excel.Conversion.Implementation.dll_4" ComponentId="{CA810252-50A2-4349-A2BE-DEF804407616}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Conversion.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.DataAccess.Contracts.dll" ComponentId="{77ED4EAF-98F1-4F07-B3C0-7D1CC70E1480}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Contracts.dll"/>
     <ROW Component="ModelExchanger.Excel.DataAccess.Contracts.dll_4" ComponentId="{F5C9DB97-A7F2-4674-B7F6-D1BFE0D7B285}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.DataAccess.Implementation.dll" ComponentId="{483CAFE2-9FF9-49CE-A3FE-D502E46C09AF}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Implementation.dll"/>
     <ROW Component="ModelExchanger.Excel.DataAccess.Implementation.dll_4" ComponentId="{DF74A92A-CDA5-4ECE-ABBA-3F0359FDC305}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.DataAccess.Models.dll" ComponentId="{068658DE-562D-4454-AC1A-685A9E0407DF}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Models.dll"/>
     <ROW Component="ModelExchanger.Excel.DataAccess.Models.dll_4" ComponentId="{427C7E27-67B2-43F3-8582-C71C9541EFF3}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.DataAccess.Models.dll_4"/>
+    <ROW Component="ModelExchanger.Excel.Integration.Bootstrapper.dll" ComponentId="{51422887-4CE4-4B23-AADE-AFB2440C66CB}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Integration.Bootstrapper.dll"/>
     <ROW Component="ModelExchanger.Excel.Integration.Bootstrapper.dll_4" ComponentId="{2F33FE71-CEE3-4446-8BF6-A40E4EA7054A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Excel.Integration.Bootstrapper.dll_4"/>
+    <ROW Component="ModelExchanger.Json.Conversion.Contracts.dll" ComponentId="{D49D412A-AA4F-4198-9480-D752239CE3A9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Conversion.Contracts.dll"/>
     <ROW Component="ModelExchanger.Json.Conversion.Contracts.dll_4" ComponentId="{4C05F417-A7F9-4B3C-93B2-4E7EC6177D6D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Conversion.Contracts.dll_4"/>
+    <ROW Component="ModelExchanger.Json.Conversion.Implementation.dll" ComponentId="{3A06BBE0-B687-488D-80FC-5E9DF0C1CEBA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Conversion.Implementation.dll"/>
     <ROW Component="ModelExchanger.Json.Conversion.Implementation.dll_4" ComponentId="{53DFE886-6BB2-4102-9134-9F57CA337614}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Conversion.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.Json.Integration.Bootstrapper.dll" ComponentId="{92BBAB29-71B9-418C-93A3-2150C01CE0AA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Integration.Bootstrapper.dll"/>
     <ROW Component="ModelExchanger.Json.Integration.Bootstrapper.dll_4" ComponentId="{9B5B1980-4AEC-4F91-BBBC-71207B67111D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Json.Integration.Bootstrapper.dll_4"/>
+    <ROW Component="ModelExchanger.Shared.Implementation.dll" ComponentId="{198314ED-318E-4D41-A2E1-D1D9E95CA244}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Shared.Implementation.dll"/>
     <ROW Component="ModelExchanger.Shared.Implementation.dll_4" ComponentId="{6C5EC360-E190-48C9-9277-19D80809D445}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Shared.Implementation.dll_4"/>
+    <ROW Component="ModelExchanger.Shared.Models.dll" ComponentId="{E6F2BA35-36F8-43DD-A356-37D9002D6856}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="ModelExchanger.Shared.Models.dll"/>
     <ROW Component="ModelExchanger.Shared.Models.dll_4" ComponentId="{4B14F814-6A81-479D-9FA6-9C778BD1354D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Shared.Models.dll_4"/>
     <ROW Component="ModelExchanger.Tools.Excel.dll" ComponentId="{EB4A9544-BE30-462F-9625-587EADCA68D7}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="ModelExchanger.Tools.Excel.dll"/>
+    <ROW Component="NLog.dll" ComponentId="{DE2E07E5-9F60-4967-BF77-52CC7EB0BFA2}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="NLog.dll"/>
+    <ROW Component="NLog.dll_1" ComponentId="{5FB839F7-1335-4FA8-9F13-40563EF3FE6A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="NLog.dll_1"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{42869B89-12A3-4DC1-9C50-02A9B4AD2AB4}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
     <ROW Component="Newtonsoft.Json.dll_4" ComponentId="{5D587DDF-B1DD-49B7-9BCD-710CFA43BD5C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll_4"/>
     <ROW Component="ProductName" ComponentId="{B70F51C7-4642-4CE8-90D9-388051389992}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName_1"/>
     <ROW Component="RISA3DFromDemo_risa3dw.exe.config_3" ComponentId="{0AB8D201-858E-401E-8D7F-2D08850948D9}" Directory_="RISA3DFromDemo_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risa3dw.exe.config_3" Type="0"/>
     <ROW Component="RISA3DFromDemo_risa3dw.exe_3" ComponentId="{840FB79D-01BE-4A82-BA4A-222DF0B3DE46}" Directory_="RISA3DFromDemo_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risa3dw.exe_3"/>
     <ROW Component="RISA_COMPANY_KEY" ComponentId="{ECB3C296-5E1A-4730-B165-A44AFB1420E8}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{5AFDA187-ABAD-437F-B1F7-A993806780B4}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
+    <ROW Component="RISAtech.CalatravaLink.Contract.dll" ComponentId="{9E6A5B4D-C176-4AE1-8160-102B9888F607}" Directory_="SAF3D_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.Contract.dll"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_10" ComponentId="{34BE16BB-7CAB-4794-B5B4-B06EC77F3545}" Directory_="SAF3D_4_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.Contract.dll_10"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_2" ComponentId="{0C48B088-7598-488D-BDE0-C184C32DA746}" Directory_="RISA3D_1_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="RISAtech.CalatravaLink.Contract.dll_2"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_7" ComponentId="{D3C2E75F-8449-49AB-B2C0-6920DDC3DDCB}" Directory_="RISA3D_5_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="RISAtech.CalatravaLink.Contract.dll_7"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll_9" ComponentId="{0B12075C-9294-4FDE-9803-38C4451B71BE}" Directory_="RISA3D_6_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.Contract.dll_9"/>
+    <ROW Component="RISAtech.CalatravaLink.dll" ComponentId="{57149D2C-5522-4990-9F5F-F33B25BD5B8E}" Directory_="SAF3D_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.dll"/>
+    <ROW Component="RISAtech.CalatravaLink.dll.config" ComponentId="{9814D092-C304-4512-B3D9-9E2FEEEF9F02}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="RISAtech.CalatravaLink.dll.config" Type="0"/>
     <ROW Component="RISAtech.CalatravaLink.dll.config_4" ComponentId="{DBEA1535-35B5-4075-80C4-B6608EBC3988}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="RISAtech.CalatravaLink.dll.config_4" Type="0"/>
     <ROW Component="RISAtech.CalatravaLink.dll_4" ComponentId="{6B02F9F7-51F7-4EEC-BAB7-3EDC85FCB1ED}" Directory_="SAF3D_4_Dir" Attributes="256" KeyPath="RISAtech.CalatravaLink.dll_4"/>
     <ROW Component="RISAtech.CoreAccess.Contract.Common.dll_1" ComponentId="{18C1B7CA-F9EB-4453-9B54-26C944EE0F75}" Directory_="RISA3D_1_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="RISAtech.CoreAccess.Contract.Common.dll_1"/>
@@ -174,6 +222,9 @@
     <ROW Component="RISAtech.Draw.R3D.dll" ComponentId="{43D9EC3A-917C-439B-BE14-C6032DDC4D9E}" Directory_="RISA3D_6_Dir" Attributes="256" KeyPath="RISAtech.Draw.R3D.dll"/>
     <ROW Component="RISAtech.Draw.R3D.dll_1" ComponentId="{2E2553B4-8CA1-4618-BF53-4B2470BCE85E}" Directory_="RISA3D_1_Dir" Attributes="256" KeyPath="RISAtech.Draw.R3D.dll_1"/>
     <ROW Component="RISAtech.Draw.R3D.dll_2" ComponentId="{DB47A419-CE75-4D0B-A1D6-332B5E499C53}" Directory_="RISA3D_5_Dir" Attributes="256" KeyPath="RISAtech.Draw.R3D.dll_2"/>
+    <ROW Component="RISAtech.Draw.dll" ComponentId="{9F9F16A7-ED54-45F5-990B-A7F0800A189B}" Directory_="RISA3D_1_Dir" Attributes="256" KeyPath="RISAtech.Draw.dll"/>
+    <ROW Component="RISAtech.Draw.dll_1" ComponentId="{C23987F5-DA9E-4FDA-84F3-D23835D33F2E}" Directory_="RISA3D_5_Dir" Attributes="256" KeyPath="RISAtech.Draw.dll_1"/>
+    <ROW Component="RISAtech.Draw.dll_2" ComponentId="{FDF946A6-BB25-4085-9C41-143646B8815A}" Directory_="RISA3D_6_Dir" Attributes="256" KeyPath="RISAtech.Draw.dll_2"/>
     <ROW Component="RISAtech.GlibRes.dll_1" ComponentId="{2E9438E8-E882-4D19-A8A4-83F3A3931EC3}" Directory_="RISA3D_1_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="RISAtech.GlibRes.dll_1"/>
     <ROW Component="RISAtech.GlibRes.dll_4" ComponentId="{48F49566-24E2-4695-88AF-745C2B4DF1C6}" Directory_="RISA3D_5_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="RISAtech.GlibRes.dll_4"/>
     <ROW Component="RISAtech.GlibRes.dll_5" ComponentId="{18285C22-E9F3-4759-8651-EB090574245E}" Directory_="RISA3D_6_Dir" Attributes="256" KeyPath="RISAtech.GlibRes.dll_5"/>
@@ -195,111 +246,209 @@
     <ROW Component="RevisionGUID" ComponentId="{BC572D65-DA0A-4FA4-A91A-63F77BA7E1F4}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
     <ROW Component="RevisionGUID_1" ComponentId="{A0B185CB-AC5F-4E30-81B9-22C510519854}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID_1"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{783D23F6-B850-43E8-8867-8C2FA78C3CF5}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="SimpleInjector.dll" ComponentId="{DC908B06-46DE-4E8F-8335-18CD2B7120F5}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="SimpleInjector.dll"/>
     <ROW Component="SimpleInjector.dll_4" ComponentId="{6ADB4929-74A3-4F93-A370-6915A85A149C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="SimpleInjector.dll_4"/>
     <ROW Component="Software" ComponentId="{BDEA2D43-E1DA-4DA1-9908-E02456364F08}" Directory_="APPDIR" Attributes="260" KeyPath="Software_2"/>
+    <ROW Component="System.AppContext.dll" ComponentId="{57112FCF-380E-4D27-A7FC-C1B8B387F857}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.AppContext.dll"/>
     <ROW Component="System.AppContext.dll_4" ComponentId="{C64A20A3-D099-4FDD-98AD-6933E38EAB8A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.AppContext.dll_4"/>
+    <ROW Component="System.Collections.Concurrent.dll" ComponentId="{78FBBDEA-E919-41CC-8A85-251AD5BC6517}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Collections.Concurrent.dll"/>
     <ROW Component="System.Collections.Concurrent.dll_4" ComponentId="{8A234EF2-7737-417F-B216-C4DD57CEBFFE}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Collections.Concurrent.dll_4"/>
+    <ROW Component="System.Collections.NonGeneric.dll" ComponentId="{0772FE2A-B0E9-4DA0-811E-5A05C7654833}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Collections.NonGeneric.dll"/>
     <ROW Component="System.Collections.NonGeneric.dll_4" ComponentId="{9F661561-EEB4-44AD-945B-CB9B2383F4C4}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Collections.NonGeneric.dll_4"/>
+    <ROW Component="System.Collections.Specialized.dll" ComponentId="{926F793C-83AF-427C-9F60-CA63B2FA4B6F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Collections.Specialized.dll"/>
     <ROW Component="System.Collections.Specialized.dll_4" ComponentId="{011057A1-9F77-4D9A-9CDF-E9173A585B08}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Collections.Specialized.dll_4"/>
+    <ROW Component="System.Collections.dll" ComponentId="{EF652623-3107-42D8-AC27-08A73F31CA24}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Collections.dll"/>
     <ROW Component="System.Collections.dll_4" ComponentId="{77BE2884-FF84-484F-8F11-85C84D7F3746}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Collections.dll_4"/>
+    <ROW Component="System.ComponentModel.Annotations.dll" ComponentId="{E5BDF5DA-5B89-44EA-8E91-E3466292A7F7}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll"/>
     <ROW Component="System.ComponentModel.Annotations.dll_4" ComponentId="{0A91EAF4-40BA-451C-AF5A-9A79B57F0624}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ComponentModel.Annotations.dll_4"/>
+    <ROW Component="System.ComponentModel.EventBasedAsync.dll" ComponentId="{52367A61-D5E5-43EF-A2DA-D5EA5B10FE4B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ComponentModel.EventBasedAsync.dll"/>
     <ROW Component="System.ComponentModel.EventBasedAsync.dll_4" ComponentId="{581230F2-6AEE-4767-8398-09EB00CE566C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ComponentModel.EventBasedAsync.dll_4"/>
+    <ROW Component="System.ComponentModel.Primitives.dll" ComponentId="{BE859457-087D-46C9-A660-E70C33F3B524}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ComponentModel.Primitives.dll"/>
     <ROW Component="System.ComponentModel.Primitives.dll_4" ComponentId="{9F59A654-2A64-4B17-89D5-08B8D1029ACA}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ComponentModel.Primitives.dll_4"/>
+    <ROW Component="System.ComponentModel.TypeConverter.dll" ComponentId="{74DB9B1D-8950-4FD2-820F-0D2C56C8B1E2}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ComponentModel.TypeConverter.dll"/>
     <ROW Component="System.ComponentModel.TypeConverter.dll_4" ComponentId="{80310DDD-A489-4E65-B8BC-EF044596688F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ComponentModel.TypeConverter.dll_4"/>
+    <ROW Component="System.ComponentModel.dll" ComponentId="{E10EDBB9-5184-4CCF-951E-0E460487754A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ComponentModel.dll"/>
     <ROW Component="System.ComponentModel.dll_4" ComponentId="{8D264415-E10D-435A-846D-2B9361F20E63}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ComponentModel.dll_4"/>
+    <ROW Component="System.Console.dll" ComponentId="{B5FE0B1D-0E6F-4D87-885F-D308090FE4C7}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Console.dll"/>
     <ROW Component="System.Console.dll_4" ComponentId="{B34E48DE-C4A7-442D-9674-B6B9321640F4}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Console.dll_4"/>
+    <ROW Component="System.Data.Common.dll" ComponentId="{82FC7E2A-58A2-425D-BBB0-FEC51DC08DEE}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Data.Common.dll"/>
     <ROW Component="System.Data.Common.dll_4" ComponentId="{37B1AB00-7FD7-4BC5-B487-5510EBD27F40}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Data.Common.dll_4"/>
+    <ROW Component="System.Diagnostics.Contracts.dll" ComponentId="{12C158BB-BC75-419C-9095-7193F9E3D899}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.Contracts.dll"/>
     <ROW Component="System.Diagnostics.Contracts.dll_4" ComponentId="{B4554341-3717-49D4-BB18-C7C00DC576E7}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.Contracts.dll_4"/>
+    <ROW Component="System.Diagnostics.Debug.dll" ComponentId="{092FBCFC-67F0-485F-A852-37DB1D38005D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.Debug.dll"/>
     <ROW Component="System.Diagnostics.Debug.dll_4" ComponentId="{BED6636A-23BD-4067-AB0B-95CFBC05214D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.Debug.dll_4"/>
+    <ROW Component="System.Diagnostics.FileVersionInfo.dll" ComponentId="{3E05E27E-17D4-4615-A771-A153FC5B060D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.FileVersionInfo.dll"/>
     <ROW Component="System.Diagnostics.FileVersionInfo.dll_4" ComponentId="{383C8CBB-8DC1-4FD3-9C6A-23CDF664F71A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.FileVersionInfo.dll_4"/>
+    <ROW Component="System.Diagnostics.Process.dll" ComponentId="{46D08217-C086-4E75-989E-D029F1BCBCBF}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.Process.dll"/>
     <ROW Component="System.Diagnostics.Process.dll_4" ComponentId="{8E795A8C-7EEB-406C-98A0-C9ED130C71FD}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.Process.dll_4"/>
+    <ROW Component="System.Diagnostics.StackTrace.dll" ComponentId="{19B5E21C-B646-476F-9E86-1877D8CBFF9F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.StackTrace.dll"/>
     <ROW Component="System.Diagnostics.StackTrace.dll_4" ComponentId="{53F26F00-E1FF-4894-8AFF-54B2E39C37E9}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.StackTrace.dll_4"/>
+    <ROW Component="System.Diagnostics.TextWriterTraceListener.dll" ComponentId="{4FB40899-F4D2-496D-A54E-D5791BEF9E26}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.TextWriterTraceListener.dll"/>
     <ROW Component="System.Diagnostics.TextWriterTraceListener.dll_4" ComponentId="{8362827C-C20E-43EF-8C60-8CAB3266FDF5}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.TextWriterTraceListener.dll_4"/>
+    <ROW Component="System.Diagnostics.Tools.dll" ComponentId="{D971423F-A499-46E7-953F-E8E1FA9922B4}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.Tools.dll"/>
     <ROW Component="System.Diagnostics.Tools.dll_4" ComponentId="{B2F748C2-B062-4866-9157-E46888F54AAA}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.Tools.dll_4"/>
+    <ROW Component="System.Diagnostics.TraceSource.dll" ComponentId="{39BBAEDE-17EC-4DD9-85AC-0D3D836F5CA9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.TraceSource.dll"/>
     <ROW Component="System.Diagnostics.TraceSource.dll_4" ComponentId="{AE185B62-4820-49BA-8117-1E7A4C3FAC03}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.TraceSource.dll_4"/>
+    <ROW Component="System.Diagnostics.Tracing.dll" ComponentId="{74CAE816-CDD8-4252-B5AE-41026AA79AEB}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Diagnostics.Tracing.dll"/>
     <ROW Component="System.Diagnostics.Tracing.dll_4" ComponentId="{534D1CC6-69ED-47B2-9665-949A6FA2A8A0}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Diagnostics.Tracing.dll_4"/>
+    <ROW Component="System.Drawing.Primitives.dll" ComponentId="{B31CA069-A8FE-453A-B23C-91A7F9405C38}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Drawing.Primitives.dll"/>
     <ROW Component="System.Drawing.Primitives.dll_4" ComponentId="{08B7F851-BFB6-47C1-B468-21859133B360}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Drawing.Primitives.dll_4"/>
+    <ROW Component="System.Dynamic.Runtime.dll" ComponentId="{E23EBBC0-71A6-40FB-9BF5-306BAF67D6BC}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Dynamic.Runtime.dll"/>
     <ROW Component="System.Dynamic.Runtime.dll_4" ComponentId="{1B7C6007-72F9-4CC1-BB97-346376C43D66}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Dynamic.Runtime.dll_4"/>
+    <ROW Component="System.Globalization.Calendars.dll" ComponentId="{31642E22-D112-455E-87EB-10DFBBAABA44}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Globalization.Calendars.dll"/>
     <ROW Component="System.Globalization.Calendars.dll_4" ComponentId="{25DA07E4-F725-49FB-99CB-4DF7F6F08036}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Globalization.Calendars.dll_4"/>
+    <ROW Component="System.Globalization.Extensions.dll" ComponentId="{744467F3-0200-4627-9CB5-7F2A5732DE07}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Globalization.Extensions.dll"/>
     <ROW Component="System.Globalization.Extensions.dll_4" ComponentId="{37EDF94C-91AC-49D9-9F5F-5DEB853D7E72}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Globalization.Extensions.dll_4"/>
+    <ROW Component="System.Globalization.dll" ComponentId="{1111B083-E971-413C-AD73-8BBDBAE986FE}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Globalization.dll"/>
     <ROW Component="System.Globalization.dll_4" ComponentId="{821A0105-1738-4393-B31B-115DADDF4175}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Globalization.dll_4"/>
+    <ROW Component="System.IO.Compression.ZipFile.dll" ComponentId="{1ED62141-0F34-457D-BAA8-C832AE6FD0A8}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.Compression.ZipFile.dll"/>
     <ROW Component="System.IO.Compression.ZipFile.dll_4" ComponentId="{9525EF3B-9D45-4F40-BAD0-8A85EB9B4C5F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.Compression.ZipFile.dll_4"/>
+    <ROW Component="System.IO.Compression.dll" ComponentId="{EE28CCE3-DC4F-46C9-B955-6F25B274FECB}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.Compression.dll"/>
     <ROW Component="System.IO.Compression.dll_4" ComponentId="{44078012-803C-481F-90F1-1F6433710CE9}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.Compression.dll_4"/>
+    <ROW Component="System.IO.FileSystem.DriveInfo.dll" ComponentId="{5D1A6A71-08BF-4ACF-927A-52F7AC48041B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.FileSystem.DriveInfo.dll"/>
     <ROW Component="System.IO.FileSystem.DriveInfo.dll_4" ComponentId="{189D280E-BDC9-4A89-AE90-2AF7AF084560}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.FileSystem.DriveInfo.dll_4"/>
+    <ROW Component="System.IO.FileSystem.Primitives.dll" ComponentId="{C36B8FC8-B7AE-4B53-AA0D-E28E2EA352D8}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.FileSystem.Primitives.dll"/>
     <ROW Component="System.IO.FileSystem.Primitives.dll_4" ComponentId="{5B92C4CC-5479-4AC3-8CAA-9C9763C06822}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.FileSystem.Primitives.dll_4"/>
+    <ROW Component="System.IO.FileSystem.Watcher.dll" ComponentId="{318223D1-87D8-4756-BF1C-F75C901DD86A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.FileSystem.Watcher.dll"/>
     <ROW Component="System.IO.FileSystem.Watcher.dll_4" ComponentId="{5968A9A6-F731-4505-AA57-9F93904CEDDB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.FileSystem.Watcher.dll_4"/>
+    <ROW Component="System.IO.FileSystem.dll" ComponentId="{19E48CB5-1E6B-4CD1-979C-8EEB44F6E191}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.FileSystem.dll"/>
     <ROW Component="System.IO.FileSystem.dll_4" ComponentId="{FBF64754-3578-42F8-98A0-E8D64733C193}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.FileSystem.dll_4"/>
+    <ROW Component="System.IO.IsolatedStorage.dll" ComponentId="{9A2B41A0-49D2-4BC6-B124-1B56A9066C9F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.IsolatedStorage.dll"/>
     <ROW Component="System.IO.IsolatedStorage.dll_4" ComponentId="{556A30A3-A18E-4245-BA82-C5FC7B5B4E54}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.IsolatedStorage.dll_4"/>
+    <ROW Component="System.IO.MemoryMappedFiles.dll" ComponentId="{71403AA9-A44C-4DEE-B6F7-18491DC2FAFC}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.MemoryMappedFiles.dll"/>
     <ROW Component="System.IO.MemoryMappedFiles.dll_4" ComponentId="{802A30D3-1252-4C08-BBDC-A8B7F1BC0C5C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.MemoryMappedFiles.dll_4"/>
+    <ROW Component="System.IO.Pipes.dll" ComponentId="{DD58125F-D401-4170-A055-5D3C7E561649}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.Pipes.dll"/>
     <ROW Component="System.IO.Pipes.dll_4" ComponentId="{9D909202-82FE-4EC1-8B9D-1F9279882F5D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.Pipes.dll_4"/>
+    <ROW Component="System.IO.UnmanagedMemoryStream.dll" ComponentId="{17667E51-C0AB-40D7-A640-28982A028C8C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.UnmanagedMemoryStream.dll"/>
     <ROW Component="System.IO.UnmanagedMemoryStream.dll_4" ComponentId="{561A24B0-D796-4927-96CF-3A775334AD61}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.UnmanagedMemoryStream.dll_4"/>
+    <ROW Component="System.IO.dll" ComponentId="{A41DD20D-76C1-4333-A984-9D063D26910A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.IO.dll"/>
     <ROW Component="System.IO.dll_4" ComponentId="{D4699876-D4F7-4931-924A-1991B8D32671}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.IO.dll_4"/>
+    <ROW Component="System.Linq.Expressions.dll" ComponentId="{D2CBD270-973E-4DB3-B39F-D6A900EF8210}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Linq.Expressions.dll"/>
     <ROW Component="System.Linq.Expressions.dll_4" ComponentId="{57FF6AEB-FFBF-4647-B99C-68548A82BAB6}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Linq.Expressions.dll_4"/>
+    <ROW Component="System.Linq.Parallel.dll" ComponentId="{ED8DA7FA-B8F7-44FA-B64A-D0345163DD25}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Linq.Parallel.dll"/>
     <ROW Component="System.Linq.Parallel.dll_4" ComponentId="{9EFB3D6E-32B2-41FB-9C8B-1E6FB6867262}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Linq.Parallel.dll_4"/>
+    <ROW Component="System.Linq.Queryable.dll" ComponentId="{A97470C3-A94B-4C04-A9F0-91C13F111F7E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Linq.Queryable.dll"/>
     <ROW Component="System.Linq.Queryable.dll_4" ComponentId="{3A57FCC4-4CD5-4AFC-9C8E-852A9F0CBAE8}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Linq.Queryable.dll_4"/>
+    <ROW Component="System.Linq.dll" ComponentId="{695CFD0F-50DE-41C3-9341-7CC27A19007D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Linq.dll"/>
     <ROW Component="System.Linq.dll_4" ComponentId="{D986D177-1677-4018-9499-0F0E97C57B02}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Linq.dll_4"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{9E0A3A3F-3248-45AF-A8A5-18ACD7235602}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Http.dll"/>
     <ROW Component="System.Net.Http.dll_4" ComponentId="{B4ECE30E-0D7C-4155-A815-B9170BCB2790}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Http.dll_4"/>
+    <ROW Component="System.Net.NameResolution.dll" ComponentId="{147A3854-46AA-47CD-A606-64A6940D36E9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.NameResolution.dll"/>
     <ROW Component="System.Net.NameResolution.dll_4" ComponentId="{B0A70528-55C3-4339-9682-208AD569B26B}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.NameResolution.dll_4"/>
+    <ROW Component="System.Net.NetworkInformation.dll" ComponentId="{10502B54-0E0F-4C87-B2BE-4C61B9B13F0D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.NetworkInformation.dll"/>
     <ROW Component="System.Net.NetworkInformation.dll_4" ComponentId="{6CC2FD5D-62C0-4996-8BA5-69A74935CCAB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.NetworkInformation.dll_4"/>
+    <ROW Component="System.Net.Ping.dll" ComponentId="{7D7E2B9B-0EBD-4B4A-8F01-2B6C27982CFC}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Ping.dll"/>
     <ROW Component="System.Net.Ping.dll_4" ComponentId="{580C40FE-7B6A-47AF-B522-3B6B4C3C2496}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Ping.dll_4"/>
+    <ROW Component="System.Net.Primitives.dll" ComponentId="{E63797D3-EF73-4DCC-BC4F-5E8687591B96}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Primitives.dll"/>
     <ROW Component="System.Net.Primitives.dll_4" ComponentId="{D48D3EB7-851E-4A7D-B4C9-B2A79235C9D5}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Primitives.dll_4"/>
+    <ROW Component="System.Net.Requests.dll" ComponentId="{8523066D-E02D-4E5C-8CFC-5D7415060BEA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Requests.dll"/>
     <ROW Component="System.Net.Requests.dll_4" ComponentId="{C5BD7E75-D453-45B3-97B5-85DC5DFF8B78}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Requests.dll_4"/>
+    <ROW Component="System.Net.Security.dll" ComponentId="{4BA52D6A-BBE8-4802-9B9E-9E2B27475497}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Security.dll"/>
     <ROW Component="System.Net.Security.dll_4" ComponentId="{606EC7EB-CB8C-4B0C-813A-9EFB39308A5E}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Security.dll_4"/>
+    <ROW Component="System.Net.Sockets.dll" ComponentId="{16F35EF5-FF15-4F54-A2ED-792411A1A520}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.Sockets.dll"/>
     <ROW Component="System.Net.Sockets.dll_4" ComponentId="{3A199212-E393-4CAD-8366-02EF0A977857}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.Sockets.dll_4"/>
+    <ROW Component="System.Net.WebHeaderCollection.dll" ComponentId="{C84071E7-5DB1-4737-AE88-4AF13ECA594A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.WebHeaderCollection.dll"/>
     <ROW Component="System.Net.WebHeaderCollection.dll_4" ComponentId="{E0B0A577-F533-4D01-AEFA-75CE8181B104}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.WebHeaderCollection.dll_4"/>
+    <ROW Component="System.Net.WebSockets.Client.dll" ComponentId="{F34D20D4-83E6-4FB7-A76E-3B0B7C78D45F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.WebSockets.Client.dll"/>
     <ROW Component="System.Net.WebSockets.Client.dll_4" ComponentId="{C3319CE4-55E0-4C89-B2F5-AA4E6B475D14}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.WebSockets.Client.dll_4"/>
+    <ROW Component="System.Net.WebSockets.dll" ComponentId="{681EF1E1-8EEC-4C5B-9D74-C80D29486553}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Net.WebSockets.dll"/>
     <ROW Component="System.Net.WebSockets.dll_4" ComponentId="{F85C688E-5DA2-41DC-BEFF-0111D09EBF73}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Net.WebSockets.dll_4"/>
+    <ROW Component="System.ObjectModel.dll" ComponentId="{2F3CD843-5A7B-472D-8B32-D1A22DB1EA29}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ObjectModel.dll"/>
     <ROW Component="System.ObjectModel.dll_4" ComponentId="{A7B0BF9A-0038-4B31-9DC5-4082CB59AD81}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ObjectModel.dll_4"/>
+    <ROW Component="System.Reflection.Extensions.dll" ComponentId="{17211C1C-8051-4760-961B-5532C9F7D2C6}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Reflection.Extensions.dll"/>
     <ROW Component="System.Reflection.Extensions.dll_4" ComponentId="{6F394CEE-FD51-4C94-8CAA-F9DF2DF5356F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Reflection.Extensions.dll_4"/>
+    <ROW Component="System.Reflection.Primitives.dll" ComponentId="{8ECA2EE6-5833-4A0B-A580-5DE87C4046B5}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Reflection.Primitives.dll"/>
     <ROW Component="System.Reflection.Primitives.dll_4" ComponentId="{D3532CD2-ED7D-4DC0-8BA6-2ACD7C7DA9DF}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Reflection.Primitives.dll_4"/>
+    <ROW Component="System.Reflection.dll" ComponentId="{60209E81-AA78-416A-87C0-151C2810C230}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Reflection.dll"/>
     <ROW Component="System.Reflection.dll_4" ComponentId="{D3FDFAB7-CB36-46DF-B883-BC039C716E34}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Reflection.dll_4"/>
+    <ROW Component="System.Resources.Reader.dll" ComponentId="{6B45557B-4F01-4C77-A530-AB6504D2308D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Resources.Reader.dll"/>
     <ROW Component="System.Resources.Reader.dll_4" ComponentId="{7B965363-F937-4781-841C-9A32E925B900}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Resources.Reader.dll_4"/>
+    <ROW Component="System.Resources.ResourceManager.dll" ComponentId="{84E4A141-97F8-4F0D-BD6E-CB0A86AC0CBA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Resources.ResourceManager.dll"/>
     <ROW Component="System.Resources.ResourceManager.dll_4" ComponentId="{E484084C-C464-4FBB-8708-86A639531A49}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Resources.ResourceManager.dll_4"/>
+    <ROW Component="System.Resources.Writer.dll" ComponentId="{2A80A21A-82B5-4788-9B3C-ED083F5F4109}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Resources.Writer.dll"/>
     <ROW Component="System.Resources.Writer.dll_4" ComponentId="{F0ADABD9-07FA-4684-9AD1-5A88DC3466A2}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Resources.Writer.dll_4"/>
     <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_1" ComponentId="{48889EA7-C7F7-49AD-A880-67DDD5C49FD3}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_1"/>
     <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_4" ComponentId="{76F09A86-1CC9-4E38-B4E7-1BF712CB5807}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_4"/>
     <ROW Component="System.Runtime.CompilerServices.Unsafe.dll_5" ComponentId="{0C04F74E-DEF6-4D8E-8B04-FB777B8140BB}" Directory_="RISA3D_6_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.Unsafe.dll_5"/>
+    <ROW Component="System.Runtime.CompilerServices.VisualC.dll" ComponentId="{E67B6AB8-22F8-4864-B8C1-7A7B2DB304FA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.VisualC.dll"/>
     <ROW Component="System.Runtime.CompilerServices.VisualC.dll_4" ComponentId="{03F98176-6A26-47E2-86BE-E7509AD90B18}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.CompilerServices.VisualC.dll_4"/>
+    <ROW Component="System.Runtime.Extensions.dll" ComponentId="{6536525E-3C11-4544-B817-1BF2606A49C9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Extensions.dll"/>
     <ROW Component="System.Runtime.Extensions.dll_4" ComponentId="{3FA62143-DC33-411D-99C3-689294B2DFBB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Extensions.dll_4"/>
+    <ROW Component="System.Runtime.Handles.dll" ComponentId="{5A7FD96A-CD98-499A-8956-7598997D4D32}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Handles.dll"/>
     <ROW Component="System.Runtime.Handles.dll_4" ComponentId="{CD5A8367-C9E4-42C0-902B-794F438CA11A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Handles.dll_4"/>
+    <ROW Component="System.Runtime.InteropServices.RuntimeInformation.dll" ComponentId="{73FED2E5-4E4D-48C5-8AA1-55508EA892BD}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.InteropServices.RuntimeInformation.dll"/>
     <ROW Component="System.Runtime.InteropServices.RuntimeInformation.dll_4" ComponentId="{F30DFFDC-7DD9-48D2-BDF0-827F46C7CAFB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.InteropServices.RuntimeInformation.dll_4"/>
+    <ROW Component="System.Runtime.InteropServices.dll" ComponentId="{C24C3B43-16EC-4BF0-BF54-A856E8F5C971}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.InteropServices.dll"/>
     <ROW Component="System.Runtime.InteropServices.dll_4" ComponentId="{F9FA7CB9-0254-4050-8B88-224E190D5653}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.InteropServices.dll_4"/>
+    <ROW Component="System.Runtime.Numerics.dll" ComponentId="{438A8074-D292-4E7F-B380-83248F496642}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Numerics.dll"/>
     <ROW Component="System.Runtime.Numerics.dll_4" ComponentId="{D12402A2-F126-4035-A91D-DFD3A948E792}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Numerics.dll_4"/>
+    <ROW Component="System.Runtime.Serialization.Formatters.dll" ComponentId="{C0DAB5D1-3DB4-4CC1-B7EA-7F7C173FDA67}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Formatters.dll"/>
     <ROW Component="System.Runtime.Serialization.Formatters.dll_4" ComponentId="{4FDD2DD4-A7B9-4AB9-A4CE-5A79475400F0}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Formatters.dll_4"/>
+    <ROW Component="System.Runtime.Serialization.Json.dll" ComponentId="{BAD5BF2A-9832-4E8D-AC0A-D93C434F2371}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Json.dll"/>
     <ROW Component="System.Runtime.Serialization.Json.dll_4" ComponentId="{DA2E0CA2-FBBD-47B7-A3BF-0743A460DC97}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Json.dll_4"/>
+    <ROW Component="System.Runtime.Serialization.Primitives.dll" ComponentId="{4E153419-F669-4273-8FD2-057F2761D676}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Primitives.dll"/>
     <ROW Component="System.Runtime.Serialization.Primitives.dll_4" ComponentId="{166010F2-E5CB-44D6-A9C3-B17D492BD557}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Primitives.dll_4"/>
+    <ROW Component="System.Runtime.Serialization.Xml.dll" ComponentId="{EB9885B4-05D5-410C-9FDC-E5534C241305}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Xml.dll"/>
     <ROW Component="System.Runtime.Serialization.Xml.dll_4" ComponentId="{E5CD8487-5B17-4750-AF5A-F21251A9B25E}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.Serialization.Xml.dll_4"/>
+    <ROW Component="System.Runtime.dll" ComponentId="{496AD16C-9800-4B4D-84E7-81C188F483A0}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Runtime.dll"/>
     <ROW Component="System.Runtime.dll_4" ComponentId="{BDE91306-7FDD-4FE1-A0EF-001A02C518CB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Runtime.dll_4"/>
+    <ROW Component="System.Security.Claims.dll" ComponentId="{3E9F3CED-FE4D-4E71-BA9E-62D190881CDD}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Claims.dll"/>
     <ROW Component="System.Security.Claims.dll_4" ComponentId="{CD0CB470-09BE-4F92-BB7A-D1E47EBC4D43}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Claims.dll_4"/>
+    <ROW Component="System.Security.Cryptography.Algorithms.dll" ComponentId="{B1711326-65B3-4DEB-BB47-3AD363D1089E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Algorithms.dll"/>
     <ROW Component="System.Security.Cryptography.Algorithms.dll_4" ComponentId="{5317157E-DE61-4E95-B21D-ED7353B1D35F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Algorithms.dll_4"/>
+    <ROW Component="System.Security.Cryptography.Csp.dll" ComponentId="{0FB663F2-88C6-44DE-A42D-B6D732F5716B}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Csp.dll"/>
     <ROW Component="System.Security.Cryptography.Csp.dll_4" ComponentId="{616BDD11-7E43-455D-BAD5-ECA5B30AB7CA}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Csp.dll_4"/>
+    <ROW Component="System.Security.Cryptography.Encoding.dll" ComponentId="{A1E78BAA-206C-4C47-A51C-F42BDEA2B75E}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Encoding.dll"/>
     <ROW Component="System.Security.Cryptography.Encoding.dll_4" ComponentId="{A0694216-7269-4291-A1FC-C411EB9BBF57}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Encoding.dll_4"/>
+    <ROW Component="System.Security.Cryptography.Primitives.dll" ComponentId="{742FB5FE-1A01-4A02-B2FE-440836338A7D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Primitives.dll"/>
     <ROW Component="System.Security.Cryptography.Primitives.dll_4" ComponentId="{1967C822-0673-49EA-91D3-EC3D4FE8901D}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Cryptography.Primitives.dll_4"/>
+    <ROW Component="System.Security.Cryptography.X509Certificates.dll" ComponentId="{9346A1C2-1D6F-4105-8C4C-63E90D32972A}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Cryptography.X509Certificates.dll"/>
     <ROW Component="System.Security.Cryptography.X509Certificates.dll_4" ComponentId="{1B8ED9EF-C299-42FA-90DA-E04D7D3A3736}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Cryptography.X509Certificates.dll_4"/>
+    <ROW Component="System.Security.Principal.dll" ComponentId="{67436935-2EC8-4B68-A82C-4A2DA3FB9EFF}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.Principal.dll"/>
     <ROW Component="System.Security.Principal.dll_4" ComponentId="{560D6776-CB56-471E-8EEA-BBC3F25582BE}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.Principal.dll_4"/>
+    <ROW Component="System.Security.SecureString.dll" ComponentId="{7E560D5F-C740-4BA5-A854-7923F9666730}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Security.SecureString.dll"/>
     <ROW Component="System.Security.SecureString.dll_4" ComponentId="{04B815D2-F6D8-4C2B-8AE8-F88837227A00}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Security.SecureString.dll_4"/>
+    <ROW Component="System.Text.Encoding.Extensions.dll" ComponentId="{9E9B0AFC-7148-474E-8F1F-B656254D7BE9}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Text.Encoding.Extensions.dll"/>
     <ROW Component="System.Text.Encoding.Extensions.dll_4" ComponentId="{2D21FD77-B612-449B-9E2E-492E0542FBDA}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Text.Encoding.Extensions.dll_4"/>
+    <ROW Component="System.Text.Encoding.dll" ComponentId="{3830D59F-2FBC-4D6B-A28E-5BCEA03ED2C0}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Text.Encoding.dll"/>
     <ROW Component="System.Text.Encoding.dll_4" ComponentId="{83185D1C-3023-4864-9192-23AFD261C619}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Text.Encoding.dll_4"/>
+    <ROW Component="System.Text.RegularExpressions.dll" ComponentId="{DE079D00-C3C8-4DDB-9ACE-1DED642044B1}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Text.RegularExpressions.dll"/>
     <ROW Component="System.Text.RegularExpressions.dll_4" ComponentId="{9FF9BA3F-551E-4E32-B21C-9524AC1613F6}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Text.RegularExpressions.dll_4"/>
+    <ROW Component="System.Threading.Overlapped.dll" ComponentId="{6057E3D8-0203-4E7B-9582-B2998917DAB1}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.Overlapped.dll"/>
     <ROW Component="System.Threading.Overlapped.dll_4" ComponentId="{9E4D3CB3-E5B1-4BD8-A150-0283A04F292A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.Overlapped.dll_4"/>
     <ROW Component="System.Threading.Tasks.Extensions.dll_1" ComponentId="{8AF4B02F-80B9-453D-8618-40B2538A95B1}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="System.Threading.Tasks.Extensions.dll_1"/>
     <ROW Component="System.Threading.Tasks.Extensions.dll_4" ComponentId="{497C0DC0-8930-480F-BA12-CBF7EFF1F432}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="System.Threading.Tasks.Extensions.dll_4"/>
     <ROW Component="System.Threading.Tasks.Extensions.dll_5" ComponentId="{9205F4A3-1120-4B50-A52A-4EAD98B19587}" Directory_="RISA3D_6_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Extensions.dll_5"/>
+    <ROW Component="System.Threading.Tasks.Parallel.dll" ComponentId="{2E1594EA-B892-4CAB-8775-2A725FCA508C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Parallel.dll"/>
     <ROW Component="System.Threading.Tasks.Parallel.dll_4" ComponentId="{91DF50B9-DCC5-4AEA-A8AB-371C0A0C2FD4}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.Tasks.Parallel.dll_4"/>
+    <ROW Component="System.Threading.Tasks.dll" ComponentId="{7E0E58FD-D2A7-4065-B0AA-4C56C345190C}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.Tasks.dll"/>
     <ROW Component="System.Threading.Tasks.dll_4" ComponentId="{D60B5261-6E6F-4DAC-B17F-DF4411871C1B}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.Tasks.dll_4"/>
+    <ROW Component="System.Threading.Thread.dll" ComponentId="{8005FA75-EAA4-4264-A270-5E0317587120}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.Thread.dll"/>
     <ROW Component="System.Threading.Thread.dll_4" ComponentId="{8934A238-B9DF-4F0E-90A9-6F92D9E3A22E}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.Thread.dll_4"/>
+    <ROW Component="System.Threading.ThreadPool.dll" ComponentId="{A8BED546-D9FD-42C6-AF4B-81401CB6568D}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.ThreadPool.dll"/>
     <ROW Component="System.Threading.ThreadPool.dll_4" ComponentId="{8738F2C7-276D-4156-8F74-4E65C2395CAB}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.ThreadPool.dll_4"/>
+    <ROW Component="System.Threading.Timer.dll" ComponentId="{7544275A-4C2F-4B93-9117-DDD51039D588}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.Timer.dll"/>
     <ROW Component="System.Threading.Timer.dll_4" ComponentId="{8E88E133-11D6-4089-AABA-6824E2CE8209}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.Timer.dll_4"/>
+    <ROW Component="System.Threading.dll" ComponentId="{192DF1AA-7190-4AF8-A12F-02F7E467FD87}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Threading.dll"/>
     <ROW Component="System.Threading.dll_4" ComponentId="{928AC125-C440-4548-86A5-DF56D67B521B}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Threading.dll_4"/>
+    <ROW Component="System.ValueTuple.dll" ComponentId="{9EE04E91-ED37-4910-AF9E-A7821C2EAAED}" Directory_="RISA3D_1_Dir" Attributes="0" KeyPath="System.ValueTuple.dll"/>
+    <ROW Component="System.ValueTuple.dll_1" ComponentId="{00541AFF-3611-4E40-95B4-4D0AC27BE4B3}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.ValueTuple.dll_1"/>
+    <ROW Component="System.ValueTuple.dll_2" ComponentId="{0E54AB9F-5E97-4753-A59C-9EA8C13AB2F2}" Directory_="RISA3D_5_Dir" Attributes="0" KeyPath="System.ValueTuple.dll_2"/>
     <ROW Component="System.ValueTuple.dll_9" ComponentId="{D339CB15-9AE6-4A57-B96D-34B474DE8BF6}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.ValueTuple.dll_9"/>
     <ROW Component="System.Windows.Interactivity.dll_1" ComponentId="{7051A68E-96B3-42BF-BBA7-4284C886EE64}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="System.Windows.Interactivity.dll_1"/>
     <ROW Component="System.Windows.Interactivity.dll_4" ComponentId="{780A848C-E664-4BC1-BEEC-EEC19F538CF0}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="System.Windows.Interactivity.dll_4"/>
     <ROW Component="System.Windows.Interactivity.dll_5" ComponentId="{C97C077D-41B9-4DB7-923C-2E32D1377551}" Directory_="RISA3D_6_Dir" Attributes="0" KeyPath="System.Windows.Interactivity.dll_5"/>
+    <ROW Component="System.Xml.ReaderWriter.dll" ComponentId="{81F0C8B1-C977-423A-9667-CE7408C2FF52}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.ReaderWriter.dll"/>
     <ROW Component="System.Xml.ReaderWriter.dll_4" ComponentId="{54D98AF9-FC25-409B-94EB-48B3D86AEC55}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.ReaderWriter.dll_4"/>
+    <ROW Component="System.Xml.XDocument.dll" ComponentId="{C64D91C6-381C-41D1-B17D-B7BC3814224F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.XDocument.dll"/>
     <ROW Component="System.Xml.XDocument.dll_4" ComponentId="{3C53B348-9FAE-461A-9DEC-7E41D95733FF}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.XDocument.dll_4"/>
+    <ROW Component="System.Xml.XPath.XDocument.dll" ComponentId="{5E4B432B-DD25-448C-8FD3-7FCCA968C348}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.XPath.XDocument.dll"/>
     <ROW Component="System.Xml.XPath.XDocument.dll_4" ComponentId="{7C4A82EB-12DA-44A1-AB28-2F25FCDA3F07}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.XPath.XDocument.dll_4"/>
+    <ROW Component="System.Xml.XPath.dll" ComponentId="{82130C22-2B81-4356-BE29-8D9D6296176F}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.XPath.dll"/>
     <ROW Component="System.Xml.XPath.dll_4" ComponentId="{7AC308D1-D384-4104-A4DF-59BE0B32CE3A}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.XPath.dll_4"/>
+    <ROW Component="System.Xml.XmlDocument.dll" ComponentId="{1AF35AEC-3AB7-4499-862B-42D618C82E09}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.XmlDocument.dll"/>
     <ROW Component="System.Xml.XmlDocument.dll_4" ComponentId="{F9D44685-76DF-41AE-AD5A-B1F11E266470}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.XmlDocument.dll_4"/>
+    <ROW Component="System.Xml.XmlSerializer.dll" ComponentId="{D5254EAB-DF57-483A-AB25-4D471E9C1BC6}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="System.Xml.XmlSerializer.dll"/>
     <ROW Component="System.Xml.XmlSerializer.dll_4" ComponentId="{D3D1512F-DD96-42BD-AFD8-A6EA33C0049F}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="System.Xml.XmlSerializer.dll_4"/>
     <ROW Component="Telerik.Windows.Controls.Chart.dll_1" ComponentId="{519751D2-25A9-4889-A350-3CE073B1175B}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="Telerik.Windows.Controls.Chart.dll_1"/>
     <ROW Component="Telerik.Windows.Controls.Chart.dll_4" ComponentId="{4AC52E87-713A-487E-891E-CCA0D933BD86}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Telerik.Windows.Controls.Chart.dll_4"/>
@@ -325,7 +474,9 @@
     <ROW Component="Telerik.Windows.Zip.dll_1" ComponentId="{8A3020B8-3C9E-4B47-BCD4-437D7AA2906C}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="Telerik.Windows.Zip.dll_1"/>
     <ROW Component="Telerik.Windows.Zip.dll_4" ComponentId="{3270B71F-4A01-4179-B292-8E32C0E1A855}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Telerik.Windows.Zip.dll_4"/>
     <ROW Component="Telerik.Windows.Zip.dll_5" ComponentId="{DEAA9D2D-1B5D-4A0C-98B5-83CB8D1BCE6B}" Directory_="RISA3D_6_Dir" Attributes="0" KeyPath="Telerik.Windows.Zip.dll_5"/>
+    <ROW Component="Triangle.dll" ComponentId="{2F7A2F55-867E-4333-94CF-D3CE1A6164DC}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="Triangle.dll"/>
     <ROW Component="Triangle.dll_4" ComponentId="{17E323D7-37CB-41D9-B7F9-F4756C743F0C}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="Triangle.dll_4"/>
+    <ROW Component="UnitsNet.dll" ComponentId="{0090BD6B-CA7C-48A6-AD26-EA67CC1D6BE6}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="UnitsNet.dll"/>
     <ROW Component="UnitsNet.dll_4" ComponentId="{BAE39B58-5ED2-413F-9554-DAE46DBAACB2}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="UnitsNet.dll_4"/>
     <ROW Component="Unity.Abstractions.dll_1" ComponentId="{40E6C5D0-E2A4-4667-B4AF-634E58AE3A5D}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="Unity.Abstractions.dll_1"/>
     <ROW Component="Unity.Abstractions.dll_4" ComponentId="{04BDFC14-68F0-4EB7-83DD-2D688C290DEB}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Unity.Abstractions.dll_4"/>
@@ -343,7 +494,9 @@
     <ROW Component="__2" ComponentId="{96B1AACF-A171-4E5E-9F28-59BE943A07EE}" Directory_="APPDIR" Attributes="260" KeyPath="__4"/>
     <ROW Component="__3" ComponentId="{99F652E8-1530-4695-96E9-50E08EBCAAF1}" Directory_="APPDIR" Attributes="260" KeyPath="__3"/>
     <ROW Component="__4" ComponentId="{BC553223-3B82-4857-BBEF-4227F0B2EF37}" Directory_="APPDIR" Attributes="260" KeyPath="__5"/>
+    <ROW Component="netstandard.dll" ComponentId="{6C826A2A-06D5-4534-9393-4A8FD394E1D7}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="netstandard.dll"/>
     <ROW Component="netstandard.dll_4" ComponentId="{310A3C13-BB89-48AD-A1E6-BE27FEBE67ED}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="netstandard.dll_4"/>
+    <ROW Component="protobufnet.dll" ComponentId="{9A128FAE-2A69-4A16-89E4-EB7C49295BBA}" Directory_="SAF3D_Dir" Attributes="0" KeyPath="protobufnet.dll"/>
     <ROW Component="protobufnet.dll_4" ComponentId="{3724898A-AD4A-4651-9EE2-5396B2CE1E86}" Directory_="SAF3D_4_Dir" Attributes="0" KeyPath="protobufnet.dll_4"/>
     <ROW Component="risa3dw.exe" ComponentId="{D22FD596-7ED9-4206-A61B-6FCB6CCB2FBA}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="risa3dw.exe"/>
     <ROW Component="risa3dw.exe.config" ComponentId="{B3BC2424-1003-41E6-9EFE-64B933276423}" Directory_="DemoBackup_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Standalone&quot;" KeyPath="risa3dw.exe.config" Type="0"/>
@@ -592,6 +745,158 @@
     <ROW File="RISAtech.GlibVideo.dll_1" Component_="RISAtech.GlibVideo.dll_1" FileName="RISAT~11.DLL|RISAtech.GlibVideo.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\RISAtech.GlibVideo.dll" SelfReg="false"/>
     <ROW File="RISAtech.Draw.R3D.dll_2" Component_="RISAtech.Draw.R3D.dll_2" FileName="RISAT~10.DLL|RISAtech.Draw.R3D.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\RISAtech.Draw.R3D.dll" SelfReg="false"/>
     <ROW File="RISAtech.GlibVideo.dll_2" Component_="RISAtech.GlibVideo.dll_2" FileName="RISAT~11.DLL|RISAtech.GlibVideo.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\RISAtech.GlibVideo.dll" SelfReg="false"/>
+    <ROW File="RISAtech.Draw.dll" Component_="RISAtech.Draw.dll" FileName="RISATE~5.DLL|RISAtech.Draw.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\RISAtech.Draw.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~3.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="AutoMapper.dll" Component_="AutoMapper.dll" FileName="AUTOMA~1.DLL|AutoMapper.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\AutoMapper.dll" SelfReg="false"/>
+    <ROW File="CSInfrastructure.dll" Component_="CSInfrastructure.dll" FileName="CSINFR~1.DLL|CSInfrastructure.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\CSInfrastructure.dll" SelfReg="false"/>
+    <ROW File="EPPlus.dll" Component_="EPPlus.dll" FileName="EPPlus.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\EPPlus.dll" SelfReg="false"/>
+    <ROW File="ExcelDataReader.DataSet.dll" Component_="ExcelDataReader.DataSet.dll" FileName="EXCELD~1.DLL|ExcelDataReader.DataSet.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ExcelDataReader.DataSet.dll" SelfReg="false"/>
+    <ROW File="ExcelDataReader.dll" Component_="ExcelDataReader.dll" FileName="EXCELD~2.DLL|ExcelDataReader.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ExcelDataReader.dll" SelfReg="false"/>
+    <ROW File="FluentValidation.dll" Component_="FluentValidation.dll" FileName="FLUENT~1.DLL|FluentValidation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\FluentValidation.dll" SelfReg="false"/>
+    <ROW File="Infrastructure.Geometry.dll" Component_="Infrastructure.Geometry.dll" FileName="INFRAS~1.DLL|Infrastructure.Geometry.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\Infrastructure.Geometry.dll" SelfReg="false"/>
+    <ROW File="MathNet.Numerics.dll" Component_="MathNet.Numerics.dll" FileName="MATHNE~1.DLL|MathNet.Numerics.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\MathNet.Numerics.dll" SelfReg="false"/>
+    <ROW File="MathNet.Spatial.dll" Component_="MathNet.Spatial.dll" FileName="MATHNE~2.DLL|MathNet.Spatial.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\MathNet.Spatial.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Win32.Primitives.dll" Component_="Microsoft.Win32.Primitives.dll" FileName="MICROS~1.DLL|Microsoft.Win32.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\Microsoft.Win32.Primitives.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.AnalysisDataModel.Contracts.dll" Component_="ModelExchanger.AnalysisDataModel.Contracts.dll" FileName="MODELE~1.DLL|ModelExchanger.AnalysisDataModel.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.AnalysisDataModel.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.AnalysisDataModel.DataBuilders.dll" Component_="ModelExchanger.AnalysisDataModel.DataBuilders.dll" FileName="MODELE~2.DLL|ModelExchanger.AnalysisDataModel.DataBuilders.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.AnalysisDataModel.DataBuilders.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.AnalysisDataModel.dll" Component_="ModelExchanger.AnalysisDataModel.dll" FileName="MODELE~3.DLL|ModelExchanger.AnalysisDataModel.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.AnalysisDataModel.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.AnalysisDataModel.Implementation.dll" Component_="ModelExchanger.AnalysisDataModel.Implementation.dll" FileName="MODELE~4.DLL|ModelExchanger.AnalysisDataModel.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.AnalysisDataModel.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll" Component_="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll" FileName="MODELE~5.DLL|ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Client.Contracts.dll" Component_="ModelExchanger.BimPlus.Client.Contracts.dll" FileName="MODELE~6.DLL|ModelExchanger.BimPlus.Client.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Client.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Client.Implementation.dll" Component_="ModelExchanger.BimPlus.Client.Implementation.dll" FileName="MODELE~7.DLL|ModelExchanger.BimPlus.Client.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Client.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Client.Models.dll" Component_="ModelExchanger.BimPlus.Client.Models.dll" FileName="MODELE~8.DLL|ModelExchanger.BimPlus.Client.Models.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Client.Models.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Conversion.Contracts.dll" Component_="ModelExchanger.BimPlus.Conversion.Contracts.dll" FileName="MODELE~9.DLL|ModelExchanger.BimPlus.Conversion.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Conversion.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Conversion.Implementation.dll" Component_="ModelExchanger.BimPlus.Conversion.Implementation.dll" FileName="MODEL~10.DLL|ModelExchanger.BimPlus.Conversion.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Conversion.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.DataAccess.Contracts.dll" Component_="ModelExchanger.BimPlus.DataAccess.Contracts.dll" FileName="MODEL~11.DLL|ModelExchanger.BimPlus.DataAccess.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.DataAccess.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.DataAccess.Implementation.dll" Component_="ModelExchanger.BimPlus.DataAccess.Implementation.dll" FileName="MODEL~12.DLL|ModelExchanger.BimPlus.DataAccess.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.DataAccess.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.DataAccess.Models.dll" Component_="ModelExchanger.BimPlus.DataAccess.Models.dll" FileName="MODEL~13.DLL|ModelExchanger.BimPlus.DataAccess.Models.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.DataAccess.Models.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Drawings.Contracts.dll" Component_="ModelExchanger.BimPlus.Drawings.Contracts.dll" FileName="MODEL~14.DLL|ModelExchanger.BimPlus.Drawings.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Drawings.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Drawings.Implementation.dll" Component_="ModelExchanger.BimPlus.Drawings.Implementation.dll" FileName="MODEL~15.DLL|ModelExchanger.BimPlus.Drawings.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Drawings.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Geometry.dll" Component_="ModelExchanger.BimPlus.Geometry.dll" FileName="MODEL~16.DLL|ModelExchanger.BimPlus.Geometry.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Geometry.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.Integration.Bootstrapper.dll" Component_="ModelExchanger.BimPlus.Integration.Bootstrapper.dll" FileName="MODEL~17.DLL|ModelExchanger.BimPlus.Integration.Bootstrapper.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.Integration.Bootstrapper.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.WebViewer.Contracts.dll" Component_="ModelExchanger.BimPlus.WebViewer.Contracts.dll" FileName="MODEL~18.DLL|ModelExchanger.BimPlus.WebViewer.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.WebViewer.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.WebViewer.Implementation.dll" Component_="ModelExchanger.BimPlus.WebViewer.Implementation.dll" FileName="MODEL~19.DLL|ModelExchanger.BimPlus.WebViewer.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.WebViewer.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.BimPlus.WebViewer.Models.dll" Component_="ModelExchanger.BimPlus.WebViewer.Models.dll" FileName="MODEL~20.DLL|ModelExchanger.BimPlus.WebViewer.Models.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.BimPlus.WebViewer.Models.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.Conversion.Contracts.dll" Component_="ModelExchanger.Excel.Conversion.Contracts.dll" FileName="MODEL~21.DLL|ModelExchanger.Excel.Conversion.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.Conversion.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.Conversion.Implementation.dll" Component_="ModelExchanger.Excel.Conversion.Implementation.dll" FileName="MODEL~22.DLL|ModelExchanger.Excel.Conversion.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.Conversion.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.DataAccess.Contracts.dll" Component_="ModelExchanger.Excel.DataAccess.Contracts.dll" FileName="MODEL~23.DLL|ModelExchanger.Excel.DataAccess.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.DataAccess.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.DataAccess.Implementation.dll" Component_="ModelExchanger.Excel.DataAccess.Implementation.dll" FileName="MODEL~24.DLL|ModelExchanger.Excel.DataAccess.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.DataAccess.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.DataAccess.Models.dll" Component_="ModelExchanger.Excel.DataAccess.Models.dll" FileName="MODEL~25.DLL|ModelExchanger.Excel.DataAccess.Models.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.DataAccess.Models.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Excel.Integration.Bootstrapper.dll" Component_="ModelExchanger.Excel.Integration.Bootstrapper.dll" FileName="MODEL~26.DLL|ModelExchanger.Excel.Integration.Bootstrapper.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Excel.Integration.Bootstrapper.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Json.Conversion.Contracts.dll" Component_="ModelExchanger.Json.Conversion.Contracts.dll" FileName="MODEL~27.DLL|ModelExchanger.Json.Conversion.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Json.Conversion.Contracts.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Json.Conversion.Implementation.dll" Component_="ModelExchanger.Json.Conversion.Implementation.dll" FileName="MODEL~28.DLL|ModelExchanger.Json.Conversion.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Json.Conversion.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Json.Integration.Bootstrapper.dll" Component_="ModelExchanger.Json.Integration.Bootstrapper.dll" FileName="MODEL~29.DLL|ModelExchanger.Json.Integration.Bootstrapper.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Json.Integration.Bootstrapper.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Shared.Implementation.dll" Component_="ModelExchanger.Shared.Implementation.dll" FileName="MODEL~30.DLL|ModelExchanger.Shared.Implementation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Shared.Implementation.dll" SelfReg="false"/>
+    <ROW File="ModelExchanger.Shared.Models.dll" Component_="ModelExchanger.Shared.Models.dll" FileName="MODEL~31.DLL|ModelExchanger.Shared.Models.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\ModelExchanger.Shared.Models.dll" SelfReg="false"/>
+    <ROW File="netstandard.dll" Component_="netstandard.dll" FileName="NETSTA~1.DLL|netstandard.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\netstandard.dll" SelfReg="false"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="NLog.dll" Component_="NLog.dll" FileName="NLog.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\NLog.dll" SelfReg="false"/>
+    <ROW File="protobufnet.dll" Component_="protobufnet.dll" FileName="PROTOB~1.DLL|protobuf-net.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\protobuf-net.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CalatravaLink.Contract.dll" Component_="RISAtech.CalatravaLink.Contract.dll" FileName="RISATE~1.DLL|RISAtech.CalatravaLink.Contract.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\RISAtech.CalatravaLink.Contract.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CalatravaLink.dll" Component_="RISAtech.CalatravaLink.dll" FileName="RISATE~2.DLL|RISAtech.CalatravaLink.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\RISAtech.CalatravaLink.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CalatravaLink.dll.config" Component_="RISAtech.CalatravaLink.dll.config" FileName="RISATE~1.CON|RISAtech.CalatravaLink.dll.config" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\RISAtech.CalatravaLink.dll.config" SelfReg="false"/>
+    <ROW File="SimpleInjector.dll" Component_="SimpleInjector.dll" FileName="SIMPLE~1.DLL|SimpleInjector.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\SimpleInjector.dll" SelfReg="false"/>
+    <ROW File="System.AppContext.dll" Component_="System.AppContext.dll" FileName="SYSTEM~1.DLL|System.AppContext.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.AppContext.dll" SelfReg="false"/>
+    <ROW File="System.Collections.Concurrent.dll" Component_="System.Collections.Concurrent.dll" FileName="SYSTEM~2.DLL|System.Collections.Concurrent.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Collections.Concurrent.dll" SelfReg="false"/>
+    <ROW File="System.Collections.dll" Component_="System.Collections.dll" FileName="SYSTEM~3.DLL|System.Collections.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Collections.dll" SelfReg="false"/>
+    <ROW File="System.Collections.NonGeneric.dll" Component_="System.Collections.NonGeneric.dll" FileName="SYSTEM~4.DLL|System.Collections.NonGeneric.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Collections.NonGeneric.dll" SelfReg="false"/>
+    <ROW File="System.Collections.Specialized.dll" Component_="System.Collections.Specialized.dll" FileName="SYSTEM~5.DLL|System.Collections.Specialized.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Collections.Specialized.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Annotations.dll" Component_="System.ComponentModel.Annotations.dll" FileName="SYSTEM~6.DLL|System.ComponentModel.Annotations.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ComponentModel.Annotations.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.dll" Component_="System.ComponentModel.dll" FileName="SYSTEM~7.DLL|System.ComponentModel.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ComponentModel.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.EventBasedAsync.dll" Component_="System.ComponentModel.EventBasedAsync.dll" FileName="SYSTEM~8.DLL|System.ComponentModel.EventBasedAsync.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ComponentModel.EventBasedAsync.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.Primitives.dll" Component_="System.ComponentModel.Primitives.dll" FileName="SYSTEM~9.DLL|System.ComponentModel.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ComponentModel.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.ComponentModel.TypeConverter.dll" Component_="System.ComponentModel.TypeConverter.dll" FileName="SYSTE~10.DLL|System.ComponentModel.TypeConverter.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ComponentModel.TypeConverter.dll" SelfReg="false"/>
+    <ROW File="System.Console.dll" Component_="System.Console.dll" FileName="SYSTE~11.DLL|System.Console.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Console.dll" SelfReg="false"/>
+    <ROW File="System.Data.Common.dll" Component_="System.Data.Common.dll" FileName="SYSTE~12.DLL|System.Data.Common.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Data.Common.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Contracts.dll" Component_="System.Diagnostics.Contracts.dll" FileName="SYSTE~13.DLL|System.Diagnostics.Contracts.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.Contracts.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Debug.dll" Component_="System.Diagnostics.Debug.dll" FileName="SYSTE~14.DLL|System.Diagnostics.Debug.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.Debug.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.FileVersionInfo.dll" Component_="System.Diagnostics.FileVersionInfo.dll" FileName="SYSTE~15.DLL|System.Diagnostics.FileVersionInfo.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.FileVersionInfo.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Process.dll" Component_="System.Diagnostics.Process.dll" FileName="SYSTE~16.DLL|System.Diagnostics.Process.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.Process.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.StackTrace.dll" Component_="System.Diagnostics.StackTrace.dll" FileName="SYSTE~17.DLL|System.Diagnostics.StackTrace.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.StackTrace.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.TextWriterTraceListener.dll" Component_="System.Diagnostics.TextWriterTraceListener.dll" FileName="SYSTE~18.DLL|System.Diagnostics.TextWriterTraceListener.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.TextWriterTraceListener.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Tools.dll" Component_="System.Diagnostics.Tools.dll" FileName="SYSTE~19.DLL|System.Diagnostics.Tools.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.Tools.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.TraceSource.dll" Component_="System.Diagnostics.TraceSource.dll" FileName="SYSTE~20.DLL|System.Diagnostics.TraceSource.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.TraceSource.dll" SelfReg="false"/>
+    <ROW File="System.Diagnostics.Tracing.dll" Component_="System.Diagnostics.Tracing.dll" FileName="SYSTE~21.DLL|System.Diagnostics.Tracing.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Diagnostics.Tracing.dll" SelfReg="false"/>
+    <ROW File="System.Drawing.Primitives.dll" Component_="System.Drawing.Primitives.dll" FileName="SYSTE~22.DLL|System.Drawing.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Drawing.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Dynamic.Runtime.dll" Component_="System.Dynamic.Runtime.dll" FileName="SYSTE~23.DLL|System.Dynamic.Runtime.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Dynamic.Runtime.dll" SelfReg="false"/>
+    <ROW File="System.Globalization.Calendars.dll" Component_="System.Globalization.Calendars.dll" FileName="SYSTE~24.DLL|System.Globalization.Calendars.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Globalization.Calendars.dll" SelfReg="false"/>
+    <ROW File="System.Globalization.dll" Component_="System.Globalization.dll" FileName="SYSTE~25.DLL|System.Globalization.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Globalization.dll" SelfReg="false"/>
+    <ROW File="System.Globalization.Extensions.dll" Component_="System.Globalization.Extensions.dll" FileName="SYSTE~26.DLL|System.Globalization.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Globalization.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.IO.Compression.dll" Component_="System.IO.Compression.dll" FileName="SYSTE~27.DLL|System.IO.Compression.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.Compression.dll" SelfReg="false"/>
+    <ROW File="System.IO.Compression.ZipFile.dll" Component_="System.IO.Compression.ZipFile.dll" FileName="SYSTE~28.DLL|System.IO.Compression.ZipFile.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.Compression.ZipFile.dll" SelfReg="false"/>
+    <ROW File="System.IO.dll" Component_="System.IO.dll" FileName="SYSTE~29.DLL|System.IO.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.dll" SelfReg="false"/>
+    <ROW File="System.IO.FileSystem.dll" Component_="System.IO.FileSystem.dll" FileName="SYSTE~30.DLL|System.IO.FileSystem.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.FileSystem.dll" SelfReg="false"/>
+    <ROW File="System.IO.FileSystem.DriveInfo.dll" Component_="System.IO.FileSystem.DriveInfo.dll" FileName="SYSTE~31.DLL|System.IO.FileSystem.DriveInfo.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.FileSystem.DriveInfo.dll" SelfReg="false"/>
+    <ROW File="System.IO.FileSystem.Primitives.dll" Component_="System.IO.FileSystem.Primitives.dll" FileName="SYSTE~32.DLL|System.IO.FileSystem.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.FileSystem.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.IO.FileSystem.Watcher.dll" Component_="System.IO.FileSystem.Watcher.dll" FileName="SYSTE~33.DLL|System.IO.FileSystem.Watcher.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.FileSystem.Watcher.dll" SelfReg="false"/>
+    <ROW File="System.IO.IsolatedStorage.dll" Component_="System.IO.IsolatedStorage.dll" FileName="SYSTE~34.DLL|System.IO.IsolatedStorage.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.IsolatedStorage.dll" SelfReg="false"/>
+    <ROW File="System.IO.MemoryMappedFiles.dll" Component_="System.IO.MemoryMappedFiles.dll" FileName="SYSTE~35.DLL|System.IO.MemoryMappedFiles.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.MemoryMappedFiles.dll" SelfReg="false"/>
+    <ROW File="System.IO.Pipes.dll" Component_="System.IO.Pipes.dll" FileName="SYSTE~36.DLL|System.IO.Pipes.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.Pipes.dll" SelfReg="false"/>
+    <ROW File="System.IO.UnmanagedMemoryStream.dll" Component_="System.IO.UnmanagedMemoryStream.dll" FileName="SYSTE~37.DLL|System.IO.UnmanagedMemoryStream.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.IO.UnmanagedMemoryStream.dll" SelfReg="false"/>
+    <ROW File="System.Linq.dll" Component_="System.Linq.dll" FileName="SYSTE~38.DLL|System.Linq.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Linq.dll" SelfReg="false"/>
+    <ROW File="System.Linq.Expressions.dll" Component_="System.Linq.Expressions.dll" FileName="SYSTE~39.DLL|System.Linq.Expressions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Linq.Expressions.dll" SelfReg="false"/>
+    <ROW File="System.Linq.Parallel.dll" Component_="System.Linq.Parallel.dll" FileName="SYSTE~40.DLL|System.Linq.Parallel.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Linq.Parallel.dll" SelfReg="false"/>
+    <ROW File="System.Linq.Queryable.dll" Component_="System.Linq.Queryable.dll" FileName="SYSTE~41.DLL|System.Linq.Queryable.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Linq.Queryable.dll" SelfReg="false"/>
+    <ROW File="System.Net.Http.dll" Component_="System.Net.Http.dll" FileName="SYSTE~42.DLL|System.Net.Http.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Http.dll" SelfReg="false"/>
+    <ROW File="System.Net.NameResolution.dll" Component_="System.Net.NameResolution.dll" FileName="SYSTE~43.DLL|System.Net.NameResolution.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.NameResolution.dll" SelfReg="false"/>
+    <ROW File="System.Net.NetworkInformation.dll" Component_="System.Net.NetworkInformation.dll" FileName="SYSTE~44.DLL|System.Net.NetworkInformation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.NetworkInformation.dll" SelfReg="false"/>
+    <ROW File="System.Net.Ping.dll" Component_="System.Net.Ping.dll" FileName="SYSTE~45.DLL|System.Net.Ping.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Ping.dll" SelfReg="false"/>
+    <ROW File="System.Net.Primitives.dll" Component_="System.Net.Primitives.dll" FileName="SYSTE~46.DLL|System.Net.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Net.Requests.dll" Component_="System.Net.Requests.dll" FileName="SYSTE~47.DLL|System.Net.Requests.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Requests.dll" SelfReg="false"/>
+    <ROW File="System.Net.Security.dll" Component_="System.Net.Security.dll" FileName="SYSTE~48.DLL|System.Net.Security.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Security.dll" SelfReg="false"/>
+    <ROW File="System.Net.Sockets.dll" Component_="System.Net.Sockets.dll" FileName="SYSTE~49.DLL|System.Net.Sockets.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.Sockets.dll" SelfReg="false"/>
+    <ROW File="System.Net.WebHeaderCollection.dll" Component_="System.Net.WebHeaderCollection.dll" FileName="SYSTE~50.DLL|System.Net.WebHeaderCollection.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.WebHeaderCollection.dll" SelfReg="false"/>
+    <ROW File="System.Net.WebSockets.Client.dll" Component_="System.Net.WebSockets.Client.dll" FileName="SYSTE~51.DLL|System.Net.WebSockets.Client.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.WebSockets.Client.dll" SelfReg="false"/>
+    <ROW File="System.Net.WebSockets.dll" Component_="System.Net.WebSockets.dll" FileName="SYSTE~52.DLL|System.Net.WebSockets.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Net.WebSockets.dll" SelfReg="false"/>
+    <ROW File="System.ObjectModel.dll" Component_="System.ObjectModel.dll" FileName="SYSTE~53.DLL|System.ObjectModel.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ObjectModel.dll" SelfReg="false"/>
+    <ROW File="System.Reflection.dll" Component_="System.Reflection.dll" FileName="SYSTE~54.DLL|System.Reflection.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Reflection.dll" SelfReg="false"/>
+    <ROW File="System.Reflection.Extensions.dll" Component_="System.Reflection.Extensions.dll" FileName="SYSTE~55.DLL|System.Reflection.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Reflection.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Reflection.Primitives.dll" Component_="System.Reflection.Primitives.dll" FileName="SYSTE~56.DLL|System.Reflection.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Reflection.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Resources.Reader.dll" Component_="System.Resources.Reader.dll" FileName="SYSTE~57.DLL|System.Resources.Reader.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Resources.Reader.dll" SelfReg="false"/>
+    <ROW File="System.Resources.ResourceManager.dll" Component_="System.Resources.ResourceManager.dll" FileName="SYSTE~58.DLL|System.Resources.ResourceManager.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Resources.ResourceManager.dll" SelfReg="false"/>
+    <ROW File="System.Resources.Writer.dll" Component_="System.Resources.Writer.dll" FileName="SYSTE~59.DLL|System.Resources.Writer.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Resources.Writer.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.VisualC.dll" Component_="System.Runtime.CompilerServices.VisualC.dll" FileName="SYSTE~60.DLL|System.Runtime.CompilerServices.VisualC.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.CompilerServices.VisualC.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.dll" Component_="System.Runtime.dll" FileName="SYSTE~61.DLL|System.Runtime.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Extensions.dll" Component_="System.Runtime.Extensions.dll" FileName="SYSTE~62.DLL|System.Runtime.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Handles.dll" Component_="System.Runtime.Handles.dll" FileName="SYSTE~63.DLL|System.Runtime.Handles.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Handles.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.InteropServices.dll" Component_="System.Runtime.InteropServices.dll" FileName="SYSTE~64.DLL|System.Runtime.InteropServices.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.InteropServices.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.InteropServices.RuntimeInformation.dll" Component_="System.Runtime.InteropServices.RuntimeInformation.dll" FileName="SYSTE~65.DLL|System.Runtime.InteropServices.RuntimeInformation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.InteropServices.RuntimeInformation.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Numerics.dll" Component_="System.Runtime.Numerics.dll" FileName="SYSTE~66.DLL|System.Runtime.Numerics.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Numerics.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Serialization.Formatters.dll" Component_="System.Runtime.Serialization.Formatters.dll" FileName="SYSTE~67.DLL|System.Runtime.Serialization.Formatters.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Serialization.Formatters.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Serialization.Json.dll" Component_="System.Runtime.Serialization.Json.dll" FileName="SYSTE~68.DLL|System.Runtime.Serialization.Json.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Serialization.Json.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Serialization.Primitives.dll" Component_="System.Runtime.Serialization.Primitives.dll" FileName="SYSTE~69.DLL|System.Runtime.Serialization.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Serialization.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.Serialization.Xml.dll" Component_="System.Runtime.Serialization.Xml.dll" FileName="SYSTE~70.DLL|System.Runtime.Serialization.Xml.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Runtime.Serialization.Xml.dll" SelfReg="false"/>
+    <ROW File="System.Security.Claims.dll" Component_="System.Security.Claims.dll" FileName="SYSTE~71.DLL|System.Security.Claims.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Claims.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Algorithms.dll" Component_="System.Security.Cryptography.Algorithms.dll" FileName="SYSTE~72.DLL|System.Security.Cryptography.Algorithms.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Cryptography.Algorithms.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Csp.dll" Component_="System.Security.Cryptography.Csp.dll" FileName="SYSTE~73.DLL|System.Security.Cryptography.Csp.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Cryptography.Csp.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Encoding.dll" Component_="System.Security.Cryptography.Encoding.dll" FileName="SYSTE~74.DLL|System.Security.Cryptography.Encoding.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Cryptography.Encoding.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.Primitives.dll" Component_="System.Security.Cryptography.Primitives.dll" FileName="SYSTE~75.DLL|System.Security.Cryptography.Primitives.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Cryptography.Primitives.dll" SelfReg="false"/>
+    <ROW File="System.Security.Cryptography.X509Certificates.dll" Component_="System.Security.Cryptography.X509Certificates.dll" FileName="SYSTE~76.DLL|System.Security.Cryptography.X509Certificates.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Cryptography.X509Certificates.dll" SelfReg="false"/>
+    <ROW File="System.Security.Principal.dll" Component_="System.Security.Principal.dll" FileName="SYSTE~77.DLL|System.Security.Principal.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.Principal.dll" SelfReg="false"/>
+    <ROW File="System.Security.SecureString.dll" Component_="System.Security.SecureString.dll" FileName="SYSTE~78.DLL|System.Security.SecureString.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Security.SecureString.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encoding.dll" Component_="System.Text.Encoding.dll" FileName="SYSTE~79.DLL|System.Text.Encoding.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Text.Encoding.dll" SelfReg="false"/>
+    <ROW File="System.Text.Encoding.Extensions.dll" Component_="System.Text.Encoding.Extensions.dll" FileName="SYSTE~80.DLL|System.Text.Encoding.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Text.Encoding.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Text.RegularExpressions.dll" Component_="System.Text.RegularExpressions.dll" FileName="SYSTE~81.DLL|System.Text.RegularExpressions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Text.RegularExpressions.dll" SelfReg="false"/>
+    <ROW File="System.Threading.dll" Component_="System.Threading.dll" FileName="SYSTE~82.DLL|System.Threading.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Overlapped.dll" Component_="System.Threading.Overlapped.dll" FileName="SYSTE~83.DLL|System.Threading.Overlapped.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.Overlapped.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.dll" Component_="System.Threading.Tasks.dll" FileName="SYSTE~84.DLL|System.Threading.Tasks.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.Tasks.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Parallel.dll" Component_="System.Threading.Tasks.Parallel.dll" FileName="SYSTE~85.DLL|System.Threading.Tasks.Parallel.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.Tasks.Parallel.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Thread.dll" Component_="System.Threading.Thread.dll" FileName="SYSTE~86.DLL|System.Threading.Thread.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.Thread.dll" SelfReg="false"/>
+    <ROW File="System.Threading.ThreadPool.dll" Component_="System.Threading.ThreadPool.dll" FileName="SYSTE~87.DLL|System.Threading.ThreadPool.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.ThreadPool.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Timer.dll" Component_="System.Threading.Timer.dll" FileName="SYSTE~88.DLL|System.Threading.Timer.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Threading.Timer.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll_1" Component_="System.ValueTuple.dll_1" FileName="SYSTE~89.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="System.Xml.ReaderWriter.dll" Component_="System.Xml.ReaderWriter.dll" FileName="SYSTE~90.DLL|System.Xml.ReaderWriter.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.ReaderWriter.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XDocument.dll" Component_="System.Xml.XDocument.dll" FileName="SYSTE~91.DLL|System.Xml.XDocument.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.XDocument.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XmlDocument.dll" Component_="System.Xml.XmlDocument.dll" FileName="SYSTE~92.DLL|System.Xml.XmlDocument.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.XmlDocument.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XmlSerializer.dll" Component_="System.Xml.XmlSerializer.dll" FileName="SYSTE~93.DLL|System.Xml.XmlSerializer.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.XmlSerializer.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XPath.dll" Component_="System.Xml.XPath.dll" FileName="SYSTE~94.DLL|System.Xml.XPath.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.XPath.dll" SelfReg="false"/>
+    <ROW File="System.Xml.XPath.XDocument.dll" Component_="System.Xml.XPath.XDocument.dll" FileName="SYSTE~95.DLL|System.Xml.XPath.XDocument.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\System.Xml.XPath.XDocument.dll" SelfReg="false"/>
+    <ROW File="Triangle.dll" Component_="Triangle.dll" FileName="Triangle.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\Triangle.dll" SelfReg="false"/>
+    <ROW File="UnitsNet.dll" Component_="UnitsNet.dll" FileName="UnitsNet.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\SAF-3D\UnitsNet.dll" SelfReg="false"/>
+    <ROW File="RISAtech.Draw.dll_1" Component_="RISAtech.Draw.dll_1" FileName="RISATE~5.DLL|RISAtech.Draw.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\RISAtech.Draw.dll" SelfReg="false"/>
+    <ROW File="System.ValueTuple.dll_2" Component_="System.ValueTuple.dll_2" FileName="SYSTEM~3.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup\Bin\RISA-3D\System.ValueTuple.dll" SelfReg="false"/>
+    <ROW File="RISAtech.Draw.dll_2" Component_="RISAtech.Draw.dll_2" FileName="RISATE~5.DLL|RISAtech.Draw.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\Bin\RISA-3D\RISAtech.Draw.dll" SelfReg="false"/>
+    <ROW File="NLog.dll_1" Component_="NLog.dll_1" FileName="NLog.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\Bin\SAF-3D\NLog.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiInstallUISequenceAliasComponent">
     <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="#MsiBuild:69"/>
@@ -1137,6 +1442,158 @@
     <ROW Feature_="MainFeature" Component_="RISAtech.Draw.R3D.dll_2"/>
     <ROW Feature_="MainFeature" Component_="RISAtech.GlibVideo.dll_2"/>
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.Draw.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll"/>
+    <ROW Feature_="MainFeature" Component_="AutoMapper.dll"/>
+    <ROW Feature_="MainFeature" Component_="CSInfrastructure.dll"/>
+    <ROW Feature_="MainFeature" Component_="EPPlus.dll"/>
+    <ROW Feature_="MainFeature" Component_="ExcelDataReader.DataSet.dll"/>
+    <ROW Feature_="MainFeature" Component_="ExcelDataReader.dll"/>
+    <ROW Feature_="MainFeature" Component_="FluentValidation.dll"/>
+    <ROW Feature_="MainFeature" Component_="Infrastructure.Geometry.dll"/>
+    <ROW Feature_="MainFeature" Component_="MathNet.Numerics.dll"/>
+    <ROW Feature_="MainFeature" Component_="MathNet.Spatial.dll"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.Win32.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.AnalysisDataModel.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.AnalysisDataModel.DataBuilders.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.AnalysisDataModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.AnalysisDataModel.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.AnalysisDataModel.Integration.Bootstrapper.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Client.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Client.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Client.Models.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Conversion.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Conversion.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.DataAccess.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.DataAccess.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.DataAccess.Models.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Drawings.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Drawings.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Geometry.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.Integration.Bootstrapper.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.WebViewer.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.WebViewer.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.BimPlus.WebViewer.Models.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.Conversion.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.Conversion.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.DataAccess.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.DataAccess.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.DataAccess.Models.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Excel.Integration.Bootstrapper.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Json.Conversion.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Json.Conversion.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Json.Integration.Bootstrapper.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Shared.Implementation.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModelExchanger.Shared.Models.dll"/>
+    <ROW Feature_="MainFeature" Component_="netstandard.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="NLog.dll"/>
+    <ROW Feature_="MainFeature" Component_="protobufnet.dll"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.CalatravaLink.Contract.dll"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.CalatravaLink.dll"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.CalatravaLink.dll.config"/>
+    <ROW Feature_="MainFeature" Component_="SimpleInjector.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.AppContext.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Collections.Concurrent.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Collections.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Collections.NonGeneric.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Collections.Specialized.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Annotations.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.EventBasedAsync.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ComponentModel.TypeConverter.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Console.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Data.Common.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Contracts.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Debug.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.FileVersionInfo.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Process.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.StackTrace.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.TextWriterTraceListener.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Tools.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.TraceSource.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Diagnostics.Tracing.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Drawing.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Dynamic.Runtime.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Globalization.Calendars.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Globalization.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Globalization.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Compression.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Compression.ZipFile.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.FileSystem.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.FileSystem.DriveInfo.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.FileSystem.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.FileSystem.Watcher.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.IsolatedStorage.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.MemoryMappedFiles.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.Pipes.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.IO.UnmanagedMemoryStream.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Linq.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Linq.Expressions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Linq.Parallel.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Linq.Queryable.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Http.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.NameResolution.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.NetworkInformation.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Ping.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Requests.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Security.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.Sockets.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.WebHeaderCollection.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.WebSockets.Client.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Net.WebSockets.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ObjectModel.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Reflection.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Reflection.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Reflection.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Resources.Reader.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Resources.ResourceManager.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Resources.Writer.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.CompilerServices.VisualC.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Handles.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.InteropServices.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.InteropServices.RuntimeInformation.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Numerics.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Serialization.Formatters.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Serialization.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Runtime.Serialization.Xml.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Claims.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Algorithms.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Csp.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Encoding.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.Primitives.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Cryptography.X509Certificates.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.Principal.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Security.SecureString.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encoding.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.Encoding.Extensions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Text.RegularExpressions.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Overlapped.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Tasks.Parallel.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Thread.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.ThreadPool.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Threading.Timer.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.ReaderWriter.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XDocument.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XmlDocument.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XmlSerializer.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XPath.dll"/>
+    <ROW Feature_="MainFeature" Component_="System.Xml.XPath.XDocument.dll"/>
+    <ROW Feature_="MainFeature" Component_="Triangle.dll"/>
+    <ROW Feature_="MainFeature" Component_="UnitsNet.dll"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.Draw.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="System.ValueTuple.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="RISAtech.Draw.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="NLog.dll_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="D.exe" SourcePath="..\Assets\3D.ico" Index="0"/>
@@ -1284,7 +1741,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
-    <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29913.0" Order="2" Property="PreReqSearch_2"/>
+    <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29325" Order="2" Property="PreReqSearch_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
     <ROW Directory_="DemoBackup_Dir" SourcePath="..\..\..\Source Files\RISA-3D_dotNET\Exes\DemoBackup" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
