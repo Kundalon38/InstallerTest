@@ -3,7 +3,11 @@ using System.IO;
 
 namespace RISA_CustomActionsLib.Models.Linked
 {
-    public class SiLog
+    public interface ISiLog
+    {
+        void Write(string who, string msg);
+    }
+    public class SiLog : ISiLog
     {
         public SiLog(string fn, bool append = true)
         {
@@ -23,7 +27,7 @@ namespace RISA_CustomActionsLib.Models.Linked
             try
             {
                 const string dtFmt = "dd-MMM-yy HH:mm:ss";
-                _sw.WriteLine($"{DateTime.Now.ToString(dtFmt)} {who} {msg}");
+                _sw.WriteLine($"{DateTime.Now.ToString(dtFmt)} {who} - {msg}");
                 _sw.Flush();    // file is never explicitly Close()d, often the best is written last
             }
             catch (Exception)

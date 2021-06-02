@@ -82,7 +82,7 @@
     <Compile Include="Models\Linked\InstallerVendorRegistry.cs" />
     <Compile Include="Models\Linked\CmdLineProperty.cs" />
     <Compile Include="Models\Linked\SiError.cs" />
-    <Compile Include="Models\Linked\SilentResult.cs" />
+    <Compile Include="Models\SilentResult.cs" />
     <Compile Include="Models\Linked\SiLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\SessionDTO.cs" />

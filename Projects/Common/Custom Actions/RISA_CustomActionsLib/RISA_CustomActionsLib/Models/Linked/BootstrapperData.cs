@@ -123,7 +123,8 @@ namespace RISA_CustomActionsLib.Models.Linked
                 return false;
             }
             if (_supportedProductNames.Contains(ProductName)) return true;
-            addErr($"Unsupported Product Name for Silent Install: {ProductName}");
+            if(ProductName.Contains("Demo")) addErr($"Unsupported Demo product for Silent Install: {ProductName}");
+            else addErr($"Unsupported product for Silent Install: {ProductName}");
             return false;
         }
 
@@ -296,10 +297,13 @@ namespace RISA_CustomActionsLib.Models.Linked
         private readonly string[] _supportedSiPropNames = { _propInsDir, _propPgmGrp, _propRegion, _propUpdate, _propLicType, _propLogFile, _propIniFile };
 
         private const string _allValidRegions = "012345678";
-        private const string _allValidUpdates = "YN";
+
         private const string _ltCloud = "Subscription";
         private const string _ltNetwork = "Network";
         private const string _ltKey = "Key";
+        private const string _ansYes = "Yes";
+        private const string _ansNo = "No";
+
 
         public bool ValidatePropertyValues()
         {
@@ -350,14 +354,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                         break;
 
                     case _propUpdate:
-                        if (siProp.PropValue.Length != 1)
-                        {
-                            addErr($"Invalid property value in: {siProp.ToString()}");
-                            retSts = false;
-                            break;
-                        }
-                        var updNdx = _allValidUpdates.IndexOf(siProp.PropValue);
-                        if (updNdx < 0)
+                        if (siProp.PropValue != _ansYes && siProp.PropValue != _ansNo)
                         {
                             addErr($"Invalid property value in: {siProp.ToString()}");
                             retSts = false;
