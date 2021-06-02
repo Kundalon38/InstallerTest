@@ -126,7 +126,7 @@ namespace RISA_CustomActionsLib
                 if (!validProductName(sessDTO)) return;
                 if (!processProductVersion(sessDTO)) return;
                 if (!validInstallType(sessDTO)) return;
-                if (!noRISAproductsAreRunning(sessDTO)) return;
+                if (anyRISAproductsActive(sessDTO)) return;
 
                 assignVersionBasedProperties(sessDTO);
                 if(!serializeMatchingInstalledProducts(sessDTO)) return;
@@ -220,22 +220,14 @@ namespace RISA_CustomActionsLib
 
         #region InitProperties - ensure no products are running
 
-        public static bool noRISAproductsAreRunning(SessionDTO sessDTO)
+        public static bool anyRISAproductsActive(SessionDTO sessDTO)
         {
-            // exclude risaservice because 1) it's not a product and 2) probing it may throw Access denied excp
-            // shutting down risaservice is directly handled by those installers that need to update it
-
-            // merely testing the process names is shaky, esp a common name like "adapt"
-            // - deeper probing is possible if tricky, see the "stash for possible future need" region below
-
-            var allProcessNamesLC = Process.GetProcesses().Select(x => x.ProcessName.ToLower());
-            var risaProcessNamesLC = allProcessNamesLC
-                .Where(x => (x.StartsWith("risa") || x.StartsWith("adapt")) && x != "risaservice");
-
-            if (!risaProcessNamesLC.Any()) return true;
-            const string methodName = "noRISAproductsAreRunning";
-            return reportError(sessDTO, methodName, _sts_ERR_PRODUCT_ACTIVE,
+            if (!anyRISAproductsActive()) return false;
+            const string methodName = "anyRISAproductsActive";
+            return !reportError(sessDTO, methodName, _sts_ERR_PRODUCT_ACTIVE,
                 $"Other RISA/ADAPT product(s) are active.  Please save your work, close them and restart this installer.");
+
+
 
             #region stash for possible future need
 
@@ -263,6 +255,22 @@ namespace RISA_CustomActionsLib
 
             #endregion
         }
+
+        public static bool anyRISAproductsActive()
+        {
+            // exclude risaservice because 1) it's not a product and 2) probing it may throw Access denied excp
+            // shutting down risaservice is directly handled by those installers that need to update it
+
+            // merely testing the process names is shaky, esp a common name like "adapt"
+            // - deeper probing is possible if tricky, see the "stash for possible future need" region below
+
+            var allProcessNamesLC = Process.GetProcesses().Select(x => x.ProcessName.ToLower());
+            var risaProcessNamesLC = allProcessNamesLC
+                .Where(x => (x.StartsWith("risa") || x.StartsWith("adapt")) && x != "risaservice");
+
+            return risaProcessNamesLC.Any();
+        }
+
 
         #endregion
 

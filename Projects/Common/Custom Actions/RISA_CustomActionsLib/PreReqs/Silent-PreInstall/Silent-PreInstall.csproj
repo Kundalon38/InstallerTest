@@ -75,6 +75,9 @@
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData_findBootstrapper.cs">
       <Link>Models\Linked\BootstrapperData_findBootstrapper.cs</Link>
     </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperTestData.cs">
+      <Link>Models\Linked\BootstrapperTestData.cs</Link>
+    </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CmdLineProperty.cs">
       <Link>Models\Linked\CmdLineProperty.cs</Link>
     </Compile>
@@ -83,6 +86,15 @@
     </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\Extensions.cs">
       <Link>Models\Linked\Extensions.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstalledProduct.cs">
+      <Link>Models\Linked\InstalledProduct.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstalledProductList.cs">
+      <Link>Models\Linked\InstalledProductList.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstallerVendorRegistry.cs">
+      <Link>Models\Linked\InstallerVendorRegistry.cs</Link>
     </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiError.cs">
       <Link>Models\Linked\SiError.cs</Link>

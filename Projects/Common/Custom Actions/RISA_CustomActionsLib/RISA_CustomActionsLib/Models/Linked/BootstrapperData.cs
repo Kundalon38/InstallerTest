@@ -12,23 +12,34 @@ namespace RISA_CustomActionsLib.Models.Linked
 
     public partial class BootstrapperData
     {
-        public BootstrapperData()
+        public BootstrapperData(BootstrapperTestData testData = null)
         {
             // exists to collect errors - which may be logged - before cmdLine is found
+            // if testData is not null, init BootstrapperData with test data
+            // 
+            if (testData == null) return;
+            ctor_common(testData.CmdLine);
+            ExeFullName = testData.ExeFullName;
+            ProductName = testData.ProductName;
+            ProductVersionStr = testData.ProductVersionStr;
         }
 
         public BootstrapperData(string cmdLine, List<SiError> previousErrs = null)
         {
             if (previousErrs != null) ErrorList = previousErrs;
+            ctor_common(cmdLine);
+        }
+
+        private void ctor_common(string cmdLine)
+        {
             if (cmdLine == null) return;
 
             CmdLine = cmdLine;
-            var cmdLineUC = cmdLine.ToUpper();
-            IsSilent = cmdLineUC.Contains(@"/Q");
+            IsSilent = cmdLine.ToUpper().Contains(@"/Q");
         }
 
-        public string CmdLine { get; }
-        public bool IsSilent { get; }
+        public string CmdLine { get; private set; }
+        public bool IsSilent { get; private set; }
 
         #region Logging
 
@@ -148,8 +159,6 @@ namespace RISA_CustomActionsLib.Models.Linked
 
         #region Parse CmdLine
 
-        public List<CmdLineProperty> CmdLineProperties { get; } = new List<CmdLineProperty>();
-
         private enum eParseState
         {
             Initial,
@@ -159,6 +168,7 @@ namespace RISA_CustomActionsLib.Models.Linked
             MidExpressionEq,
             InPropValue
         }
+        public List<CmdLineProperty> CmdLineProperties { get; } = new List<CmdLineProperty>();
 
         public bool ParseCmdLine()
         {
@@ -271,6 +281,10 @@ namespace RISA_CustomActionsLib.Models.Linked
             return false;
         }
 
+        #endregion
+
+        #region Validate Properties
+
         private const string _propInsDir = "SIDIR";
         private const string _propPgmGrp = "SIGRP";
         private const string _propRegion = "SIRGN";
@@ -278,6 +292,122 @@ namespace RISA_CustomActionsLib.Models.Linked
         private const string _propLicType = "SILTY";
         private const string _propLogFile = "SILOG";
         private const string _propIniFile = "SINIF";
+
+        private readonly string[] _supportedSiPropNames = { _propInsDir, _propPgmGrp, _propRegion, _propUpdate, _propLicType, _propLogFile, _propIniFile };
+
+        private const string _allValidRegions = "012345678";
+        private const string _allValidUpdates = "YN";
+        private const string _ltCloud = "Subscription";
+        private const string _ltNetwork = "Network";
+        private const string _ltKey = "Key";
+
+        public bool ValidatePropertyValues()
+        {
+            // ignore all but SI* cmd line properties - these are stored UpperCase
+            var retSts = true;
+            var siProps = CmdLineProperties.Where(x => x.PropName.StartsWith("SI")).ToList();
+
+            var iniFileKvp = siProps.SingleOrDefault(x => x.PropName == _propIniFile);
+            if(iniFileKvp != null)
+            {
+                try
+                {
+                    if (!File.Exists(iniFileKvp.PropValue))
+                        throw new ApplicationException();   // complete processing in catch block
+                }
+                catch (Exception e)
+                {
+                    addErr($"Can't open file: {iniFileKvp.ToString()}");
+                    return false;
+                }
+                // TODO process iniFile - how to merge properties for one set of processing?
+            }
+
+            foreach (var siProp in siProps)
+            {
+                switch (siProp.PropName)
+                {
+                    case _propRegion:
+                        if (siProp.PropValue.Length != 1)
+                        {
+                            addErr($"Invalid Region code in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        var rgnNdx = _allValidRegions.IndexOf(siProp.PropValue);
+                        if (rgnNdx < 0)
+                        {
+                            addErr($"Invalid Region code in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        if (ProductName == _prodCN && rgnNdx > 1)
+                        {
+                            addErr($"Invalid Region code for {_prodCN} in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        break;
+
+                    case _propUpdate:
+                        if (siProp.PropValue.Length != 1)
+                        {
+                            addErr($"Invalid property value in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        var updNdx = _allValidUpdates.IndexOf(siProp.PropValue);
+                        if (updNdx < 0)
+                        {
+                            addErr($"Invalid property value in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        break;
+
+                    case _propLicType:
+                        if (siProp.PropValue != _ltCloud && siProp.PropValue != _ltKey && siProp.PropValue != _ltNetwork)
+                        {
+                            addErr($"Invalid License Type in: {siProp.ToString()}");
+                            retSts = false;
+                            break;
+                        }
+                        break;
+
+                    default:
+                        if (!Array.Exists(_supportedSiPropNames, el => el == siProp.PropName))
+                        {
+                            addErr($"Invalid Property: {siProp.PropName}");
+                            retSts = false;
+                        }
+                        break;
+                }
+            }
+            return retSts;
+        }
+
+        #endregion
+
+        #region Install Old over New
+
+        public bool IsInstallOldOverNew(InstalledProductList insProdList)
+        {
+            const string insTypeStandalone = "Standalone";
+            foreach (var installed in insProdList)
+            {
+                if (installed.ProductName != ProductName) continue;
+                if (installed.InstallType != insTypeStandalone) continue;
+                if (installed.ProductVersion.CompareTo(ProductVersionStr.ToVersion()) <= 0) continue;
+
+                var errmsg = $"Installing older version of {installed.ProductName}" +
+                             $"{insTypeStandalone} ({ProductVersionStr})" +
+                             $" when newer version {installed.ProductVersion} is already installed";
+
+                addErr(errmsg);
+                return true;
+            }
+            return false;
+        }
 
         #endregion
 

@@ -15,34 +15,51 @@ namespace RISA_CustomActionsLib
         [CustomAction]
         public static ActionResult SilentValidate(Session session)
         {
+            return SilentValidate();
+        }
+
+        public static ActionResult SilentValidate(BootstrapperTestData testData = null)
+        {
+            // cull out for testing
             //_doTrace = true;    // set False for production use; use CmdLine LOG instead
 
             const string methodName = "SilentValidate";
-            var bootData = BootstrapperData.FindBootstrapperFromCA();
+            var bootData = BootstrapperData.FindBootstrapperFromCA(testData);
             if (bootData == null) return ActionResult.Success;
             if (!bootData.IsSilent) return ActionResult.Success;
 
             var validParse = bootData.ParseCmdLine();
             _log = new SiLog(bootData.LogFileName, false);
 
-            foreach(var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
             if (!validParse || bootData.ErrorList.Any(x => x.IsFatal)) return ActionResult.Failure;
-            bootData.ErrorList.Clear();
 
+            bootData.ErrorList.Clear();
             var validProduct = bootData.ValidateProduct();
             var validVersion = bootData.ValidateVersion();
             foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
             if (!validProduct || validVersion) return ActionResult.Failure;
+
             bootData.ErrorList.Clear();
-
-            var validProperties = bootData.ValidateProperties();
-
+            var validProperties = bootData.ValidatePropertyValues();
             foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
-            if (!validProduct) return ActionResult.Failure;
+            if (!validProperties) return ActionResult.Failure;
+
             bootData.ErrorList.Clear();
+            var insProductList = findInstalledProducts(bootData.ProductName);
+            var installOldOverNew = bootData.IsInstallOldOverNew(insProductList);
+            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            if (installOldOverNew) return ActionResult.Failure;
 
+            if (!anyRISAproductsActive()) return ActionResult.Success;
+
+            bootData.ErrorList.Clear();
+            var errmsg = $"Other RISA/ADAPT product(s) are active.  Please save your work, close them and restart this installer.";
+            bootData.ErrorList.Add(new SiError(errmsg));
+            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            return ActionResult.Failure;
         }
-        private static SiLog _log;
 
+        private static SiLog _log;
     }
 }

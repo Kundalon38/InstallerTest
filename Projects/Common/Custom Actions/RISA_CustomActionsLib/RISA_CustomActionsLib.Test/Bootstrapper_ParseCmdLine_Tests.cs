@@ -10,7 +10,7 @@ using BootstrapperData = RISA_CustomActionsLib.Models.Linked.BootstrapperData;
 namespace RISA_CustomActionsLib.Test
 {
     [TestClass]
-    public class BootstrapperData_Tests:TestBase
+    public class Bootstrapper_ParseCmdLine_Tests : TestBase
     {
         public const string dq = @"""";
         public const string myProp = "MYPROP";
@@ -20,7 +20,7 @@ namespace RISA_CustomActionsLib.Test
 
         // naming: exe_slashQ_propValuePair
 
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exe_slashQ_propValuePair_OK()
         {
             var cmdLine = $@"install_3d_1900.exe /qn {myProp}={dq}{myPropValue}{dq}";
@@ -33,7 +33,7 @@ namespace RISA_CustomActionsLib.Test
             Assert.IsTrue(true);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exeSlashQ_propValuePair_OK()
         {
             var cmdLine = $@"install_3d_1900.exe/qn {myProp}={dq}{myPropValue}{dq}";
@@ -46,7 +46,7 @@ namespace RISA_CustomActionsLib.Test
             Assert.IsTrue(true);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exe_NotSilent_OK()
         {
             var cmdLine = $@"install_3d_1900.exe {myProp}={dq}{myPropValue}{dq}";
@@ -55,7 +55,7 @@ namespace RISA_CustomActionsLib.Test
             expecting(bd.CmdLineProperties.Count == 0);
             Assert.IsTrue(true);
         }
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exeSlashQ_propValuePair2_OK()
         {
             var cmdLine = $@"install_3d_1900.exe/qn {myProp}={dq}{myPropValue}{dq} {myProp2}={dq}{myProp2Value}{dq}";
@@ -70,7 +70,7 @@ namespace RISA_CustomActionsLib.Test
             Assert.IsTrue(true);
         }
 
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exeSlashQ_propValuePair_NoDq_Bad()
         {
             var cmdLine = $@"install_3d_1900.exe/qn {myProp}={myPropValue}";
@@ -82,7 +82,7 @@ namespace RISA_CustomActionsLib.Test
             Console.WriteLine(bd.ErrorList[0].Text);
             Assert.IsTrue(true);
         }
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exeSlashQ_propValuePair_NoEq_Bad()
         {
             var cmdLine = $@"install_3d_1900.exe/qn {myProp} {myPropValue}";
@@ -94,7 +94,7 @@ namespace RISA_CustomActionsLib.Test
             Console.WriteLine(bd.ErrorList[0].Text);
             Assert.IsTrue(true);
         }
-        [TestMethod]
+        [TestMethod, TestCategory("ParseCmdLine")]
         public void TestCmd_exeSlashQ_propValuePair2_MissingTerminatorBad()
         {
             var cmdLine = $@"install_3d_1900.exe/qn {myProp}={dq}{myPropValue}{dq} {myProp2}={dq}{myProp2Value}";

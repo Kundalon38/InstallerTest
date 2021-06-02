@@ -11,7 +11,7 @@ namespace RISA_CustomActionsLib
     {
         public static bool serializeMatchingInstalledProducts(SessionDTO sessDTO)
         {
-            var insProdList = findInstalledProducts(sessDTO);
+            var insProdList = findInstalledProducts(sessDTO[_propMSI_ProductName]);
             //
             // return F if incoming product is older than newer one already installed
             // return T otherwise, plus the serialized installed product list in _propRISA_INSTALLED_PRODUCTS
@@ -22,7 +22,7 @@ namespace RISA_CustomActionsLib
             foreach (var installed in insProdList)
             {
                 if (installed.ProductName != sessDTO[_propMSI_ProductName]) continue;
-                if (installed.InStallType != sessDTO[_propRISA_INSTALL_TYPE]) continue;
+                if (installed.InstallType != sessDTO[_propRISA_INSTALL_TYPE]) continue; // TODO if-condition repeated 2x
                 if (installed.ProductVersion.CompareTo(sessDTO[_propMSI_ProductVersion].ToVersion()) <= 0) continue;
                 {
                     // installed Version is newer than incoming Version - the only possible user error at this point
@@ -30,7 +30,7 @@ namespace RISA_CustomActionsLib
 
                     sessDTO[_propRISA_STATUS_CODE] = _sts_ERR_INSTALL_OLD_VERSION;
                     sessDTO[_propRISA_STATUS_TEXT] = $"Installing older version of {installed.ProductName}" +
-                                                     $"{displayedInstallType(installed.InStallType)}" +
+                                                     $"{displayedInstallType(installed.InstallType)}" +
                                                      $" ({sessDTO[_propMSI_ProductVersion]})" +
                                                      $" when newer version {installed.ProductVersion} is already installed";
                     return false;
@@ -42,9 +42,8 @@ namespace RISA_CustomActionsLib
             return true;
         }
 
-        public static InstalledProductList findInstalledProducts(SessionDTO sessDTO)
+        public static InstalledProductList findInstalledProducts(string productName)
         {
-            var productName = sessDTO[_propMSI_ProductName];
             var insProdList = new InstalledProductList();
 
             using (var insVendorReg = new InstallAwareRegistry())
@@ -58,6 +57,7 @@ namespace RISA_CustomActionsLib
             }
             return insProdList;
         }
+
 
         private static List<InstalledProduct> searchUnInsRegistry(InstallerVendorRegistry vendorInfo, string productNameToSearchFor)
         {

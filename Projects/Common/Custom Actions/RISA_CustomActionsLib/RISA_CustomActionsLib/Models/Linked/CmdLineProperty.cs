@@ -10,5 +10,11 @@
             PropName = propName.ToUpper();
             PropValue = propValue;
         }
+        public override string ToString()
+        {
+            var propNameStr = string.IsNullOrEmpty(PropName) ? "no-name" : PropName;
+            var propValueStr = string.IsNullOrEmpty(PropValue) ? "missing-value" : PropValue.Dq();
+            return $"{propNameStr}={propValueStr}";
+        }
     }
 }

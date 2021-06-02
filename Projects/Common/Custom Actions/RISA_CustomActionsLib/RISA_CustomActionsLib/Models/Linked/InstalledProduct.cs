@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Xml.Serialization;
-using RISA_CustomActionsLib.Extensions;
-using RISA_CustomActionsLib.Models.Linked;
 
-namespace RISA_CustomActionsLib.Models
+namespace RISA_CustomActionsLib.Models.Linked
 {
     public class InstalledProduct
     {
@@ -31,7 +29,7 @@ namespace RISA_CustomActionsLib.Models
 
         // DisplayNames are:  'RISA-3D 19.0' or 'RISA-3D 19.0 Demo'
         //  older product versions have a lot more decorators following the major.minor version
-        [XmlIgnore] public string InStallType => DisplayName.Contains(CustomActions._insTypeDemo)
+        [XmlIgnore] public string InstallType => DisplayName.Contains(CustomActions._insTypeDemo)
                         ? CustomActions._insTypeDemo : CustomActions._insTypeStandalone;
         [XmlIgnore] public string ProductName => DisplayName.Split(' ')[0];
         [XmlIgnore] public Version ProductVersion => ProductVersionStr.ToVersion();
@@ -51,8 +49,12 @@ namespace RISA_CustomActionsLib.Models
                    + $"UnInstallStr = {UnInstallStr}";
         }
 
-        public void UnInstall()
+        public delegate void dlgtTrace(string loc, string msg);
+
+        public void UnInstall(dlgtTrace traceFunction)
         {
+            // dlgtTrace stands in for CustomActions.Trace, to allow this class to be used by other than CustomActions
+            //
             Process uninsProcess = null;
             const int milliSecsWaitForUnInstall = 30*1000;
 
@@ -65,7 +67,7 @@ namespace RISA_CustomActionsLib.Models
                     //
                     const string cmdArgsIA = @"/S MODIFY=FALSE REMOVE=TRUE UNINSTALL=YES";
                     uninsProcess = Process.Start(Linked.Extensions.Dq(UnInstallStr), cmdArgsIA);
-                    CustomActions.Trace("UnInstall", $"UnInstallStr.Dq()={Linked.Extensions.Dq(UnInstallStr)} args={cmdArgsIA}");
+                    traceFunction("UnInstall", $"UnInstallStr.Dq()={Linked.Extensions.Dq(UnInstallStr)} args={cmdArgsIA}");
 
                     break;
 

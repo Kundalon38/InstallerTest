@@ -5,9 +5,10 @@ namespace RISA_CustomActionsLib.Models.Linked
 {
     public partial class BootstrapperData
     {
-        public static BootstrapperData FindBootstrapperFromCA()
+        public static BootstrapperData FindBootstrapperFromCA(BootstrapperTestData testData = null)
         {
-            var bootData = new BootstrapperData();
+            var bootData = new BootstrapperData(testData);   // btd injects test data
+            if (testData != null) return bootData;           // production use continues below
 
             var allProcs = Process.GetProcesses(".");
             foreach (var curProcess in allProcs)
@@ -32,9 +33,10 @@ namespace RISA_CustomActionsLib.Models.Linked
             return bootData;
         }
 
-        public static BootstrapperData FindBootstrapperFromExe()
+        public static BootstrapperData FindBootstrapperFromExe(BootstrapperTestData testData = null)
         {
-            var bootData = new BootstrapperData();
+            var bootData = new BootstrapperData(testData);   // btd injects test data
+            if (testData != null) return bootData;           // production use continues below
 
             var curProcess = Process.GetCurrentProcess();
             var bootStrapperProcess = curProcess.GetParent();

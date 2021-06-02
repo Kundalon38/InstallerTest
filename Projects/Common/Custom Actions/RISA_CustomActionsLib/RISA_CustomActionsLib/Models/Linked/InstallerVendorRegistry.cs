@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Win32;
 
-namespace RISA_CustomActionsLib.Models
+namespace RISA_CustomActionsLib.Models.Linked
 {
     // This handles InstallAware and AdvancedInstaller
     //

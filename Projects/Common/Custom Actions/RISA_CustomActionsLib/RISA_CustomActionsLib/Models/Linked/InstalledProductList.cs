@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace RISA_CustomActionsLib.Models
+namespace RISA_CustomActionsLib.Models.Linked
 {
     public class InstalledProductList : List<InstalledProduct>
     {

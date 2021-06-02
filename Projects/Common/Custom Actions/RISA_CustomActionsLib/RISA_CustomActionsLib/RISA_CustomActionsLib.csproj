@@ -66,6 +66,7 @@
     <Compile Include="CustomActions\Silent\CustomActions_SilentInitProps.cs" />
     <Compile Include="CustomActions\Silent\CustomActions_SilentValidate.cs" />
     <Compile Include="CustomActions\StopStartService\CustomActions_StopStartService.cs" />
+    <Compile Include="Models\Linked\BootstrapperTestData.cs" />
     <Compile Include="Models\Linked\CustomActions_consts.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps.cs" />
@@ -76,9 +77,9 @@
     <Compile Include="Models\Linked\BootstrapperData.cs" />
     <Compile Include="Models\Linked\BootstrapperData_findBootstrapper.cs" />
     <Compile Include="Models\Linked\Extensions.cs" />
-    <Compile Include="Models\InstalledProduct.cs" />
-    <Compile Include="Models\InstalledProductList.cs" />
-    <Compile Include="Models\InstallerVendorRegistry.cs" />
+    <Compile Include="Models\Linked\InstalledProduct.cs" />
+    <Compile Include="Models\Linked\InstalledProductList.cs" />
+    <Compile Include="Models\Linked\InstallerVendorRegistry.cs" />
     <Compile Include="Models\Linked\CmdLineProperty.cs" />
     <Compile Include="Models\Linked\SiError.cs" />
     <Compile Include="Models\Linked\SiLog.cs" />
