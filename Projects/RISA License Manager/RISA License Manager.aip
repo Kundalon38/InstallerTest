@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.2" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.3" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
@@ -245,8 +245,8 @@
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
-    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
+    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActio_1" Target="ServiceControlStartRISA32"/>
+    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActio_1" Target="ServiceControlStopRISA32"/>
     <ROW Action="lsinitCOREV19" Type="1538" Source="viewer.exe_1" Target="/RunAsAdmin /HideWindow &quot;[#lsinitCOREv19.exe_1]&quot;" Options="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">

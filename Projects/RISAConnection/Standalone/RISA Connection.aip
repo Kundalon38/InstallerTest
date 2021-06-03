@@ -19,10 +19,10 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#ExeBuild:install_background.bmp#WebInstallerBuild:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#ExeBuild:vp#WebInstallerBuild:vp"/>
-    <ROW Property="ProductCode" Value="1033:{44091A11-4BBE-4C05-BC67-C5C325CCA757} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{7D7A28A5-0917-4B3F-9DD6-15E490B6AE0A} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAConnection"/>
-    <ROW Property="ProductVersion" Value="12.9.1.1" Type="32"/>
+    <ROW Property="ProductVersion" Value="12.9.0.3" Type="32"/>
     <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_CHECK_UPDATES" Value="True"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
@@ -33,7 +33,7 @@
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISAConnection 12.9"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="12.9"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.1"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="0.3"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_STATUS_CODE" Value="Dummy"/>
@@ -41,7 +41,7 @@
     <ROW Property="RISA_UPDATE_DATA_VALUE" Value="Dummy"/>
     <ROW Property="RISA_USERFILES" Value="Dummy"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{5FB668C5-B1F2-400F-A572-62321B418AF4}"/>
+    <ROW Property="UpgradeCode" Value="{C07BA582-6F6C-4445-BC73-FAD9DD3CF8CE}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#ExeBuild:Windows 9x/ME#WebInstallerBuild:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#ExeBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#WebInstallerBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
@@ -107,7 +107,7 @@
     <ROW Directory="eaDir_Dir" Directory_Parent="CANADA_Dir" DefaultDir="@eaDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="AI_CustomARPName" ComponentId="{A52A08AD-EB6B-4ACA-9A8F-97DEC5828A89}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_CustomARPName" ComponentId="{BDD45839-9FBB-4514-BD0D-EB00C8F96B1E}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
     <ROW Component="AI_DisableModify" ComponentId="{EFD66464-5313-43BC-A8D0-CC50F7BE333A}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{57270DC5-9777-4E79-8017-71AF652FB374}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{0B667704-C8F4-430E-86A1-BC3CBDDE3CEB}" Directory_="APPDIR" Attributes="0"/>
