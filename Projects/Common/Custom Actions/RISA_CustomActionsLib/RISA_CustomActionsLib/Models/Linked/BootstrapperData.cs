@@ -283,6 +283,8 @@ namespace RISA_CustomActionsLib.Models.Linked
             var retSts = true;
             var siProps = CmdLineProperties.Where(x => x.PropName.StartsWith("SI")).ToList();
 
+            // process an ini file if it exists
+
             var iniFileKvp = siProps.SingleOrDefault(x => x.PropName == _propIniFile);
 
             BootstrapperIniFile bootIni = null;
@@ -295,7 +297,13 @@ namespace RISA_CustomActionsLib.Models.Linked
             {
                 bootIni = new BootstrapperIniFile(iniFileKvp.PropValue, ProductName);
             }
-            // TODO process iniFile - how to merge properties for one set of processing?
+
+            if (bootIni != null)
+            {
+                CmdLineProperties = bootIni.CmdLineProperties;
+                ErrorList.AddRange(bootIni.ErrorList);
+                if (ErrorList.Any(x => x.IsFatal)) return false;
+            }
 
             foreach (var siProp in siProps)
             {

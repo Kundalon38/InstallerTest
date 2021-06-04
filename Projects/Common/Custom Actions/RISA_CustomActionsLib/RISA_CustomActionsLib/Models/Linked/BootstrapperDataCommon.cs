@@ -34,7 +34,7 @@ namespace RISA_CustomActionsLib.Models.Linked
         protected const string _ltKey = "Key";
         protected const string _ansYes = "Yes";
         protected const string _ansNo = "No";
-        public List<CmdLineProperty> CmdLineProperties { get; } = new List<CmdLineProperty>();
+        public List<CmdLineProperty> CmdLineProperties { get; protected set; } = new List<CmdLineProperty>();
 
         public List<SiError> ErrorList { get; set; } = new List<SiError>();
 
