@@ -10,7 +10,7 @@ namespace RISA_CustomActionsLib.Models.Linked
     //  only one copy of source code, DRY.
 
 
-    public partial class BootstrapperData
+    public partial class BootstrapperData : BootstrapperDataCommon
     {
         public BootstrapperData(BootstrapperTestData testData = null)
         {
@@ -72,14 +72,6 @@ namespace RISA_CustomActionsLib.Models.Linked
                 var shortExeFn = Path.GetFileName(ExeFullName);
                 return Path.ChangeExtension(shortExeFn, ".log");
             }
-        }
-
-        public List<SiError> ErrorList { get; set; } = new List<SiError>();
-
-        private void addErr(string text, bool isFatal = true)
-        {
-            // a little shorter^ than:
-            ErrorList.Add(new SiError(text, isFatal));
         }
 
         #endregion
@@ -169,7 +161,6 @@ namespace RISA_CustomActionsLib.Models.Linked
             MidExpressionEq,
             InPropValue
         }
-        public List<CmdLineProperty> CmdLineProperties { get; } = new List<CmdLineProperty>();
 
         public bool ParseCmdLine()
         {
@@ -286,25 +277,6 @@ namespace RISA_CustomActionsLib.Models.Linked
 
         #region Validate Properties
 
-        private const string _propInsDir = "SIDIR";
-        private const string _propPgmGrp = "SIGRP";
-        private const string _propRegion = "SIRGN";
-        private const string _propUpdate = "SIUPD";
-        private const string _propLicType = "SILTY";
-        private const string _propLogFile = "SILOG";
-        private const string _propIniFile = "SINIF";
-
-        private readonly string[] _supportedSiPropNames = { _propInsDir, _propPgmGrp, _propRegion, _propUpdate, _propLicType, _propLogFile, _propIniFile };
-
-        private const string _allValidRegions = "012345678";
-
-        private const string _ltCloud = "Subscription";
-        private const string _ltNetwork = "Network";
-        private const string _ltKey = "Key";
-        private const string _ansYes = "Yes";
-        private const string _ansNo = "No";
-
-
         public bool ValidatePropertyValues()
         {
             // ignore all but SI* cmd line properties - these are stored UpperCase
@@ -312,20 +284,18 @@ namespace RISA_CustomActionsLib.Models.Linked
             var siProps = CmdLineProperties.Where(x => x.PropName.StartsWith("SI")).ToList();
 
             var iniFileKvp = siProps.SingleOrDefault(x => x.PropName == _propIniFile);
-            if(iniFileKvp != null)
+
+            BootstrapperIniFile bootIni = null;
+            if (iniFileKvp == null)
             {
-                try
-                {
-                    if (!File.Exists(iniFileKvp.PropValue))
-                        throw new ApplicationException();   // complete processing in catch block
-                }
-                catch (Exception e)
-                {
-                    addErr($"Can't open file: {iniFileKvp.ToString()}");
-                    return false;
-                }
-                // TODO process iniFile - how to merge properties for one set of processing?
+                var setupIniFn = Path.Combine(Path.GetDirectoryName(ExeFullName), "Setup.Ini");
+                if(File.Exists(setupIniFn)) bootIni = new BootstrapperIniFile(setupIniFn, ProductName);
             }
+            else
+            {
+                bootIni = new BootstrapperIniFile(iniFileKvp.PropValue, ProductName);
+            }
+            // TODO process iniFile - how to merge properties for one set of processing?
 
             foreach (var siProp in siProps)
             {

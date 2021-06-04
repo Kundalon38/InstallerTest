@@ -72,8 +72,14 @@
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData.cs">
       <Link>Models\Linked\BootstrapperData.cs</Link>
     </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperDataCommon.cs">
+      <Link>Models\Linked\BootstrapperDataCommon.cs</Link>
+    </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData_findBootstrapper.cs">
       <Link>Models\Linked\BootstrapperData_findBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperIniFile.cs">
+      <Link>Models\Linked\BootstrapperIniFile.cs</Link>
     </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperTestData.cs">
       <Link>Models\Linked\BootstrapperTestData.cs</Link>
