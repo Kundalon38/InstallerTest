@@ -241,6 +241,10 @@ namespace RISA_CustomActionsLib.Test
             Assert.IsTrue(siRes.IsOK);
         }
 
+        #endregion
+
+        #region Region Code
+
         [TestMethod, TestCategory("SiValidate")]
         public void RegionCode_TooBig_Fail()
         {
@@ -311,6 +315,11 @@ namespace RISA_CustomActionsLib.Test
             expecting(siRes.BooData.IsSilent);
             Assert.IsTrue(siRes.IsFail);
         }
+
+        #endregion
+
+        #region Auto Update
+
         [TestMethod, TestCategory("SiValidate")]
         public void UpdCode_Valid_OK()
         {
@@ -345,6 +354,11 @@ namespace RISA_CustomActionsLib.Test
             expecting(siRes.BooData.IsSilent);
             Assert.IsTrue(siRes.IsFail);
         }
+
+        #endregion
+
+        #region License Type
+
         [TestMethod, TestCategory("SiValidate")]
         public void LicenseType_Omit_Fail()
         {
@@ -396,9 +410,54 @@ namespace RISA_CustomActionsLib.Test
             expecting(siRes.BooData.IsSilent);
             Assert.IsTrue(siRes.IsOK);
         }
+
         #endregion
 
+        #region Install Old over New
 
+        [TestMethod, TestCategory("SiValidate")]
+        public void Old_Over_New_Fail()
+        {
+            // NOTE: RISA-3D > 17.0 must be installed
+
+            var cmdLine = $@"{exeShortFn} /qn";
+            var btd = new BootstrapperTestData()
+            {
+                CmdLine = cmdLine,
+                ExeFullName = exeFullFn,
+                ProductName = _prod3D,
+                ProductVersionStr = "17.0.0"
+            };
+            var siRes = CustomActions.SilentValidate(btd, new ConsoleLog());
+
+            expecting(siRes.BooData.IsSilent);
+            Assert.IsTrue(siRes.IsFail);
+        }
+
+        #endregion
+
+        #region Install Old over New
+
+        [TestMethod, TestCategory("SiValidate")]
+        public void Any_RISA_Products_Running()
+        {
+            // NOTE: You have to have a RISA product running
+
+            var cmdLine = $@"{exeShortFn} /qn";
+            var btd = new BootstrapperTestData()
+            {
+                CmdLine = cmdLine,
+                ExeFullName = exeFullFn,
+                ProductName = _prodCN,
+                ProductVersionStr = "19.0.3"
+            };
+            var siRes = CustomActions.SilentValidate(btd, new ConsoleLog());
+
+            expecting(siRes.BooData.IsSilent);
+            Assert.IsTrue(siRes.IsFail);
+        }
+
+        #endregion
 
         #region Consts and Helpers
 
