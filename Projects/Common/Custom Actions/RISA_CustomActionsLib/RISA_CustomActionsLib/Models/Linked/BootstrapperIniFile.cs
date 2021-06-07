@@ -60,6 +60,8 @@ namespace RISA_CustomActionsLib.Models.Linked
                 {
                     buf = buf.Trim();
                     if (buf.Length == 0) continue;
+                    if (buf.StartsWith(";")) continue;
+
                     switch (state)
                     {
                         case eIniState.FindSection:
@@ -81,7 +83,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                             var tokenNdx = Array.FindIndex(_supportedIniPropNames, x => x == tokens[0]);
                             if (tokenNdx < 0)
                             {
-                                addErr($"Invalid keyword {tokens[0]} in: {iniFn}");
+                                addErr($"Invalid property name: {tokens[0]} in: {iniFn}");
                                 state = eIniState.ParseFinished;
                                 break;
                             }
@@ -94,7 +96,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                     }
                 }
 
-                if (!productSectionFound) addErr($"[{productName}] sectopm not found in {iniFn}");
+                if (!productSectionFound) addErr($"[{productName}] section not found in {iniFn}");
             }
             catch (Exception e)
             {

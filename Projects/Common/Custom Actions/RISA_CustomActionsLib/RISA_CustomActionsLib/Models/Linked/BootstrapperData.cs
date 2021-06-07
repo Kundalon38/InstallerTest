@@ -303,6 +303,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                 CmdLineProperties = bootIni.CmdLineProperties;
                 ErrorList.AddRange(bootIni.ErrorList);
                 if (ErrorList.Any(x => x.IsFatal)) return false;
+                siProps = CmdLineProperties.Where(x => x.PropName.StartsWith("SI")).ToList();
             }
 
             foreach (var siProp in siProps)

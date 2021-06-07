@@ -194,55 +194,6 @@ namespace RISA_CustomActionsLib.Test
 
         #endregion
 
-        #region INI file
-
-        [TestMethod, TestCategory("SiValidate")]
-        public void Cant_Find_IniFile_Fail()
-        {
-            var iniFn = Path.Combine(deskTopDir, "Setup.Ini");
-            try
-            {
-                File.Delete(iniFn); // if anything was there
-            }
-            catch (Exception e)
-            {
-            }
-            var propStr = propKvP(_propIniFile, iniFn);
-            var cmdLine = $@"{exeShortFn} /qn {propStr}";
-            var btd = new BootstrapperTestData()
-            {
-                CmdLine = cmdLine,
-                ExeFullName = exeFullFn,
-                ProductName = _prod3D,
-                ProductVersionStr = "19.0.3"
-            };
-            var siRes = CustomActions.SilentValidate(btd, new ConsoleLog());
-
-            expecting(siRes.BooData.IsSilent);
-            Assert.IsTrue(siRes.IsFail);
-        }
-        [TestMethod, TestCategory("SiValidate")]
-        public void Can_Find_IniFile_OK()
-        {
-            var iniFn = Path.Combine(deskTopDir, "Setup.Ini");
-            File.Create(iniFn);
-            var propStr = propKvP(_propIniFile, iniFn);
-            var cmdLine = $@"{exeShortFn} /qn {propStr}";
-            var btd = new BootstrapperTestData()
-            {
-                CmdLine = cmdLine,
-                ExeFullName = exeFullFn,
-                ProductName = _prod3D,
-                ProductVersionStr = "19.0.3"
-            };
-            var siRes = CustomActions.SilentValidate(btd, new ConsoleLog());
-
-            expecting(siRes.BooData.IsSilent);
-            Assert.IsTrue(siRes.IsOK);
-        }
-
-        #endregion
-
         #region Region Code
 
         [TestMethod, TestCategory("SiValidate")]
@@ -456,42 +407,6 @@ namespace RISA_CustomActionsLib.Test
             expecting(siRes.BooData.IsSilent);
             Assert.IsTrue(siRes.IsFail);
         }
-
-        #endregion
-
-        #region Consts and Helpers
-
-        private const string _prod2D = "RISA-2D";
-        private const string _prod3D = "RISA-3D";
-        private const string _prodFD = "RISAFloor";
-        private const string _prodFL = "RISAFoundation";
-        private const string _prodCN = "RISAConnection";
-
-        private const string _propInsDir = "SIDIR";
-        private const string _propPgmGrp = "SIGRP";
-        private const string _propRegion = "SIRGN";
-        private const string _propUpdate = "SIUPD";
-        private const string _propLicType = "SILTY";
-        private const string _propLogFile = "SILOG";
-        private const string _propIniFile = "SINIF";
-
-        private const string _ltCloud = "Subscription";
-        private const string _ltNetwork = "Network";
-        private const string _ltKey = "Key";
-        private const string _ansYes = "Yes";
-        private const string _ansNo = "No";
-
-        private string propKvP(string propName, string propValue)
-        {
-            const string dq = @"""";
-            return $"{propName}={dq}{propValue}{dq}";
-        }
-
-        private const string exeShortFn = "installer_3d_1903.exe";
-
-        private string exeFullFn => Path.Combine(deskTopDir, exeShortFn);
-
-        private string deskTopDir => Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
         #endregion
 

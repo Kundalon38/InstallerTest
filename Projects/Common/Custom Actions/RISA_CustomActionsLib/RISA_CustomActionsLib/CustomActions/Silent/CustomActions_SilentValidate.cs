@@ -1,9 +1,5 @@
 using Microsoft.Deployment.WindowsInstaller;
-using System;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using RISA_CustomActionsLib.Extensions;
 using RISA_CustomActionsLib.Models;
 using RISA_CustomActionsLib.Models.Linked;
 using BootstrapperData = RISA_CustomActionsLib.Models.Linked.BootstrapperData;
@@ -63,7 +59,7 @@ namespace RISA_CustomActionsLib
             }
             else
             {
-                bootData.ErrorList.Add(new SiError("SUccessful input validation",false));
+                bootData.ErrorList.Add(new SiError("Successful input validation",false));
                 retSts = SilentResult.OK(bootData);
             }
             foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
