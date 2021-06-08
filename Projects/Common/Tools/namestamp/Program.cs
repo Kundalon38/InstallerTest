@@ -25,13 +25,14 @@ namespace namestamp
 
                 DateTime mod = File.GetLastWriteTime(fileName);
                 string newFileName = $"{before}_{major}{minor}{patch}_{build}-{mod.ToString("yyMMdd-HHmm")}-ai.exe";
-                File.Move(fileName, newFileName);
-                Console.WriteLine($"Rewrote the name of {fileName} to be {newFileName}");
+                File.Delete(newFileName);
+                File.Copy(fileName, newFileName);
+                Console.WriteLine($"Copied {fileName} to {newFileName}");
                 return 0;
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Unable to rewrite the name of {args[0]}!");
+                Console.WriteLine($"Unable to copy/rename {args[0]}!");
                 Console.WriteLine(e.Message);
                 return 1;
             }
