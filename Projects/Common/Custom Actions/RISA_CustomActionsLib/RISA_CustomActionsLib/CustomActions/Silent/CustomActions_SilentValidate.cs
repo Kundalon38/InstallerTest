@@ -16,10 +16,10 @@ namespace RISA_CustomActionsLib
 
         public static SilentResult SilentValidate(BootstrapperTestData testData = null, ISiLog logger = null)
         {
-            // cull out for testing
+            // culled out for testing
             //_doTrace = true;    // set False for production use; use CmdLine LOG instead
 
-            const string methodName = "SilentValidate";
+            const string methodName = "Silent-Validate";
             var bootData = BootstrapperData.FindBootstrapperFromCA(testData);
             if (bootData == null) return SilentResult.OK(bootData);
             if (!bootData.IsSilent) return SilentResult.OK(bootData);
@@ -43,7 +43,7 @@ namespace RISA_CustomActionsLib
             if (!validProperties) return SilentResult.Fail(bootData);
 
             bootData.ErrorList.Clear();
-            var insProductList = findInstalledProducts(bootData.ProductName);
+            var insProductList = InstalledProductList.FindInstalledProducts(bootData.ProductName);
             var installOldOverNew = bootData.IsInstallOldOverNew(insProductList);
             foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
             if (installOldOverNew) return SilentResult.Fail(bootData);

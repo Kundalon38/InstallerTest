@@ -387,7 +387,7 @@ namespace RISA_CustomActionsLib.Test
 
         #endregion
 
-        #region Install Old over New
+        #region Any RISA Products active
 
         [TestMethod, TestCategory("SiValidate")]
         public void Any_RISA_Products_Running()

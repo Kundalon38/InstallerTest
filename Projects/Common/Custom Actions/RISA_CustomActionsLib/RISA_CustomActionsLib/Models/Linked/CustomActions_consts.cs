@@ -57,8 +57,12 @@
 
         // _propRISA_SI_PREINSTALL_RESULT values must be numeric.ToString()
 
+        public const int _ists_SILENT_OK = 1;
+        public const int _ists_SILENT_ERR = 0;
+        public const int _ists_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = -1;
+
         public const string _sts_SILENT_OK = "1";
-        public const string _sts_SILENT_EXCP = "0";
+        public const string _sts_SILENT_ERR = "0";
         public const string _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = "-1";
 
         public const string _stsText_Success = "Success";

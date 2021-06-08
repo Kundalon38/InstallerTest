@@ -159,19 +159,19 @@ namespace RISA_CustomActionsLib.Test
 
             expecting(siRes.BooData.IsSilent, loc());
 
-            var siPgmGrpProp = siRes.BooData.CmdLineProperties.SingleOrDefault(x => x.PropName == _propPgmGrp);
+            var siPgmGrpProp = siRes.BooData.CmdLineProperties[_propPgmGrp];
             expecting(siPgmGrpProp != null, loc());
             expecting(siPgmGrpProp.PropValue == "RISA", loc());
 
-            var siRegionProp = siRes.BooData.CmdLineProperties.SingleOrDefault(x => x.PropName == _propRegion);
+            var siRegionProp = siRes.BooData.CmdLineProperties[_propRegion];
             expecting(siRegionProp != null, loc());
             expecting(siRegionProp.PropValue == "0", loc());
 
-            var siUpdateProp = siRes.BooData.CmdLineProperties.SingleOrDefault(x => x.PropName == _propUpdate);
+            var siUpdateProp = siRes.BooData.CmdLineProperties[_propUpdate];
             expecting(siUpdateProp != null, loc());
             expecting(siUpdateProp.PropValue == _ansYes, loc());
 
-            var siLicTypeProp = siRes.BooData.CmdLineProperties.SingleOrDefault(x => x.PropName == _propLicType);
+            var siLicTypeProp = siRes.BooData.CmdLineProperties[_propLicType];
             expecting(siLicTypeProp != null, loc());
             expecting(siLicTypeProp.PropValue == _ltCloud, loc());
 

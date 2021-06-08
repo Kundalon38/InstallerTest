@@ -5,21 +5,23 @@ using RISA_CustomActionsLib;
 using RISA_CustomActionsLib.Models.Linked;
 using Silent_PreInstall.Extensions;
 
-namespace Silent_PreInstall
+namespace Silent_PreInstall_TestLib
 {
-    // Note: this application must be built x64,
-    //  at least for SpecialFolders.ProgramFiles to resolve correctly
-    class Program
+    public class ProgramClass
     {
-        static int Main(string[] args)
+        public static int Main(BootstrapperTestData testData = null, ISiLog logger = null)
         {
-            // code below was pasted in (more or less intact) from test location: Silent_PreInstall_TestLib.ProgramClass.Main()
-            var bootData = BootstrapperData.FindBootstrapperFromExe();
+            // culled out for testing - code is then moved into Silent-PreInstall console app
+            // this repeats some of Silent-Validate's logic to get things set up,
+            //  but pares down the validation to get on with the main purpose: remove an installed product if needed
+
+            var bootData = BootstrapperData.FindBootstrapperFromExe(testData);
             if (bootData == null) return CustomActions._ists_SILENT_OK;
             if (!bootData.IsSilent) return CustomActions._ists_SILENT_OK;
 
             var validParse = bootData.ParseCmdLine();
-            _log = new SiLog(bootData.LogFileName, true);
+            if (logger == null) _log = new SiLog(bootData.LogFileName, false);
+            else _log = logger;
 
             foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);
             if (!validParse || bootData.ErrorList.Any(x => x.IsFatal)) return CustomActions._ists_SILENT_ERR;
@@ -42,7 +44,7 @@ namespace Silent_PreInstall
                 //
                 var insDirKvp = bootData.CmdLineProperties[BootstrapperDataCommon._propInsDir];
                 var userSpecifiedInsDir = insDirKvp?.PropValue;
-                var normalizedAppDir = CustomActions.getInstallDir(userSpecifiedInsDir, CustomActions._insTypeStandalone).EnsureTrailingBash();
+                var normalizedAppDir = CustomActions.getInstallDir(userSpecifiedInsDir,CustomActions._insTypeStandalone).EnsureTrailingBash();
                 _log.Write(_methodName, $"Installation directory resolved to: {normalizedAppDir}");
                 foreach (var insProd in insProductList)
                 {
@@ -64,7 +66,7 @@ namespace Silent_PreInstall
             finally
             {
                 if (tbRemoved.Count == 0)
-                    _log.Write(_methodName, "No earlier products were removed");
+                    _log.Write(_methodName,"No earlier products were removed");
                 else
                 {
                     // check that removal worked. Typically msiexec uninstall will fail silently (won't appear in catch block)
@@ -82,5 +84,5 @@ namespace Silent_PreInstall
         }
         private static ISiLog _log;
         private const string _methodName = "Silent-PreInstall";
-     }
+    }
 }

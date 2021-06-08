@@ -4,13 +4,13 @@ namespace RISA_CustomActionsLib.Models.Linked
 {
     public class BootstrapperDataCommon
     {
-        protected const string _propInsDir = "SIDIR";
-        protected const string _propPgmGrp = "SIGRP";
-        protected const string _propRegion = "SIRGN";
-        protected const string _propUpdate = "SIUPD";
-        protected const string _propLicType = "SILTY";
-        protected const string _propLogFile = "SILOG";
-        protected const string _propIniFile = "SINIF";
+        public const string _propInsDir = "SIDIR";
+        public const string _propPgmGrp = "SIGRP";
+        public const string _propRegion = "SIRGN";
+        public const string _propUpdate = "SIUPD";
+        public const string _propLicType = "SILTY";
+        public const string _propLogFile = "SILOG";
+        public const string _propIniFile = "SINIF";
 
         protected readonly string[] _supportedSiPropNames = { _propInsDir, _propPgmGrp, _propRegion, _propUpdate, _propLicType, _propLogFile, _propIniFile };
 
@@ -34,7 +34,7 @@ namespace RISA_CustomActionsLib.Models.Linked
         protected const string _ltKey = "Key";
         protected const string _ansYes = "Yes";
         protected const string _ansNo = "No";
-        public List<CmdLineProperty> CmdLineProperties { get; protected set; } = new List<CmdLineProperty>();
+        public CmdLineProperties CmdLineProperties { get; protected set; } = new CmdLineProperties();
 
         public List<SiError> ErrorList { get; set; } = new List<SiError>();
 

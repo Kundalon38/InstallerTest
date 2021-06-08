@@ -51,7 +51,7 @@ namespace RISA_CustomActionsLib.Models.Linked
 
         public delegate void dlgtTrace(string loc, string msg);
 
-        public void UnInstall(dlgtTrace traceFunction)
+        public void UnInstall(dlgtTrace traceFunction = null)
         {
             // dlgtTrace stands in for CustomActions.Trace, to allow this class to be used by other than CustomActions
             //
@@ -67,8 +67,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                     //
                     const string cmdArgsIA = @"/S MODIFY=FALSE REMOVE=TRUE UNINSTALL=YES";
                     uninsProcess = Process.Start(Linked.Extensions.Dq(UnInstallStr), cmdArgsIA);
-                    traceFunction("UnInstall", $"UnInstallStr.Dq()={Linked.Extensions.Dq(UnInstallStr)} args={cmdArgsIA}");
-
+                    traceFunction?.Invoke("UnInstall", $"UnInstallStr.Dq()={Linked.Extensions.Dq(UnInstallStr)} args={cmdArgsIA}");
                     break;
 
                 case eInstallerVendor.AdvancedInstaller:

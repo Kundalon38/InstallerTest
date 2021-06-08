@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{127B8AE5-12F4-4BEC-B492-F211F7CAA623}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>Silent_PreInstall</RootNamespace>
-    <AssemblyName>Silent-PreInstall</AssemblyName>
+    <ProjectGuid>{59CDE944-BC0A-4D08-ABF0-11E92EA3E6B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Silent_PreInstall_TestLib</RootNamespace>
+    <AssemblyName>Silent-PreInstall_TestLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,41 +21,15 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>risa.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -69,60 +43,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\BootstrapperData.cs">
       <Link>Models\Linked\BootstrapperData.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperDataCommon.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\BootstrapperDataCommon.cs">
       <Link>Models\Linked\BootstrapperDataCommon.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperData_findBootstrapper.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\BootstrapperData_findBootstrapper.cs">
       <Link>Models\Linked\BootstrapperData_findBootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperIniFile.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\BootstrapperIniFile.cs">
       <Link>Models\Linked\BootstrapperIniFile.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\BootstrapperTestData.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\BootstrapperTestData.cs">
       <Link>Models\Linked\BootstrapperTestData.cs</Link>
     </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CmdLineProperties.cs">
       <Link>Models\Linked\CmdLineProperties.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CmdLineProperty.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\CmdLineProperty.cs">
       <Link>Models\Linked\CmdLineProperty.cs</Link>
     </Compile>
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CustomActions_common.cs">
       <Link>Models\Linked\CustomActions_common.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\CustomActions_consts.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\CustomActions_consts.cs">
       <Link>Models\Linked\CustomActions_consts.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\Extensions.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\Extensions.cs">
       <Link>Models\Linked\Extensions.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstalledProduct.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\InstalledProduct.cs">
       <Link>Models\Linked\InstalledProduct.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstalledProductList.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\InstalledProductList.cs">
       <Link>Models\Linked\InstalledProductList.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\InstallerVendorRegistry.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\InstallerVendorRegistry.cs">
       <Link>Models\Linked\InstallerVendorRegistry.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiError.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\SiError.cs">
       <Link>Models\Linked\SiError.cs</Link>
     </Compile>
-    <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiLog.cs">
+    <Compile Include="..\..\risa_customactionslib\models\linked\SiLog.cs">
       <Link>Models\Linked\SiLog.cs</Link>
     </Compile>
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ProgramClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="risa.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

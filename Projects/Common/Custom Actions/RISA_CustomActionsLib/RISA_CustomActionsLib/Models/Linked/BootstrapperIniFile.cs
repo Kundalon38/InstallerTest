@@ -52,10 +52,10 @@ namespace RISA_CustomActionsLib.Models.Linked
 
             var state = eIniState.FindSection;
             var productSectionFound = false;
-            string buf;
 
             try
             {
+                string buf;
                 while ((buf = sr.ReadLine()) != null && state != eIniState.ParseFinished)
                 {
                     buf = buf.Trim();

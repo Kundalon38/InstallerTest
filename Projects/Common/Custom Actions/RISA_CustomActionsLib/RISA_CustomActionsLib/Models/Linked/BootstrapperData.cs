@@ -48,7 +48,7 @@ namespace RISA_CustomActionsLib.Models.Linked
             // null means no logging was requested
             get
             {
-                var logKvp = CmdLineProperties.FirstOrDefault(x => x.PropName == _propLogFile);
+                var logKvp = CmdLineProperties[_propLogFile];
                 if (logKvp == null) return null;
 
                 const string deskTop = "DESKTOP";

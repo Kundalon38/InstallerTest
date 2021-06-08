@@ -9,6 +9,9 @@ namespace RISA_CustomActionsLib.Models.Linked
     }
     public class SiLog : ISiLog
     {
+        // if no filename is given, SiLog effectively is a null logger
+        //  Write() may be called but it does nothing
+
         public SiLog(string fn, bool append = true)
         {
             if (string.IsNullOrEmpty(fn)) return;

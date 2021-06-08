@@ -69,8 +69,10 @@
     <Compile Include="Models\Linked\BootstrapperDataCommon.cs" />
     <Compile Include="Models\Linked\BootstrapperIniFile.cs" />
     <Compile Include="Models\Linked\BootstrapperTestData.cs" />
+    <Compile Include="Models\Linked\CmdLineProperties.cs" />
+    <Compile Include="Models\Linked\CustomActions_common.cs" />
     <Compile Include="Models\Linked\CustomActions_consts.cs" />
-    <Compile Include="CustomActions\InitProps\CustomActions_InitProps_FindInstalled.cs" />
+    <Compile Include="CustomActions\RemoveInstalled\CustomActions_InitProps_FindInstalled.cs" />
     <Compile Include="CustomActions\InitProps\CustomActions_InitProps.cs" />
     <Compile Include="CustomActions\CustomActions_logging.cs" />
     <Compile Include="CustomActions\RemoveInstalled\CustomActions_RemoveInstalled.cs" />
