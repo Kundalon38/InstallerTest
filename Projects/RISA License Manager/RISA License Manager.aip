@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.2" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.3" Modules="msm" RootPath="." Language="en" Id="{A9EF5BD6-EEDF-421B-9081-CAACBBB3183C}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="RISA_INSTALL_TYPE" Value="Standalone"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="." IsPseudoRoot="1"/>
@@ -25,88 +26,88 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AppCompatFlags" ComponentId="{7532AC46-039B-4811-A8D4-A545CA7499D8}" Directory_="APPDIR" Attributes="260" KeyPath="AppCompatFlags"/>
-    <ROW Component="CSharpControls.Wpf.dll" ComponentId="{906CAA2C-E983-4344-8008-17A643913236}" Directory_="ld_Dir" Attributes="16" KeyPath="CSharpControls.Wpf.dll"/>
-    <ROW Component="Caliburn.Micro.Platform.Core.dll" ComponentId="{66F7233A-27E1-4BD7-BF57-6ADA9C043650}" Directory_="ld_Dir" Attributes="16" KeyPath="Caliburn.Micro.Platform.Core.dll"/>
-    <ROW Component="Caliburn.Micro.Platform.Core.dll_1" ComponentId="{347521F5-E0BF-43BC-8016-E2A8FBB60970}" Directory_="fo_Dir" Attributes="16" KeyPath="Caliburn.Micro.Platform.Core.d_1"/>
-    <ROW Component="Caliburn.Micro.Platform.dll" ComponentId="{00DAC006-DEBB-498A-BCA8-65077DFD584F}" Directory_="ld_Dir" Attributes="16" KeyPath="Caliburn.Micro.Platform.dll"/>
-    <ROW Component="Caliburn.Micro.Platform.dll_1" ComponentId="{859134A0-8261-4011-A63D-22ABCDED5A3D}" Directory_="fo_Dir" Attributes="16" KeyPath="Caliburn.Micro.Platform.dll_1"/>
-    <ROW Component="Caliburn.Micro.dll" ComponentId="{E65B142F-CBA7-4FA2-8DB4-FFF95102C8BB}" Directory_="ld_Dir" Attributes="16" KeyPath="Caliburn.Micro.dll"/>
-    <ROW Component="Caliburn.Micro.dll_1" ComponentId="{62A9AD7F-046A-4CFD-8F17-C9687F1343BE}" Directory_="fo_Dir" Attributes="16" KeyPath="Caliburn.Micro.dll_1"/>
-    <ROW Component="ClientProgramKey.dll" ComponentId="{E8628FB9-6099-4FB5-8D26-E2F457917902}" Directory_="ld_Dir" Attributes="272" KeyPath="ClientProgramKey.dll"/>
-    <ROW Component="ClientProgramKeyLib.dll" ComponentId="{1B63293D-5D69-4149-A36E-314E875BD989}" Directory_="ld_Dir" Attributes="272" KeyPath="ClientProgramKeyLib.dll"/>
-    <ROW Component="ControlzEx.dll" ComponentId="{18957DCC-3358-4356-8C6F-6F3284F2F322}" Directory_="clt_Dir" Attributes="16" KeyPath="ControlzEx.dll"/>
-    <ROW Component="ControlzEx.dll_1" ComponentId="{E4D237B5-8DA4-478A-93F5-80469FA4AFD6}" Directory_="ld_Dir" Attributes="16" KeyPath="ControlzEx.dll_1"/>
-    <ROW Component="ControlzEx.dll_2" ComponentId="{12041BFE-AFC4-4ABF-9944-C1897A9B7CB5}" Directory_="fo_Dir" Attributes="16" KeyPath="ControlzEx.dll_2"/>
+    <ROW Component="CSharpControls.Wpf.dll" ComponentId="{906CAA2C-E983-4344-8008-17A643913236}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="CSharpControls.Wpf.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.Core.dll" ComponentId="{66F7233A-27E1-4BD7-BF57-6ADA9C043650}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.Platform.Core.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.Core.dll_1" ComponentId="{347521F5-E0BF-43BC-8016-E2A8FBB60970}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.Platform.Core.d_1"/>
+    <ROW Component="Caliburn.Micro.Platform.dll" ComponentId="{00DAC006-DEBB-498A-BCA8-65077DFD584F}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.Platform.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.dll_1" ComponentId="{859134A0-8261-4011-A63D-22ABCDED5A3D}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.Platform.dll_1"/>
+    <ROW Component="Caliburn.Micro.dll" ComponentId="{E65B142F-CBA7-4FA2-8DB4-FFF95102C8BB}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.dll"/>
+    <ROW Component="Caliburn.Micro.dll_1" ComponentId="{62A9AD7F-046A-4CFD-8F17-C9687F1343BE}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Caliburn.Micro.dll_1"/>
+    <ROW Component="ClientProgramKey.dll" ComponentId="{E8628FB9-6099-4FB5-8D26-E2F457917902}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ClientProgramKey.dll"/>
+    <ROW Component="ClientProgramKeyLib.dll" ComponentId="{1B63293D-5D69-4149-A36E-314E875BD989}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ClientProgramKeyLib.dll"/>
+    <ROW Component="ControlzEx.dll" ComponentId="{18957DCC-3358-4356-8C6F-6F3284F2F322}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ControlzEx.dll"/>
+    <ROW Component="ControlzEx.dll_1" ComponentId="{E4D237B5-8DA4-478A-93F5-80469FA4AFD6}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ControlzEx.dll_1"/>
+    <ROW Component="ControlzEx.dll_2" ComponentId="{12041BFE-AFC4-4ABF-9944-C1897A9B7CB5}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ControlzEx.dll_2"/>
     <ROW Component="CurrentVersion" ComponentId="{880BD231-022B-411D-B6F2-CAF76A1E058B}" Directory_="APPDIR" Attributes="260" KeyPath="CurrentVersion"/>
-    <ROW Component="FileUploader.exe" ComponentId="{54DAEEAC-E795-446D-9403-02CEAFB8F739}" Directory_="fo_Dir" Attributes="272" KeyPath="FileUploader.exe"/>
-    <ROW Component="FileUploader.exe.config" ComponentId="{2E52810E-6BCD-47A4-8064-5FE270BCECA2}" Directory_="fo_Dir" Attributes="16" KeyPath="FileUploader.exe.config" Type="0"/>
-    <ROW Component="FluentFTP.dll" ComponentId="{7B75615B-D1C5-47E9-A0B5-F831FF7A1A02}" Directory_="fo_Dir" Attributes="16" KeyPath="FluentFTP.dll"/>
-    <ROW Component="Interop.RISALicenseManagerCOMLib.dl" ComponentId="{525647DC-9C18-4FD4-B27C-BAC5446DD266}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="Interop.RISALicenseManagerCOMLib"/>
-    <ROW Component="LicensingDashboard.exe" ComponentId="{2A7DAC45-80BA-491B-B23A-DC27918174DE}" Directory_="ld_Dir" Attributes="272" KeyPath="LicensingDashboard.exe"/>
-    <ROW Component="LicensingDashboard.exe.config" ComponentId="{707005B4-C6E9-45A2-9797-94BC91495FDB}" Directory_="ld_Dir" Attributes="16" KeyPath="LicensingDashboard.exe.config" Type="0"/>
-    <ROW Component="MahApps.Metro.IconPacks.Material.dl" ComponentId="{23DBC56F-2174-4383-8865-8AFF94E14254}" Directory_="ld_Dir" Attributes="16" KeyPath="MahApps.Metro.IconPacks.Material"/>
-    <ROW Component="MahApps.Metro.dll" ComponentId="{F9811774-4238-4383-845D-7F7859D3E110}" Directory_="clt_Dir" Attributes="16" KeyPath="MahApps.Metro.dll"/>
-    <ROW Component="MahApps.Metro.dll_1" ComponentId="{2133E075-5CB6-4001-BE97-F994FB7570C6}" Directory_="ld_Dir" Attributes="16" KeyPath="MahApps.Metro.dll_1"/>
-    <ROW Component="MahApps.Metro.dll_2" ComponentId="{DCFDA58D-ECEE-48EC-B5FD-38DDB2E8C12C}" Directory_="fo_Dir" Attributes="16" KeyPath="MahApps.Metro.dll_2"/>
+    <ROW Component="FileUploader.exe" ComponentId="{54DAEEAC-E795-446D-9403-02CEAFB8F739}" Directory_="fo_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="FileUploader.exe"/>
+    <ROW Component="FileUploader.exe.config" ComponentId="{2E52810E-6BCD-47A4-8064-5FE270BCECA2}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="FileUploader.exe.config" Type="0"/>
+    <ROW Component="FluentFTP.dll" ComponentId="{7B75615B-D1C5-47E9-A0B5-F831FF7A1A02}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="FluentFTP.dll"/>
+    <ROW Component="Interop.RISALicenseManagerCOMLib.dl" ComponentId="{525647DC-9C18-4FD4-B27C-BAC5446DD266}" Directory_="NewFolder1_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Interop.RISALicenseManagerCOMLib"/>
+    <ROW Component="LicensingDashboard.exe" ComponentId="{2A7DAC45-80BA-491B-B23A-DC27918174DE}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="LicensingDashboard.exe"/>
+    <ROW Component="LicensingDashboard.exe.config" ComponentId="{707005B4-C6E9-45A2-9797-94BC91495FDB}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="LicensingDashboard.exe.config" Type="0"/>
+    <ROW Component="MahApps.Metro.IconPacks.Material.dl" ComponentId="{23DBC56F-2174-4383-8865-8AFF94E14254}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MahApps.Metro.IconPacks.Material"/>
+    <ROW Component="MahApps.Metro.dll" ComponentId="{F9811774-4238-4383-845D-7F7859D3E110}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MahApps.Metro.dll"/>
+    <ROW Component="MahApps.Metro.dll_1" ComponentId="{2133E075-5CB6-4001-BE97-F994FB7570C6}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MahApps.Metro.dll_1"/>
+    <ROW Component="MahApps.Metro.dll_2" ComponentId="{DCFDA58D-ECEE-48EC-B5FD-38DDB2E8C12C}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MahApps.Metro.dll_2"/>
     <ROW Component="Microsoft" ComponentId="{BC3402D9-C10D-474D-86C7-6F59E1126423}" Directory_="APPDIR" Attributes="260" KeyPath="Microsoft"/>
-    <ROW Component="Microsoft.Expression.Controls.dll" ComponentId="{57C7365F-FE79-4689-837C-DFAAFF6C7E61}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Controls.dl"/>
-    <ROW Component="Microsoft.Expression.Drawing.dll" ComponentId="{32DE49A4-28E3-4AD3-9438-18FFA439BC7A}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Drawing.dll"/>
-    <ROW Component="Microsoft.Expression.Effects.dll" ComponentId="{D07290A6-F6E4-4126-AEF4-82980B695C0D}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Effects.dll"/>
-    <ROW Component="Microsoft.Expression.Interactions.d" ComponentId="{599C8083-E359-45C3-999E-AEB6FB0BFED9}" Directory_="ld_Dir" Attributes="16" KeyPath="Microsoft.Expression.Interaction"/>
-    <ROW Component="Microsoft.Expression.Interactions_1" ComponentId="{B4AC669D-29F5-4AFA-B145-8C9F8F83D7D0}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Interacti_1"/>
-    <ROW Component="Microsoft.Expression.Prototyping.In" ComponentId="{F6543B57-6A7E-483A-AF6D-ACCF2AFA7109}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Prototyping"/>
-    <ROW Component="Microsoft.Expression.Prototyping.Sk" ComponentId="{54F687DA-7B00-4C6A-92D5-589FFA68AFF4}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.Expression.Prototypi_1"/>
-    <ROW Component="Microsoft.Practices.Prism.Mvvm.Desk" ComponentId="{03D0CB28-155B-4B93-B4C8-693105E5D718}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Mvvm.D"/>
-    <ROW Component="Microsoft.Practices.Prism.Mvvm.dll" ComponentId="{8E9620CC-A4A0-4D9E-86E2-896D39E50691}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Mvvm_1"/>
-    <ROW Component="Microsoft.Practices.Prism.SharedInt" ComponentId="{797A2EDF-957F-497C-8DB4-6BB158E0AA4C}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="Microsoft.Practices.Prism.Shared"/>
-    <ROW Component="Microsoft.Practices.ServiceLocation" ComponentId="{2E121881-FE84-4DA6-9C44-03074791E076}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.ServiceLocat"/>
-    <ROW Component="Microsoft.Practices.Unity.Configura" ComponentId="{AB851E13-2114-41EF-8D6E-E7D2787672A4}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.Unity.Config"/>
-    <ROW Component="Microsoft.Practices.Unity.Registrat" ComponentId="{B92E1AE5-C549-40CF-8A98-5B62AD0F49F0}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.Unity.Regist"/>
-    <ROW Component="Microsoft.Practices.Unity.dll" ComponentId="{1D0C03F7-B790-4C03-BF8F-0421248B856B}" Directory_="clt_Dir" Attributes="16" KeyPath="Microsoft.Practices.Unity.dll"/>
-    <ROW Component="Microsoft.SDK.Expression.Blend.dll" ComponentId="{CCBF856E-1947-4CF2-8730-2C1F0869E376}" Directory_="fo_Dir" Attributes="16" KeyPath="Microsoft.SDK.Expression.Blend.d"/>
-    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{14D83F7A-A166-4397-84B0-6E5F7B5A0912}" Directory_="ld_Dir" Attributes="16" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
-    <ROW Component="Newtonsoft.Json.dll" ComponentId="{62181EE4-E1DF-4BA1-9318-85496E68A3C8}" Directory_="ld_Dir" Attributes="16" KeyPath="Newtonsoft.Json.dll"/>
-    <ROW Component="Prism.Unity.Wpf.dll" ComponentId="{7B5F16FB-ECFB-4354-ABEB-B3230218DE14}" Directory_="clt_Dir" Attributes="16" KeyPath="Prism.Unity.Wpf.dll"/>
-    <ROW Component="Prism.Wpf.dll" ComponentId="{C6DFA027-FD3E-4145-9575-A539099FD542}" Directory_="clt_Dir" Attributes="16" KeyPath="Prism.Wpf.dll"/>
-    <ROW Component="Prism.dll" ComponentId="{A24A84A5-F7AC-492B-97D9-9691CA38D594}" Directory_="clt_Dir" Attributes="16" KeyPath="Prism.dll"/>
+    <ROW Component="Microsoft.Expression.Controls.dll" ComponentId="{57C7365F-FE79-4689-837C-DFAAFF6C7E61}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Controls.dl"/>
+    <ROW Component="Microsoft.Expression.Drawing.dll" ComponentId="{32DE49A4-28E3-4AD3-9438-18FFA439BC7A}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Drawing.dll"/>
+    <ROW Component="Microsoft.Expression.Effects.dll" ComponentId="{D07290A6-F6E4-4126-AEF4-82980B695C0D}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Effects.dll"/>
+    <ROW Component="Microsoft.Expression.Interactions.d" ComponentId="{599C8083-E359-45C3-999E-AEB6FB0BFED9}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interaction"/>
+    <ROW Component="Microsoft.Expression.Interactions_1" ComponentId="{B4AC669D-29F5-4AFA-B145-8C9F8F83D7D0}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interacti_1"/>
+    <ROW Component="Microsoft.Expression.Prototyping.In" ComponentId="{F6543B57-6A7E-483A-AF6D-ACCF2AFA7109}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Prototyping"/>
+    <ROW Component="Microsoft.Expression.Prototyping.Sk" ComponentId="{54F687DA-7B00-4C6A-92D5-589FFA68AFF4}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Prototypi_1"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.Desk" ComponentId="{03D0CB28-155B-4B93-B4C8-693105E5D718}" Directory_="NewFolder1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Prism.Mvvm.D"/>
+    <ROW Component="Microsoft.Practices.Prism.Mvvm.dll" ComponentId="{8E9620CC-A4A0-4D9E-86E2-896D39E50691}" Directory_="NewFolder1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Prism.Mvvm_1"/>
+    <ROW Component="Microsoft.Practices.Prism.SharedInt" ComponentId="{797A2EDF-957F-497C-8DB4-6BB158E0AA4C}" Directory_="NewFolder1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Prism.Shared"/>
+    <ROW Component="Microsoft.Practices.ServiceLocation" ComponentId="{2E121881-FE84-4DA6-9C44-03074791E076}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.ServiceLocat"/>
+    <ROW Component="Microsoft.Practices.Unity.Configura" ComponentId="{AB851E13-2114-41EF-8D6E-E7D2787672A4}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Unity.Config"/>
+    <ROW Component="Microsoft.Practices.Unity.Registrat" ComponentId="{B92E1AE5-C549-40CF-8A98-5B62AD0F49F0}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Unity.Regist"/>
+    <ROW Component="Microsoft.Practices.Unity.dll" ComponentId="{1D0C03F7-B790-4C03-BF8F-0421248B856B}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Practices.Unity.dll"/>
+    <ROW Component="Microsoft.SDK.Expression.Blend.dll" ComponentId="{CCBF856E-1947-4CF2-8730-2C1F0869E376}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.SDK.Expression.Blend.d"/>
+    <ROW Component="Microsoft.Xaml.Behaviors.dll" ComponentId="{14D83F7A-A166-4397-84B0-6E5F7B5A0912}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Xaml.Behaviors.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{62181EE4-E1DF-4BA1-9318-85496E68A3C8}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="Prism.Unity.Wpf.dll" ComponentId="{7B5F16FB-ECFB-4354-ABEB-B3230218DE14}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Prism.Unity.Wpf.dll"/>
+    <ROW Component="Prism.Wpf.dll" ComponentId="{C6DFA027-FD3E-4145-9575-A539099FD542}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Prism.Wpf.dll"/>
+    <ROW Component="Prism.dll" ComponentId="{A24A84A5-F7AC-492B-97D9-9691CA38D594}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Prism.dll"/>
     <ROW Component="RISA" ComponentId="{9D592B1F-7D11-4F90-8B92-27B3957ED35C}" Directory_="RISA_Dir" Attributes="0"/>
-    <ROW Component="RISABorrowLicense.exe" ComponentId="{48A72494-28D0-4D41-9CC5-254075259DDE}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="RISABorrowLicense.exe"/>
-    <ROW Component="RISAChangeLicenseType.exe" ComponentId="{2CAFA1CD-CC6F-4DCF-A0E6-58899C389D0E}" Directory_="clt_Dir" Attributes="272" KeyPath="RISAChangeLicenseType.exe"/>
-    <ROW Component="RISAChangeLicenseType.exe.config" ComponentId="{7DF81411-C768-483D-97D6-2DC7EC230439}" Directory_="clt_Dir" Attributes="16" KeyPath="RISAChangeLicenseType.exe.config" Type="0"/>
-    <ROW Component="RISAKeyManager.exe" ComponentId="{EEF9AAE9-9733-4884-9C1F-D923403EA89A}" Directory_="NewFolder_1_Dir" Attributes="272" KeyPath="RISAKeyManager.exe"/>
-    <ROW Component="RISALicenseManagerCOM.dll" ComponentId="{360C37AF-2953-4487-B069-2C0872CE5C08}" Directory_="NewFolder1_Dir" Attributes="272" KeyPath="RISALicenseManagerCOM.dll"/>
-    <ROW Component="RISALicensing.chm" ComponentId="{D3DA46EE-18AC-465D-AC68-F295903689FF}" Directory_="NewFolder_1_Dir" Attributes="16" KeyPath="RISALicensing.chm" Type="1"/>
-    <ROW Component="RISARegistryLib.dll" ComponentId="{EDB1A0C9-9163-414A-907B-B3D59151C491}" Directory_="clt_Dir" Attributes="272" KeyPath="RISARegistryLib.dll"/>
-    <ROW Component="RISARegistryLib.dll_1" ComponentId="{3498FC9A-1EFA-4084-B706-1AF238C75DE9}" Directory_="ld_Dir" Attributes="272" KeyPath="RISARegistryLib.dll_1"/>
-    <ROW Component="RISARegistryLib.dll_2" ComponentId="{8C2C9FD0-FAA5-417F-AC27-86AB343D9EC3}" Directory_="fo_Dir" Attributes="272" KeyPath="RISARegistryLib.dll_2"/>
-    <ROW Component="RMS_WrapperLib.dll" ComponentId="{933B3555-A65A-4CBB-BA92-D2A570CC1B82}" Directory_="ld_Dir" Attributes="272" KeyPath="RMS_WrapperLib.dll"/>
-    <ROW Component="SLSLib.dll" ComponentId="{0C0F8C8C-183C-476F-8747-002FBA219EBB}" Directory_="ld_Dir" Attributes="272" KeyPath="SLSLib.dll"/>
-    <ROW Component="SentinelRMS_ServerBrowser.exe" ComponentId="{01523152-96A9-446A-87D8-4CFAAACABBE7}" Directory_="NewFolder_Dir" Attributes="16" KeyPath="ServerBrowser.exe"/>
-    <ROW Component="SentinelRMS_WCommute.exe" ComponentId="{4E2078BF-FD7D-4EB7-B87A-0B420CFE8E2C}" Directory_="Commute_Dir" Attributes="16" KeyPath="WCommute.exe"/>
-    <ROW Component="SentinelRMS_WRCommute.exe" ComponentId="{9B4FE70F-EEE8-407F-8035-CF69D22D32D5}" Directory_="Commute_Dir" Attributes="16" KeyPath="WRCommute.exe"/>
-    <ROW Component="SentinelRMS_WlmAdmin.exe" ComponentId="{8D8D8C7E-2474-4ED7-A3E4-E4A90EF72861}" Directory_="NewFolder_Dir" Attributes="16" KeyPath="WlmAdmin.exe"/>
-    <ROW Component="SentinelRMS_commute.dat" ComponentId="{CEBB9CB6-D140-49EB-BB56-4063D47CCE81}" Directory_="Commute_Dir" Attributes="16" KeyPath="commute.dat" Type="0"/>
-    <ROW Component="SentinelRMS_lsapiw32.dll" ComponentId="{0062B0DF-325B-4686-9CA9-BCF2FA116AF5}" Directory_="NewFolder_Dir" Attributes="16" KeyPath="lsapiw32.dll"/>
-    <ROW Component="SentinelRMS_lsapiw32.dll_1" ComponentId="{1D36ADAD-C304-4D2B-8E23-10425E909512}" Directory_="Commute_Dir" Attributes="16" KeyPath="lsapiw32.dll_1"/>
-    <ROW Component="SentinelRMS_lsclean.exe" ComponentId="{C695A0DA-CEBA-461B-B9B3-C8633BA89526}" Directory_="NewFolder_Dir" Attributes="16" KeyPath="lsclean.exe"/>
-    <ROW Component="SentinelRMS_lsinitCOREv19.exe" ComponentId="{21AAF6FD-1EF4-42AA-93FA-0D1A35BDF1DB}" Directory_="LSInit_Dir" Attributes="16" KeyPath="lsinitCOREv19.exe"/>
-    <ROW Component="SentinelRMS_wechoid.exe" ComponentId="{ACB7B530-2D56-4838-A775-D4B1DA951EDF}" Directory_="NewFolder_Dir" Attributes="16" KeyPath="wechoid.exe"/>
-    <ROW Component="SentinelSystemDriverInstaller7.6.0." ComponentId="{D69ACE61-2C0C-4E98-9009-8F25FFCCA290}" Directory_="SentinelSystemDriver_Dir" Attributes="16" KeyPath="SentinelSystemDriverInstaller7.6"/>
+    <ROW Component="RISABorrowLicense.exe" ComponentId="{48A72494-28D0-4D41-9CC5-254075259DDE}" Directory_="NewFolder1_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISABorrowLicense.exe"/>
+    <ROW Component="RISAChangeLicenseType.exe" ComponentId="{2CAFA1CD-CC6F-4DCF-A0E6-58899C389D0E}" Directory_="clt_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISAChangeLicenseType.exe"/>
+    <ROW Component="RISAChangeLicenseType.exe.config" ComponentId="{7DF81411-C768-483D-97D6-2DC7EC230439}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISAChangeLicenseType.exe.config" Type="0"/>
+    <ROW Component="RISAKeyManager.exe" ComponentId="{EEF9AAE9-9733-4884-9C1F-D923403EA89A}" Directory_="NewFolder_1_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISAKeyManager.exe"/>
+    <ROW Component="RISALicenseManagerCOM.dll" ComponentId="{360C37AF-2953-4487-B069-2C0872CE5C08}" Directory_="NewFolder1_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISALicenseManagerCOM.dll"/>
+    <ROW Component="RISALicensing.chm" ComponentId="{D3DA46EE-18AC-465D-AC68-F295903689FF}" Directory_="NewFolder_1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISALicensing.chm" Type="1"/>
+    <ROW Component="RISARegistryLib.dll" ComponentId="{EDB1A0C9-9163-414A-907B-B3D59151C491}" Directory_="clt_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISARegistryLib.dll"/>
+    <ROW Component="RISARegistryLib.dll_1" ComponentId="{3498FC9A-1EFA-4084-B706-1AF238C75DE9}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISARegistryLib.dll_1"/>
+    <ROW Component="RISARegistryLib.dll_2" ComponentId="{8C2C9FD0-FAA5-417F-AC27-86AB343D9EC3}" Directory_="fo_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISARegistryLib.dll_2"/>
+    <ROW Component="RMS_WrapperLib.dll" ComponentId="{933B3555-A65A-4CBB-BA92-D2A570CC1B82}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RMS_WrapperLib.dll"/>
+    <ROW Component="SLSLib.dll" ComponentId="{0C0F8C8C-183C-476F-8747-002FBA219EBB}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="SLSLib.dll"/>
+    <ROW Component="SentinelRMS_ServerBrowser.exe" ComponentId="{01523152-96A9-446A-87D8-4CFAAACABBE7}" Directory_="NewFolder_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ServerBrowser.exe"/>
+    <ROW Component="SentinelRMS_WCommute.exe" ComponentId="{4E2078BF-FD7D-4EB7-B87A-0B420CFE8E2C}" Directory_="Commute_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WCommute.exe"/>
+    <ROW Component="SentinelRMS_WRCommute.exe" ComponentId="{9B4FE70F-EEE8-407F-8035-CF69D22D32D5}" Directory_="Commute_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WRCommute.exe"/>
+    <ROW Component="SentinelRMS_WlmAdmin.exe" ComponentId="{8D8D8C7E-2474-4ED7-A3E4-E4A90EF72861}" Directory_="NewFolder_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WlmAdmin.exe"/>
+    <ROW Component="SentinelRMS_commute.dat" ComponentId="{CEBB9CB6-D140-49EB-BB56-4063D47CCE81}" Directory_="Commute_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="commute.dat" Type="0"/>
+    <ROW Component="SentinelRMS_lsapiw32.dll" ComponentId="{0062B0DF-325B-4686-9CA9-BCF2FA116AF5}" Directory_="NewFolder_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsapiw32.dll"/>
+    <ROW Component="SentinelRMS_lsapiw32.dll_1" ComponentId="{1D36ADAD-C304-4D2B-8E23-10425E909512}" Directory_="Commute_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsapiw32.dll_1"/>
+    <ROW Component="SentinelRMS_lsclean.exe" ComponentId="{C695A0DA-CEBA-461B-B9B3-C8633BA89526}" Directory_="NewFolder_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsclean.exe"/>
+    <ROW Component="SentinelRMS_lsinitCOREv19.exe" ComponentId="{21AAF6FD-1EF4-42AA-93FA-0D1A35BDF1DB}" Directory_="LSInit_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsinitCOREv19.exe"/>
+    <ROW Component="SentinelRMS_wechoid.exe" ComponentId="{ACB7B530-2D56-4838-A775-D4B1DA951EDF}" Directory_="NewFolder_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="wechoid.exe"/>
+    <ROW Component="SentinelSystemDriverInstaller7.6.0." ComponentId="{D69ACE61-2C0C-4E98-9009-8F25FFCCA290}" Directory_="SentinelSystemDriver_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="SentinelSystemDriverInstaller7.6"/>
     <ROW Component="Software" ComponentId="{338A143B-1742-4F09-B994-5B8F3D671975}" Directory_="APPDIR" Attributes="260" KeyPath="Software"/>
-    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{FA7716B1-7F38-4243-9E3A-E5654EAF6FFA}" Directory_="clt_Dir" Attributes="16" KeyPath="System.Windows.Interactivity.dll"/>
-    <ROW Component="System.Windows.Interactivity.dll_1" ComponentId="{D49A9593-9C2E-4E71-AFBE-780D92298268}" Directory_="ld_Dir" Attributes="16" KeyPath="System.Windows.Interactivity.d_1"/>
-    <ROW Component="System.Windows.Interactivity.dll_2" ComponentId="{B189DFD1-9F4D-44CC-8760-35272B6AB2D6}" Directory_="fo_Dir" Attributes="16" KeyPath="System.Windows.Interactivity.d_2"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{FA7716B1-7F38-4243-9E3A-E5654EAF6FFA}" Directory_="clt_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll_1" ComponentId="{D49A9593-9C2E-4E71-AFBE-780D92298268}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="System.Windows.Interactivity.d_1"/>
+    <ROW Component="System.Windows.Interactivity.dll_2" ComponentId="{B189DFD1-9F4D-44CC-8760-35272B6AB2D6}" Directory_="fo_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="System.Windows.Interactivity.d_2"/>
     <ROW Component="TARGETDIRRISAKeyManagerRISAKeyManag" ComponentId="{5FE7833C-D982-483F-9962-D5F45DE0ADF9}" Directory_="APPDIR" Attributes="260" KeyPath="TARGETDIRRISAKeyManagerRISAKeyManag"/>
-    <ROW Component="WCF_ServiceLib.LicensingDashboard.d" ComponentId="{B8885338-4CDE-4A89-930E-226439AF131B}" Directory_="ld_Dir" Attributes="272" KeyPath="WCF_ServiceLib.LicensingDashboar"/>
+    <ROW Component="WCF_ServiceLib.LicensingDashboard.d" ComponentId="{B8885338-4CDE-4A89-930E-226439AF131B}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WCF_ServiceLib.LicensingDashboar"/>
     <ROW Component="WindowsNT" ComponentId="{D9AD7EEA-B80E-4DF3-B3CF-2D6BC1A60C52}" Directory_="APPDIR" Attributes="260" KeyPath="WindowsNT"/>
-    <ROW Component="WpfAnimatedGif.dll" ComponentId="{18B39FC9-C44E-4B38-8E63-830BC4998205}" Directory_="ld_Dir" Attributes="16" KeyPath="WpfAnimatedGif.dll"/>
-    <ROW Component="log4net.dll" ComponentId="{3A8F670D-1C79-4907-8B1C-7F07CB093E83}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="log4net.dll"/>
-    <ROW Component="lsapiw64.dll" ComponentId="{FA6B0771-DC4E-4A13-A7E7-7DAB93CFC155}" Directory_="ld_Dir" Attributes="272" KeyPath="lsapiw64.dll"/>
-    <ROW Component="lsclean.exe" ComponentId="{416F8383-0E26-488A-AA89-3EA181EBE2DF}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsclean.exe_1"/>
-    <ROW Component="lsclean.exe.manifest" ComponentId="{89A29D9F-E359-4AB0-B37F-C3D91398ADD0}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsclean.exe.manifest_1" Type="0"/>
-    <ROW Component="lsinitCOREv19.exe" ComponentId="{D36AF451-DEF6-417C-BB08-80A7B440E342}" Directory_="Utilities_Dir" Attributes="16" KeyPath="lsinitCOREv19.exe_1"/>
-    <ROW Component="readme.txt" ComponentId="{37A07C4A-19D9-4953-85EE-0D3CA297852B}" Directory_="NewFolder1_Dir" Attributes="16" KeyPath="readme.txt" Type="0"/>
-    <ROW Component="wechoid.exe" ComponentId="{34B09E93-C84D-4435-BD4A-E3A15F5FF3A4}" Directory_="Utilities_Dir" Attributes="16" KeyPath="wechoid.exe_1"/>
+    <ROW Component="WpfAnimatedGif.dll" ComponentId="{18B39FC9-C44E-4B38-8E63-830BC4998205}" Directory_="ld_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WpfAnimatedGif.dll"/>
+    <ROW Component="log4net.dll" ComponentId="{3A8F670D-1C79-4907-8B1C-7F07CB093E83}" Directory_="NewFolder1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="log4net.dll"/>
+    <ROW Component="lsapiw64.dll" ComponentId="{FA6B0771-DC4E-4A13-A7E7-7DAB93CFC155}" Directory_="ld_Dir" Attributes="272" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsapiw64.dll"/>
+    <ROW Component="lsclean.exe" ComponentId="{416F8383-0E26-488A-AA89-3EA181EBE2DF}" Directory_="Utilities_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsclean.exe_1"/>
+    <ROW Component="lsclean.exe.manifest" ComponentId="{89A29D9F-E359-4AB0-B37F-C3D91398ADD0}" Directory_="Utilities_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsclean.exe.manifest_1" Type="0"/>
+    <ROW Component="lsinitCOREv19.exe" ComponentId="{D36AF451-DEF6-417C-BB08-80A7B440E342}" Directory_="Utilities_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="lsinitCOREv19.exe_1"/>
+    <ROW Component="readme.txt" ComponentId="{37A07C4A-19D9-4953-85EE-0D3CA297852B}" Directory_="NewFolder1_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="readme.txt" Type="0"/>
+    <ROW Component="wechoid.exe" ComponentId="{34B09E93-C84D-4435-BD4A-E3A15F5FF3A4}" Directory_="Utilities_Dir" Attributes="16" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="wechoid.exe_1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="TargetFeature" Title="TargetFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -244,8 +245,8 @@
     <ROW Directory_="RISA_Dir" Component_="RISA" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
-    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
-    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActio_1" Target="InitProperties"/>
+    <ROW Action="CustomServiceStartRISA32" Type="3073" Source="RISA_CustomActio_1" Target="ServiceControlStartRISA32"/>
+    <ROW Action="CustomServiceStopRISA32" Type="3073" Source="RISA_CustomActio_1" Target="ServiceControlStopRISA32"/>
     <ROW Action="lsinitCOREV19" Type="1538" Source="viewer.exe_1" Target="/RunAsAdmin /HideWindow &quot;[#lsinitCOREv19.exe_1]&quot;" Options="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
@@ -360,7 +361,6 @@
     <ROW Registry="Programmable_7" Root="0" Key="CLSID\{43ca0339-b928-4319-8bdd-b4373910e66c}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_8" Root="0" Key="CLSID\{505f2ef2-1b1d-4a90-84ad-0037d881c10f}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Programmable_9" Root="0" Key="CLSID\{5cfcf68c-b57f-4656-9994-294e95fec4ca}\Programmable" Name="+" Component_="RISALicenseManagerCOM.dll"/>
-    <ROW Registry="SetId" Root="2" Key="System\CurrentControlSet\Control\GraphicsDrivers\Connectivity\SHP14B90_16_07E3_16^9221B588BAF921789CD31B1F8A7B86DE" Name="SetId" Value="SHP14B90_16_07E3_16" Component_="RISALicenseManagerCOM.dll"/>
     <ROW Registry="Software" Root="2" Key="Software" Name="+" Component_="Software"/>
     <ROW Registry="TARGETDIRRISAKeyManagerRISAKeyManag" Root="2" Key="Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" Name="[APPDIR]\RISA Key Manager\RISA Key Manager.exe" Value="~ WIN7RTM" Component_="TARGETDIRRISAKeyManagerRISAKeyManag"/>
     <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{171f51b8-98b3-48ed-98a5-929f28738c50}\InprocServer32" Name="ThreadingModel" Value="Apartment" Component_="RISALicenseManagerCOM.dll"/>
@@ -909,10 +909,10 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleInstExSeqComponent">
     <ROW Action="CustomServiceStopRISA32" BaseAction="ProcessComponents" After="1"/>
     <ROW Action="CustomServiceStartRISA32" BaseAction="PublishProduct" After="1"/>
-    <ROW Action="lsinitCOREV19" BaseAction="CustomServiceStartRISA32" After="1" Condition="( ( NOT Installed ) OR ( Installed AND REMOVE &lt;&gt; &quot;ALL&quot; AND AI_INSTALL_MODE &lt;&gt; &quot;Remove&quot; ) )"/>
+    <ROW Action="lsinitCOREV19" BaseAction="CustomServiceStartRISA32" After="1" Condition="( ( NOT Installed ) OR ( Installed AND REMOVE &lt;&gt; &quot;ALL&quot; AND AI_INSTALL_MODE &lt;&gt; &quot;Remove&quot; ) ) AND ( RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot; )"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
-    <ROW ModuleID="RISALicenseManager" Version="1.0.0" GUID="EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Name="RISA License Manager" Manufacturer="RISA Tech, Inc." Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
+    <ROW ModuleID="RISALicenseManager" Version="6.2.1.0" GUID="EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Name="RISA License Manager" Manufacturer="RISA Tech, Inc." Comments="This database contains the logic and data required to install &lt;module name&gt; component."/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
     <ROW Directory_="SentinelSystemDriver_Dir" SourcePath="..\..\Source Files\SafeNet\Sentinel System Driver" Feature="TargetFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store|*.scc" ExcludeFlags="6" FileAddOptions="4"/>
