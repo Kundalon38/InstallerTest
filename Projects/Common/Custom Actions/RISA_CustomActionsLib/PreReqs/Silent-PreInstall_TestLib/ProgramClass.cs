@@ -44,7 +44,7 @@ namespace Silent_PreInstall_TestLib
                 //
                 var insDirKvp = bootData.CmdLineProperties[BootstrapperDataCommon._propInsDir];
                 var userSpecifiedInsDir = insDirKvp?.PropValue;
-                var normalizedAppDir = CustomActions.getInstallDir(userSpecifiedInsDir,CustomActions._insTypeStandalone).EnsureTrailingBash();
+                var normalizedAppDir = getInstallDir(userSpecifiedInsDir,CustomActions._insTypeStandalone).EnsureTrailingBash();
                 _log.Write(_methodName, $"Installation directory resolved to: {normalizedAppDir}");
                 foreach (var insProd in insProductList)
                 {
@@ -84,5 +84,26 @@ namespace Silent_PreInstall_TestLib
         }
         private static ISiLog _log;
         private const string _methodName = "Silent-PreInstall";
+
+        public static string getInstallDir(string userRequestedInsDir, string installType)
+        {
+            if (userRequestedInsDir == null) // installation dir defaulted, TODO log decision
+            {
+                return CustomActions.isAproblemProfile()
+                    ? CustomActions.altInstallDir(installType)
+                    : CustomActions.pgmFilesInsDir(installType);
+            }
+            // verify that specified ins dir is not a child of C:\Program Files
+            //  I believe this is because both ins dir and documents go here (they're unfortunately conflated)
+            //   application will fail if it tries to write (documents) to C:\Program Files
+            //
+            var pgmFilesDir = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+            if (userRequestedInsDir.StartsWith(pgmFilesDir, StringComparison.CurrentCultureIgnoreCase))
+            {
+                return CustomActions.altInstallDir(installType);
+            }
+
+            return userRequestedInsDir;
+        }
     }
 }

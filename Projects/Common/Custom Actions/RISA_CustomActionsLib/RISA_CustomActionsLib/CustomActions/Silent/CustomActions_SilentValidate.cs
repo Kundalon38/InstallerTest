@@ -17,35 +17,35 @@ namespace RISA_CustomActionsLib
         public static SilentResult SilentValidate(BootstrapperTestData testData = null, ISiLog logger = null)
         {
             // culled out for testing
-            //_doTrace = true;    // set False for production use; use CmdLine LOG instead
 
             const string methodName = "Silent-Validate";
             var bootData = BootstrapperData.FindBootstrapperFromCA(testData);
             if (bootData == null) return SilentResult.OK(bootData);
             if (!bootData.IsSilent) return SilentResult.OK(bootData);
 
+            ISiLog log;
             var validParse = bootData.ParseCmdLine();
-            if (logger == null) _log = new SiLog(bootData.LogFileName, false);
-            else _log = logger;
+            if (logger == null) log = new SiLog(bootData.LogFileName, false);
+            else log = logger;
 
-            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
             if (!validParse || bootData.ErrorList.Any(x => x.IsFatal)) return SilentResult.Fail(bootData);
 
             bootData.ErrorList.Clear();
             var validProduct = bootData.ValidateProduct();
             var validVersion = bootData.ValidateVersion();
-            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
             if (!validProduct || !validVersion) return SilentResult.Fail(bootData);
 
             bootData.ErrorList.Clear();
             var validProperties = bootData.ValidatePropertyValues();
-            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
             if (!validProperties) return SilentResult.Fail(bootData);
 
             bootData.ErrorList.Clear();
             var insProductList = InstalledProductList.FindInstalledProducts(bootData.ProductName);
             var installOldOverNew = bootData.IsInstallOldOverNew(insProductList);
-            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
             if (installOldOverNew) return SilentResult.Fail(bootData);
 
             bootData.ErrorList.Clear();
@@ -62,10 +62,8 @@ namespace RISA_CustomActionsLib
                 bootData.ErrorList.Add(new SiError("Successful input validation",false));
                 retSts = SilentResult.OK(bootData);
             }
-            foreach (var err in bootData.ErrorList) _log.Write(methodName, err.Text);
+            foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
             return retSts;
         }
-
-        private static ISiLog _log;
     }
 }

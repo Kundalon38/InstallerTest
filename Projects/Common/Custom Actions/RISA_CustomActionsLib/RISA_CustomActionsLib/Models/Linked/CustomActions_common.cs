@@ -6,27 +6,6 @@ namespace RISA_CustomActionsLib
 {
     public partial class CustomActions
     {
-        public static string getInstallDir(string userRequestedInsDir, string installType)
-        {
-            if (userRequestedInsDir == null) // installation dir defaulted, TODO log decision
-            {
-                return isAproblemProfile()
-                    ? altInstallDir(installType)
-                    : pgmFilesInsDir(installType);
-            }
-            // verify that specified ins dir is not a child of C:\Program Files
-            //  I believe this is because both ins dir and documents go here (they're unfortunately conflated)
-            //   application will fail if it tries to write (documents) to C:\Program Files
-            //
-            var pgmFilesDir = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-            if (userRequestedInsDir.StartsWith(pgmFilesDir, StringComparison.CurrentCultureIgnoreCase))
-            {
-                return CustomActions.altInstallDir(installType);
-            }
-
-            return userRequestedInsDir;
-        }
-
         public static string altInstallDir(string installType)
         {
             // this is about finding the correct drive letter based on where the Windows directory lives

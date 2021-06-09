@@ -32,8 +32,8 @@ namespace RISA_CustomActionsLib.Models.Linked
         protected const string _ltCloud = "Subscription";
         protected const string _ltNetwork = "Network";
         protected const string _ltKey = "Key";
-        protected const string _ansYes = "Yes";
-        protected const string _ansNo = "No";
+        public const string _ansYes = "Yes";
+        public const string _ansNo = "No";
         public CmdLineProperties CmdLineProperties { get; protected set; } = new CmdLineProperties();
 
         public List<SiError> ErrorList { get; set; } = new List<SiError>();

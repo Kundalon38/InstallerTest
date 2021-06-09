@@ -14,6 +14,7 @@
         public const string _propMSI_TARGETDIR = "TARGETDIR";
         public const string _propMSI_CustomActionData = "CustomActionData";
 
+        public const string _propRISA_CHECK_UPDATES = "RISA_CHECK_UPDATES";
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
         public const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
         public const string _propRISA_IS_ROAMING_PROFILE = "RISA_IS_ROAMING_PROFILE";
