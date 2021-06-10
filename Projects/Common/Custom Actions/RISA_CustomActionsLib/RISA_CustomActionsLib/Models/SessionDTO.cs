@@ -14,8 +14,15 @@ namespace RISA_CustomActionsLib.Models
             _dlgtLog = dlgtLog;
         }
 
+        public static SessionDTO Clone(SessionDTO sess)
+        {
+            var clone = new SessionDTO(sess._dlgtLog);
+            foreach(var kvp in sess.PropDict) clone.PropDict.Add(kvp.Key,kvp.Value);
+            return clone;
+        }
+
         private readonly Action<string> _dlgtLog;
-        private readonly Dictionary<string,string> _propDict = new Dictionary<string, string>();
+        public Dictionary<string,string> PropDict { get; } = new Dictionary<string, string>();
 
         public void Log(string msg)
         {
@@ -26,21 +33,21 @@ namespace RISA_CustomActionsLib.Models
         {
             get
             {
-                if (_propDict.TryGetValue(propName, out var propValue)) return propValue;
+                if (PropDict.TryGetValue(propName, out var propValue)) return propValue;
                 throw new IndexOutOfRangeException($"Property {propName} is not defined");
             }
-            set => _propDict[propName] = value;
+            set => PropDict[propName] = value;
         }
 
         public bool PropertyExists(string propName)
         {
-            return _propDict.ContainsKey(propName);
+            return PropDict.ContainsKey(propName);
         }
 
         public override string ToString()
         {
             var outStr = string.Empty;
-            foreach (var kvp in _propDict)
+            foreach (var kvp in PropDict)
                 outStr += $"{kvp.Key} = {kvp.Value}{Environment.NewLine}";
             return outStr;
         }

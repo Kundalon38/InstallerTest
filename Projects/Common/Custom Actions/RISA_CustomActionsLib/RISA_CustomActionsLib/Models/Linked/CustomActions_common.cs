@@ -42,7 +42,7 @@ namespace RISA_CustomActionsLib
             if (!usingOneDrive) usingOneDrive = pathContainsOneDrive(userProfilePath);
 
             // roaming if a unc path
-            var isRoaming = isRoamingValue.HasValue ? isRoamingValue.Value : myDocsPath.StartsWith(@"\\");
+            var isRoaming = isRoamingValue ?? pathIsRoaming(myDocsPath);
 
             if (!isRoaming)
             {
@@ -67,6 +67,11 @@ namespace RISA_CustomActionsLib
             var pathParts = path.Split((char)bash);
             if (pathParts.Length < 4) return false;     // C: - Users - <username> - OneDrive - maybeMore
             return (pathParts[3] == "OneDrive");
+        }
+
+        public static bool pathIsRoaming(string path)
+        {
+            return path.StartsWith(@"\\");
         }
     }
 }

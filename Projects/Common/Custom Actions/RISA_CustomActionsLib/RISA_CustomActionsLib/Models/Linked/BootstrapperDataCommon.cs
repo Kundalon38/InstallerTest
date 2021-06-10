@@ -29,9 +29,9 @@ namespace RISA_CustomActionsLib.Models.Linked
 
         protected const string _allValidRegions = "012345678";
 
-        protected const string _ltCloud = "Subscription";
-        protected const string _ltNetwork = "Network";
-        protected const string _ltKey = "Key";
+        public const string _ltCloud = "Subscription";
+        public const string _ltNetwork = "Network";
+        public const string _ltKey = "Key";
         public const string _ansYes = "Yes";
         public const string _ansNo = "No";
         public CmdLineProperties CmdLineProperties { get; protected set; } = new CmdLineProperties();

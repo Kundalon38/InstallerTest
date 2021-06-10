@@ -62,9 +62,6 @@ namespace RISA_CustomActionsLib.Test
         protected const string _propLogFile = "SILOG";
         protected const string _propIniFile = "SINIF";
 
-        protected const string _ltCloud = "Subscription";
-        protected const string _ltNetwork = "Network";
-        protected const string _ltKey = "Key";
         protected const string _ansYes = "Yes";
         protected const string _ansNo = "No";
 

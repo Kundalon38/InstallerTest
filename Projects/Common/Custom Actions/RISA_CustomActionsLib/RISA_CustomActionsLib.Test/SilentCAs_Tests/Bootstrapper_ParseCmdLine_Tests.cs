@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RISA_CustomActionsLib.Models;
 using BootstrapperData = RISA_CustomActionsLib.Models.Linked.BootstrapperData;
 
-namespace RISA_CustomActionsLib.Test
+namespace RISA_CustomActionsLib.Test.SilentCAs_Tests
 {
     [TestClass]
     public class Bootstrapper_ParseCmdLine_Tests : TestBase

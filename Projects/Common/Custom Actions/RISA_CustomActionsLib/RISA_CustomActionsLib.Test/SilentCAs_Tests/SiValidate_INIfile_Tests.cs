@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RISA_CustomActionsLib.Models.Linked;
 
-namespace RISA_CustomActionsLib.Test
+namespace RISA_CustomActionsLib.Test.SilentCAs_Tests
 {
     [TestClass]
     public class SiValidate_INIfile_Tests : TestBase
@@ -173,7 +169,7 @@ namespace RISA_CustomActionsLib.Test
 
             var siLicTypeProp = siRes.BooData.CmdLineProperties[_propLicType];
             expecting(siLicTypeProp != null, loc());
-            expecting(siLicTypeProp.PropValue == _ltCloud, loc());
+            expecting(siLicTypeProp.PropValue == BootstrapperDataCommon._ltCloud, loc());
 
             expecting(siRes.IsOK, loc());
             Assert.IsTrue(true);

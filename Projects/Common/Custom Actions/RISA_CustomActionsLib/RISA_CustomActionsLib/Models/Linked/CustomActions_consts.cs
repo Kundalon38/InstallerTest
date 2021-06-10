@@ -119,15 +119,15 @@
 
         #region Regions
 
-        private const string _regionUSA = "UNITED_STATES";
-        private const string _regionCANADA = "CANADA";
-        private const string _regionUK = "BRITAIN";
-        private const string _regionEUROPE = "EUROPE";
-        private const string _regionINDIA = "INDIA";
-        private const string _regionOZ = "AUSTRALIA";
-        private const string _regionNZ = "NEW_ZEALAND";
-        private const string _regionMEXICO = "MEXICO";
-        private const string _regionSAUDI = "SAUDI_ARABIA";
+        public const string _regionUSA = "UNITED_STATES";
+        public const string _regionCANADA = "CANADA";
+        public const string _regionUK = "BRITAIN";
+        public const string _regionEUROPE = "EUROPE";
+        public const string _regionINDIA = "INDIA";
+        public const string _regionOZ = "AUSTRALIA";
+        public const string _regionNZ = "NEW_ZEALAND";
+        public const string _regionMEXICO = "MEXICO";
+        public const string _regionSAUDI = "SAUDI_ARABIA";
 
         // order is critical, silent file syntax requires user to provide an index
         private static readonly string[] _regionNameList = new[]

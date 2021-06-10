@@ -69,12 +69,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrapper_ParseCmdLine_Tests.cs" />
+    <Compile Include="SilentCAs_Tests\Bootstrapper_ParseCmdLine_Tests.cs" />
     <Compile Include="ConsoleLog.cs" />
-    <Compile Include="InitProperties_Tests.cs" />
+    <Compile Include="LoudCAs_Tests\InitProperties_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiValidate_INIfile_Tests.cs" />
-    <Compile Include="SiValidate_Tests.cs" />
+    <Compile Include="SilentCAs_Tests\SiInitProps_Tests.cs" />
+    <Compile Include="SilentCAs_Tests\SiValidate_INIfile_Tests.cs" />
+    <Compile Include="SilentCAs_Tests\SiValidate_Tests.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>

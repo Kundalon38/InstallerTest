@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Deployment.WindowsInstaller;
-using RISA_CustomActionsLib.Extensions;
 using RISA_CustomActionsLib.Models;
 using RISA_CustomActionsLib.Models.Linked;
 using BootstrapperData = RISA_CustomActionsLib.Models.Linked.BootstrapperData;
@@ -28,7 +23,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Success;
+                return ActionResult.Failure;
             }
             #endregion
 
@@ -43,7 +38,7 @@ namespace RISA_CustomActionsLib
             catch (Exception ex)
             {
                 excpLog(session, methodName, ex);
-                return ActionResult.Success;
+                return ActionResult.Failure;
             }
             #endregion
 
@@ -78,9 +73,9 @@ namespace RISA_CustomActionsLib
                 }
 
                 // assign properties - clone into InitProperties
+                processProductVersion(sessDTO);
                 assignVersionBasedProperties(sessDTO);
                 assignRemainingIdentityBasedProperties(sessDTO);
-
 
                 // assign install + documents directories
                 var siDIRprop = bootData.CmdLineProperties[BootstrapperDataCommon._propInsDir];
@@ -88,29 +83,36 @@ namespace RISA_CustomActionsLib
                 else
                 {
                     var userSpecifiedInsDir = siDIRprop.PropValue;
-                    var pgmFilesDir = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-                    var appDir = userSpecifiedInsDir.StartsWith(pgmFilesDir, StringComparison.CurrentCultureIgnoreCase)
-                        ? altInstallDir(sessDTO[_propRISA_INSTALL_TYPE])
-                        : userSpecifiedInsDir;
+                    string appDir;
+                    if (pathContainsOneDrive(userSpecifiedInsDir) || pathIsRoaming(userSpecifiedInsDir))
+                        appDir = altInstallDir(sessDTO[_propRISA_INSTALL_TYPE]);
+                    else
+                    {
+                        var pgmFilesDir = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+                        appDir = userSpecifiedInsDir.StartsWith(pgmFilesDir, StringComparison.CurrentCultureIgnoreCase)
+                            ? altInstallDir(sessDTO[_propRISA_INSTALL_TYPE])
+                            : userSpecifiedInsDir;
+                    }
                     sessDTO[_propAI_APPDIR] = appDir;
                     sessDTO[_propRISA_USERFILES] = appDir;
                 }
                 log.Write(methodName, $"Installation directory resolved to: {sessDTO[_propAI_APPDIR]}");
+                log.Write(methodName, $"Documents directory resolved to: {sessDTO[_propRISA_USERFILES]}");
 
 
                 // assign license Type
                 var siLTYprop = bootData.CmdLineProperties[BootstrapperDataCommon._propLicType];
                 if (siLTYprop == null) assignDefaultLicenseType(sessDTO);
                 else sessDTO[_propRISA_LICENSE_TYPE] = siLTYprop.PropValue;
-
+                log.Write(methodName, $"License Type resolved to: {sessDTO[_propRISA_LICENSE_TYPE]}");
 
                 // assign Region name, translate number (index) to country name string
                 var siRGNprop = bootData.CmdLineProperties[BootstrapperDataCommon._propRegion];
                 sessDTO[_propRISA_REGION_NAME] = siRGNprop == null
                     ? _defRegionName
                     : _regionNameList[int.Parse(siRGNprop.PropValue)];
+                log.Write(methodName, $"Region Name resolved to: {sessDTO[_propRISA_REGION_NAME]}");
 
-                
                 // assign AutoUpdate, translate Yes / No to True / False
                 var siUPDprop = bootData.CmdLineProperties[BootstrapperDataCommon._propUpdate];
                 var finalValue = _boolTrue;
@@ -119,13 +121,14 @@ namespace RISA_CustomActionsLib
                     if (siUPDprop.PropValue == BootstrapperDataCommon._ansNo) finalValue = _boolFalse;
                 }
                 sessDTO[_propRISA_CHECK_UPDATES] = finalValue;
+                log.Write(methodName, $"Auto Check for Updates resolved to: {sessDTO[_propRISA_CHECK_UPDATES]}");
+                return SilentResult.OK(bootData);
             }
             catch (Exception e)
             {
                 log?.Write(methodName, $"{e.Message}{Environment.NewLine}{e.StackTrace}");
                 return SilentResult.Fail(bootData);
             }
-            return SilentResult.OK(bootData);
         }
 
         #endregion

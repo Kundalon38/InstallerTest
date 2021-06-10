@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RISA_CustomActionsLib.Models.Linked;
 
-namespace RISA_CustomActionsLib.Test
+namespace RISA_CustomActionsLib.Test.SilentCAs_Tests
 {
     [TestClass]
     public class SiValidate_Tests : TestBase
@@ -347,7 +342,7 @@ namespace RISA_CustomActionsLib.Test
         [TestMethod, TestCategory("SiValidate")]
         public void LicenseType_Valid_OK()
         {
-            var propStr = propKvP(_propLicType, _ltCloud);
+            var propStr = propKvP(_propLicType, BootstrapperDataCommon._ltCloud);
             var cmdLine = $@"{exeShortFn} /qn {propStr}";
             var btd = new BootstrapperTestData()
             {
