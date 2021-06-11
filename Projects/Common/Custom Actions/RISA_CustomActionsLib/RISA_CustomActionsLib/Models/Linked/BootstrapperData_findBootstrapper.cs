@@ -13,7 +13,7 @@ namespace RISA_CustomActionsLib.Models.Linked
             var allProcs = Process.GetProcesses(".");
             foreach (var curProcess in allProcs)
             {
-                if (string.Compare(curProcess.ProcessName, "msiexec", StringComparison.CurrentCultureIgnoreCase) != 0) continue;
+                if (!curProcess.ProcessName.IsEqIgnoreCase("msiexec")) continue;
                 var cmdLine = curProcess.GetCommandLine();
                 if (cmdLine == null) continue;
                 var cmdLineUC = cmdLine.ToUpper();

@@ -18,6 +18,17 @@ namespace RISA_CustomActionsLib.Models.Linked
             const string ddq = @"""";
             return $"{ddq}{src}{ddq}";
         }
+        public static string EnsureTrailingBash(this string path)
+        {
+            const string bash = @"\";
+            if (string.IsNullOrEmpty(path)) return path;
+            if (path.Substring(path.Length - 1, 1) == bash) return path;
+            return path += bash;
+        }
+        public static bool IsEqIgnoreCase(this string src, string cmpWith)
+        {
+            return string.Compare(src, cmpWith, StringComparison.CurrentCultureIgnoreCase) == 0;
+        }
 
         public static string ToDetailStr(this string src)
         {

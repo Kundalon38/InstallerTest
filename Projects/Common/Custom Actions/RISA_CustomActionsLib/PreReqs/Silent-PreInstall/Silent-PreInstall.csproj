@@ -114,7 +114,6 @@
     <Compile Include="..\..\RISA_CustomActionsLib\Models\Linked\SiLog.cs">
       <Link>Models\Linked\SiLog.cs</Link>
     </Compile>
-    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

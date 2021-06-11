@@ -88,7 +88,6 @@
     <Compile Include="..\..\risa_customactionslib\models\linked\SiLog.cs">
       <Link>Models\Linked\SiLog.cs</Link>
     </Compile>
-    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="ProgramClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

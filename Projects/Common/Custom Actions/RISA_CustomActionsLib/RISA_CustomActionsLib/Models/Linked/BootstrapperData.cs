@@ -52,7 +52,7 @@ namespace RISA_CustomActionsLib.Models.Linked
                 if (logKvp == null) return null;
 
                 const string deskTop = "DESKTOP";
-                if (string.Compare(logKvp.PropValue, deskTop, StringComparison.CurrentCultureIgnoreCase) == 0)
+                if(logKvp.PropValue.IsEqIgnoreCase(deskTop))
                 {
                     var deskTopDir = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
                     return Path.Combine(deskTopDir, shortLogFileName);

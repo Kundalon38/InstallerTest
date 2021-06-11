@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using RISA_CustomActionsLib;
 using RISA_CustomActionsLib.Models.Linked;
-using Silent_PreInstall.Extensions;
 
 namespace Silent_PreInstall_TestLib
 {
@@ -20,7 +19,7 @@ namespace Silent_PreInstall_TestLib
             if (!bootData.IsSilent) return CustomActions._ists_SILENT_OK;
 
             var validParse = bootData.ParseCmdLine();
-            if (logger == null) _log = new SiLog(bootData.LogFileName, false);
+            if (logger == null) _log = new SiLog(bootData.LogFileName, true);
             else _log = logger;
 
             foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);

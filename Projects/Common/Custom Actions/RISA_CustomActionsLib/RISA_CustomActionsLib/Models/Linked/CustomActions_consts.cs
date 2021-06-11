@@ -57,14 +57,16 @@
         public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
 
         // _propRISA_SI_PREINSTALL_RESULT values must be numeric.ToString()
+        // NOTE: Success or OK MUST equal to 0 - this is an MSI requirement
+        // - Silent-PreInstall returns an int, this is stored as a string in _propRISA_SI_PREINSTALL_RESULT
 
-        public const int _ists_SILENT_OK = 1;
-        public const int _ists_SILENT_ERR = 0;
-        public const int _ists_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = -1;
+        public const int _ists_SILENT_OK = 0;
+        public const int _ists_SILENT_ERR = -1;
+        public const int _ists_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = -2;
 
-        public const string _sts_SILENT_OK = "1";
-        public const string _sts_SILENT_ERR = "0";
-        public const string _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = "-1";
+        public const string _sts_SILENT_OK = "0";
+        public const string _sts_SILENT_ERR = "-1";
+        public const string _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = "-2";
 
         public const string _stsText_Success = "Success";
 

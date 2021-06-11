@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using RISA_CustomActionsLib;
 using RISA_CustomActionsLib.Models.Linked;
-using Silent_PreInstall.Extensions;
 
 namespace Silent_PreInstall
 {
@@ -47,8 +46,7 @@ namespace Silent_PreInstall
 
                 foreach (var insProd in insProductList)
                 {
-                    if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedAppDir,
-                        StringComparison.CurrentCultureIgnoreCase)) tbRemoved.Add(insProd);
+                    if(insProd.TargetDir.EnsureTrailingBash().IsEqIgnoreCase(normalizedAppDir)) tbRemoved.Add(insProd);
                 }
 
                 foreach (var insProd in tbRemoved)

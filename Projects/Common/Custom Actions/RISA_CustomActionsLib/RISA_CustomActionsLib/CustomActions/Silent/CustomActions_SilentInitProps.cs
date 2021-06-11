@@ -59,7 +59,7 @@ namespace RISA_CustomActionsLib
                 if (!bootData.IsSilent) return SilentResult.OK(bootData);
 
                 var validParse = bootData.ParseCmdLine();
-                if (logger == null) log = new SiLog(bootData.LogFileName, false);
+                if (logger == null) log = new SiLog(bootData.LogFileName, true);
                 else log = logger;
 
                 foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);

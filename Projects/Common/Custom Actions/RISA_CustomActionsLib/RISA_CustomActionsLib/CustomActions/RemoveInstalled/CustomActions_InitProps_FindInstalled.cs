@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Win32;
-using RISA_CustomActionsLib.Extensions;
-using RISA_CustomActionsLib.Models;
+﻿using RISA_CustomActionsLib.Models;
 using RISA_CustomActionsLib.Models.Linked;
 
 namespace RISA_CustomActionsLib

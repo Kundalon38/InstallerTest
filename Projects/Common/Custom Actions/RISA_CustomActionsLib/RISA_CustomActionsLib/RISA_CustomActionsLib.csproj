@@ -77,7 +77,6 @@
     <Compile Include="CustomActions\CustomActions_logging.cs" />
     <Compile Include="CustomActions\RemoveInstalled\CustomActions_RemoveInstalled.cs" />
     <Compile Include="CustomActions\ValidateInstallDirectory\CustomActions_ValidateInstallDirectory.cs" />
-    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\Linked\BootstrapperData.cs" />
     <Compile Include="Models\Linked\BootstrapperData_findBootstrapper.cs" />
     <Compile Include="Models\Linked\Extensions.cs" />

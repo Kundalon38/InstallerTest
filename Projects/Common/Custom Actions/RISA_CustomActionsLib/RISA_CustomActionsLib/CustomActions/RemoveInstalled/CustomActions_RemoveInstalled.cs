@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Deployment.WindowsInstaller;
-using RISA_CustomActionsLib.Extensions;
 using RISA_CustomActionsLib.Models;
 using RISA_CustomActionsLib.Models.Linked;
 
@@ -66,8 +65,7 @@ namespace RISA_CustomActionsLib
                 var normalizedAppDir = sessDTO[_propAI_APPDIR].EnsureTrailingBash();
                 foreach (var insProd in insProductList)
                 {
-                    if (string.Equals(insProd.TargetDir.EnsureTrailingBash(), normalizedAppDir,
-                        StringComparison.CurrentCultureIgnoreCase)) tbRemoved.Add(insProd);
+                    if (insProd.TargetDir.EnsureTrailingBash().IsEqIgnoreCase(normalizedAppDir)) tbRemoved.Add(insProd);
                 }
 
                 foreach (var insProd in tbRemoved) insProd.UnInstall(Trace);
