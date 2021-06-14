@@ -1,5 +1,5 @@
 # guest services must be turned on in the VM
-$VMName = "MyWin10"
+$VMName = "MyWin81"
 $VMUser = "Tom"
 # $SrcFolder = "C:\Advanced Installer\Projects\RISA-3D_dotNET\Standalone\Setup Files"
 $DestFolder = "C:\Users\$VMUser\Desktop\"
