@@ -308,6 +308,7 @@ namespace RISA_CustomActionsLib.Models.Linked
 
             foreach (var siProp in siProps)
             {
+                var valueAccepted = false;
                 switch (siProp.PropName)
                 {
                     case _propRegion:
@@ -333,20 +334,44 @@ namespace RISA_CustomActionsLib.Models.Linked
                         break;
 
                     case _propUpdate:
-                        if (siProp.PropValue != _ansYes && siProp.PropValue != _ansNo)
+                        // normalize the value, so user can disregard letter case, so can code downstream
+                        if (siProp.PropValue.IsEqIgnoreCase(_ansYes))
+                        {
+                            valueAccepted = true;
+                            siProp.PropValue = _ansYes;
+                        }
+                        else if (siProp.PropValue.IsEqIgnoreCase(_ansNo))
+                        {
+                            valueAccepted = true;
+                            siProp.PropValue = _ansNo;
+                        }
+                        if (!valueAccepted)
                         {
                             addErr($"Invalid property value in: {siProp.ToString()}");
                             retSts = false;
-                            break;
                         }
                         break;
 
                     case _propLicType:
-                        if (siProp.PropValue != _ltCloud && siProp.PropValue != _ltKey && siProp.PropValue != _ltNetwork)
+                        if (siProp.PropValue.IsEqIgnoreCase(_ltCloud))
+                        {
+                            valueAccepted = true;
+                            siProp.PropValue = _ltCloud;
+                        }
+                        else if (siProp.PropValue.IsEqIgnoreCase(_ltKey))
+                        {
+                            valueAccepted = true;
+                            siProp.PropValue = _ltKey;
+                        }
+                        else if (siProp.PropValue.IsEqIgnoreCase(_ltNetwork))
+                        {
+                            valueAccepted = true;
+                            siProp.PropValue = _ltNetwork;
+                        }
+                        if (!valueAccepted)
                         {
                             addErr($"Invalid License Type in: {siProp.ToString()}");
                             retSts = false;
-                            break;
                         }
                         break;
 

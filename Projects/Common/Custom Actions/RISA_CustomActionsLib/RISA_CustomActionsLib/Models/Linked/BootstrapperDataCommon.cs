@@ -10,7 +10,7 @@ namespace RISA_CustomActionsLib.Models.Linked
         public const string _propUpdate = "SIUPD";
         public const string _propLicType = "SILTY";
         public const string _propLogFile = "SILOG";
-        public const string _propIniFile = "SINIF";
+        public const string _propIniFile = "SINFI";
 
         protected readonly string[] _supportedSiPropNames = { _propInsDir, _propPgmGrp, _propRegion, _propUpdate, _propLicType, _propLogFile, _propIniFile };
 

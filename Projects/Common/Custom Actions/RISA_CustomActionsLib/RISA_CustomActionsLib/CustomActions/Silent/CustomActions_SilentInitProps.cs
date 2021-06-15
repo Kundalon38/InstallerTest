@@ -72,6 +72,11 @@ namespace RISA_CustomActionsLib
                     return SilentResult.Fail(bootData);
                 }
 
+                bootData.ErrorList.Clear();
+                var validProperties = bootData.ValidatePropertyValues();
+                foreach (var err in bootData.ErrorList) log.Write(methodName, err.Text);
+                if (!validProperties) return SilentResult.Fail(bootData);
+
                 // assign properties - clone into InitProperties
                 processProductVersion(sessDTO);
                 assignVersionBasedProperties(sessDTO);

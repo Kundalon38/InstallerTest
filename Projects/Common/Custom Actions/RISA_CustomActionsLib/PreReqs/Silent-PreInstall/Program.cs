@@ -6,31 +6,50 @@ using RISA_CustomActionsLib.Models.Linked;
 
 namespace Silent_PreInstall
 {
-    // Note: this application must be built x64,
+    // Silent_PreInstall's only function is:
+    // - figure out where product is going to be installed to, detect if it will collide with an existing product
+    //   and remove the existing product if this is the case
+    // - an early test is to determine if this is a silent install.  If it isn't, drop thru.
+    // - int status is returned, and assigned to a property by AI, which is read downstream.
+    //   It's critical to return 0 for success (an MSI convention).
+    //
+    // This application must be built x64,
     //  at least for SpecialFolders.ProgramFiles to resolve correctly
+    //
     class Program
     {
         static int Main(string[] args)
         {
-            // code below was pasted in (more or less intact) from test location: Silent_PreInstall_TestLib.ProgramClass.Main()
-            var bootData = BootstrapperData.FindBootstrapperFromExe();
-            if (bootData == null) return CustomActions._ists_SILENT_OK;
-            if (!bootData.IsSilent) return CustomActions._ists_SILENT_OK;
+            // code below was developed from test location: Silent_PreInstall_TestLib.ProgramClass.Main()
+            BootstrapperData bootData = null;
+            InstalledProductList insProductList = null;
 
-            var validParse = bootData.ParseCmdLine();
-            _log = new SiLog(bootData.LogFileName, true);
+            try
+            {
+                bootData = BootstrapperData.FindBootstrapperFromExe();
+                if (bootData == null) return CustomActions._ists_SILENT_OK;
+                if (!bootData.IsSilent) return CustomActions._ists_SILENT_OK;
 
-            foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);
-            if (!validParse || bootData.ErrorList.Any(x => x.IsFatal)) return CustomActions._ists_SILENT_ERR;
+                var validParse = bootData.ParseCmdLine();
+                _log = new SiLog(bootData.LogFileName, true);
 
-            bootData.ErrorList.Clear();
-            var validProperties = bootData.ValidatePropertyValues();            // reads ini file if exists
-            foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);
-            if (!validProperties) return CustomActions._ists_SILENT_ERR;
+                foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);
+                if (!validParse || bootData.ErrorList.Any(x => x.IsFatal)) return CustomActions._ists_SILENT_ERR;
 
-            bootData.ErrorList.Clear();
-            var insProductList = InstalledProductList.FindInstalledProducts(bootData.ProductName);
-            if (insProductList.Count == 0) return CustomActions._ists_SILENT_OK;    // no installed products ==> go home
+                bootData.ErrorList.Clear();
+                var validProperties = bootData.ValidatePropertyValues();            // reads ini file if exists
+                foreach (var err in bootData.ErrorList) _log.Write(_methodName, err.Text);
+                if (!validProperties) return CustomActions._ists_SILENT_ERR;
+
+                bootData.ErrorList.Clear();
+                insProductList = InstalledProductList.FindInstalledProducts(bootData.ProductName);
+                if (insProductList.Count == 0) return CustomActions._ists_SILENT_OK;    // no installed products ==> go home
+            }
+            catch (Exception e)
+            {
+                _log.Write(_methodName, $"{e.Message}{Environment.NewLine}{e.StackTrace}");
+                return CustomActions._ists_SILENT_ERR;
+            }
 
             var returnStatus = CustomActions._ists_SILENT_OK;
             var tbRemoved = new List<InstalledProduct>();
