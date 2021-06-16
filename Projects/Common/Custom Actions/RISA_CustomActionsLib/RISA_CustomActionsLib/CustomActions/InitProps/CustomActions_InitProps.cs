@@ -126,7 +126,7 @@ namespace RISA_CustomActionsLib
                 if (!validProductName(sessDTO)) return;
                 if (!processProductVersion(sessDTO)) return;
                 if (!validInstallType(sessDTO)) return;
-                if (!noRISAproductsAreRunning(sessDTO)) return;
+                if (anyRISAproductsActive(sessDTO)) return;
 
                 assignVersionBasedProperties(sessDTO);
                 if(!serializeMatchingInstalledProducts(sessDTO)) return;
@@ -220,22 +220,14 @@ namespace RISA_CustomActionsLib
 
         #region InitProperties - ensure no products are running
 
-        public static bool noRISAproductsAreRunning(SessionDTO sessDTO)
+        public static bool anyRISAproductsActive(SessionDTO sessDTO)
         {
-            // exclude risaservice because 1) it's not a product and 2) probing it may throw Access denied excp
-            // shutting down risaservice is directly handled by those installers that need to update it
-
-            // merely testing the process names is shaky, esp a common name like "adapt"
-            // - deeper probing is possible if tricky, see the "stash for possible future need" region below
-
-            var allProcessNamesLC = Process.GetProcesses().Select(x => x.ProcessName.ToLower());
-            var risaProcessNamesLC = allProcessNamesLC
-                .Where(x => (x.StartsWith("risa") || x.StartsWith("adapt")) && x != "risaservice");
-
-            if (!risaProcessNamesLC.Any()) return true;
-            const string methodName = "noRISAproductsAreRunning";
-            return reportError(sessDTO, methodName, _sts_ERR_PRODUCT_ACTIVE,
+            if (!anyRISAproductsActive()) return false;
+            const string methodName = "anyRISAproductsActive";
+            return !reportError(sessDTO, methodName, _sts_ERR_PRODUCT_ACTIVE,
                 $"Other RISA/ADAPT product(s) are active.  Please save your work, close them and restart this installer.");
+
+
 
             #region stash for possible future need
 
@@ -264,6 +256,22 @@ namespace RISA_CustomActionsLib
             #endregion
         }
 
+        public static bool anyRISAproductsActive()
+        {
+            // exclude risaservice because 1) it's not a product and 2) probing it may throw Access denied excp
+            // shutting down risaservice is directly handled by those installers that need to update it
+
+            // merely testing the process names is shaky, esp a common name like "adapt"
+            // - deeper probing is possible if tricky, see the "stash for possible future need" region below
+
+            var allProcessNamesLC = Process.GetProcesses().Select(x => x.ProcessName.ToLower());
+            var risaProcessNamesLC = allProcessNamesLC
+                .Where(x => (x.StartsWith("risa") || x.StartsWith("adapt")) && x != "risaservice");
+
+            return risaProcessNamesLC.Any();
+        }
+
+
         #endregion
 
         #region InitProperties - roaming profile
@@ -281,13 +289,13 @@ namespace RISA_CustomActionsLib
 
             if (isAproblemProfile(isRoamingValue))
             {
-                appDir = defaultRoamingInstallDir(installTypeProperty);
+                appDir = altInstallDir(installTypeProperty);
                 docsPath = appDir;
                 isAproblemProfileStr = _boolTrue;
             }
             else
             {
-                appDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), folderName);
+                appDir = pgmFilesInsDir(folderName);
                 docsPath = Path.Combine(myDocsPath, folderName);
                 isAproblemProfileStr = _boolFalse;
             }
@@ -295,61 +303,6 @@ namespace RISA_CustomActionsLib
             session[_propAI_APPDIR] = appDir;
             session[_propRISA_IS_ROAMING_PROFILE] = isAproblemProfileStr;
             session[_propRISA_USERFILES] = docsPath;
-        }
-
-        public static string defaultRoamingInstallDir(string installType)
-        {
-            // this is about finding the correct drive letter based on where the Windows directory lives
-            // nearly everyone will be using C:\
-            //
-            const string bash = @"\";
-            var drives = DriveInfo.GetDrives();
-            var windowsDir = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
-            var outDriveIfRoaming = drives.Select(x => x.Name).SingleOrDefault(x => windowsDir.StartsWith(x));
-            if (outDriveIfRoaming == null) outDriveIfRoaming = @"C:\";
-            else if (!outDriveIfRoaming.EndsWith(bash)) outDriveIfRoaming += bash;
-
-            var folderName = (installType == _insTypeDemo) ? "RISADemo" : "RISA";
-            return $"{outDriveIfRoaming}{folderName}";
-        }
-
-        public static bool isAproblemProfile(bool? isRoamingValue = null)
-        {
-            var myDocsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            // typical myDocsPath:      C:\Users\<username>\Documents
-            var usingOneDrive = pathContainsOneDrive(myDocsPath);
-
-            // typical userProfilePath: C:\Users\<username>
-            var userProfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            if (!usingOneDrive) usingOneDrive = pathContainsOneDrive(userProfilePath);
-
-            // roaming if a unc path
-            var isRoaming = isRoamingValue.HasValue ? isRoamingValue.Value : myDocsPath.StartsWith(@"\\");
-
-            if (!isRoaming)
-            {
-                // myDocsPath must stem from userProfilePath, otherwise isRoaming=T; will this comparison always work?
-                isRoaming = !myDocsPath.StartsWith(userProfilePath);
-            }
-
-            if (!isRoaming)
-            {
-                // require both paths to exist, otherwise isRoaming=T
-                isRoaming = !(Directory.Exists(myDocsPath) && Directory.Exists(userProfilePath));
-            }
-            return isRoaming || usingOneDrive;
-        }
-
-        public static bool pathContainsOneDrive(string path)
-        {
-            // OneDrive is at:      C:\Users\<username>\OneDrive    users can add subdirs to this
-            // but not completely sure of all use cases
-            //
-            const int bash = 92;
-            var pathParts = path.Split((char)bash);
-            if (pathParts.Length < 4) return false;     // C: - Users - <username> - OneDrive - maybeMore
-            return (pathParts[3] == "OneDrive");
         }
 
         #endregion

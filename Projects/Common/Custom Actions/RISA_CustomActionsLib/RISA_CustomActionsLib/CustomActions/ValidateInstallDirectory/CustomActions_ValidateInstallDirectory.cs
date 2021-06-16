@@ -59,7 +59,7 @@ namespace RISA_CustomActionsLib
                     var pgmFilesDir = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
                     if (appDir.StartsWith(pgmFilesDir, StringComparison.CurrentCultureIgnoreCase))
                     {
-                        sessDTO[_propAI_APPDIR] = defaultRoamingInstallDir(sessDTO[_propRISA_INSTALL_TYPE]);
+                        sessDTO[_propAI_APPDIR] = altInstallDir(sessDTO[_propRISA_INSTALL_TYPE]);
                         sessDTO[_propRISA_STATUS_CODE] = _sts_BAD_DEST_DIR;
                         msgText = badDirMsg;
                         return;

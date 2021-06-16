@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.Deployment.WindowsInstaller;
-using RISA_CustomActionsLib.Models;
-
-namespace RISA_CustomActionsLib
+﻿namespace RISA_CustomActionsLib
 {
     public partial class CustomActions
     {
@@ -18,9 +14,9 @@ namespace RISA_CustomActionsLib
         public const string _propMSI_TARGETDIR = "TARGETDIR";
         public const string _propMSI_CustomActionData = "CustomActionData";
 
+        public const string _propRISA_CHECK_UPDATES = "RISA_CHECK_UPDATES";
         public const string _propRISA_COMPANY_KEY = "RISA_COMPANY_KEY";
         public const string _propRISA_INSTALL_TYPE = "RISA_INSTALL_TYPE";
-        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
         public const string _propRISA_IS_ROAMING_PROFILE = "RISA_IS_ROAMING_PROFILE";
 
         public const string _propRISA_LICENSE_TYPE = "RISA_LICENSE_TYPE";
@@ -38,6 +34,13 @@ namespace RISA_CustomActionsLib
 
         public const string _debug_Trace = "TRACEFILE";
 
+        #region Transfer properties - from One CA to Another
+
+        public const string _propRISA_INSTALLED_PRODUCTS = "RISA_INSTALLED_PRODUCTS";
+        public const string _propRISA_SI_PREINSTALL_RESULT = "RISA_SI_PREINSTALL_RESULT";
+
+        #endregion
+
         #endregion
 
         #region RISA_STATUS_CODE values
@@ -52,6 +55,18 @@ namespace RISA_CustomActionsLib
         public const string _sts_BAD_INSTALLTYPE = "RISA_BAD_INSTALLTYPE";
         public const string _sts_BAD_PRODUCTNAME = "RISA_BAD_PRODUCTNAME";
         public const string _sts_BAD_PRODUCTVERSION = "RISA_BAD_PRODUCTVERSION";
+
+        // _propRISA_SI_PREINSTALL_RESULT values must be numeric.ToString()
+        // NOTE: Success or OK MUST equal to 0 - this is an MSI requirement
+        // - Silent-PreInstall returns an int, this is stored as a string in _propRISA_SI_PREINSTALL_RESULT
+
+        public const int _ists_SILENT_OK = 0;
+        public const int _ists_SILENT_ERR = -1;
+        public const int _ists_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = -2;
+
+        public const string _sts_SILENT_OK = "0";
+        public const string _sts_SILENT_ERR = "-1";
+        public const string _sts_SILENT_ERR_REMOVE_INSTALLED_PRODUCT = "-2";
 
         public const string _stsText_Success = "Success";
 
@@ -106,15 +121,15 @@ namespace RISA_CustomActionsLib
 
         #region Regions
 
-        private const string _regionUSA = "UNITED_STATES";
-        private const string _regionCANADA = "CANADA";
-        private const string _regionUK = "BRITAIN";
-        private const string _regionEUROPE = "EUROPE";
-        private const string _regionINDIA = "INDIA";
-        private const string _regionOZ = "AUSTRALIA";
-        private const string _regionNZ = "NEW_ZEALAND";
-        private const string _regionMEXICO = "MEXICO";
-        private const string _regionSAUDI = "SAUDI_ARABIA";
+        public const string _regionUSA = "UNITED_STATES";
+        public const string _regionCANADA = "CANADA";
+        public const string _regionUK = "BRITAIN";
+        public const string _regionEUROPE = "EUROPE";
+        public const string _regionINDIA = "INDIA";
+        public const string _regionOZ = "AUSTRALIA";
+        public const string _regionNZ = "NEW_ZEALAND";
+        public const string _regionMEXICO = "MEXICO";
+        public const string _regionSAUDI = "SAUDI_ARABIA";
 
         // order is critical, silent file syntax requires user to provide an index
         private static readonly string[] _regionNameList = new[]
@@ -135,40 +150,6 @@ namespace RISA_CustomActionsLib
         private const string _defLicenseType = "Cloud";
         public const string _boolTrue = "True";
         public const string _boolFalse = "False";
-
-        #endregion
-
-        #region Misc functions
-
-        private static void copySinglePropFromSession(SessionDTO sessDTO, Session session, string propName, bool propMustExist=true)
-        {
-            // the whole idea is to provide enough info (property name) should an installer fail to establish a required prop
-            try
-            {
-                sessDTO[propName] = session[propName];
-            }
-            catch (Exception ex)
-            {
-                if (!propMustExist) return;
-                throw new IndexOutOfRangeException($"Error retrieving Session property {propName}", ex);
-            }
-        }
-
-        private static void setupDebugIfRequested(Session session, SessionDTO sessDTO)
-        {
-
-            copySinglePropFromSession(sessDTO, session, _propRISA_CA_DEBUG, false);
-            if (!sessDTO.PropertyExists(_propRISA_CA_DEBUG)) return;
-            switch (sessDTO[_propRISA_CA_DEBUG])
-            {
-                case _debug_Trace:
-                    _doTrace = true;
-                    break;
-                // other debug types here
-                default:
-                    break;
-            }
-        }
 
         #endregion
     }

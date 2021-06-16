@@ -1,49 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 using Microsoft.Win32;
-using RISA_CustomActionsLib.Extensions;
-using RISA_CustomActionsLib.Models;
 
-namespace RISA_CustomActionsLib
+namespace RISA_CustomActionsLib.Models.Linked
 {
-    public partial class CustomActions
+    public class InstalledProductList : List<InstalledProduct>
     {
-        public static bool serializeMatchingInstalledProducts(SessionDTO sessDTO)
+        public static InstalledProductList FindInstalledProducts(string productName)
         {
-            var insProdList = findInstalledProducts(sessDTO);
-            //
-            // return F if incoming product is older than newer one already installed
-            // return T otherwise, plus the serialized installed product list in _propRISA_INSTALLED_PRODUCTS
-            //
-            // this version exactly matches the INSTALL_TYPE, for better or worse matching InstallAware implementation
-            // - this is regardless of TARGETDIR
-            //
-            foreach (var installed in insProdList)
-            {
-                if (installed.ProductName != sessDTO[_propMSI_ProductName]) continue;
-                if (installed.InStallType != sessDTO[_propRISA_INSTALL_TYPE]) continue;
-                if (installed.ProductVersion.CompareTo(sessDTO[_propMSI_ProductVersion].ToVersion()) <= 0) continue;
-                {
-                    // installed Version is newer than incoming Version - the only possible user error at this point
-                    if (installed.ProductVersion.CompareTo(sessDTO[_propMSI_ProductVersion].ToVersion()) <= 0) continue;
-
-                    sessDTO[_propRISA_STATUS_CODE] = _sts_ERR_INSTALL_OLD_VERSION;
-                    sessDTO[_propRISA_STATUS_TEXT] = $"Installing older version of {installed.ProductName}" +
-                                                     $"{displayedInstallType(installed.InStallType)}" +
-                                                     $" ({sessDTO[_propMSI_ProductVersion]})" +
-                                                     $" when newer version {installed.ProductVersion} is already installed";
-                    return false;
-                }
-            }
-            sessDTO[_propRISA_INSTALLED_PRODUCTS] = insProdList.Count == 0
-                ? string.Empty
-                : insProdList.Serialize();
-            return true;
-        }
-
-        public static InstalledProductList findInstalledProducts(SessionDTO sessDTO)
-        {
-            var productName = sessDTO[_propMSI_ProductName];
             var insProdList = new InstalledProductList();
 
             using (var insVendorReg = new InstallAwareRegistry())
@@ -57,6 +24,7 @@ namespace RISA_CustomActionsLib
             }
             return insProdList;
         }
+
 
         private static List<InstalledProduct> searchUnInsRegistry(InstallerVendorRegistry vendorInfo, string productNameToSearchFor)
         {
@@ -99,5 +67,37 @@ namespace RISA_CustomActionsLib
             return new InstalledProduct(vendorInfo.Vendor, dispNameStr, dispVersion, productInstallLoc,
                 installerLoc);
         }
+
+
+        #region De/Ser
+
+        public string Serialize()
+        {
+            var serializer = new XmlSerializer(typeof(InstalledProductList));
+            var settings = new XmlWriterSettings
+            {
+                Indent = true,
+                OmitXmlDeclaration = true
+            };
+            var ns = new XmlSerializerNamespaces();
+            ns.Add(string.Empty, string.Empty);
+
+            using (var stream = new StringWriter())
+            using (var writer = XmlWriter.Create(stream, settings))
+            {
+                serializer.Serialize(writer, this, ns);
+                return stream.ToString();
+            }
+        }
+
+        public static InstalledProductList Deserialize(string xmlStr)
+        {
+            var deserializer = new XmlSerializer(typeof(InstalledProductList));
+            var ms = new MemoryStream(Encoding.UTF8.GetBytes(xmlStr));
+            object o = deserializer.Deserialize(ms);
+            return (InstalledProductList)o;
+        }
+
+        #endregion
     }
 }

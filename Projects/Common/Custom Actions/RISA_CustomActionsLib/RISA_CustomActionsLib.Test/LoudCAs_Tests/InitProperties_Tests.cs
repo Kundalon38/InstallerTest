@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RISA_CustomActionsLib.Models;
 
-namespace RISA_CustomActionsLib.Test
+namespace RISA_CustomActionsLib.Test.LoudCAs_Tests
 {
     [TestClass]
     public class InitProperties_Tests
