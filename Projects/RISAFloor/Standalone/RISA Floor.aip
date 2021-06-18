@@ -37,6 +37,7 @@
     <ROW Property="RISA_PRODUCT_VERSION34" Value="2.27"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
+    <ROW Property="RISA_SI_PREINSTALL_RESULT" Value="Dummy"/>
     <ROW Property="RISA_STATUS_CODE" Value="Dummy"/>
     <ROW Property="RISA_STATUS_TEXT" Value="Dummy"/>
     <ROW Property="RISA_UPDATE_DATA_VALUE" Value="Dummy"/>
@@ -337,6 +338,7 @@
     <ROW Action="PassUserFilesPropertyToCoreMSM" Type="51" Source="RISA_USERFILES.D309AC61_F11F_4342_8D41_6F61928420A3" Target="[RISA_USERFILES]"/>
     <ROW Action="RISA_InitProperties" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
     <ROW Action="RISA_RemoveInstalledProducts" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="RemoveInstalledProducts" WithoutSeq="true"/>
+    <ROW Action="RISA_SilentInitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="SilentInitProperties"/>
     <ROW Action="RISA_ValidateInstallDirectory" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="ValidateInstallDirectory" WithoutSeq="true"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[ProgramFiles64Folder]RISA#ExeBuild:[ProgramFiles64Folder]RISADemo#WebInstallerBuild:[ProgramFiles64Folder]RISA"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder]RISA#ExeBuild:[ProgramMenuFolder]RISADemo#WebInstallerBuild:[ProgramMenuFolder]RISA"/>
@@ -409,11 +411,11 @@
     <ROW Action="AI_DetectSoftware" Sequence="102"/>
     <ROW Action="AI_AppSearchEx" Sequence="101"/>
     <ROW Action="AI_DETECT_MODERNWIN" Condition="(VersionNT &gt;= 603)" Sequence="57" MsiKey="AI_DETECT_MODERNWIN"/>
-    <ROW Action="RISA_InitProperties" Sequence="51"/>
     <ROW Action="PassUserFilesPropertyToCoreMSM" Sequence="52"/>
     <ROW Action="PassInstallTypePropertyToCoreMSM" Sequence="53"/>
     <ROW Action="PassInstallTypePropertyToLMMSM" Sequence="54"/>
     <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="RISA_SilentInitProperties" Sequence="51"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -522,11 +524,15 @@
     <ROW PrereqKey="B96F93FA27E74B02866727AAE83982D0" DisplayName=".NET Framework 4.8" SetupFileUrl="G:\Shared drives\Tech\Advanced Installer\Redistributables\ndp48-x86-x64-allos-enu.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" WinNT64Versions="Windows Vista x64, Windows Server 2008 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 8 x64, Windows 10 version 1507 x64, Windows 10 version 1511 x64, Windows 10 version 1903 x64, Windows 10 version 1909 x64, Windows 10 version 2004 x64, Windows 10 version 20H2 x64, Windows 10 version 21H1 x64" Operator="1" NoUiComLine="/q /norestart" Options="xymz" TargetName=".NET Framework 4.8\ndp48-x86-x64-allos-enu.exe"/>
     <ROW PrereqKey="MicrosoftVisualC" DisplayName="Microsoft Visual C++ 2019 Redistributable (x64)" VersionMin="14.28.29325.2" SetupFileUrl="..\..\Common\Redistributables\VC_redist.x64.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/install /quiet /norestart" BasicUiComLine="/install /quiet /norestart" NoUiComLine="/install /quiet /norestart" Options="ym" TargetName="Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29325\VC_redist.x64.exe"/>
     <ROW PrereqKey="SentinelSystemDriv" DisplayName="Sentinel System Driver 7.6.0" VersionMin="9.50.98.0" SetupFileUrl="..\..\..\Source Files\SafeNet\Sentinel System Driver\Sentinel System Driver Installer 7.6.0.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" BasicUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" NoUiComLine="/S /v&quot;/q CONFIRMUPGRADE=TRUE, REBOOT=ReallySuppress ADDLOCAL=ALL&quot;" Options="y" TargetName="Sentinel System Driver Installer 7.6.0                       \Sentinel System Driver Installer 7.6.0.exe" RetValPropName="SSDSTATUS"/>
-    <ATTRIBUTE name="PrereqsOrder" value="SentinelSystemDriv MicrosoftVisualC B96F93FA27E74B02866727AAE83982D0"/>
+    <ROW PrereqKey="SilentPreInstall" DisplayName="RISA-Silent-PreInstall" VersionMin="1.0.0.0" SetupFileUrl="..\..\Common\Custom Actions\RISA_CustomActionsLib\PreReqs\Silent-PreInstall\bin\x64\Debug\Silent-PreInstall.exe" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" Options="yi" TargetName="Silent-PreInstall\Silent-PreInstall.exe" RetValPropName="RISA_SI_PREINSTALL_RESULT"/>
+    <ROW PrereqKey="SilentValidate" DisplayName="RISA-Silent-Validate" VersionMin="1.0.0" SetupFileUrl="..\..\Common\Custom Actions\Silent-PreReq-Installer\Silent-Validate-PreReq-SetupFiles\Silent-Validate-PreReq.msi" Location="0" ExactSize="0" WinNTVersions="Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" Operator="1" ComLine="/qn" BasicUiComLine="/qn" NoUiComLine="/qn" Options="yim" TargetName="SilentValidate\Silent-Validate-PreReq.msi"/>
+    <ATTRIBUTE name="PrereqsOrder" value="SilentValidate SentinelSystemDriv MicrosoftVisualC B96F93FA27E74B02866727AAE83982D0 SilentPreInstall"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
     <ROW SearchKey="B96F93FA27E74B02866727AAE83982D0Rel" Prereq="B96F93FA27E74B02866727AAE83982D0" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G528048" Order="1" Property="PreReqSearch_B96F93FA27E74B02866727"/>
     <ROW SearchKey="CurrentVersion" Prereq="SentinelSystemDriv" SearchType="2" SearchString="HKLM\SOFTWARE\Wow6432Node\Rainbow Technologies\Sentinel System Driver\CurrentVersion" VerMin="7.6.0" Order="2" Property="PreReqSearch_1"/>
+    <ROW SearchKey="SystemFolderfile.dll" Prereq="SilentPreInstall" SearchType="0" SearchString="[SystemFolder]file.dll" VerMin="1.0" Order="1" Property="PreReqSearch_3"/>
+    <ROW SearchKey="UpgradeCode" Prereq="SilentValidate" SearchType="4" SearchString="{ADD69EF5-AF00-4D1D-A87C-73402B90D336}" VerMin="1.0.0" Order="1" Property="PreReqSearch"/>
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29325.2" Order="2" Property="PreReqSearch_2"/>
   </COMPONENT>
 </DOCUMENT>
