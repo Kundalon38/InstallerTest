@@ -36,8 +36,8 @@
     <ROW Property="RISA_IS_SILENT" Value="False" MultiBuildValue="MsiBuild:True"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISA-3D 19.0"/>
-    <ROW Property="RISA_PRODUCT_VERSION2" Value="19.0"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="2.63472"/>
+    <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_SI_PREINSTALL_RESULT" Value="Dummy"/>

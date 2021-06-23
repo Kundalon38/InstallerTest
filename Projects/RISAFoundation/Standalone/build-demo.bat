@@ -6,8 +6,6 @@ set builds="Demo"
 @set mod="C:\Advanced Installer\Projects\RISAFoundation\Standalone\RISAFoundation_demo.aip"
 advancedinstaller /edit %proj% /DuplicateProject %mod%
 advancedinstaller /edit %mod% /SetProperty ProductVersion="13.0.0.1"
-advancedinstaller /edit %mod% /SetProperty RISA_PRODUCT_VERSION2="13.0"
-advancedinstaller /edit %mod% /SetProperty RISA_PRODUCT_VERSION34="0.1"
 advancedinstaller /edit %mod% /SetProperty RISA_PRODUCT_TITLE2_INSTYPE="RISA Foundation 13.0 (Demo)"
 advancedInstaller /edit %mod% /DelPrerequisite "Sentinel System Driver 7.6.0"
 advancedInstaller /rebuild %mod% -buildslist %builds%

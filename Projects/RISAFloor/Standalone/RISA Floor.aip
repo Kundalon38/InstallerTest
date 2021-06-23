@@ -33,8 +33,8 @@
     <ROW Property="RISA_IS_ROAMING_PROFILE" Value="False"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
     <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISAFloor 15.0"/>
-    <ROW Property="RISA_PRODUCT_VERSION2" Value="15.0"/>
-    <ROW Property="RISA_PRODUCT_VERSION34" Value="2.27"/>
+    <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
     <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
     <ROW Property="RISA_SI_PREINSTALL_RESULT" Value="Dummy"/>
@@ -122,9 +122,6 @@
     <ROW EventId="0" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fl_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFloor\Standalone\SetupFiles" EventDescription="RISA namestamp" EventOrder="1" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="DefaultBuild"/>
     <ROW EventId="1" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fl_demo_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFloor\Standalone\DemoSetupFiles" EventDescription="RISA namestamp" EventOrder="2" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="ExeBuild"/>
     <ROW EventId="2" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fl_web_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFloor\Standalone\WebInstallerSetupFiles" EventDescription="RISA namestamp" EventOrder="3" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="WebInstallerBuild"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
-    <ATTRIBUTE name="Enable" value="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -507,7 +504,7 @@
     <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFL~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFL~2.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
     <ROW Shortcut="RISAFloor" Directory_="DesktopFolder" Name="RISAFL~1.0|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">

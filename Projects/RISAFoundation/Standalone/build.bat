@@ -9,8 +9,6 @@ set builds="Standalone"
 @pushd "c:\Program Files (x86)\Caphyon\Advanced Installer 18.3\bin\x86"
 @set proj="C:\Advanced Installer\Projects\RISAFoundation\Standalone\RISAFoundation.aip"
 advancedinstaller /edit %proj% /SetProperty ProductVersion="13.0.0.1"
-advancedinstaller /edit %proj% /SetProperty RISA_PRODUCT_VERSION2="13.0"
-advancedinstaller /edit %proj% /SetProperty RISA_PRODUCT_VERSION34="0.1"
 advancedinstaller /edit %proj% /SetProperty RISA_PRODUCT_TITLE2_INSTYPE="RISA Foundation 13.0"
 advancedInstaller /rebuild %proj% -buildslist %builds%
 @popd

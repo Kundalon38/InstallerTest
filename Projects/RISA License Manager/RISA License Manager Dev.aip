@@ -21,7 +21,9 @@
     <ROW Property="ProductName" Value="RISA License Manager Dev"/>
     <ROW Property="ProductVersion" Value="6.2.1.0" Type="32"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone"/>
-    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISA License Manager 6.2.1.0"/>
+    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISA LIcense Manager 6.2.1.0"/>
+    <ROW Property="RISA_PRODUCT_VERSION2" Value="6.2"/>
+    <ROW Property="RISA_PRODUCT_VERSION34" Value="1.0"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{4B27EB1A-CF76-4248-97DB-08F7FA92F239}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
