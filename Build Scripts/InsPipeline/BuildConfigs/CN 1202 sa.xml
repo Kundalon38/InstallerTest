@@ -7,7 +7,9 @@
   <EnableSuccessEmail>false</EnableSuccessEmail>
   <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISAConnection</PublishInstaller_Directory>
   <BatchScript>C:\InstallAware\Build Scripts\IP_Build_CN_Standalone_IA.batTemplate</BatchScript>
-  <InstallerScript>C:\InstallAware\Project Files\RISAConnection\Standalone\RISAConnection Standalone.mpr</InstallerScript>
+  <InstallerScript>C:\aaKE\Repos\RISA\InstallerTest\Projects\RISAConnection\Standalone\RISA Connection.aip</InstallerScript>
+  <BuildType>AdvancedInstaller</BuildType>
+  <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>
   <DirWatches>
     <DirectoryWatch>
       <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISAConnection</RootSourceDir>

@@ -8,7 +8,7 @@
   </Directories>
   <BuildConfigDirectories>
     <BuildConfigDirectory ShortName="Advanced Installer" ColorName="MediumTurquoise">
-      <FullDirName>C:\Advanced Installer\Build Scripts\InsPipeline\BuildConfigs</FullDirName>
+      <FullDirName>C:\aaKE\Repos\RISA\InstallerTest\Build Scripts\InsPipeline\BuildConfigs</FullDirName>
     </BuildConfigDirectory>
     <BuildConfigDirectory ShortName="InstallAware" ColorName="RoyalBlue">
       <FullDirName>C:\Installer Pipeline\Build Configs</FullDirName>
@@ -18,8 +18,8 @@
     <AIinstallationPathFormatStr>C:\Program Files (x86)\Caphyon\Advanced Installer {0}</AIinstallationPathFormatStr>
     <GitHubUserName>Kundalon38</GitHubUserName>
     <GitHubToken>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</GitHubToken>
-    <LocalRepoDir>C:\Advanced Installer</LocalRepoDir>
-    <LocalRepoBranch>dev</LocalRepoBranch>
+    <LocalRepoDir>C:\aaKE\Repos\RISA\InstallerTest</LocalRepoDir>
+    <LocalRepoBranch>master</LocalRepoBranch>
   </InstallerRepo>
   <Notifications>
     <Notify OnBuildComplete="kirke@risa.com" />
