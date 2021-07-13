@@ -34,7 +34,7 @@
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
-    <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName]"/>
+    <ROW Property="RISA_REGISTRY_PRODUCT_NAME" Value="[|ProductName].NET"/>
     <ROW Property="RISA_SI_PREINSTALL_RESULT" Value="Dummy"/>
     <ROW Property="RISA_STATUS_CODE" Value="Dummy"/>
     <ROW Property="RISA_STATUS_TEXT" Value="Dummy"/>
