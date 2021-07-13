@@ -1,6 +1,17 @@
+# certain: dll and msi files need to move from developers to the build machine via the repo
+# and so care should be take to allow (at least) these to go thru:
+#
+# - Projects\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll
+# - \Projects\Common\Custom Actions\Silent-PreReq-Installer\Silent-Validate-PreReq-SetupFiles\Silent-Validate-PreReq.msi
+# 
+# even though these^ *should* be excluded given the rules below, 
+# if they were added to the repo BEFORE the rule was added to gitignore, I think git regards them as tracked and grand-fathered in
+# - K Evans July 2021
+#
 Source Files/
 Projects/**/SetupFiles/
 Projects/**/Setup Files/
+Build Scripts/Generated/
 *.obj
 *.pdb
 *.user

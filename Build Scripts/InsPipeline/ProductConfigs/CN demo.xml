@@ -1,0 +1,33 @@
+<BuildProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductName>RISAConnection</ProductName>
+  <Abbrev2>CN</Abbrev2>
+  <InstallType>Demo</InstallType>
+  <BuildEnabled>Y</BuildEnabled>
+  <NotifyOnSuccessEmails>mattl@risa.com</NotifyOnSuccessEmails>
+  <EnableSuccessEmail>true</EnableSuccessEmail>
+  <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISAConnection</PublishInstaller_Directory>
+  <BatchScript>C:\InstallAware\Build Scripts\IP_Build_CN_Demo_IA.batTemplate</BatchScript>
+  <InstallerScript>C:\InstallAware\Project Files\RISAConnection\Demo\RISAConnection Demo.mpr</InstallerScript>
+  <BuildType>InstallAware</BuildType>
+  <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>
+  <DirWatches>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISAConnection</RootSourceDir>
+      <DestDir>G:\Shared drives\Tech\Installer Staging\RISAConnection</DestDir>
+      <FileWatches>
+        <FileWatch>
+          <AppendPath>DemoBackup</AppendPath>
+          <FileName>RISAConnection.exe</FileName>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>GE</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>12.0.0.0</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>Y</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+  </DirWatches>
+</BuildProcess>
