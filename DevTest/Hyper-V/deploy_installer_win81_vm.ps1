@@ -19,6 +19,12 @@ Switch ($num)
 	Write-Output "Copying $File to virtual machine $VMName..."
        	Copy-VMFile -VM (Get-VM $VMName) -SourcePath $SrcFolder"\"$File -DestinationPath "$DestFolder$file" -FileSource Host -CreateFullPath -Force
     }
+    "FD.NET" {
+    	$SrcFolder = "C:\Advanced Installer\Projects\RISAFoundation_dotNET\Standalone\Setup Files"
+	$File = Get-ChildItem -Path $SrcFolder -Filter "*.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+	Write-Output "Copying $File to virtual machine $VMName..."
+       	Copy-VMFile -VM (Get-VM $VMName) -SourcePath $SrcFolder"\"$File -DestinationPath "$DestFolder$file" -FileSource Host -CreateFullPath -Force
+    }
     "FL" {
     	$SrcFolder = "C:\Advanced Installer\Projects\RISAFloor\Standalone\SetupFiles"
 	$File = Get-ChildItem -Path $SrcFolder -Filter "*.exe" | Sort-Object LastWriteTime -Descending | Select-Object -First 1
