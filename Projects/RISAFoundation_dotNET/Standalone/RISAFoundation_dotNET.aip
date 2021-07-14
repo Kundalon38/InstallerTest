@@ -17,7 +17,7 @@
     <ROW Property="DialogBitmap" Value="dialog" MultiBuildValue="DefaultBuild:install_background.bmp#MsiBuild:install_background.bmp#MsiBuild_1:install_background.bmp" Type="1" MsiKey="DialogBitmap"/>
     <ROW Property="Manufacturer" Value="RISA Tech, Inc."/>
     <ROW Property="MsiLogging" MultiBuildValue="DefaultBuild:vp#MsiBuild:vp#MsiBuild_1:vp"/>
-    <ROW Property="ProductCode" Value="1033:{18B8AC53-1156-46FE-99AD-77E369B38D89} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{BF85DDE9-D7A2-4C54-AA68-1E433A5F4132} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RISAFoundation"/>
     <ROW Property="ProductVersion" Value="13.0.0.1" Type="32"/>
@@ -41,7 +41,7 @@
     <ROW Property="RISA_UPDATE_DATA_VALUE" Value="Dummy"/>
     <ROW Property="RISA_USERFILES" Value="Dummy"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
-    <ROW Property="UpgradeCode" Value="{56AA7796-D0BF-48D0-9701-9E5826775C23}"/>
+    <ROW Property="UpgradeCode" Value="{D605EAED-988B-4CCA-A52C-B28B6C1A1BB4}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME#MsiBuild:Windows 9x/ME#MsiBuild_1:Windows 9x/ME" ValueLocId="-"/>
     <ROW Property="WindowsTypeNT" MultiBuildValue="DefaultBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#MsiBuild:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86#MsiBuild_1:Windows 9x/ME/NT/2000/XP/Vista/Windows 7/Windows 8 x86/Windows 8.1 x86/Windows 10 x86" ValueLocId="-"/>
@@ -161,7 +161,7 @@
     <ROW BuildKey="MsiBuild_1" BuildName="WebInstaller" BuildOrder="3" BuildType="0" PackageFolder="WebInstallerSetupFiles" PackageFileName="install_fd_web_[|ProductVersion]" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="..\Assets\install_foundation.ico" MainAppUrl="http://localhost/test/install_fd_web_[|ProductVersion]" ExtUI="true" UseLargeSchema="true" ExeName="install_fd_web_[|ProductVersion]" MsiPackageType="x64" UACExecutionLevel="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildEventsComponent">
-    <ROW EventId="0" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fd_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFoundation\Standalone\Setup Files" EventDescription="RISA namestamp" EventOrder="1" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="DefaultBuild"/>
+    <ROW EventId="0" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fd_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFoundation_dotNET\Standalone\Setup Files" EventDescription="RISA namestamp" EventOrder="1" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="DefaultBuild"/>
     <ROW EventId="1" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fd_demo_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFoundation\Standalone\DemoSetupFiles" EventDescription="RISA namestamp" EventOrder="2" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="MsiBuild"/>
     <ROW EventId="2" EventRun="C:\Advanced Installer\Projects\Common\Tools\namestamp\bin\Release\netcoreapp3.1\namestamp.exe" EventCmdLine="install_fd_web_[|ProductVersion].exe" EventWkDir="C:\Advanced Installer\Projects\RISAFoundation\Standalone\WebInstallerSetupFiles" EventDescription="RISA namestamp" EventOrder="3" EventType="2" EventInterupt="false" EventEnabled="true" EventPrecompression="false" RollbackEvent="false" EventBuild="MsiBuild_1"/>
   </COMPONENT>
