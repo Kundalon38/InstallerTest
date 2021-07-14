@@ -30,7 +30,7 @@
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="MsiBuild:Demo"/>
     <ROW Property="RISA_IS_ROAMING_PROFILE" Value="False"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud" Type="4" ValueLocId="Property.RISA_LICENSE_TYPE"/>
-    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISAFoundation 13.0"/>
+    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISA Foundation 13.0"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
@@ -109,36 +109,38 @@
     <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
     <ROW Component="__2" ComponentId="{9847281C-6411-4D2D-AA87-A2997487AB47}" Directory_="APPDIR" Attributes="260" KeyPath="__2"/>
     <ROW Component="risafnd.exe" ComponentId="{88D696C2-3BE4-400E-8A8A-6785F2F7A388}" Directory_="APPDIR" Attributes="256" KeyPath="risafnd.exe"/>
+    <ROW Component="risafnd.exe.config" ComponentId="{CA49EB91-0874-4794-A6D3-D17D42146BC1}" Directory_="APPDIR" Attributes="0" KeyPath="risafnd.exe.config" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="risafnd.exe" Component_="risafnd.exe" FileName="risafnd.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\risafnd.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="Interop.RISALicenseManagerCOMLib.dll" Component_="Interop.RISALicenseManagerCOMLib.dll" FileName="INTERO~1.DLL|Interop.RISALicenseManagerCOMLib.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Interop.RISALicenseManagerCOMLib.dll" SelfReg="false"/>
-    <ROW File="Microsoft.Expression.Interactions.dll" Component_="Microsoft.Expression.Interactions.dll" FileName="MICROS~1.DLL|Microsoft.Expression.Interactions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Microsoft.Expression.Interactions.dll" SelfReg="false"/>
-    <ROW File="RISAtech.CoreAccess.Contract.Common.dll" Component_="RISAtech.CoreAccess.Contract.Common.dll" FileName="RISATE~1.DLL|RISAtech.CoreAccess.Contract.Common.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.CoreAccess.Contract.Common.dll" SelfReg="false"/>
-    <ROW File="RISAtech.CoreAccess.Contract.FND.dll" Component_="RISAtech.CoreAccess.Contract.FND.dll" FileName="RISATE~2.DLL|RISAtech.CoreAccess.Contract.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.CoreAccess.Contract.FND.dll" SelfReg="false"/>
-    <ROW File="RISAtech.CoreAccess.FND.dll" Component_="RISAtech.CoreAccess.FND.dll" FileName="RISATE~3.DLL|RISAtech.CoreAccess.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.CoreAccess.FND.dll" SelfReg="false"/>
-    <ROW File="RISAtech.GlibRes.dll" Component_="RISAtech.GlibRes.dll" FileName="RISATE~4.DLL|RISAtech.GlibRes.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.GlibRes.dll" SelfReg="false"/>
-    <ROW File="RISAtech.Presentation.DX.Contract.Common.dll" Component_="RISAtech.Presentation.DX.Contract.Common.dll" FileName="RISATE~5.DLL|RISAtech.Presentation.DX.Contract.Common.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.Presentation.DX.Contract.Common.dll" SelfReg="false"/>
-    <ROW File="RISAtech.Presentation.DX.Contract.FND.dll" Component_="RISAtech.Presentation.DX.Contract.FND.dll" FileName="RISATE~6.DLL|RISAtech.Presentation.DX.Contract.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.Presentation.DX.Contract.FND.dll" SelfReg="false"/>
-    <ROW File="RISAtech.RISAFND.dll" Component_="RISAtech.RISAFND.dll" FileName="RISATE~7.DLL|RISAtech.RISAFND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\RISAtech.RISAFND.dll" SelfReg="false"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~1.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
-    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~2.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
-    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~3.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\System.Windows.Interactivity.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.Chart.dll" Component_="Telerik.Windows.Controls.Chart.dll" FileName="TELERI~1.DLL|Telerik.Windows.Controls.Chart.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.Chart.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.dll" Component_="Telerik.Windows.Controls.dll" FileName="TELERI~2.DLL|Telerik.Windows.Controls.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.Docking.dll" Component_="Telerik.Windows.Controls.Docking.dll" FileName="TELERI~3.DLL|Telerik.Windows.Controls.Docking.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.Docking.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.Input.dll" Component_="Telerik.Windows.Controls.Input.dll" FileName="TELERI~4.DLL|Telerik.Windows.Controls.Input.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.Input.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.Navigation.dll" Component_="Telerik.Windows.Controls.Navigation.dll" FileName="TELERI~5.DLL|Telerik.Windows.Controls.Navigation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.Navigation.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Controls.RibbonView.dll" Component_="Telerik.Windows.Controls.RibbonView.dll" FileName="TELERI~6.DLL|Telerik.Windows.Controls.RibbonView.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Controls.RibbonView.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Data.dll" Component_="Telerik.Windows.Data.dll" FileName="TELERI~7.DLL|Telerik.Windows.Data.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Data.dll" SelfReg="false"/>
-    <ROW File="Telerik.Windows.Zip.dll" Component_="Telerik.Windows.Zip.dll" FileName="TELERI~8.DLL|Telerik.Windows.Zip.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Telerik.Windows.Zip.dll" SelfReg="false"/>
-    <ROW File="Unity.Abstractions.dll" Component_="Unity.Abstractions.dll" FileName="UNITYA~1.DLL|Unity.Abstractions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Unity.Abstractions.dll" SelfReg="false"/>
-    <ROW File="Unity.Container.dll" Component_="Unity.Container.dll" FileName="UNITYC~1.DLL|Unity.Container.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\Unity.Container.dll" SelfReg="false"/>
-    <ROW File="WpfMath.dll" Component_="WpfMath.dll" FileName="WpfMath.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation\WpfMath.dll" SelfReg="false"/>
+    <ROW File="risafnd.exe" Component_="risafnd.exe" FileName="risafnd.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\risafnd.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="Interop.RISALicenseManagerCOMLib.dll" Component_="Interop.RISALicenseManagerCOMLib.dll" FileName="INTERO~1.DLL|Interop.RISALicenseManagerCOMLib.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Interop.RISALicenseManagerCOMLib.dll" SelfReg="false"/>
+    <ROW File="Microsoft.Expression.Interactions.dll" Component_="Microsoft.Expression.Interactions.dll" FileName="MICROS~1.DLL|Microsoft.Expression.Interactions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Microsoft.Expression.Interactions.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CoreAccess.Contract.Common.dll" Component_="RISAtech.CoreAccess.Contract.Common.dll" FileName="RISATE~1.DLL|RISAtech.CoreAccess.Contract.Common.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.CoreAccess.Contract.Common.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CoreAccess.Contract.FND.dll" Component_="RISAtech.CoreAccess.Contract.FND.dll" FileName="RISATE~2.DLL|RISAtech.CoreAccess.Contract.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.CoreAccess.Contract.FND.dll" SelfReg="false"/>
+    <ROW File="RISAtech.CoreAccess.FND.dll" Component_="RISAtech.CoreAccess.FND.dll" FileName="RISATE~3.DLL|RISAtech.CoreAccess.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.CoreAccess.FND.dll" SelfReg="false"/>
+    <ROW File="RISAtech.GlibRes.dll" Component_="RISAtech.GlibRes.dll" FileName="RISATE~4.DLL|RISAtech.GlibRes.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.GlibRes.dll" SelfReg="false"/>
+    <ROW File="RISAtech.Presentation.DX.Contract.Common.dll" Component_="RISAtech.Presentation.DX.Contract.Common.dll" FileName="RISATE~5.DLL|RISAtech.Presentation.DX.Contract.Common.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.Presentation.DX.Contract.Common.dll" SelfReg="false"/>
+    <ROW File="RISAtech.Presentation.DX.Contract.FND.dll" Component_="RISAtech.Presentation.DX.Contract.FND.dll" FileName="RISATE~6.DLL|RISAtech.Presentation.DX.Contract.FND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.Presentation.DX.Contract.FND.dll" SelfReg="false"/>
+    <ROW File="RISAtech.RISAFND.dll" Component_="RISAtech.RISAFND.dll" FileName="RISATE~7.DLL|RISAtech.RISAFND.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\RISAtech.RISAFND.dll" SelfReg="false"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~1.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~2.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\System.Threading.Tasks.Extensions.dll" SelfReg="false"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="SYSTEM~3.DLL|System.Windows.Interactivity.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\System.Windows.Interactivity.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.Chart.dll" Component_="Telerik.Windows.Controls.Chart.dll" FileName="TELERI~1.DLL|Telerik.Windows.Controls.Chart.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.Chart.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.dll" Component_="Telerik.Windows.Controls.dll" FileName="TELERI~2.DLL|Telerik.Windows.Controls.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.Docking.dll" Component_="Telerik.Windows.Controls.Docking.dll" FileName="TELERI~3.DLL|Telerik.Windows.Controls.Docking.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.Docking.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.Input.dll" Component_="Telerik.Windows.Controls.Input.dll" FileName="TELERI~4.DLL|Telerik.Windows.Controls.Input.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.Input.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.Navigation.dll" Component_="Telerik.Windows.Controls.Navigation.dll" FileName="TELERI~5.DLL|Telerik.Windows.Controls.Navigation.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.Navigation.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Controls.RibbonView.dll" Component_="Telerik.Windows.Controls.RibbonView.dll" FileName="TELERI~6.DLL|Telerik.Windows.Controls.RibbonView.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Controls.RibbonView.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Data.dll" Component_="Telerik.Windows.Data.dll" FileName="TELERI~7.DLL|Telerik.Windows.Data.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Data.dll" SelfReg="false"/>
+    <ROW File="Telerik.Windows.Zip.dll" Component_="Telerik.Windows.Zip.dll" FileName="TELERI~8.DLL|Telerik.Windows.Zip.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Telerik.Windows.Zip.dll" SelfReg="false"/>
+    <ROW File="Unity.Abstractions.dll" Component_="Unity.Abstractions.dll" FileName="UNITYA~1.DLL|Unity.Abstractions.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Unity.Abstractions.dll" SelfReg="false"/>
+    <ROW File="Unity.Container.dll" Component_="Unity.Container.dll" FileName="UNITYC~1.DLL|Unity.Container.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\Unity.Container.dll" SelfReg="false"/>
+    <ROW File="WpfMath.dll" Component_="WpfMath.dll" FileName="WpfMath.dll" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation\WpfMath.dll" SelfReg="false"/>
+    <ROW File="risafnd.exe.config" Component_="risafnd.exe.config" FileName="RISAFN~1.CON|risafnd.exe.config" Attributes="0" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\risafnd.exe.config" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiInstallUISequenceAliasComponent">
     <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="#DefaultBuild:61"/>
@@ -454,6 +456,7 @@
     <ROW Feature_="MainFeature" Component_="Unity.Abstractions.dll"/>
     <ROW Feature_="MainFeature" Component_="Unity.Container.dll"/>
     <ROW Feature_="MainFeature" Component_="WpfMath.dll"/>
+    <ROW Feature_="MainFeature" Component_="risafnd.exe.config"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Foundation.exe" SourcePath="..\Assets\Foundation.ico" Index="0"/>
@@ -604,6 +607,6 @@
     <ROW SearchKey="Version" Prereq="MicrosoftVisualC" SearchType="2" SearchString="HKCR\Installer\Dependencies\VC,redist.x64,amd64,14.28,bundle\Version" VerMin="14.28.29325.2" Order="2" Property="PreReqSearch_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
-    <ROW Directory_="RISAFoundation_Dir" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Bin\RISAFoundation" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
+    <ROW Directory_="RISAFoundation_Dir" SourcePath="..\..\..\Source Files\RISAFoundation_dotNet\Exes\Bin\RISAFoundation" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6" FileAddOptions="4"/>
   </COMPONENT>
 </DOCUMENT>
