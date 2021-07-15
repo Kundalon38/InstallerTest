@@ -1390,6 +1390,7 @@
     <ROW File="TextEffects.css" Component_="Slideshow.css" FileName="TEXTEF~1.CSS|TextEffects.css" Attributes="0" SourcePath="..\..\..\Source Files\RISAConnection\Help\Skins\Default\Stylesheets\TextEffects.css" SelfReg="false"/>
     <ROW File="Topic.css" Component_="Slideshow.css" FileName="Topic.css" Attributes="0" SourcePath="..\..\..\Source Files\RISAConnection\Help\Skins\Default\Stylesheets\Topic.css" SelfReg="false"/>
     <ROW File="Topic.microcontent.css" Component_="Slideshow.css" FileName="TOPICM~1.CSS|Topic.micro-content.css" Attributes="0" SourcePath="..\..\..\Source Files\RISAConnection\Help\Skins\Default\Stylesheets\Topic.micro-content.css" SelfReg="false"/>
+    <ROW File="RISAConnectionV12SilentInstall.bat" Component_="RISAConnectionV10SilentInstall.bat" FileName="RISACO~5.BAT|RISAConnection V12-Silent Install.bat" Attributes="0" SourcePath="..\..\..\Source Files\RISAConnection\Silent Install\RISAConnection V12-Silent Install.bat" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiInstallUISequenceAliasComponent">
     <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="#DefaultBuild:61"/>
@@ -1874,11 +1875,11 @@
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="DesktopFolder" Name="RISACO~1|[|ProductName] [|RISA_PRODUCT_VERSION2] " Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
+    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="DesktopFolder" Name="RISACO~1.9|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
     <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2Dem" Directory_="SHORTCUTDIR" Name="DUMMY(~1|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="RISAConnection.exe_2" Target="[#RISAConnection.exe_2]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnectionDemoOnly_Dir"/>
     <ROW Shortcut="RISAConnection" Directory_="SHORTCUTDIR" Name="DUMMY~1|[|RISA_PRODUCT_TITLE2_INSTYPE] " Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" Icon_="RISAConnection.exe" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
     <ROW Shortcut="RISAConnectionGeneralReference" Directory_="SHORTCUTDIR" Name="RISACO~1|RISAConnection General Reference" Component_="General_Reference_Connection.pdf" Target="[#General_Reference_Connection.pdf]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="Manuals_Dir"/>
-    <ROW Shortcut="RISAConnection_1" Directory_="DesktopFolder" Name="RISACO~2|[|ProductName] [|RISA_PRODUCT_VERSION2]" Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
+    <ROW Shortcut="RISAConnection_1" Directory_="DesktopFolder" Name="RISACO~2.9|[|RISA_PRODUCT_TITLE2_INSTYPE] " Component_="RISAConnection.exe_1" Target="[#RISAConnection.exe_1]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAConnection_Dir"/>
     <ROW Shortcut="RISALicensingHelp" Directory_="SHORTCUTDIR" Name="RISALI~1|RISA Licensing Help" Component_="RISALicensing.chm" Target="[#RISALicensing.chm]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="NewFolder_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
