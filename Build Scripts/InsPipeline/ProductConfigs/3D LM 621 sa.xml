@@ -1,0 +1,70 @@
+<BuildProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductName>RISA-3D</ProductName>
+  <Abbrev2>3D</Abbrev2>
+  <InstallType>Standalone</InstallType>
+  <BuildEnabled>Y</BuildEnabled>
+  <NotifyOnSuccessEmails>mattl@risa.com</NotifyOnSuccessEmails>
+  <EnableSuccessEmail>true</EnableSuccessEmail>
+  <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISA-3D</PublishInstaller_Directory>
+  <BatchScript>C:\Advanced Installer\Build Scripts\BatTemplates\IP_Build_3DNET_Standalone_IA.batTemplate</BatchScript>
+  <InstallerScript>C:\Advanced Installer\Build Scripts\BatBuildTemplates\3D.batBuildTemplate</InstallerScript>
+  <Suffix_InstallerFileName>LM621</Suffix_InstallerFileName>
+  <BuildType>AdvancedInstaller</BuildType>
+  <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>
+  <DirWatches>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISA-3D_dotNET</RootSourceDir>
+      <DestDir>G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET</DestDir>
+      <FileWatches>
+        <FileWatch>
+          <FileName>RISA3Dw.exe</FileName>
+          <DestDir />
+          <Do_CopyDir>Y</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>NE</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>*.9</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>Y</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISA-3D_dotNET DEMO</RootSourceDir>
+      <DestDir>G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNet_Demo</DestDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\Common Files</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISALicenseManager</RootSourceDir>
+      <DestDir>G:\Shared drives\Tech\Installer Staging\RISA License Manager</DestDir>
+      <FileWatches>
+        <FileWatch>
+          <FileName>RISALicenseManagerCOM.dll</FileName>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>EQ</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>6.2.1</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>N</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\RISA-3D</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+  </DirWatches>
+</BuildProcess>

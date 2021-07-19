@@ -1,0 +1,23 @@
+rem 3D all builds
+
+rem below, in-line "C:\Advanced Installer\Projects\RISA License Manager\build.bat"
+%IP_GetVersionFromAIP @set proj="C:\Advanced Installer\Projects\RISA License Manager\RISA License Manager.aip"
+@pushd %IP_SetAIversionDir
+advancedInstaller /rebuild %proj%
+@popd
+
+rem below, in-line "C:\Advanced Installer\Projects\Common\Merge Modules\RISA Core Files\build.bat"
+%IP_GetVersionFromAIP @set proj="C:\Advanced Installer\Projects\Common\Merge Modules\RISA Core Files\RISA Core Files.aip"
+@pushd %IP_SetAIversionDir
+advancedInstaller /rebuild %proj%
+@popd
+
+rem below, main build
+%IP_GetVersionFromAIP @set proj="C:\Advanced Installer\Projects\RISA-3D_dotNET\Standalone\RISA-3D_dotNET.aip"
+@pushd %IP_SetAIversionDir
+@set mod= IP_EditInstallerScriptFile                        <-- existing var, verify this is correct
+advancedinstaller /edit %proj% /DuplicateProject %mod%
+%IP_IfInstallTypeDemo advancedInstaller /edit %mod% /DelPrerequisite "Sentinel System Driver 7.6.0"
+%IP_CustomizeAIP
+advancedInstaller /rebuild %mod% -buildslist %IP_InstallType
+@popd
