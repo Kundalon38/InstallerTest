@@ -18,6 +18,6 @@ rem below, main build
 @set mod= IP_EditInstallerScriptFile                        <-- existing var, verify this is correct
 advancedinstaller /edit %proj% /DuplicateProject %mod%
 %IP_IfInstallTypeDemo advancedInstaller /edit %mod% /DelPrerequisite "Sentinel System Driver 7.6.0"
-%IP_CustomizeAIP
+%IP_CustomizeInstallerScriptFile
 advancedInstaller /rebuild %mod% -buildslist %IP_InstallType
 @popd

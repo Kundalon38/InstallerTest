@@ -10,9 +10,9 @@
     <BuildConfigDirectory ShortName="Advanced Installer" ColorName="MediumTurquoise">
       <FullDirName>C:\Advanced Installer\Build Scripts\InsPipeline\ProductConfigs</FullDirName>
     </BuildConfigDirectory>
-    <!--<BuildConfigDirectory ShortName="InstallAware" ColorName="RoyalBlue">
+    <BuildConfigDirectory ShortName="InstallAware" ColorName="RoyalBlue">
       <FullDirName>C:\Installer Pipeline\Build Configs</FullDirName>
-    </BuildConfigDirectory>-->
+    </BuildConfigDirectory>
   </BuildConfigDirectories>
   <InstallerRepo>
     <AIinstallationPathFormatStr>C:\Program Files (x86)\Caphyon\Advanced Installer {0}</AIinstallationPathFormatStr>
