@@ -6,7 +6,6 @@
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
     <ROW Property="AI_PRODUCTNAME_ARP" Value="[|RISA_PRODUCT_TITLE2_INSTYPE]"/>
-    <ROW Property="AI_PROPPATH_PERBUILD_risafloor.exe" Value="..\..\..\Source Files\RISAFloor\Exes\risafloor.exe" MultiBuildValue="ExeBuild:..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe"/>
     <ROW Property="AI_ThemeStyle" Value="aero" MsiKey="AI_ThemeStyle"/>
     <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
     <ROW Property="ALLUSERS" Value="1"/>
@@ -60,8 +59,8 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DemoBackup_Dir" Directory_Parent="APPDIR" DefaultDir="DEMOBA~1|DemoBackup"/>
-    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
-    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="RISAFloorStandaloneOnly_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFL~2|RISAFloor (Standalone Only)"/>
+    <ROW Directory="RISA_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFL~1|RISAFloor (Demo Only)"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
@@ -82,20 +81,21 @@
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{00157264-5585-4D40-9BA2-D5FBB4C141CC}" Directory_="APPDIR" Attributes="276" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="Region" ComponentId="{9F8C2FA1-D6EE-4444-B3BD-8EA3059563AD}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
     <ROW Component="RevisionGUID" ComponentId="{045798C2-56E9-4D2F-B671-D87C4749054E}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{717F0C09-E4A3-42E2-BDB0-497DC03630BE}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="Version" ComponentId="{88EF90D8-EE3D-429A-82EC-419DC768ED6A}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="__1" ComponentId="{845A3BA3-1B4E-41F4-BA89-6605B146B238}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
     <ROW Component="__2" ComponentId="{0A4856EE-0FC1-415D-849F-E9C890EF2F71}" Directory_="APPDIR" Attributes="260" KeyPath="__2"/>
-    <ROW Component="risafloor.exe" ComponentId="{54AB4D24-AAB3-4701-BAC7-36E2F109EA94}" Directory_="APPDIR" Attributes="256" KeyPath="risafloor.exe"/>
     <ROW Component="risafloor.exe_1" ComponentId="{0119DC65-827B-4F9E-A4FC-AC9745046548}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafloor.exe_1"/>
+    <ROW Component="risafloor.exe_2" ComponentId="{CEE6762B-37BE-42A0-8990-618A42E2EDD7}" Directory_="RISAFloorStandaloneOnly_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafloor.exe_2"/>
+    <ROW Component="risafloor.exe_3" ComponentId="{5B96BB4B-FB69-46A2-A60B-6F0B4DF0FF8C}" Directory_="RISA_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risafloor.exe_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="risafloor.exe" Component_="risafloor.exe" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_risafloor.exe&gt;" SelfReg="false"/>
     <ROW File="risafloor.exe_1" Component_="risafloor.exe_1" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="risafloor.exe_2" Component_="risafloor.exe_2" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFloor\Exes\risafloor.exe" SelfReg="false"/>
+    <ROW File="risafloor.exe_3" Component_="risafloor.exe_3" FileName="RISAFL~1.EXE|risafloor.exe" Attributes="0" SourcePath="..\..\..\Source Files\RISAFloor\Exes\Demo\risafloor.exe" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.custcomp.AiInstallUISequenceAliasComponent">
     <ROW AliasRowId="AI_EnableDebugLog" AliasRowOperation="2" Sequence="#DefaultBuild:61"/>
@@ -103,9 +103,6 @@
     <ROW AliasRowId="AI_ResolveKnownFolders" AliasRowOperation="2" Sequence="#DefaultBuild:63"/>
     <ROW AliasRowId="InitPropertiesErrorDlg" AliasRowOperation="2" Sequence="#DefaultBuild:52"/>
     <ROW AliasRowId="RISA_InitProperties" AliasRowOperation="2" Sequence="#DefaultBuild:51"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
-    <ROW Name="AI_APPPATH_PERBUILD_risafloor.exe" Path="[|AI_PROPPATH_PERBUILD_risafloor.exe]" Type="2" Content="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -304,7 +301,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -371,11 +367,9 @@
     <ROW Feature_="MainFeature" Component_="InstallGUID"/>
     <ROW Feature_="MainFeature" Component_="RevisionGUID"/>
     <ROW Feature_="MainFeature" Component_="Version"/>
-    <ROW Feature_="MainFeature" Component_="risafloor.exe"/>
     <ROW Feature_="MainFeature" Component_="risafloor.exe_1"/>
     <ROW Feature_="MainFeature" Component_="LicenseType"/>
     <ROW Feature_="MainFeature" Component_="LicenseTypeList"/>
-    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
     <ROW Feature_="MainFeature" Component_="__2"/>
     <ROW Feature_="MainFeature" Component_="EXEPath_2"/>
     <ROW Feature_="MainFeature" Component_="INIPath_2"/>
@@ -383,6 +377,8 @@
     <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
     <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
     <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
+    <ROW Feature_="MainFeature" Component_="risafloor.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="risafloor.exe_3"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Floor.exe" SourcePath="..\..\..\Source Files\Common Files\Icons\Floor.ico" Index="0"/>
@@ -502,10 +498,6 @@
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
     <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
-  </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFL~2.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
-    <ROW Shortcut="RISAFloor" Directory_="DesktopFolder" Name="RISAFL~2.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafloor.exe" Target="[#risafloor.exe]" Hotkey="0" Icon_="Floor.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
