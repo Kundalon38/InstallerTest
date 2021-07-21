@@ -1,6 +1,6 @@
 @call "C:\Advanced Installer\Projects\RISA License Manager\build.bat"
 set builds="Demo"
-@pushd "c:\Program Files (x86)\Caphyon\Advanced Installer 18.3\bin\x86"
+@pushd "c:\Program Files (x86)\Caphyon\Advanced Installer 18.4\bin\x86"
 @set proj="C:\Advanced Installer\Projects\RISAConnection\Standalone\RISA Connection.aip"
 @set mod="C:\Advanced Installer\Projects\RISAConnection\Standalone\RISA Connection_demo.aip"
 advancedinstaller /edit %proj% /DuplicateProject %mod%

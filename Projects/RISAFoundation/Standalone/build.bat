@@ -6,7 +6,7 @@ goto st
 :default
 set builds="Standalone"
 :st
-@pushd "c:\Program Files (x86)\Caphyon\Advanced Installer 18.3\bin\x86"
+@pushd "c:\Program Files (x86)\Caphyon\Advanced Installer 18.4\bin\x86"
 @set proj="C:\Advanced Installer\Projects\RISAFoundation\Standalone\RISAFoundation.aip"
 advancedinstaller /edit %proj% /SetProperty ProductVersion="13.0.0.1"
 advancedinstaller /edit %proj% /SetProperty RISA_PRODUCT_TITLE2_INSTYPE="RISA Foundation 13.0"
