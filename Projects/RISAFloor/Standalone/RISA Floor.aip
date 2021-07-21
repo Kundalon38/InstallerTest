@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.3" Modules="enterprise" RootPath="." Language="en" Id="{188EFCDF-111F-4A8F-BAEB-6D999BD02317}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="17.9" version="18.4" Modules="enterprise" RootPath="." Language="en" Id="{188EFCDF-111F-4A8F-BAEB-6D999BD02317}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
@@ -59,8 +59,10 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DemoBackup_Dir" Directory_Parent="APPDIR" DefaultDir="DEMOBA~1|DemoBackup"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="RISAFloorStandaloneOnly_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFL~2|RISAFloor (Standalone Only)"/>
     <ROW Directory="RISA_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFL~1|RISAFloor (Demo Only)"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
@@ -81,6 +83,7 @@
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{00157264-5585-4D40-9BA2-D5FBB4C141CC}" Directory_="APPDIR" Attributes="276" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="Region" ComponentId="{9F8C2FA1-D6EE-4444-B3BD-8EA3059563AD}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
     <ROW Component="RevisionGUID" ComponentId="{045798C2-56E9-4D2F-B671-D87C4749054E}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{AC6827FC-CFA4-41D7-ABFB-9E712CE08094}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="Version" ComponentId="{88EF90D8-EE3D-429A-82EC-419DC768ED6A}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="__1" ComponentId="{845A3BA3-1B4E-41F4-BA89-6605B146B238}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
     <ROW Component="__2" ComponentId="{0A4856EE-0FC1-415D-849F-E9C890EF2F71}" Directory_="APPDIR" Attributes="260" KeyPath="__2"/>
@@ -301,6 +304,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
@@ -379,6 +383,7 @@
     <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
     <ROW Feature_="MainFeature" Component_="risafloor.exe_2"/>
     <ROW Feature_="MainFeature" Component_="risafloor.exe_3"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Floor.exe" SourcePath="..\..\..\Source Files\Common Files\Icons\Floor.ico" Index="0"/>
@@ -498,6 +503,12 @@
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
     <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE" Directory_="SHORTCUTDIR" Name="RISAFL~1.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafloor.exe_2" Target="[#risafloor.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFloorStandaloneOnly_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPEDemo" Directory_="SHORTCUTDIR" Name="RISAFL~1.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="risafloor.exe_3" Target="[#risafloor.exe_3]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISA_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPEDemo_1" Directory_="DesktopFolder" Name="RISAFL~1.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="risafloor.exe_3" Target="[#risafloor.exe_3]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISA_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE_1" Directory_="DesktopFolder" Name="RISAFL~1.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafloor.exe_2" Target="[#risafloor.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFloorStandaloneOnly_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>

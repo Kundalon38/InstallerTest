@@ -1810,7 +1810,9 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2D_1" Directory_="DesktopFolder" Name="RISA-3~2.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="RISA3DFromDemo_risa3dw.exe_3" Target="[#risa3dw.exe_3]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="RISA3DFromDemo_Dir"/>
-    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2Dem" Directory_="SHORTCUTDIR" Name="DUMMYD~1|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="RISA3DFromDemo_risa3dw.exe_3" Target="[#risa3dw.exe_3]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="RISA3DFromDemo_Dir"/>
+    <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2Dem" Directory_="SHORTCUTDIR" Name="RISA-3~1.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="RISA3DFromDemo_risa3dw.exe_3" Target="[#risa3dw.exe_3]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="RISA3DFromDemo_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE" Directory_="SHORTCUTDIR" Name="RISA-3~2.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risa3dw.exe_1" Target="[#risa3dw.exe_1]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISA3D_2_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE_1" Directory_="DesktopFolder" Name="RISA-3~1.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risa3dw.exe_1" Target="[#risa3dw.exe_1]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISA3D_2_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
