@@ -29,7 +29,7 @@
     <ROW Property="RISA_INSTALLED_PRODUCTS" Value="Dummy"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
     <ROW Property="RISA_LICENSE_TYPE" Value="Cloud"/>
-    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISAConnection 12.9"/>
+    <ROW Property="RISA_PRODUCT_TITLE2_INSTYPE" Value="RISAConnection 12.9 (Demo)"/>
     <ROW Property="RISA_PRODUCT_VERSION2" Value="Dummy"/>
     <ROW Property="RISA_PRODUCT_VERSION34" Value="Dummy"/>
     <ROW Property="RISA_REGION_NAME" Value="UNITED_STATES"/>
