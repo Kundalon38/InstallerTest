@@ -4,7 +4,7 @@ set builds="Demo"
 @set proj="C:\Advanced Installer\Projects\RISAConnection\Standalone\RISA Connection.aip"
 @set mod="C:\Advanced Installer\Projects\RISAConnection\Standalone\RISA Connection_demo.aip"
 advancedinstaller /edit %proj% /DuplicateProject %mod%
-advancedinstaller /edit %proj% /SetProperty RISA_PRODUCT_TITLE2_INSTYPE="RISAConnection 12.9 (Demo)"
+advancedinstaller /edit %mod% /SetProperty RISA_PRODUCT_TITLE2_INSTYPE="RISAConnection 12.9 (Demo)"
 advancedInstaller /edit %mod% /DelPrerequisite "Sentinel System Driver 7.6.0"
 advancedInstaller /rebuild %mod% -buildslist %builds%
 @popd
