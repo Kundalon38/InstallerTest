@@ -29,7 +29,7 @@
     <ROW Property="RISA_CA_DEBUG" Value="Dummy"/>
     <ROW Property="RISA_CHECK_UPDATES" Value="True" Type="4"/>
     <ROW Property="RISA_COMPANY_KEY" Value="RISA Technologies"/>
-    <ROW Property="RISA_FORCE_ROAMING_DEBUG" Value="True" MultiBuildValue="DefaultBuild:False"/>
+    <ROW Property="RISA_FORCE_ROAMING_DEBUG" Value="False"/>
     <ROW Property="RISA_INSTALLATION_FOLDER_TYPE" Value="Standard" Type="4"/>
     <ROW Property="RISA_INSTALL_TYPE" Value="Standalone" MultiBuildValue="ExeBuild:Demo"/>
     <ROW Property="RISA_IS_ROAMING_PROFILE" Value="False"/>
