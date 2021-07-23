@@ -1624,7 +1624,7 @@
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
     <ROW Action="PassInstallTypePropertyToLMMSM" Type="51" Source="RISA_INSTALL_TYPE.EDAC66DA_447F_4B2A_A5F7_B98A161DE31C" Target="[RISA_INSTALL_TYPE]"/>
-    <ROW Action="RISA_InitProperties" Type="257" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
+    <ROW Action="RISA_InitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="InitProperties"/>
     <ROW Action="RISA_RemoveInstalledProducts" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="RemoveInstalledProducts" WithoutSeq="true"/>
     <ROW Action="RISA_SilentInitProperties" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="SilentInitProperties"/>
     <ROW Action="RISA_ValidateInstallDirectory" Type="1" Source="RISA_CustomActionsLib.CA.dll" Target="ValidateInstallDirectory" WithoutSeq="true"/>
@@ -1774,8 +1774,8 @@
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
     <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
-    <ROW Action="AI_ResolveKnownFolders" Sequence="54"/>
-    <ROW Action="AI_EnableDebugLog" Sequence="53"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="55"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="54"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild;ExeBuild"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="103" Builds="DefaultBuild;ExeBuild"/>
     <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild;ExeBuild"/>
@@ -1789,10 +1789,11 @@
     <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
     <ROW Action="AI_AppSearchEx" Sequence="102"/>
     <ROW Action="AI_DetectSoftware" Sequence="101"/>
-    <ROW Action="AI_DETECT_MODERNWIN" Condition="(VersionNT &gt;= 603)" Sequence="55" MsiKey="AI_DETECT_MODERNWIN"/>
-    <ROW Action="PassInstallTypePropertyToLMMSM" Sequence="52"/>
+    <ROW Action="AI_DETECT_MODERNWIN" Condition="(VersionNT &gt;= 603)" Sequence="56" MsiKey="AI_DETECT_MODERNWIN"/>
+    <ROW Action="PassInstallTypePropertyToLMMSM" Sequence="53"/>
     <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
-    <ROW Action="RISA_SilentInitProperties" Sequence="51"/>
+    <ROW Action="RISA_SilentInitProperties" Condition="( NOT Installed )" Sequence="52"/>
+    <ROW Action="RISA_InitProperties" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) )" Sequence="51"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
