@@ -2,6 +2,10 @@
 <DOCUMENT Type="Advanced Installer" CreateVersion="18.0" version="18.4" Modules="enterprise" RootPath="." Language="en" Id="{64EF5E9C-1EC4-47D7-8BEF-B17130F4CED9}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CLEAN_RESOURCES_DISABLE_UPGRADE" Value="1"/>
+    <ROW Property="AI_CLEAN_RESOURCES_UNINSTALL" Value="1"/>
+    <ROW Property="AI_CLEAN_RESOURCES_USER_PROMPT_BASIC_UI" Value="0"/>
+    <ROW Property="AI_CLEAN_RESOURCES_USER_PROMPT_FULL_UI" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
@@ -89,6 +93,7 @@
     <ROW Component="AppBase.dll.manifest" ComponentId="{F0DDA028-6C23-468C-B942-2B2A0D4EFC95}" Directory_="bit_Dir" Attributes="0" KeyPath="AppBase.dll.manifest" Type="0"/>
     <ROW Component="AppBase.dll.manifest_1" ComponentId="{99F18AA2-A06D-4C21-B77C-614456B0A4A8}" Directory_="bit_1_Dir" Attributes="0" KeyPath="AppBase.dll.manifest_1" Type="0"/>
     <ROW Component="AppBase.dll_1" ComponentId="{257C6E2D-6A7B-4825-8905-51933187CEC1}" Directory_="bit_1_Dir" Attributes="256" KeyPath="AppBase.dll_1"/>
+    <ROW Component="AppPaths" ComponentId="{5136A58D-BE24-49C9-8164-96D704035832}" Directory_="APPDIR" Attributes="260" KeyPath="AppPaths"/>
     <ROW Component="AutoMapper.dll" ComponentId="{2A0C49AF-8533-4FE9-BB44-2689E094B7C2}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="AutoMapper.dll"/>
     <ROW Component="BCGCBPRO2920u142.dll" ComponentId="{926D6BD7-BCA1-42BE-A46E-00885848BAB9}" Directory_="bit_Dir" Attributes="0" KeyPath="BCGCBPRO2920u142.dll"/>
     <ROW Component="BCGCBPRO2920u142.dll_1" ComponentId="{2032CE00-6D24-4384-8A16-A9AA93682C14}" Directory_="bit_1_Dir" Attributes="256" KeyPath="BCGCBPRO2920u142.dll_1"/>
@@ -101,6 +106,7 @@
     <ROW Component="CSInfrastructure.dll" ComponentId="{BBF408BC-01F3-4644-9AC7-41FA0F0CE631}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="CSInfrastructure.dll"/>
     <ROW Component="CherryFlower.dll" ComponentId="{3140FB96-1808-45D7-BAF1-2D3038F07DDD}" Directory_="bit_Dir" Attributes="0" KeyPath="CherryFlower.dll"/>
     <ROW Component="CherryFlower.dll_1" ComponentId="{32A41CA1-4135-4CDD-BB3B-E03CBE58B988}" Directory_="bit_1_Dir" Attributes="256" KeyPath="CherryFlower.dll_1"/>
+    <ROW Component="CurrentVersion" ComponentId="{ECA3B44B-2252-4C89-B850-C8FB13536360}" Directory_="APPDIR" Attributes="260" KeyPath="CurrentVersion_1"/>
     <ROW Component="Default_1" ComponentId="{4049630D-36CB-4657-B908-3012CDE1ED19}" Directory_="APPDIR" Attributes="260" KeyPath="Default_4"/>
     <ROW Component="Default_3" ComponentId="{1446CAC7-1703-44BB-A0EF-AB2729BD2917}" Directory_="APPDIR" Attributes="260" KeyPath="Default_3"/>
     <ROW Component="Default_4" ComponentId="{E04871F0-0DE8-49AE-8A49-63BE26E9EDC7}" Directory_="APPDIR" Attributes="260" KeyPath="Default_5"/>
@@ -190,6 +196,7 @@
     <ROW Component="Material_mapping.xlsx" ComponentId="{48F144C3-B6E1-4F1F-96A7-DD5D89B5D941}" Directory_="NewFolder_Dir" Attributes="0" KeyPath="Material_mapping.xlsx" Type="0"/>
     <ROW Component="MathNet.Numerics.dll" ComponentId="{CD0D06D4-E31A-4FDD-A35A-00866C0E0612}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MathNet.Numerics.dll"/>
     <ROW Component="MathNet.Spatial.dll" ComponentId="{EA8FE52B-147A-4A5C-B545-B36B688D991E}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="MathNet.Spatial.dll"/>
+    <ROW Component="Microsoft" ComponentId="{97DF7914-2116-417C-AC16-8C4D3F561F48}" Directory_="APPDIR" Attributes="260" KeyPath="Microsoft_1"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_1" ComponentId="{90B224E5-FD1E-4D2B-B0AA-06821B426D3D}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interactions.dll_1"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_4" ComponentId="{F1BF7A03-599A-434E-8F3A-52EBCD723FE4}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interactions.dll_4"/>
     <ROW Component="Microsoft.Expression.Interactions.dll_5" ComponentId="{72945194-D297-43A4-873D-3F82E8317A99}" Directory_="RISA3D_6_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Microsoft.Expression.Interactions.dll_5"/>
@@ -228,6 +235,8 @@
     <ROW Component="ModelExchanger.Shared.Models.dll" ComponentId="{81F09AA7-620B-44C8-9D83-D41E08597D72}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ModelExchanger.Shared.Models.dll"/>
     <ROW Component="ModelExchanger.Tools.Excel.dll" ComponentId="{AF8DB368-6DBD-4276-87F4-24D273C6496D}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="ModelExchanger.Tools.Excel.dll"/>
     <ROW Component="Newtonsoft.Json.dll" ComponentId="{F2001138-9E37-4BE5-A2A6-FD204A92B350}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="NullFile" ComponentId="{5A260C0F-395A-475A-A675-FFAD048CDCD1}" Directory_="APPDIR" Attributes="260" KeyPath="NullFile"/>
+    <ROW Component="NullFile_1" ComponentId="{554BCEFD-D339-4B93-94C6-32C88D19A8BC}" Directory_="APPDIR" Attributes="260" KeyPath="NullFile_1"/>
     <ROW Component="ProductName" ComponentId="{B70F51C7-4642-4CE8-90D9-388051389992}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName_1"/>
     <ROW Component="ProtMan.dll" ComponentId="{E34DEFCC-E8EC-43C2-A9F2-C44131E6F4D1}" Directory_="bit_Dir" Attributes="0" KeyPath="ProtMan.dll"/>
     <ROW Component="ProtMan.dll_1" ComponentId="{4C216080-7B6A-4DA4-8A89-FC4FDB7EB84F}" Directory_="bit_1_Dir" Attributes="256" KeyPath="ProtMan.dll_1"/>
@@ -235,6 +244,8 @@
     <ROW Component="ProtMan_09.dll_1" ComponentId="{452C1D01-A990-4733-AE9B-5E7A91202244}" Directory_="bit_1_Dir" Attributes="256" KeyPath="ProtMan_09.dll_1"/>
     <ROW Component="RISA3DFromDemo_risa3dw.exe.config_3" ComponentId="{0AB8D201-858E-401E-8D7F-2D08850948D9}" Directory_="RISA3DFromDemo_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risa3dw.exe.config_3" Type="0"/>
     <ROW Component="RISA3DFromDemo_risa3dw.exe_3" ComponentId="{840FB79D-01BE-4A82-BA4A-222DF0B3DE46}" Directory_="RISA3DFromDemo_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risa3dw.exe_3"/>
+    <ROW Component="RISA3DModel" ComponentId="{F813BEDE-C60F-4BBD-8662-0255F0F84F44}" Directory_="APPDIR" Attributes="260" KeyPath="RISA3DModel"/>
+    <ROW Component="RISADesignList" ComponentId="{507D064A-AEF4-4BB7-979E-E95FB7E8C477}" Directory_="APPDIR" Attributes="260" KeyPath="RISADesignList"/>
     <ROW Component="RISA_COMPANY_KEY" ComponentId="{ECB3C296-5E1A-4730-B165-A44AFB1420E8}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{5AFDA187-ABAD-437F-B1F7-A993806780B4}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="RISAtech.CalatravaLink.Contract.dll" ComponentId="{242C876D-89C7-4264-A50C-AFCDE3383C15}" Directory_="SAF3D_4_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="RISAtech.CalatravaLink.Contract.dll"/>
@@ -282,6 +293,8 @@
     <ROW Component="SciaImages.dll_1" ComponentId="{6611B816-ED4D-455E-9128-CA8BA0734BB7}" Directory_="bit_1_Dir" Attributes="256" KeyPath="SciaImages.dll_1"/>
     <ROW Component="SciaImages_09.dll" ComponentId="{7BAB5EF3-9EA2-4067-A4CF-39D9688957EF}" Directory_="bit_Dir" Attributes="0" KeyPath="SciaImages_09.dll"/>
     <ROW Component="SciaImages_09.dll_1" ComponentId="{FABCD7DB-0311-4EDE-8A6A-626D23C194DA}" Directory_="bit_1_Dir" Attributes="256" KeyPath="SciaImages_09.dll_1"/>
+    <ROW Component="ShellNew" ComponentId="{45EB6010-AC1A-4B14-BCF8-2E7E43A1BB17}" Directory_="APPDIR" Attributes="260" KeyPath="ShellNew"/>
+    <ROW Component="ShellNew_1" ComponentId="{A882834E-72FC-4DC4-96C9-1E4F119F2C23}" Directory_="APPDIR" Attributes="260" KeyPath="ShellNew_1"/>
     <ROW Component="SimpleInjector.dll" ComponentId="{98F8998D-4F02-4EAF-BD70-2852D5B53D9F}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="SimpleInjector.dll"/>
     <ROW Component="Software" ComponentId="{BDEA2D43-E1DA-4DA1-9908-E02456364F08}" Directory_="APPDIR" Attributes="260" KeyPath="Software_2"/>
     <ROW Component="SolverData.dll" ComponentId="{71D8DD90-0FBB-42A3-9F50-BAFD8690E6F0}" Directory_="bit_Dir" Attributes="0" KeyPath="SolverData.dll"/>
@@ -434,6 +447,7 @@
     <ROW Component="Unity.Container.dll_5" ComponentId="{36B3EDBA-3086-4DCD-9087-1217977ECABA}" Directory_="RISA3D_6_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="Unity.Container.dll_5"/>
     <ROW Component="Version" ComponentId="{A871E54A-F814-4BDB-B907-4A9A41F0034E}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="Version_1" ComponentId="{4ED589C2-B62F-4F02-B6D0-F8CC824D6D0C}" Directory_="APPDIR" Attributes="260" KeyPath="Version_1"/>
+    <ROW Component="Windows" ComponentId="{0F35E806-D93E-49F7-8936-6C13B1792EA0}" Directory_="APPDIR" Attributes="260" KeyPath="Windows_1"/>
     <ROW Component="WpfMath.dll_1" ComponentId="{3B24203B-B6A4-4B75-A2B6-55A16237EB3E}" Directory_="RISA3D_1_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WpfMath.dll_1"/>
     <ROW Component="WpfMath.dll_4" ComponentId="{388B6E8C-B8F0-480C-843C-1DA69DCEBEAD}" Directory_="RISA3D_5_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="WpfMath.dll_4"/>
     <ROW Component="WpfMath.dll_5" ComponentId="{148AF7FB-F45F-49A8-91A5-57FC4F24122B}" Directory_="RISA3D_6_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="WpfMath.dll_5"/>
@@ -451,9 +465,18 @@
     <ROW Component="ZenSupp.dll_1" ComponentId="{070D7FF4-B2F4-4F9B-8E0D-853F692FE99A}" Directory_="bit_1_Dir" Attributes="256" KeyPath="ZenSupp.dll_1"/>
     <ROW Component="_" ComponentId="{1FAAB185-8929-4A30-B2DE-7EA8315D4B62}" Directory_="APPDIR" Attributes="260" KeyPath="__6"/>
     <ROW Component="__1" ComponentId="{5DF150CA-E997-4337-8347-EE0C30815B2C}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
+    <ROW Component="__10" ComponentId="{D0D6ABF0-B5FB-43FC-8544-A1D6AF45FFA2}" Directory_="APPDIR" Attributes="260" KeyPath="__12"/>
+    <ROW Component="__11" ComponentId="{38367E08-E569-41EF-948B-2B9C23A40AE1}" Directory_="APPDIR" Attributes="260" KeyPath="__13"/>
+    <ROW Component="__12" ComponentId="{12B6EF37-C32A-4051-8627-201EC8B6B19C}" Directory_="APPDIR" Attributes="260" KeyPath="__14"/>
+    <ROW Component="__13" ComponentId="{21C0417E-A69B-4BAC-82A8-E7E11B4741FF}" Directory_="APPDIR" Attributes="260" KeyPath="__15"/>
     <ROW Component="__2" ComponentId="{96B1AACF-A171-4E5E-9F28-59BE943A07EE}" Directory_="APPDIR" Attributes="260" KeyPath="__4"/>
     <ROW Component="__3" ComponentId="{99F652E8-1530-4695-96E9-50E08EBCAAF1}" Directory_="APPDIR" Attributes="260" KeyPath="__3"/>
     <ROW Component="__4" ComponentId="{BC553223-3B82-4857-BBEF-4227F0B2EF37}" Directory_="APPDIR" Attributes="260" KeyPath="__5"/>
+    <ROW Component="__5" ComponentId="{891CB2D1-BA3B-4E17-8C15-F02E31A1F933}" Directory_="APPDIR" Attributes="260" KeyPath="__7"/>
+    <ROW Component="__6" ComponentId="{B64E3878-0687-43DF-A95D-1C9B5D4082E0}" Directory_="APPDIR" Attributes="260" KeyPath="__8"/>
+    <ROW Component="__7" ComponentId="{F4E5EE36-2FA8-44E0-AF6C-0D6CF2BDC826}" Directory_="APPDIR" Attributes="260" KeyPath="__9"/>
+    <ROW Component="__8" ComponentId="{59E913F2-01A7-4888-B488-345B0703E523}" Directory_="APPDIR" Attributes="260" KeyPath="__10"/>
+    <ROW Component="__9" ComponentId="{05F2BBBC-658F-4B94-B614-31D70890CFB1}" Directory_="APPDIR" Attributes="260" KeyPath="__11"/>
     <ROW Component="concrt140.dll" ComponentId="{85CEA5A1-0022-4A52-8534-CA6DF987B111}" Directory_="bit_Dir" Attributes="0" KeyPath="concrt140.dll"/>
     <ROW Component="concrt140.dll_1" ComponentId="{C53E72BF-1471-4348-A0C1-1E217AAA610A}" Directory_="bit_1_Dir" Attributes="256" KeyPath="concrt140.dll_1"/>
     <ROW Component="logger.dll" ComponentId="{5D6A3C00-DF1E-4EA6-A542-CC7D3E845707}" Directory_="bit_Dir" Attributes="0" KeyPath="logger.dll"/>
@@ -475,6 +498,7 @@
     <ROW Component="msvcp140_codecvt_ids.dll" ComponentId="{EC2E1F12-8F7C-4E18-ACEF-670BD18638D4}" Directory_="bit_Dir" Attributes="0" KeyPath="msvcp140_codecvt_ids.dll"/>
     <ROW Component="msvcp140_codecvt_ids.dll_1" ComponentId="{63BEA8DF-0FA4-486F-995D-8FABDEA72B41}" Directory_="bit_1_Dir" Attributes="256" KeyPath="msvcp140_codecvt_ids.dll_1"/>
     <ROW Component="netstandard.dll" ComponentId="{44B0E1C9-7753-4E57-9F33-C8E59E1BDEC8}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="netstandard.dll"/>
+    <ROW Component="open" ComponentId="{BB579B5C-3C16-47D9-9F0C-CF568F21C229}" Directory_="APPDIR" Attributes="260" KeyPath="open"/>
     <ROW Component="protobufnet.dll" ComponentId="{6CC14BE1-5C15-4CEC-81C9-BAF0A18B838A}" Directory_="SAF3D_4_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="protobufnet.dll"/>
     <ROW Component="risa3dw.exe" ComponentId="{D22FD596-7ED9-4206-A61B-6FCB6CCB2FBA}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risa3dw.exe"/>
     <ROW Component="risa3dw.exe.config" ComponentId="{B3BC2424-1003-41E6-9EFE-64B933276423}" Directory_="DemoBackup_Dir" Attributes="0" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risa3dw.exe.config" Type="0"/>
@@ -483,6 +507,7 @@
     <ROW Component="risa3dw17.exe" ComponentId="{1A7C4485-7F63-4684-AEC2-06277760BDC5}" Directory_="RISA3D_2_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risa3dw17.exe"/>
     <ROW Component="ruiSDK_5.4.0.x64.dll" ComponentId="{70A94430-69B3-48D4-AB9A-323BB3A11D8A}" Directory_="bit_1_Dir" Attributes="256" KeyPath="ruiSDK_5.4.0.x64.dll"/>
     <ROW Component="ruiSDK_5.4.0.x86.dll" ComponentId="{ACD55571-12AC-4B47-8574-A045FC802C9B}" Directory_="bit_Dir" Attributes="0" KeyPath="ruiSDK_5.4.0.x86.dll"/>
+    <ROW Component="shell" ComponentId="{888C12A5-C801-474A-997A-23DB6509C6B3}" Directory_="APPDIR" Attributes="260" KeyPath="shell"/>
     <ROW Component="vccorlib140.dll" ComponentId="{248442B8-8513-45A7-BFB7-3106480FD4A7}" Directory_="bit_Dir" Attributes="0" KeyPath="vccorlib140.dll"/>
     <ROW Component="vccorlib140.dll_1" ComponentId="{BE401855-4364-4C74-8490-123048FD6AC5}" Directory_="bit_1_Dir" Attributes="256" KeyPath="vccorlib140.dll_1"/>
     <ROW Component="vcruntime140.dll" ComponentId="{BC0101AD-A82E-43C7-A8A9-A2FB647FCDFE}" Directory_="bit_Dir" Attributes="0" KeyPath="vcruntime140.dll"/>
@@ -988,6 +1013,12 @@
     <ROW AliasRowId="RemoveInstalledProductsErrorDlg" AliasRowOperation="2" Condition="#MsiBuild:AI_INSTALL AND RISA_STATUS_CODE &lt;&gt; &quot;RISA_STS_OK&quot;"/>
     <ROW AliasRowId="RISA_InitProperties" AliasRowOperation="2" Sequence="#MsiBuild:51"/>
   </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AiRemoveRegComponent">
+    <ROW RemoveReg="_" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+    <ROW RemoveReg="__1" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+    <ROW RemoveReg="__2" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+    <ROW RemoveReg="__3" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" GeneralOptions="o" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
   </COMPONENT>
@@ -1030,6 +1061,11 @@
     <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_AiRemoveRegsCommit" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsCommit" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsCommit"/>
+    <ROW Action="AI_AiRemoveRegsCommitUser" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsCommit" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsCommit"/>
+    <ROW Action="AI_AiRemoveRegsDeferred" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsDeferred" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsDeferred"/>
+    <ROW Action="AI_AiRemoveRegsDeferredUser" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsDeferred" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsDeferred"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Description="Generating actions to remove registry entries." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsImmediate"/>
     <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
@@ -1042,6 +1078,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="RISA_CustomActionsLib.CA.dll_1" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
+    <ROW Name="ResourceCleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ResourceCleaner.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="header_logo.bmp" SourcePath="..\..\Common\Assets\header_logo.bmp"/>
@@ -1202,6 +1239,11 @@
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AiRemoveRegsCommit" Type="11777" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsCommitUser" Type="9729" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsDeferred" Type="11265" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsDeferredUser" Type="9217" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Type="1" Source="ResourceCleaner.dll" Target="OnAiRemoveRegsImmediate"/>
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
@@ -1665,6 +1707,27 @@
     <ROW Feature_="MainFeature" Component_="XEP_ExtensionUI_09.dll_1"/>
     <ROW Feature_="MainFeature" Component_="XmlSupport.dll_1"/>
     <ROW Feature_="MainFeature" Component_="ZenSupp.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="RISADesignList"/>
+    <ROW Feature_="MainFeature" Component_="__5"/>
+    <ROW Feature_="MainFeature" Component_="__6"/>
+    <ROW Feature_="MainFeature" Component_="__7"/>
+    <ROW Feature_="MainFeature" Component_="ShellNew"/>
+    <ROW Feature_="MainFeature" Component_="NullFile"/>
+    <ROW Feature_="MainFeature" Component_="__8"/>
+    <ROW Feature_="MainFeature" Component_="RISA3DModel"/>
+    <ROW Feature_="MainFeature" Component_="shell"/>
+    <ROW Feature_="MainFeature" Component_="open"/>
+    <ROW Feature_="MainFeature" Component_="__9"/>
+    <ROW Feature_="MainFeature" Component_="ShellNew_1"/>
+    <ROW Feature_="MainFeature" Component_="NullFile_1"/>
+    <ROW Feature_="MainFeature" Component_="__10"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft"/>
+    <ROW Feature_="MainFeature" Component_="Windows"/>
+    <ROW Feature_="MainFeature" Component_="CurrentVersion"/>
+    <ROW Feature_="MainFeature" Component_="AppPaths"/>
+    <ROW Feature_="MainFeature" Component_="__11"/>
+    <ROW Feature_="MainFeature" Component_="__12"/>
+    <ROW Feature_="MainFeature" Component_="__13"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="D.exe" SourcePath="..\Assets\3D.ico" Index="0"/>
@@ -1698,6 +1761,7 @@
     <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
     <ROW Action="RISA_SilentInitProperties" Condition="( NOT Installed )" Sequence="52"/>
     <ROW Action="RISA_InitProperties" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) )" Sequence="51"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Sequence="2599"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -1752,8 +1816,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="AppPaths" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths" Name="+" Component_="AppPaths"/>
     <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
     <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="CurrentVersion_1" Root="2" Key="Software\Microsoft\Windows\CurrentVersion" Name="+" Component_="CurrentVersion"/>
     <ROW Registry="Default_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="*" Component_="Default_5"/>
     <ROW Registry="Default_3" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="Default_3"/>
     <ROW Registry="Default_4" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0\Default" Name="*" Component_="Default_1"/>
@@ -1781,11 +1847,16 @@
     <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Name="LocalUpdateCheck" Value="True" Component_="LocalUpdateCheck"/>
     <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="[RISA_CHECK_UPDATES]" Component_="LocalUpdateCheck_1"/>
+    <ROW Registry="Microsoft_1" Root="2" Key="Software\Microsoft" Name="+" Component_="Microsoft"/>
     <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
     <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify" VirtualValue="#"/>
     <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="NullFile" Root="0" Key=".r3d\ShellNew\NullFile" Name="+" Component_="NullFile"/>
+    <ROW Registry="NullFile_1" Root="0" Key=".rt3\ShellNew\NullFile" Name="+" Component_="NullFile_1"/>
     <ROW Registry="ProductName_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="*" Component_="ProductName"/>
     <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="RISA3DModel" Root="0" Key="RISA-3DModel" Name="+" Component_="RISA3DModel"/>
+    <ROW Registry="RISADesignList" Root="0" Key=".asc" Value="RISADesignList" Component_="RISADesignList"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
     <ROW Registry="RISA_COMPANY_KEY_1" Root="2" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY_1"/>
     <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
@@ -1794,6 +1865,8 @@
     <ROW Registry="Region_2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region_2"/>
     <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
     <ROW Registry="RevisionGUID_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Name="RevisionGUID" Value="[REVISION_GUID_3D_17]" Component_="RevisionGUID_1"/>
+    <ROW Registry="ShellNew" Root="0" Key=".r3d\ShellNew" Name="+" Component_="ShellNew"/>
+    <ROW Registry="ShellNew_1" Root="0" Key=".rt3\ShellNew" Name="+" Component_="ShellNew_1"/>
     <ROW Registry="Software_2" Root="2" Key="Software" Name="+" Component_="Software"/>
     <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
     <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
@@ -1803,11 +1876,29 @@
     <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#19" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="Version_1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Name="Version" Value="0.0" Component_="Version_1"/>
+    <ROW Registry="Windows_1" Root="2" Key="Software\Microsoft\Windows" Name="+" Component_="Windows"/>
     <ROW Registry="__1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0\Default" Component_="__1"/>
+    <ROW Registry="__10" Root="0" Key=".r3d" Value="RISA-3DModel" Component_="__8"/>
+    <ROW Registry="__11" Root="0" Key="RISA-3DModel\shell\open\command" Value="&quot;[APPDIR]\risa3dw.exe&quot; &quot;%1&quot;" Component_="__9"/>
+    <ROW Registry="__12" Root="0" Key=".rt3" Value="RISA-3DModel" Component_="__10"/>
+    <ROW Registry="__13" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risa3dw.exe" Value="[APPDIR]\risa3dw.exe" Component_="__11"/>
+    <ROW Registry="__14" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risa3dw.exe\Path" Value="[APPDIR]" Component_="__12"/>
+    <ROW Registry="__15" Root="0" Key="RISA-3DModel" Value="RISA-3D File" Component_="__13"/>
     <ROW Registry="__3" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0\Default" Component_="__3"/>
     <ROW Registry="__4" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Component_="__2"/>
     <ROW Registry="__5" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__4"/>
     <ROW Registry="__6" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\17.0" Component_="_"/>
+    <ROW Registry="__7" Root="0" Key="RISADesignList" Value="RISA Design List" Component_="__5"/>
+    <ROW Registry="__8" Root="0" Key=".fil" Value="RISADatabase" Component_="__6"/>
+    <ROW Registry="__9" Root="0" Key="RISADatabase" Value="RISA Database" Component_="__7"/>
+    <ROW Registry="open" Root="0" Key="RISA-3DModel\shell\open" Name="+" Component_="open"/>
+    <ROW Registry="shell" Root="0" Key="RISA-3DModel\shell" Name="+" Component_="shell"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRemoveRegComponent">
+    <ROW RemoveRegistry="_" Root="0" Key="RISA-3DModel" Name="-" Component_="RISAtech.CoreAccess.R3D.dll_4"/>
+    <ROW RemoveRegistry="__1" Root="0" Key=".rt3" Name="-" Component_="RISAtech.CoreAccess.R3D.dll_4"/>
+    <ROW RemoveRegistry="__2" Root="0" Key=".r3d" Name="-" Component_="RISAtech.CoreAccess.R3D.dll_4"/>
+    <ROW RemoveRegistry="__3" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risa3dw.exe" Name="-" Component_="RISAtech.CoreAccess.R3D.dll_4"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="ProductNameRISA_PRODUCT_VERSION2D_1" Directory_="DesktopFolder" Name="RISA-3~2.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="RISA3DFromDemo_risa3dw.exe_3" Target="[#risa3dw.exe_3]" Hotkey="0" Icon_="D.exe" IconIndex="0" ShowCmd="1" WkDir="RISA3DFromDemo_Dir"/>

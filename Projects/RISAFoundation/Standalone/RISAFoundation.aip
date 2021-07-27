@@ -2,6 +2,10 @@
 <DOCUMENT Type="Advanced Installer" CreateVersion="18.0" version="18.4" Modules="enterprise" RootPath="." Language="en" Id="{7A05D186-29FB-48FC-88C9-5A3CA6101E18}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CLEAN_RESOURCES_DISABLE_UPGRADE" Value="1"/>
+    <ROW Property="AI_CLEAN_RESOURCES_UNINSTALL" Value="1"/>
+    <ROW Property="AI_CLEAN_RESOURCES_USER_PROMPT_BASIC_UI" Value="0"/>
+    <ROW Property="AI_CLEAN_RESOURCES_USER_PROMPT_FULL_UI" Value="0"/>
     <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_INTERNET_CONNECTION"/>
@@ -58,6 +62,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="DemoBackup_Dir" Directory_Parent="APPDIR" DefaultDir="DEMOBA~1|DemoBackup"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="RISAFoundationDemoOnly_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFO~1|RISAFoundation (Demo Only)"/>
     <ROW Directory="RISAFoundationStandaloneOnly_Dir" Directory_Parent="APPDIR" DefaultDir=".:RISAFO~2|RISAFoundation (Standalone Only)"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
@@ -68,6 +73,8 @@
     <ROW Component="AI_DisableModify" ComponentId="{33C2A2DE-F969-4044-9EA8-CF486F457BBD}" Directory_="APPDIR" Attributes="260" KeyPath="NoModify" Options="1"/>
     <ROW Component="AI_ExePath" ComponentId="{5046031C-4278-40C4-9B12-C32B9A1FA69D}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="APPDIR" ComponentId="{F875DE03-D1A4-4DA7-80F9-958DAFC721F4}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="AppPaths" ComponentId="{D706D624-2FF7-4B82-AAE2-0B005634EE40}" Directory_="APPDIR" Attributes="260" KeyPath="AppPaths"/>
+    <ROW Component="CurrentVersion" ComponentId="{AC6C097F-0609-449F-B654-A904E6F7BC32}" Directory_="APPDIR" Attributes="260" KeyPath="CurrentVersion_1"/>
     <ROW Component="EXEPath_1" ComponentId="{33D302CB-6E94-4720-8CCB-981FAD9F7A42}" Directory_="APPDIR" Attributes="260" KeyPath="EXEPath_1"/>
     <ROW Component="EXE_PATH" ComponentId="{97EA77A1-E172-4DAB-AAF0-3277F4244E5C}" Directory_="APPDIR" Attributes="260" KeyPath="EXE_PATH"/>
     <ROW Component="INIPath_1" ComponentId="{16D32E05-638F-4157-90A3-3B9A6F4072BD}" Directory_="APPDIR" Attributes="260" KeyPath="INIPath_1"/>
@@ -76,18 +83,33 @@
     <ROW Component="LicenseType" ComponentId="{5884F01D-1C21-4F44-AFAD-8ECF2DC8D914}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseType"/>
     <ROW Component="LicenseTypeList" ComponentId="{C5627D15-C497-4D07-9E39-30034C1176FF}" Directory_="APPDIR" Attributes="260" KeyPath="LicenseTypeList"/>
     <ROW Component="LocalUpdateCheck_1" ComponentId="{D07BA195-977F-46F8-AF72-71B5F711C0B9}" Directory_="APPDIR" Attributes="260" KeyPath="LocalUpdateCheck_1"/>
+    <ROW Component="Microsoft" ComponentId="{9B22D766-C896-4BBA-9EA1-1CD692041036}" Directory_="APPDIR" Attributes="260" KeyPath="Microsoft_1"/>
+    <ROW Component="NullFile" ComponentId="{C59AF9A9-30FD-43F5-9884-6A3CFC605AF9}" Directory_="APPDIR" Attributes="260" KeyPath="NullFile"/>
     <ROW Component="ProductName" ComponentId="{8A201A8F-86C9-4B19-B534-6AFFF3D347EC}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
     <ROW Component="RISA_COMPANY_KEY" ComponentId="{A8B350BD-7E31-4EA3-8933-9069990D97CF}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY"/>
     <ROW Component="RISA_COMPANY_KEY_1" ComponentId="{03DDF735-1361-4DDF-B65D-384F2F008ABD}" Directory_="APPDIR" Attributes="260" KeyPath="RISA_COMPANY_KEY_1"/>
     <ROW Component="Region" ComponentId="{96CCE83A-65E4-426A-A589-E7858BACB6ED}" Directory_="APPDIR" Attributes="260" KeyPath="Region"/>
     <ROW Component="RevisionGUID" ComponentId="{919C214A-B7AF-4D51-96A2-A9029F9B9D25}" Directory_="APPDIR" Attributes="260" KeyPath="RevisionGUID"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{0E49E739-349F-4CED-BBFA-50CCE0912C8F}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="ShellNew" ComponentId="{6332CE3E-E81E-4C5B-AFAE-1794565580D5}" Directory_="APPDIR" Attributes="260" KeyPath="ShellNew"/>
     <ROW Component="Version" ComponentId="{2D7EDD2A-802C-4A86-A4F5-F30F04708DF2}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
+    <ROW Component="Windows" ComponentId="{B336332F-BD8F-4EAE-913F-ED9486041D8E}" Directory_="APPDIR" Attributes="260" KeyPath="Windows_1"/>
+    <ROW Component="_" ComponentId="{7753FD0F-A010-4791-8EBD-B068F1D8F940}" Directory_="APPDIR" Attributes="260" KeyPath="_"/>
     <ROW Component="__1" ComponentId="{9D46F7DE-9EC4-4E3B-BF29-F86316FFFB3D}" Directory_="APPDIR" Attributes="260" KeyPath="__1"/>
+    <ROW Component="__10" ComponentId="{55322678-815E-4A3A-B77C-F22CAB0880E7}" Directory_="APPDIR" Attributes="260" KeyPath="__10"/>
     <ROW Component="__2" ComponentId="{9847281C-6411-4D2D-AA87-A2997487AB47}" Directory_="APPDIR" Attributes="260" KeyPath="__2"/>
+    <ROW Component="__3" ComponentId="{3EC02DC6-E2A5-4FAA-AB1C-0126AEEF13B5}" Directory_="APPDIR" Attributes="260" KeyPath="__3"/>
+    <ROW Component="__4" ComponentId="{BAEF8198-3D29-420C-8D64-0C1D330DC301}" Directory_="APPDIR" Attributes="260" KeyPath="__4"/>
+    <ROW Component="__5" ComponentId="{1EE8725B-F69C-40CE-B391-F0F79CF3AA79}" Directory_="APPDIR" Attributes="260" KeyPath="__5"/>
+    <ROW Component="__6" ComponentId="{16F3618C-027E-46AD-AB08-BA5C3E6B1985}" Directory_="APPDIR" Attributes="260" KeyPath="__6"/>
+    <ROW Component="__7" ComponentId="{49748A72-71C8-454C-B7A4-59CF7D8EBF3C}" Directory_="APPDIR" Attributes="260" KeyPath="__7"/>
+    <ROW Component="__8" ComponentId="{422FFEDE-8EE4-4747-B3E9-341E85585564}" Directory_="APPDIR" Attributes="260" KeyPath="__8"/>
+    <ROW Component="__9" ComponentId="{03B4D9A3-BF66-44BA-B49A-D3FABEA44D08}" Directory_="APPDIR" Attributes="260" KeyPath="__9"/>
+    <ROW Component="open" ComponentId="{40930180-2916-46E8-A0DB-D1CC455A2099}" Directory_="APPDIR" Attributes="260" KeyPath="open"/>
     <ROW Component="risafnd.exe_1" ComponentId="{BE41536D-861C-4FF1-8C89-B7ED4D7CB0D9}" Directory_="DemoBackup_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_1"/>
     <ROW Component="risafnd.exe_2" ComponentId="{8240E120-7409-4F9A-850D-0181759C084D}" Directory_="RISAFoundationDemoOnly_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE = &quot;Demo&quot;" KeyPath="risafnd.exe_2"/>
     <ROW Component="risafnd.exe_3" ComponentId="{461DBEAC-7BEF-4E51-A65B-89FDC69DADB7}" Directory_="RISAFoundationStandaloneOnly_Dir" Attributes="256" Condition="RISA_INSTALL_TYPE &lt;&gt; &quot;Demo&quot;" KeyPath="risafnd.exe_3"/>
+    <ROW Component="shell" ComponentId="{56604A99-60C1-4DE9-8654-E189A757D1B1}" Directory_="APPDIR" Attributes="260" KeyPath="shell"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -104,6 +126,11 @@
     <ROW AliasRowId="AI_ResolveKnownFolders" AliasRowOperation="2" Sequence="#DefaultBuild:63"/>
     <ROW AliasRowId="RISA_InitProperties" AliasRowOperation="2" Sequence="#DefaultBuild:51"/>
     <ROW AliasRowId="InitPropertiesErrorDlg" AliasRowOperation="2" Sequence="#DefaultBuild:52"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AiRemoveRegComponent">
+    <ROW RemoveReg="__1" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+    <ROW RemoveReg="_" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
+    <ROW RemoveReg="__2" InstallMode="2" Condition="(AI_CLEAN_RESOURCES_UNINSTALL = &quot;1&quot;) AND (NOT UPGRADINGPRODUCTCODE)"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -145,6 +172,11 @@
     <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_AiRemoveRegsCommit" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsCommit" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsCommit"/>
+    <ROW Action="AI_AiRemoveRegsCommitUser" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsCommit" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsCommit"/>
+    <ROW Action="AI_AiRemoveRegsDeferred" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsDeferred" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsDeferred"/>
+    <ROW Action="AI_AiRemoveRegsDeferredUser" Description="Executing registry removal operations." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsDeferred" Template="Removing registry entry: [1]" TemplateLocId="ActionText.Template.AI_AiRemoveRegsDeferred"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Description="Generating actions to remove registry entries." DescriptionLocId="ActionText.Description.AI_AiRemoveRegsImmediate"/>
     <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
     <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
@@ -157,6 +189,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="RISA_CustomActionsLib.CA.dll" SourcePath="..\..\Common\Custom Actions\RISA_CustomActionsLib\RISA_CustomActionsLib\bin\x64\Debug\RISA_CustomActionsLib.CA.dll"/>
+    <ROW Name="ResourceCleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ResourceCleaner.dll"/>
     <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
     <ROW Name="header_logo.bmp" SourcePath="..\..\Common\Assets\header_logo.bmp"/>
@@ -306,6 +339,11 @@
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AiRemoveRegsCommit" Type="11777" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsCommitUser" Type="9729" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsDeferred" Type="11265" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsDeferredUser" Type="9217" Source="ResourceCleaner.dll" Target="OnAiRemoveRegs" WithoutSeq="true"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Type="1" Source="ResourceCleaner.dll" Target="OnAiRemoveRegsImmediate"/>
     <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
     <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
@@ -388,6 +426,23 @@
     <ROW Feature_="MainFeature" Component_="risafnd.exe_2"/>
     <ROW Feature_="MainFeature" Component_="risafnd.exe_3"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="_"/>
+    <ROW Feature_="MainFeature" Component_="__3"/>
+    <ROW Feature_="MainFeature" Component_="__4"/>
+    <ROW Feature_="MainFeature" Component_="__5"/>
+    <ROW Feature_="MainFeature" Component_="ShellNew"/>
+    <ROW Feature_="MainFeature" Component_="NullFile"/>
+    <ROW Feature_="MainFeature" Component_="__6"/>
+    <ROW Feature_="MainFeature" Component_="shell"/>
+    <ROW Feature_="MainFeature" Component_="open"/>
+    <ROW Feature_="MainFeature" Component_="__7"/>
+    <ROW Feature_="MainFeature" Component_="__8"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft"/>
+    <ROW Feature_="MainFeature" Component_="Windows"/>
+    <ROW Feature_="MainFeature" Component_="CurrentVersion"/>
+    <ROW Feature_="MainFeature" Component_="AppPaths"/>
+    <ROW Feature_="MainFeature" Component_="__9"/>
+    <ROW Feature_="MainFeature" Component_="__10"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="Foundation.exe" SourcePath="..\Assets\Foundation.ico" Index="0"/>
@@ -421,6 +476,7 @@
     <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
     <ROW Action="RISA_SilentInitProperties" Condition="( NOT Installed )" Sequence="52"/>
     <ROW Action="RISA_InitProperties" Condition="( Installed AND ( REMOVE = &quot;ALL&quot; OR AI_INSTALL_MODE = &quot;Remove&quot; ) )" Sequence="51"/>
+    <ROW Action="AI_AiRemoveRegsImmediate" Sequence="2599"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -472,8 +528,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="AppPaths" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths" Name="+" Component_="AppPaths"/>
     <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
     <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="CurrentVersion_1" Root="2" Key="Software\Microsoft\Windows\CurrentVersion" Name="+" Component_="CurrentVersion"/>
     <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
@@ -489,9 +547,11 @@
     <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
     <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="[RISA_CHECK_UPDATES]" Component_="LocalUpdateCheck_1"/>
+    <ROW Registry="Microsoft_1" Root="2" Key="Software\Microsoft" Name="+" Component_="Microsoft"/>
     <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
     <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify" VirtualValue="#"/>
     <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="NullFile" Root="0" Key=".fnd\ShellNew\NullFile" Name="+" Component_="NullFile"/>
     <ROW Registry="ProductName" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="+" Component_="ProductName"/>
     <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
     <ROW Registry="RISA_COMPANY_KEY" Root="1" Key="Software\[RISA_COMPANY_KEY]" Name="+" Component_="RISA_COMPANY_KEY"/>
@@ -499,6 +559,7 @@
     <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
     <ROW Registry="Region" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Name="Region" Value="[RISA_REGION_NAME]" Component_="Region"/>
     <ROW Registry="RevisionGUID" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="RevisionGUID" Value="[UpgradeCode]" Component_="RevisionGUID"/>
+    <ROW Registry="ShellNew" Root="0" Key=".fnd\ShellNew" Name="+" Component_="ShellNew"/>
     <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
     <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
     <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
@@ -506,12 +567,31 @@
     <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
     <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#13" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="Windows_1" Root="2" Key="Software\Microsoft\Windows" Name="+" Component_="Windows"/>
+    <ROW Registry="_" Root="0" Key=".asc" Value="RISADesignList" Component_="_"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
+    <ROW Registry="__10" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe\Path" Value="[APPDIR]" Component_="__10"/>
     <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
+    <ROW Registry="__3" Root="0" Key=".fil" Value="RISADatabase" Component_="__3"/>
+    <ROW Registry="__4" Root="0" Key="RISADatabase" Value="RISA Database" Component_="__4"/>
+    <ROW Registry="__5" Root="0" Key="RISADesignList" Value="RISA Design List" Component_="__5"/>
+    <ROW Registry="__6" Root="0" Key=".fnd" Value="RISAFoundationModel" Component_="__6"/>
+    <ROW Registry="__7" Root="0" Key="RISAFoundationModel\shell\open\command" Value="&quot;[APPDIR]\risafnd.exe&quot; &quot;%1&quot;" Component_="__7"/>
+    <ROW Registry="__8" Root="0" Key="RISAFoundationModel" Value="RISAFoundation File" Component_="__8"/>
+    <ROW Registry="__9" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Value="[APPDIR]\risafnd.exe" Component_="__9"/>
+    <ROW Registry="open" Root="0" Key="RISAFoundationModel\shell\open" Name="+" Component_="open"/>
+    <ROW Registry="shell" Root="0" Key="RISAFoundationModel\shell" Name="+" Component_="shell"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRemoveRegComponent">
+    <ROW RemoveRegistry="_" Root="0" Key=".fnd" Name="-" Component_="Region"/>
+    <ROW RemoveRegistry="__1" Root="0" Key="RISAFoundationModel" Name="-" Component_="Region"/>
+    <ROW RemoveRegistry="__2" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Name="-" Component_="Region"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE" Directory_="SHORTCUTDIR" Name="RISAFO~1.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafnd.exe_3" Target="[#risafnd.exe_3]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFoundationStandaloneOnly_Dir"/>
     <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPEDemo" Directory_="SHORTCUTDIR" Name="RISAFO~1.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="risafnd.exe_2" Target="[#risafnd.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFoundationDemoOnly_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPEDemo_1" Directory_="DesktopFolder" Name="RISAFO~1.0(D|[|RISA_PRODUCT_TITLE2_INSTYPE] (Demo)" Component_="risafnd.exe_2" Target="[#risafnd.exe_2]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFoundationDemoOnly_Dir"/>
+    <ROW Shortcut="RISA_PRODUCT_TITLE2_INSTYPE_1" Directory_="DesktopFolder" Name="RISAFO~1.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafnd.exe_3" Target="[#risafnd.exe_3]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RISAFoundationStandaloneOnly_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiTextStyleComponent">
     <ROW TextStyle="DlgFontBold8_DlgFontBold8" FaceName="Tahoma" Size="8" Color="0" StyleBits="1"/>
