@@ -596,10 +596,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
-    <ROW Registry="AppPaths" Root="2" Key="Microsoft\Windows\CurrentVersion\App Paths" Name="+" Component_="AppPaths"/>
+    <ROW Registry="AppPaths" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths" Name="+" Component_="AppPaths"/>
     <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
     <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
-    <ROW Registry="CurrentVersion_1" Root="2" Key="Microsoft\Windows\CurrentVersion" Name="+" Component_="CurrentVersion"/>
+    <ROW Registry="CurrentVersion_1" Root="2" Key="Software\Microsoft\Windows\CurrentVersion" Name="+" Component_="CurrentVersion"/>
     <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
@@ -615,7 +615,7 @@
     <ROW Registry="LicenseType" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type" Value="[RISA_LICENSE_TYPE]" Component_="LicenseType"/>
     <ROW Registry="LicenseTypeList" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]" Name="License Type List" Value="[RISA_LICENSE_TYPE]" Component_="LicenseTypeList"/>
     <ROW Registry="LocalUpdateCheck_1" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="LocalUpdateCheck" Value="[RISA_CHECK_UPDATES]" Component_="LocalUpdateCheck_1"/>
-    <ROW Registry="Microsoft_1" Root="2" Key="Microsoft" Name="+" Component_="Microsoft"/>
+    <ROW Registry="Microsoft_1" Root="2" Key="Software\Microsoft" Name="+" Component_="Microsoft"/>
     <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
     <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify" VirtualValue="#"/>
     <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
@@ -635,10 +635,10 @@
     <ROW Registry="Version" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Name="Version" Value="[RISA_PRODUCT_VERSION34]" Component_="Version"/>
     <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#13" Component_="AI_CustomARPName" VirtualValue="#"/>
     <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
-    <ROW Registry="Windows_1" Root="2" Key="Microsoft\Windows" Name="+" Component_="Windows"/>
+    <ROW Registry="Windows_1" Root="2" Key="Software\Microsoft\Windows" Name="+" Component_="Windows"/>
     <ROW Registry="_" Root="0" Key=".asc" Value="RISADesignList" Component_="_"/>
     <ROW Registry="__1" Root="2" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]\Default" Component_="__1"/>
-    <ROW Registry="__10" Root="2" Key="Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Value="[APPDIR]\risafnd.exe" Component_="__10"/>
+    <ROW Registry="__10" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Value="[APPDIR]\risafnd.exe" Component_="__10"/>
     <ROW Registry="__2" Root="1" Key="Software\[RISA_COMPANY_KEY]\[RISA_REGISTRY_PRODUCT_NAME]\[RISA_PRODUCT_VERSION2]" Component_="__2"/>
     <ROW Registry="__3" Root="0" Key=".fil" Value="RISADatabase" Component_="__3"/>
     <ROW Registry="__4" Root="0" Key="RISADatabase" Value="RISA Database" Component_="__4"/>
@@ -646,14 +646,14 @@
     <ROW Registry="__6" Root="0" Key=".fnd" Value="RISAFoundationModel" Component_="__6"/>
     <ROW Registry="__7" Root="0" Key="RISAFoundationModel\shell\open\command" Value="&quot;[APPDIR]\risafnd.exe&quot; &quot;%1&quot;" Component_="__7"/>
     <ROW Registry="__8" Root="0" Key="RISAFoundationModel" Value="RISAFoundation File" Component_="__8"/>
-    <ROW Registry="__9" Root="2" Key="Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe\Path" Value="[APPDIR]" Component_="__9"/>
+    <ROW Registry="__9" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe\Path" Value="[APPDIR]" Component_="__9"/>
     <ROW Registry="open" Root="0" Key="RISAFoundationModel\shell\open" Name="+" Component_="open"/>
     <ROW Registry="shell" Root="0" Key="RISAFoundationModel\shell" Name="+" Component_="shell"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRemoveRegComponent">
     <ROW RemoveRegistry="_" Root="0" Key=".fnd" Name="-" Component_="WpfMath.dll"/>
     <ROW RemoveRegistry="__1" Root="0" Key="RISAFoundationModel" Name="-" Component_="WpfMath.dll"/>
-    <ROW RemoveRegistry="__2" Root="2" Key="Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Name="-" Component_="WpfMath.dll"/>
+    <ROW RemoveRegistry="__2" Root="2" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\risafnd.exe" Name="-" Component_="WpfMath.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
     <ROW Shortcut="RISAFoundationPRODUCT_VERSION2" Directory_="SHORTCUTDIR" Name="RISAFO~2.0|[|RISA_PRODUCT_TITLE2_INSTYPE]" Component_="risafnd.exe" Target="[#risafnd.exe]" Hotkey="0" Icon_="Foundation.exe" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
