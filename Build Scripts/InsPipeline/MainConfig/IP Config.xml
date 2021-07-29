@@ -5,6 +5,7 @@
     <Directory Logs="C:\Installer Pipeline\Logs" />
     <Directory BuildLogs="C:\Installer Pipeline\Build Logs" />
     <Directory InstallerExesRoot="C:\UnOfficial_InstallPackages" />
+    <Directory Temp="C:\Advanced Installer\Build Scripts\Generated" />
   </Directories>
   <BuildConfigDirectories>
     <BuildConfigDirectory ShortName="Advanced Installer" ColorName="MediumTurquoise">
@@ -23,7 +24,7 @@
   </InstallerRepo>
   <Notifications>
     <Notify OnBuildComplete="kirke@risa.com" />
-    <Notify OnErrors="kirke@risa.com" />
+    <!--<Notify OnErrors="kirke@risa.com" />-->
     <Notify OnWatchesSignalled="kirke@risa.com" />
     <Notify SenderEmail="kirke@risa.com" />
     <Notify SenderEmailPassword="Ni#any16%" />

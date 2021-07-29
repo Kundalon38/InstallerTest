@@ -5,7 +5,7 @@
   <BuildEnabled>Y</BuildEnabled>
   <EnableSuccessEmail>false</EnableSuccessEmail>
   <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISA-3D</PublishInstaller_Directory>
-  <BatchScript>C:\Advanced Installer\Build Scripts\BatTemplates\IP_Build_3D_Demo_IA.batTemplate</BatchScript>
+  <BatchScript>C:\Advanced Installer\Build Scripts\BatTemplates\IP_Build_3D_Demo_AI.batTemplate</BatchScript>
   <InstallerScript>C:\Advanced Installer\Build Scripts\BatBuildTemplates\3D.batBuildTemplate</InstallerScript>
   <BuildType>AdvancedInstaller</BuildType>
   <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>

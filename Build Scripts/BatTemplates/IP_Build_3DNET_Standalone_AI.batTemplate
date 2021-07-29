@@ -91,20 +91,15 @@ robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\RISA_Decks" "C
 robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Silent Install" "C:\InstallAware\Source Files\RISAFloor\Silent Install" /e /X /TS /FP /NP /V
 robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Tutorials" "C:\InstallAware\Source Files\RISAFloor\Tutorials" /e /X /TS /FP /NP /V
 
-copy "G:\Shared drives\Support Team\Install Sources\Common Files\Install Screens\install_splash_3d.bmp" "C:\InstallAware\Project Files\RISA-3D\Demo\Setup.bmp" /y 
-copy "G:\Shared drives\Support Team\Install Sources\Common Files\Install Screens\install_splash_3d.bmp" "C:\InstallAware\Project Files\RISA-3D\Standalone\Setup.bmp" /y 
-
 robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Help" "C:\InstallAware\Source Files\RISAFoundation\Help" risafnd.chm /X /TS /FP /NP /V
 
 time /t
 
-echo -Building RISA-3D Standalone Install-
+echo -Building RISA-3D Standalone Install
 
-miabuild.exe %IP_EditInstallerScriptFile /b=1 >%IP_EditInstallerLogFile
-rem Uncompressed
-rem miabuild.exe %IP_EditInstallerScriptFile /b=0 >%IP_EditInstallerLogFile
-robocopy "C:\InstallAware\Project Files\RISA-3D_dotNET\Standalone\Release\Single" %IP_EditInstallerOutputDir *.exe  /X /TS /FP /NP /V
+%IP_BatBuildTemplate
+
 signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v %IP_EditInstallerOutputFile
-
-robocopy %IP_EditInstallerOutputDir *.exe %IP_EditInstallerPublishDir /X /TS /FP /NP /V
+rem the line below is removed for a private build, the value for IP_EditInstallerPublishDir won't be defined, triggering the removal
+robocopy %IP_EditInstallerOutputDir %IP_EditInstallerOutputShortFile %IP_EditInstallerPublishDir /X /TS /FP /NP /V
 time /t
