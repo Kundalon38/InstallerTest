@@ -1,0 +1,11 @@
+
+time /t
+
+echo -Building RISA-3D Standalone Install
+
+%IP_BatBuildTemplate
+
+signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v %IP_EditInstallerOutputFile
+rem the line below is removed for a private build; the value for IP_EditInstallerPublishDir won't be defined, triggering the removal
+robocopy %IP_EditInstallerOutputDir %IP_EditInstallerOutputShortFile %IP_EditInstallerPublishDir /X /TS /FP /NP /V
+time /t
