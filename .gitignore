@@ -21,6 +21,7 @@ Build Scripts/Generated/
 *.sln.docstates
 *.cache
 *.back.aip
+*_demo.aip
 *.testlog
 **/packages
 **/debug
@@ -29,4 +30,4 @@ Build Scripts/Generated/
 **/release
 **/*SetupFiles
 **/*-cache
-.vs/*
+**/.vs
