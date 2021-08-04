@@ -8,7 +8,7 @@
   <PublishInstaller_Directory>C:\Users\Kirk\Desktop</PublishInstaller_Directory>
   <BatchScript>C:\Advanced Installer\Build Scripts\BatTemplates\IP_Build_3DNET_Standalone_AI.batTemplate</BatchScript>
   <InstallerScript>C:\Advanced Installer\Build Scripts\BatBuildTemplates\3D.batBuildTemplate</InstallerScript>
-  <Suffix_InstallerFileName>AI</Suffix_InstallerFileName>
+  <Suffix_InstallerFileName>AIRepoTest</Suffix_InstallerFileName>
   <BuildType>AdvancedInstaller</BuildType>
   <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>
   <DirWatches>
