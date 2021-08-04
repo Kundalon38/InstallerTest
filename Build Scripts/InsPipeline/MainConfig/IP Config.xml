@@ -26,7 +26,7 @@
     <GitHubUserName>Kundalon38</GitHubUserName>
     <GitHubToken>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</GitHubToken>
     <LocalRepoDir>C:\Advanced Installer</LocalRepoDir>
-    <LocalRepoBranch>dev</LocalRepoBranch>
+    <LocalRepoBranch>2021_08_Aip_CodeSign_experiment</LocalRepoBranch>
   </InstallerRepo>
   <DirectoryVersions>
     <Enabled>N</Enabled>
