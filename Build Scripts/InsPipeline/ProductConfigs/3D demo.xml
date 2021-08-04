@@ -7,6 +7,7 @@
   <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISA-3D</PublishInstaller_Directory>
   <BatchScript>C:\Advanced Installer\Build Scripts\BatTemplates\IP_Build_3D_Demo_AI.batTemplate</BatchScript>
   <InstallerScript>C:\Advanced Installer\Build Scripts\BatBuildTemplates\3D.batBuildTemplate</InstallerScript>
+  <Suffix_InstallerFileName>AI</Suffix_InstallerFileName>
   <BuildType>AdvancedInstaller</BuildType>
   <BatchRequiresAdminPrivs>false</BatchRequiresAdminPrivs>
   <DirWatches>

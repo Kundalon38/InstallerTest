@@ -1,6 +1,4 @@
-echo -Code Sign the Application EXEs
-signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET\RISA3Dw.exe"
-signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET_Demo\RISA3Dw.exe"
+echo 3D.NET standalone build
 
 rem code sign Unbundled DLLS for RISA-3D
 signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET\bin\RISA-3D\RISAtech.RISA3D.dll"
@@ -16,12 +14,6 @@ signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\S
 signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET\bin\RISA-3D\RISAtech.CalatravaLink.Contract.dll"
 signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET\bin\SAF-3D\RISAtech.CalatravaLink.Contract.dll"
 signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNET\bin\SAF-3D\RISAtech.CalatravaLink.dll"
-
-echo -Delete the Release Folders in Project Files
-rmdir /Q /S "C:\Advanced Installer\Project Files\RISA-3D_dotNET\Standalone\Release"
-
-echo -Delete the Installation Package
-del %IP_EditInstallerOutputFile
 
 rem robocopy switches, show: /Xtras | /TimeStamp | /FullPath | /NoProgress | /Verbose | /E copy subdirs | /MIR	Mirrors a directory tree (equivalent to /e plus /purge)
 
@@ -95,11 +87,14 @@ robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Help" "C:
 
 time /t
 
+rem special Merge defaults handling for AI
+robocopy "c:\Advanced Installer\Source Files\RISA-3D\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
+robocopy "c:\Advanced Installer\Source Files\RISAFoundation\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
+robocopy "c:\Advanced Installer\Source Files\RISAFloor\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
 echo -Building RISA-3D Standalone Install
 
 %IP_BatBuildTemplate
 
-signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v %IP_EditInstallerOutputFile
 rem the line below is removed for a private build; the value for IP_EditInstallerPublishDir won't be defined, triggering the removal
 robocopy %IP_EditInstallerOutputDir %IP_EditInstallerOutputShortFile %IP_EditInstallerPublishDir /X /TS /FP /NP /V
 time /t

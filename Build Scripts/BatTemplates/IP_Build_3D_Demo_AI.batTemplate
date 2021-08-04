@@ -1,87 +1,55 @@
-echo -Code Sign the Application EXEs
-signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNet_Demo\RISA3Dw.exe"
-
-echo -Delete the Release Folders in Project Files
-rmdir /Q /S "C:\InstallAware\Project Files\RISA-3D_dotNET\Demo\Release"
-
-echo -Delete the Installation Package
-del %IP_EditInstallerOutputFile
+echo 3D Demo build
 
 rem robocopy switches, show: /Xtras | /TimeStamp | /FullPath | /NoProgress | /Verbose | /E copy subdirs | /MIR	Mirrors a directory tree (equivalent to /e plus /purge)
 
 echo -Copying Common Source Files
-robocopy "C:\InstallAware\Source Files\Common Files\Databases" "C:\InstallAware\Source Files\Common Files\DatabasesBAK"  /X /TS /FP /NP /V
-erase /Q "C:\InstallAware\Source Files\Common Files\Databases\*.*"
+robocopy "C:\Advanced Installer\Source Files\Common Files\Databases" "C:\Advanced Installer\Source Files\Common Files\DatabasesBAK"  /X /TS /FP /NP /V
+erase /Q "C:\Advanced Installer\Source Files\Common Files\Databases\*.*"
 
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Databases" "C:\InstallAware\Source Files\Common Files\Databases" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Database Utilities" "C:\InstallAware\Source Files\Common Files\Database Utilities" *.exe /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Design Lists" "C:\InstallAware\Source Files\Common Files\Design Lists" *.asc /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Detail Reports" "C:\InstallAware\Source Files\Common Files\Detail Reports" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\DXF" "C:\InstallAware\Source Files\Common Files\DXF" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\INI" "C:\InstallAware\Source Files\Common Files\INI" *.ini /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Library" "C:\InstallAware\Source Files\Common Files\Library" *.dll /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\License\Borrow" "C:\InstallAware\Source Files\Common Files\License\Borrow" /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\License\Utilities" "C:\InstallAware\Source Files\Common Files\License\Utilities" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\LC_lists" "C:\InstallAware\Source Files\Common Files\LC_lists" *.xml /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Manuals" "C:\InstallAware\Source Files\Common Files\Manuals" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\RISA_Wood_Schedules" "C:\InstallAware\Source Files\Common Files\RISA_Wood_Schedules" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\SAF" "C:\InstallAware\Source Files\Common Files\SAF" /e   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Silent Install" "C:\InstallAware\Source Files\Common Files\Silent Install" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Yield Links" "C:\InstallAware\Source Files\Common Files\Yield Links" /e   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Databases" "C:\Advanced Installer\Source Files\Common Files\Databases" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Database Utilities" "C:\Advanced Installer\Source Files\Common Files\Database Utilities" *.exe /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Design Lists" "C:\Advanced Installer\Source Files\Common Files\Design Lists" *.asc /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Detail Reports" "C:\Advanced Installer\Source Files\Common Files\Detail Reports" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\DXF" "C:\Advanced Installer\Source Files\Common Files\DXF" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\INI" "C:\Advanced Installer\Source Files\Common Files\INI" *.ini /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Library" "C:\Advanced Installer\Source Files\Common Files\Library" *.dll /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\License\Borrow" "C:\Advanced Installer\Source Files\Common Files\License\Borrow" /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\License\Utilities" "C:\Advanced Installer\Source Files\Common Files\License\Utilities" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\LC_lists" "C:\Advanced Installer\Source Files\Common Files\LC_lists" *.xml /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Manuals" "C:\Advanced Installer\Source Files\Common Files\Manuals" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\RISA_Wood_Schedules" "C:\Advanced Installer\Source Files\Common Files\RISA_Wood_Schedules" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\SAF" "C:\Advanced Installer\Source Files\Common Files\SAF" /e   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Silent Install" "C:\Advanced Installer\Source Files\Common Files\Silent Install" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\Common Files\Yield Links" "C:\Advanced Installer\Source Files\Common Files\Yield Links" /e   /X /TS /FP /NP /V
 
-robocopy "G:\Shared drives\Tech\Installer Staging\RISA Key Manager" "C:\InstallAware\Source Files\RISA Key Manager" /e /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Tech\Installer Staging\SafeNet\Sentinel RMS" "C:\InstallAware\Source Files\SafeNet\Sentinel RMS" /e  /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Tech\Installer Staging\RISA Key Manager" "C:\Advanced Installer\Source Files\RISA Key Manager" /e /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Tech\Installer Staging\SafeNet\Sentinel RMS" "C:\Advanced Installer\Source Files\SafeNet\Sentinel RMS" /e  /X /TS /FP /NP /V
 
 echo -Copying RISA-3D Source Files
 rem for file renames, use copy, not xcopy; xcopy will ask if this is a file or a directory, no way to shut it off
 
-robocopy "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNet_Demo" "C:\InstallAware\Source Files\RISA-3D_dotNET\Exes\DemoBackup" /e  /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Install Support Files" "C:\InstallAware\Project Files\RISA-3D\Demo" /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Install Support Files" "C:\InstallAware\Project Files\RISA-3D\Standalone" /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Examples" "C:\InstallAware\Source Files\RISA-3D\Examples" /MIR  /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Help" "C:\InstallAware\Source Files\RISA-3D\Help"   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Manuals" "C:\InstallAware\Source Files\RISA-3D\Manuals"   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Region Defaults" "C:\InstallAware\Source Files\RISA-3D\Region Defaults" /e   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Release Notes" "C:\InstallAware\Source Files\RISA-3D\Release Notes"   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Silent Install" "C:\InstallAware\Source Files\RISA-3D\Silent Install"   /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Tutorials" "C:\InstallAware\Source Files\RISA-3D\Tutorials" /MIR  /X /TS /FP /NP /V
-robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\STAAD" "C:\InstallAware\Source Files\RISA-3D\STAAD" /X /TS /FP /NP /V
-
-rem 2020-02-06 CE - Commented out these lines so 3D 18 Demo install is more like v17 Demo install then v18 Standalone install.
-rem robocopy "G:\Shared drives\Tech\Installer Staging\RISAFoundation" "C:\InstallAware\Source Files\RISAFoundation\Exes" /e  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Install Support Files" "C:\InstallAware\Project Files\RISAFoundation\Demo" /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Install Support Files" "C:\InstallAware\Project Files\RISAFoundation\Standalone" /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Examples" "C:\InstallAware\Source Files\RISAFoundation\Examples" /MIR  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Help" "C:\InstallAware\Source Files\RISAFoundation\Help"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Manuals" "C:\InstallAware\Source Files\RISAFoundation\Manuals"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Region Defaults" "C:\InstallAware\Source Files\RISAFoundation\Region Defaults" /e   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Release Notes" "C:\InstallAware\Source Files\RISAFoundation\Release Notes"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Silent Install" "C:\InstallAware\Source Files\RISAFoundation\Silent Install"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFoundation\Tutorials" "C:\InstallAware\Source Files\RISAFoundation\Tutorials" /MIR  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Tech\Installer Staging\RISAFloor" "C:\InstallAware\Source Files\RISAFloor\Exes" /e  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Examples" "C:\InstallAware\Source Files\RISAFloor\Examples" /MIR   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\RISA_Decks" "C:\InstallAware\Source Files\RISAFloor\RISA_Decks" *.xml  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Help" "C:\InstallAware\Source Files\RISAFloor\Help"  /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Install Support Files" "C:\InstallAware\Project Files\RISAFloor\Demo" /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Install Support Files" "C:\InstallAware\Project Files\RISAFloor\Standalone" /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Manuals" "C:\InstallAware\Source Files\RISAFloor\Manuals"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Region Defaults" "C:\InstallAware\Source Files\RISAFloor\Region Defaults" /e   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Release Notes" "C:\InstallAware\Source Files\RISAFloor\Release Notes"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Silent Install" "C:\InstallAware\Source Files\RISAFloor\Silent Install"   /X /TS /FP /NP /V
-rem robocopy "G:\Shared drives\Support Team\Install Sources\RISAFloor\Tutorials" "C:\InstallAware\Source Files\RISAFloor\Tutorials" /MIR   /X /TS /FP /NP /V
-
-copy "G:\Shared drives\Support Team\Install Sources\Common Files\Install Screens\install_splash_3d.bmp" "C:\InstallAware\Project Files\RISA-3D\Demo\Setup.bmp" /y 
-copy "G:\Shared drives\Support Team\Install Sources\Common Files\Install Screens\install_splash_3d.bmp" "C:\InstallAware\Project Files\RISA-3D\Standalone\Setup.bmp" /y 
+robocopy "G:\Shared drives\Tech\Installer Staging\RISA-3D_dotNet_Demo" "C:\Advanced Installer\Source Files\RISA-3D_dotNET\Exes\DemoBackup" /e  /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Install Support Files" "C:\Advanced Installer\Project Files\RISA-3D\Demo" /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Install Support Files" "C:\Advanced Installer\Project Files\RISA-3D\Standalone" /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Examples" "C:\Advanced Installer\Source Files\RISA-3D\Examples" /MIR  /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Help" "C:\Advanced Installer\Source Files\RISA-3D\Help"   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Manuals" "C:\Advanced Installer\Source Files\RISA-3D\Manuals"   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Region Defaults" "C:\Advanced Installer\Source Files\RISA-3D\Region Defaults" /e   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Release Notes" "C:\Advanced Installer\Source Files\RISA-3D\Release Notes"   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Silent Install" "C:\Advanced Installer\Source Files\RISA-3D\Silent Install"   /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\Tutorials" "C:\Advanced Installer\Source Files\RISA-3D\Tutorials" /MIR  /X /TS /FP /NP /V
+robocopy "G:\Shared drives\Support Team\Install Sources\RISA-3D\STAAD" "C:\Advanced Installer\Source Files\RISA-3D\STAAD" /X /TS /FP /NP /V
 
 time /t
 
-echo - Build RISA-3D Demo Install
+rem special Merge defaults handling for AI
+robocopy "c:\Advanced Installer\Source Files\RISA-3D\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
+robocopy "c:\Advanced Installer\Source Files\RISAFoundation\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
+robocopy "c:\Advanced Installer\Source Files\RISAFloor\Region Defaults" "c:\Advanced Installer\Source Files\Region Defaults Merged" /E /XO /NFL /NDL
+echo -Building RISA-3D Demo Install
 
-miabuild.exe %IP_EditInstallerScriptFile /b=1 >%IP_EditInstallerLogFile
-robocopy "C:\InstallAware\Project Files\RISA-3D_dotNET\Demo\Release\Single" %IP_EditInstallerOutputDir *.exe /X /TS /FP /NP /V
-signtool.exe sign /a /s my /fd sha256 /tr http://timestamp.digicert.com /v %IP_EditInstallerOutputFile
+%IP_BatBuildTemplate
 
-robocopy %IP_EditInstallerOutputDir *.exe "G:\Shared drives\Support Team\Install_packages\RISA-3D" /X /TS /FP /NP /V
-robocopy %IP_EditInstallerOutputDir *.exe %IP_EditInstallerPublishDir /X /TS /FP /NP /V
-
+rem the line below is removed for a private build; the value for IP_EditInstallerPublishDir won't be defined, triggering the removal
+robocopy %IP_EditInstallerOutputDir %IP_EditInstallerOutputShortFile %IP_EditInstallerPublishDir /X /TS /FP /NP /V
 time /t
