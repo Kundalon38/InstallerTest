@@ -21,7 +21,7 @@
     <Directory BuildLogs="C:\Installer Pipeline\Build Logs"/>
     <Directory InstallerExesRoot="C:\UnOfficial_InstallPackages" />
   </Directories>
-    <InstallerRepo>
+  <InstallerRepo>
     <AIinstallationPathFormatStr>C:\Program Files (x86)\Caphyon\Advanced Installer {0}\bin\x86</AIinstallationPathFormatStr>
     <GitHubUserName>Kundalon38</GitHubUserName>
     <GitHubToken>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</GitHubToken>
