@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunMonSettings>
+  <TimerFrequency Seconds="5"/>
+  <ScanForWorkFrequency Seconds="300"/>
+  <StartBuildAfterWatchesSignal Seconds="120"/>
+  <BuildTimeout Minutes="40"/>
+  <LogRetention Days="30"/>
+  <ProductGuidDatabase FileName="C:\InstallAware\Product Guids Database\ProductGuids.db"/>
+  <AcceptClientConnections>N</AcceptClientConnections>
+  <StartScanOnStartup>N</StartScanOnStartup>
+  <BuildConfigDirectories>
+     <BuildConfigDirectory ShortName="InstallAware" ColorName="RoyalBlue">
+         <FullDirName>C:\Installer Pipeline\Build Configs</FullDirName>
+     </BuildConfigDirectory>
+     <BuildConfigDirectory ShortName="Advanced Installer" ColorName="MediumTurquoise">
+         <FullDirName>C:\Advanced Installer\Build Scripts\InsPipeline\ProductConfigs</FullDirName>
+     </BuildConfigDirectory>
+  </BuildConfigDirectories>
+  <Directories>
+    <Directory Logs="C:\Installer Pipeline\Logs"/>
+    <Directory BuildLogs="C:\Installer Pipeline\Build Logs"/>
+    <Directory InstallerExesRoot="C:\UnOfficial_InstallPackages" />
+  </Directories>
+    <InstallerRepo>
+    <AIinstallationPathFormatStr>C:\Program Files (x86)\Caphyon\Advanced Installer {0}\bin\x86</AIinstallationPathFormatStr>
+    <GitHubUserName>Kundalon38</GitHubUserName>
+    <GitHubToken>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</GitHubToken>
+    <LocalRepoDir>C:\Advanced Installer</LocalRepoDir>
+    <LocalRepoBranch>dev</LocalRepoBranch>
+  </InstallerRepo>
+  <DirectoryVersions>
+    <Enabled>N</Enabled>
+    <DB_ServerName>installer-versions-db.cpbgk5xvua5h.us-west-2.rds.amazonaws.com</DB_ServerName>
+    <DB_UserName>admin</DB_UserName>
+    <DB_Password>CE7koot-kep!phap</DB_Password>
+    <DB_DatabaseName>ProductVersionDirectories_Test</DB_DatabaseName>	<!-- Test Dir Ver database -->
+  </DirectoryVersions> 
+  <Notifications>
+    <Notify OnBuildComplete="kirke@risa.com"/>
+    <Notify OnErrors="kirke@risa.com"/>
+    <Notify OnWatchesSignalled="kirke@risa.com"/>
+    <Notify SenderEmail="kirke@risa.com"/>
+    <Notify SenderEmailPassword="Ni#any16%"/>
+  </Notifications>
+  <ProductNames>
+	<ProductName Name="RISA-3D" Abbrev2="3D" DirVerProduct="RISA3D" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISA-2D" Abbrev2="2D" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISAFloor" Abbrev2="FL"  DirVerProduct="RISAFloor" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISAFoundation" Abbrev2="FD" DirVerProduct="RISAFoundation" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISAConnection" Abbrev2="CN" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISA-RevitLink" Abbrev2=""/>
+	<ProductName Name="RISA-TeklaLink" Abbrev2=""/>
+	<ProductName Name="RISASection" Abbrev2="SE" InstallTypes="Demo,Standalone"/>
+	<ProductName Name="RISA Network Server" Abbrev2=""/>
+	<ProductName Name="RISA License Manager" Abbrev2=""/>
+	<ProductName Name="RISA Service" Abbrev2=""/>
+  </ProductNames>
+</RunMonSettings>
