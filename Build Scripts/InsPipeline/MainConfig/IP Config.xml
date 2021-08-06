@@ -4,7 +4,7 @@
   <ScanForWorkFrequency Seconds="300"/>
   <StartBuildAfterWatchesSignal Seconds="120"/>
   <BuildTimeout Minutes="40"/>
-  <LogRetention Days="30"/>
+  <LogRetention Days="20"/>
   <ProductGuidDatabase FileName="C:\InstallAware\Product Guids Database\ProductGuids.db"/>
   <AcceptClientConnections>N</AcceptClientConnections>
   <StartScanOnStartup>N</StartScanOnStartup>
