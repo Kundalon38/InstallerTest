@@ -1,0 +1,42 @@
+<BuildProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductName>RISAFoundation</ProductName>
+  <Abbrev2>FD</Abbrev2>
+  <InstallType>Demo</InstallType>
+  <BuildEnabled>Y</BuildEnabled>
+  <EnableSuccessEmail>false</EnableSuccessEmail>
+  <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISAFoundation</PublishInstaller_Directory>
+  <BatchScript>C:\InstallAware\Build Scripts\IP_Build_FD_Demo_IA.batTemplate</BatchScript>
+  <InstallerScript>C:\InstallAware\Project Files\RISAFoundation\Demo\RISAFoundation Demo.mpr</InstallerScript>
+  <DirWatches>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISAFoundation</RootSourceDir>
+      <FileWatches>
+        <FileWatch>
+          <AppendPath>Demo</AppendPath>
+          <FileName>risafnd.exe</FileName>
+          <DestDir>G:\Shared drives\Tech\Installer Staging\RISAFoundation_Demo</DestDir>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>NE</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>*.9</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>Y</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>N</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\Common Files</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\RISAFoundation</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+  </DirWatches>
+</BuildProcess>
