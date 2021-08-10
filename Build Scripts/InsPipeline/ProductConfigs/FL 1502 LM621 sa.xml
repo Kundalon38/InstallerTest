@@ -1,0 +1,70 @@
+<BuildProcess xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductName>RISAFloor</ProductName>
+  <Abbrev2>FL</Abbrev2>
+  <InstallType>Standalone</InstallType>
+  <BuildEnabled>N</BuildEnabled>
+  <NotifyOnSuccessEmails>mattl@risa.com</NotifyOnSuccessEmails>
+  <EnableSuccessEmail>true</EnableSuccessEmail>
+  <PublishInstaller_Directory>G:\Shared drives\Support Team\Install_packages\RISAFloor</PublishInstaller_Directory>
+  <BatchScript>C:\InstallAware\Build Scripts\IP_Build_FL_Standalone_IA.batTemplate</BatchScript>
+  <InstallerScript>C:\InstallAware\Project Files\RISAFloor\Standalone\RISAFloor Standalone.mpr</InstallerScript>
+  <Suffix_InstallerFileName>LM621</Suffix_InstallerFileName>
+  <DirWatches>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISAFloor</RootSourceDir>
+      <FileWatches>
+        <FileWatch>
+          <FileName>risafloor.exe</FileName>
+          <DestDir>G:\Shared drives\Tech\Installer Staging\RISAFloor</DestDir>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>EQ</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>15.0.2</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>Y</Does_SetInstallerVersion>
+        </FileWatch>
+        <FileWatch>
+          <AppendPath>Demo</AppendPath>
+          <FileName>risafloor.exe</FileName>
+          <DestDir>G:\Shared drives\Tech\Installer Staging\RISAFloor_Demo</DestDir>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>Y</Optional_for_Baseline>
+          <Does_BuildRequireVersion>N</Does_BuildRequireVersion>
+          <BuildRequiresVersion_VersionStr />
+          <Does_SetInstallerVersion>N</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>N</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\Common Files</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Product R&amp;D\Current Executables\RISALicenseManager</RootSourceDir>
+      <DestDir>G:\Shared drives\Tech\Installer Staging\RISA License Manager</DestDir>
+      <FileWatches>
+        <FileWatch>
+          <FileName>RISALicenseManagerCOM.dll</FileName>
+          <Do_CopyDir>N</Do_CopyDir>
+          <Optional_for_Baseline>N</Optional_for_Baseline>
+          <Does_BuildRequireVersion>Y</Does_BuildRequireVersion>
+          <BuildRequiresVersion_Operator>EQ</BuildRequiresVersion_Operator>
+          <BuildRequiresVersion_VersionStr>6.2.1</BuildRequiresVersion_VersionStr>
+          <Does_SetInstallerVersion>N</Does_SetInstallerVersion>
+        </FileWatch>
+      </FileWatches>
+      <WatchFor_NewChildDir>Y</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+    <DirectoryWatch>
+      <RootSourceDir>G:\Shared drives\Support Team\Install Sources\RISAFloor</RootSourceDir>
+      <FileWatches />
+      <WatchFor_NewChildDir>N</WatchFor_NewChildDir>
+      <WatchAll_Files>Y</WatchAll_Files>
+    </DirectoryWatch>
+  </DirWatches>
+</BuildProcess>
